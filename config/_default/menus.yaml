@@ -1,0 +1,22 @@
+main:
+  - name: Research
+    url: '/research'
+    weight: 10
+  - name: Publications
+    url: '/publications'
+    weight: 20
+  - name: People
+    url: '/people'
+    weight: 30
+  - name: News
+    url: '/news'
+    weight: 40
+  - name: Lab Life
+    url: '/lab-life'
+    weight: 50
+  - name: Resources
+    url: '/resources'
+    weight: 55
+  - name: Contact
+    url: '/contact'
+    weight: 60

@@ -1,0 +1,52 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: David M. Shechter, PhD
+  last_name: Shechter
+role: Professor of Biochemistry
+bio: PI of the Shechter Lab. We study how post-translational modifications regulate chromatin assembly, RNA processing, and the cellular methyl economy, with applications in cancer, ALS, and aging.
+affiliations:
+  - name: Albert Einstein College of Medicine, Department of Biochemistry
+    url: https://einsteinmed.edu/
+  - name: Montefiore-Einstein Comprehensive Cancer Center
+    url: https://einsteinmed.edu/centers/cancer/
+  - name: Data Science Institute, Einstein
+    url: https://einsteinmed.edu/
+links:
+  - icon: hero/envelope
+    url: mailto:david.shechter@einsteinmed.edu
+  - icon: brands/google-scholar
+    url: https://scholar.google.com/citations?user=Mz9sZUoAAAAJ
+  - icon: brands/orcid
+    url: https://orcid.org/0000-0001-9388-6004
+  - icon: brands/cv
+    url: /uploads/shechter-cv-2026.pdf
+  - icon: hero/globe-alt
+    url: https://www.shechterlab.org/
+interests:
+  - Protein arginine methylation and PRMT biology
+  - Chromatin assembly and histone supply
+  - RNA processing, splicing, and transcript fate
+  - One-carbon metabolism and the methyl economy
+  - Mechanism-driven therapeutic discovery
+education:
+  - degree: Postdoctoral training, The Laboratory of Chromatin Biology
+    institution: The Rockefeller University, with C. David Allis
+    end: "2009-08-01"
+  - degree: PhD in Cellular, Molecular, and Biophysical Studies, with Distinction
+    institution: Columbia University College of Physicians and Surgeons, with Jean Gautier
+    end: "2004-05-01"
+  - degree: BS in Biochemistry
+    institution: Cornell University
+    end: "1995-05-01"
+roles_secondary:
+  - Assistant Dean for Graduate Educational Innovation (from July 2026)
+  - Co-Chair, Standing Artificial Intelligence Review Committee
+  - Chair, Graduate Curriculum Committee
+  - Founding organizer, NYC Chromatin Club
+highlight_name: true
+website: "https://www.shechterlab.org/"
+user_groups:
+  - Principal Investigator
+last_name: Shechter

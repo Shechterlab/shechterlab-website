@@ -1,0 +1,18 @@
+schema: hugoblox/author/v1
+slug: aliza-silverstein
+avatar_filename: aliza-silverstein.jpg
+name:
+  display: Aliza M. Silverstein
+  last_name: Silverstein
+role: MD-PhD Student
+bio: MD-PhD graduate student in the Shechter Lab, working on PRMT5-dependent regulation of mRNA chromatin escape and the GRIPP class of chromatin-tethered transcripts.
+affiliations:
+  - name: Albert Einstein College of Medicine
+interests:
+  - PRMT5
+  - RNA processing
+  - GRIPPs and chromatin escape
+  - Splicing
+user_groups:
+  - MD-PhD Student
+last_name: Silverstein

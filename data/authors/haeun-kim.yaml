@@ -1,0 +1,18 @@
+schema: hugoblox/author/v1
+slug: haeun-kim
+avatar_filename: haeun-kim.jpg
+name:
+  display: Haeun Kim
+  last_name: Kim
+role: PhD Student
+bio: New graduate student in the Shechter Lab, working on PRMT9 regulation of TDP-43 cryptic exon inclusion in ALS.
+affiliations:
+  - name: Albert Einstein College of Medicine
+interests:
+  - PRMT9
+  - TDP-43 and ALS
+  - RNA processing
+  - Arginine methylation
+user_groups:
+  - PhD Student
+last_name: Kim

@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: liana-valin
+avatar_filename: liana-valin.jpg
+name:
+  display: Liana Valin
+  last_name: Valin
+role: MD-PhD Student (MSTP)
+bio: New MSTP graduate student in the Shechter Lab.
+affiliations:
+  - name: Albert Einstein College of Medicine, MSTP
+interests:
+  - Chromatin biology
+  - Protein methylation
+  - RNA biology
+user_groups:
+  - MD-PhD Student
+last_name: Valin
