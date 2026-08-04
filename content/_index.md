@@ -30,9 +30,9 @@ sections:
           position: center
           size: cover
         color: '#134e5e'
+        text_color_light: true
       spacing:
         padding: ['180px', '0', '180px', '0']
-      text_color_light: true
 
   - block: stats
     content:
