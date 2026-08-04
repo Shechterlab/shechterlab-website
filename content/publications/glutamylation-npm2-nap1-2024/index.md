@@ -17,8 +17,8 @@ date: "2024-04-19T00:00:00Z"
 publishDate: "2024-04-19T00:00:00Z"
 publication_types: ["article-journal"]
 publication: "*iScience, 27*(4)"
-abstract: "This paper shows how glutamylation tunes acidic disordered regions in histone chaperones, strengthening the lab’s mechanistic framework for PTM regulation of chromatin-associated proteins."
-summary: "Builds the mechanistic framework for glutamylation control of histone chaperones."
+abstract: "Histone chaperones are structurally diverse, non-catalytic proteins enriched with acidic intrinsically disordered regions (IDRs) that protect histones from spurious nucleic acid interactions and guide their deposition into and out of nucleosomes. We show that the Xenopus laevis Npm2 and Nap1 acidic IDRs are substrates for TTLL4-catalyzed post-translational glutamate-glutamylation, and that chaperone acidic IDRs function as DNA mimetics to bind, stabilize, and deposit histones into nucleosomes. Biochemical, computational, and biophysical studies show that glutamylation of these acidic stretches enhances DNA electrostatic mimicry, promoting the binding and stabilization of H2A/H2B heterodimers and facilitating nucleosome assembly."
+summary: "Glutamylation of the Npm2 and Nap1 acidic IDRs enhances their DNA charge mimicry and boosts histone chaperone efficiency."
 tags:
 - Chromatin
 - RNA biology
@@ -31,5 +31,3 @@ image:
 projects: []
 slides: ""
 ---
-
-Draft site entry based on the uploaded CV and biosketch.
