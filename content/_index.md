@@ -32,7 +32,8 @@ sections:
         color: '#134e5e'
         text_color_light: true
       spacing:
-        padding: ['180px', '0', '180px', '0']
+        padding: ['96px', '0', '96px', '0']
+      no_padding: true
 
   - block: stats
     content:
