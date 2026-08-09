@@ -7,3 +7,31 @@
 
 body { font-family: var(--font-body); }
 h1, h2, h3, h4, h5 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; }
+
+/* Orange accent for in-content links and "Read more" links, alongside the teal brand color. */
+:root {
+  --color-accent: #c2410c;
+  --color-accent-dark: #9a3412;
+}
+.dark {
+  --color-accent: #fb923c;
+  --color-accent-dark: #fdba74;
+}
+
+.prose :where(a):not(:where(.not-prose, .not-prose *)) {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  text-underline-offset: 2px;
+}
+.prose :where(a):not(:where(.not-prose, .not-prose *)):hover {
+  color: var(--color-accent-dark);
+  text-decoration-color: var(--color-accent-dark);
+}
+
+a[class*="group/link"] {
+  color: var(--color-accent) !important;
+}
+a[class*="group/link"]:hover {
+  color: var(--color-accent-dark) !important;
+}

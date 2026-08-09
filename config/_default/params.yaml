@@ -14,7 +14,7 @@ hugoblox:
     pack: "default"
     colors:
       primary: "#155e75"
-      secondary: ""
+      secondary: "#c2410c"
       neutral: ""
     colors_light: {}
     colors_dark: {}

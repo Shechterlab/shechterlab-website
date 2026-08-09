@@ -32,7 +32,9 @@ tags:
 - Chromatin
 - RNA biology
 featured: true
-links: []
+links:
+- name: bioRxiv
+  url: https://doi.org/10.1101/2025.04.07.647605
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: ""

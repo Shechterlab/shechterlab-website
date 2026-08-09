@@ -23,12 +23,12 @@ sections:
     design:
       background:
         image:
-          filename: "lab/hero-david-shechter.jpg"
+          filename: "lab/david-with-colleague.jpg"
           filters:
             brightness: 0.5
             contrast: 1.05
           parallax: false
-          position: right
+          position: center 30%
           size: cover
         color: '#0f3b47'
         text_color_light: true
@@ -150,7 +150,7 @@ sections:
         - title: 'Training and scientific culture'
           text: |
             The lab prioritizes rigorous mentorship, careful experimental design, and active participation in the chromatin community. This includes course leadership in graduate education, founding and leading the NYC Chromatin Club, co-organizing the Einstein Chromatin Club joint lab meetings since 2011, and a strong track record of trainee success from PhD students and MD-PhD trainees through to postdocs and undergraduates.
-          image: lab/david-with-colleague.jpg
+          image: lab/lab-photo-2026.jpg
           feature_icon: hero/users
           features:
             - 'Strong mentoring record across PhD, MD-PhD, postdoctoral, undergraduate, and high-school trainees'
