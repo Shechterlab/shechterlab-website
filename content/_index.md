@@ -97,7 +97,7 @@ sections:
             text: Read more
             url: /research/glutamylation-chaperones
         - name: The Methyl Economy of Cellular Proliferation
-          description: We test the idea that proliferating cells solve an allocation problem for one-carbon methylation potential, with GNMT as a supply-side rheostat and PRMT5-dependent H4 methylation as a demand-side gate for histone production and genome packaging.
+          description: We test the idea that proliferating cells solve an allocation problem for one-carbon methylation potential — tuning supply through GNMT and gating demand through PRMT5-dependent H4 methylation, which controls histone production and genome packaging.
           icon: hero/scale
           gradient: from-amber-400 to-orange-600
           status: active
@@ -137,7 +137,7 @@ sections:
       items:
         - title: 'A through-line from replication checkpoints to chromatin methylation'
           text: |
-            Recent work in the lab defines how PRMT5 sustains S-phase histone production through H4 methylation, identifies GRIPPs as a class of chromatin-tethered incompletely spliced mRNA released post-transcriptionally on PRMT5 activity, and characterizes how the GNMT N-terminus couples folate feedback to SAM and SAH homeostasis. Together these findings frame a unified question: how cells allocate methylation potential across competing reactions to keep proliferation stable.
+            Recent work in the lab shows how PRMT5 sustains S-phase histone production through H4 methylation, identifies GRIPPs as a class of chromatin-tethered incompletely spliced mRNA released post-transcriptionally on PRMT5 activity, and traces how the GNMT N-terminus couples folate feedback to SAM and SAH homeostasis. The common thread: how cells allocate a limited pool of methylation potential across competing reactions without losing control of proliferation.
           image: research/nucleosome-cartoon.jpg
           feature_icon: hero/check-circle
           features:
@@ -170,22 +170,22 @@ sections:
       text: ''
       items:
         - name: Mechanistic Curiosity
-          description: We want to understand how things work at the molecular level. We value deep mechanistic insight over descriptive results.
+          description: We want to know how things actually work at the molecular level, not just that they happen.
           icon: hero/magnifying-glass
         - name: Biochemistry First
-          description: We believe in the power of in vitro reconstitution and quantitative enzymology to reveal principles of RNA-protein and chromatin biology that guide interpretation of cellular and genomic data.
+          description: In vitro reconstitution and quantitative enzymology tell us what's mechanistically possible before we interpret what's happening in cells and genomes.
           icon: hero/beaker
         - name: Integrative Thinking
-          description: We combine tools from molecular biology, genomics, structural biology, metabolomics, and cell biology to tackle questions from multiple angles and connect molecular events to broader biological outcomes.
+          description: Molecular biology, genomics, structural biology, and metabolomics each catch something the others miss — we use whichever tool answers the question.
           icon: hero/puzzle-piece
         - name: Discovery with Purpose
-          description: We aim to uncover new mechanisms and link them to contexts where they matter, including cancer, neurodegeneration, and aging.
+          description: A new mechanism matters more when it connects to a disease context — cancer, ALS, or aging — where it can eventually be tested.
           icon: hero/light-bulb
         - name: Rigor, Reproducibility, and Openness
-          description: We prioritize careful experimental design, transparent sharing of data and methods, and open, collaborative science.
+          description: Careful experimental design, and data and methods shared openly enough for others to build on.
           icon: hero/check-badge
         - name: Mentorship and Growth
-          description: We invest in people. We encourage independence, intellectual risk-taking, and career development at every stage.
+          description: Independence and intellectual risk-taking, supported at every career stage from rotation student to postdoc.
           icon: hero/users
     design:
       css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
