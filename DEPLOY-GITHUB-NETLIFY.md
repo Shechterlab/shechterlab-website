@@ -79,9 +79,3 @@ The old redirect stays active until the new records propagate (usually a few min
 Edit files, then push. Or for small edits, use the GitHub web UI directly — find the file, click the pencil, commit. No terminal needed.
 
 To roll back a bad deploy: in Netlify under **Deploys**, find the last good deploy and click **Publish deploy**. Instant, no Git involved.
-
----
-
-## Note: a second deploy pipeline also exists
-
-`.github/workflows/deploy.yml` builds this site to **GitHub Pages** on every push to `main`, independent of Netlify. It's part of the original Hugo Blox template scaffold and appears to have been left enabled rather than intentionally set up — the live site (`www.shechterlab.org`) is served by Netlify per the setup above. Check the repo's **Actions** tab; if that workflow is running and nobody uses its GitHub Pages URL, it's safe to delete `.github/workflows/deploy.yml` to stop the redundant builds. Confirm with whoever manages the domain/DNS before removing it, in case it's serving as an intentional backup.

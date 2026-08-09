@@ -3,7 +3,7 @@ slug: subray-hegde
 avatar_filename: subray-hegde.jpg
 name:
   display: Subray Hegde, PhD
-  last_name: Hegde
+  family: Hegde
 role: Instructor
 bio: Senior research scientist in the Shechter Lab since 2020. Contributes across the lab's biochemistry, structural, and biophysical work on histone chaperones, PRMTs, and the methyl economy.
 affiliations:
@@ -15,4 +15,3 @@ interests:
   - Histone chaperones
 user_groups:
   - Instructor
-last_name: Hegde

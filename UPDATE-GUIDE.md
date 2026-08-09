@@ -42,7 +42,7 @@ slug: firstname-lastname
 avatar_filename: firstname-lastname.jpg
 name:
   display: Firstname Lastname
-  last_name: Lastname
+  family: Lastname
 role: PhD Student
 bio: One or two sentences on research focus.
 affiliations:
@@ -52,10 +52,9 @@ interests:
   - Topic two
 user_groups:
   - PhD Student
-last_name: Lastname
 ```
 
-`role` and `user_groups` must be one of exactly: `Principal Investigator`, `Instructor`, `MD-PhD Student`, `PhD Student`, `Postdoctoral Fellow` — these are the values the homepage and People page team-showcase blocks filter on (`user_groups:` in `content/_index.md` and `content/people.md`). A person is listed **automatically** once their file exists with a matching role — there is no separate slug list to edit.
+Use `name.family` (not `last_name`) — that's the field the theme's sort-by-surname logic actually reads on the People/homepage team blocks. `role` and `user_groups` must be one of exactly: `Principal Investigator`, `Instructor`, `MD-PhD Student`, `PhD Student`, `Postdoctoral Fellow` — these are the values the homepage and People page team-showcase blocks filter on (`user_groups:` in `content/_index.md` and `content/people.md`). A person is listed **automatically** once their file exists with a matching role — there is no separate slug list to edit.
 
 2. Drop a headshot at `assets/media/authors/firstname-lastname.jpg` — 600×600 px, JPG, ~85% quality, under 200 KB. If there's no headshot yet, skip this — the theme shows a colored initials placeholder automatically (this is normal, not a broken image; see gotchas below).
 

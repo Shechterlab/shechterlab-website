@@ -149,7 +149,7 @@ sections:
             url: '/#projects'
         - title: 'Training and scientific culture'
           text: |
-            The lab prioritizes rigorous mentorship, careful experimental design, and active participation in the chromatin community. This includes course leadership in graduate education, founding and leading the NYC Chromatin Club, co-organizing the Einstein Chromatin Club joint lab meetings since 2011, and a strong track record of trainee success from PhD students and MD-PhD trainees through to postdocs and undergraduates.
+            The lab prioritizes rigorous mentorship, careful experimental design, and active participation in the chromatin community. This includes directing the graduate course *Gene Expression: Beyond the Double Helix*, founding and leading the [NYC Chromatin Club](https://www.nycchromatinclub.org/), co-organizing the Einstein Chromatin Club joint lab meetings since 2011, and a strong track record of trainee success from PhD students and MD-PhD trainees through to postdocs and undergraduates.
           image: lab/lab-photo-2026.jpg
           feature_icon: hero/users
           features:

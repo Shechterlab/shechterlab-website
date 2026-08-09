@@ -35,7 +35,7 @@ sections:
       text: |
         The lab combines biochemical and mechanistic work with cell-based and genome-wide approaches. Typical project directions include enzyme mechanism, substrate recognition, chromatin-associated regulation, RNA maturation and retention, and therapeutic target validation.
 
-        We benefit from the broader Einstein ecosystem including the Montefiore-Einstein Comprehensive Cancer Center, the Data Science Institute, and strong neighboring expertise in chromatin, cancer biology, chemical biology, structural biology, metabolism, and graduate training. The lab plays an active role in the Einstein Chromatin Club joint lab meetings since 2011 and the founding and ongoing leadership of the NYC Chromatin Club.
+        We benefit from the broader Einstein ecosystem including the Montefiore-Einstein Comprehensive Cancer Center, the Data Science Institute, and strong neighboring expertise in chromatin, cancer biology, chemical biology, structural biology, metabolism, and graduate training. The lab plays an active role in the Einstein Chromatin Club joint lab meetings since 2011 and the founding and ongoing leadership of the [NYC Chromatin Club](https://www.nycchromatinclub.org/).
     design:
       columns: '1'
 

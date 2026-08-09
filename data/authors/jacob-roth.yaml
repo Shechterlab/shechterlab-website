@@ -3,7 +3,7 @@ slug: jacob-roth
 avatar_filename: jacob-roth.jpg
 name:
   display: Jacob S. Roth
-  last_name: Roth
+  family: Roth
 role: MD-PhD Student (MSTP)
 bio: MSTP graduate student in the Shechter Lab. Lead author on work defining how PRMT5 sustains S-phase histone production by methylating newly synthesized H4, connecting methylation potential to chromatin assembly capacity.
 affiliations:
@@ -15,4 +15,3 @@ interests:
   - Methyl economy
 user_groups:
   - MD-PhD Student
-last_name: Roth

@@ -1,9 +1,9 @@
 {
-  "name": "hugo-blox-research-lab-starter",
+  "name": "shechterlab-website",
   "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@10.14.0",
-  "description": "Research Lab starter template for Hugo Blox with Tailwind CSS v4 - Perfect for research groups and academic laboratories",
+  "description": "Source for the Shechter Lab website (shechterlab.org) — Hugo + Hugo Blox Kit + Tailwind CSS v4.",
   "scripts": {
     "dev": "hugo server --disableFastRender",
     "build": "hugo --minify"

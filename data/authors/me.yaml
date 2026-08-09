@@ -3,12 +3,12 @@ slug: me
 is_owner: true
 name:
   display: David M. Shechter, PhD
-  last_name: Shechter
+  family: Shechter
 role: Professor of Biochemistry
 bio: PI of the Shechter Lab. We study how post-translational modifications regulate chromatin assembly, RNA processing, and the cellular methyl economy, with applications in cancer, ALS, and aging.
 affiliations:
   - name: Albert Einstein College of Medicine, Department of Biochemistry
-    url: https://einsteinmed.edu/
+    url: https://einsteinmed.edu/departments/biochemistry
   - name: Montefiore-Einstein Comprehensive Cancer Center
     url: https://einsteinmed.edu/centers/cancer/
   - name: Data Science Institute, Einstein
@@ -44,9 +44,9 @@ roles_secondary:
   - Assistant Dean for Graduate Educational Innovation (from July 2026)
   - Co-Chair, Standing Artificial Intelligence Review Committee
   - Chair, Graduate Curriculum Committee
+  - Course Director, Gene Expression: Beyond the Double Helix
   - Founding organizer, NYC Chromatin Club
 highlight_name: true
 website: "https://www.shechterlab.org/"
 user_groups:
   - Principal Investigator
-last_name: Shechter

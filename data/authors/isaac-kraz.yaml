@@ -3,7 +3,7 @@ slug: isaac-kraz
 avatar_filename: isaac-kraz.jpg
 name:
   display: Isaac Kraz
-  last_name: Kraz
+  family: Kraz
 role: MD-PhD Student (MSTP)
 bio: MSTP graduate student in the Shechter Lab. Lead author on work defining how the GNMT N-terminus couples folate feedback to SAM and SAH homeostasis, establishing GNMT as a physiological supply-side regulator of methylation potential.
 affiliations:
@@ -15,4 +15,3 @@ interests:
   - Methyl economy
 user_groups:
   - MD-PhD Student
-last_name: Kraz
