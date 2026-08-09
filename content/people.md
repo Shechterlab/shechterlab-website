@@ -68,4 +68,22 @@ sections:
         | Shannon Wilczek, PhD | Graduate Student, 2012–2017 | Sartorius |
 
         *Alumni destinations are listed as of last contact and may not reflect current positions.*
+
+  - block: markdown
+    id: rotation-summer-students
+    content:
+      title: Rotation & Summer Students
+      text: |
+        Short-term trainees who have worked in the lab, listed by name only.
+
+        **College / undergraduate summer students**
+
+        *(Names to be added.)*
+
+        **High school summer students**
+
+        *(Names to be added.)*
+    design:
+      spacing:
+        padding: ['0.5rem', '0', '2rem', '0']
 ---
