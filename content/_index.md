@@ -11,8 +11,8 @@ sections:
     id: about
     content:
       title: |
-        Decoding how protein modifications regulate gene expression and RNA processing in cancer and ALS
-      text: "Shechter Lab @ Albert Einstein College of Medicine"
+        Decoding the protein chemistry behind cancer and ALS
+      text: "The Shechter Lab at Albert Einstein College of Medicine studies how chromatin and RNA-processing proteins are chemically modified — and how that goes wrong in NPM1-mutant leukemia and C9orf72 ALS."
       primary_action:
         text: Explore Research
         url: '/research'
@@ -23,13 +23,14 @@ sections:
     design:
       background:
         image:
-          filename: "lab/lab-glass-experiment-notes.jpg"
+          filename: "lab/hero-david-shechter.jpg"
           filters:
-            brightness: 0.35
+            brightness: 0.5
+            contrast: 1.05
           parallax: false
-          position: center
+          position: right
           size: cover
-        color: '#134e5e'
+        color: '#0f3b47'
         text_color_light: true
       spacing:
         padding: ['96px', '0', '96px', '0']
