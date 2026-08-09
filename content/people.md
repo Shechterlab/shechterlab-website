@@ -36,12 +36,6 @@ sections:
     content:
       title: Current Lab Members
       subtitle: ''
-      user_groups:
-        - Principal Investigator
-        - Instructor
-        - MD-PhD Student
-        - PhD Student
-        - Postdoctoral Fellow
       sort_by: 'Params.last_name'
       sort_ascending: true
     design:

@@ -196,12 +196,6 @@ sections:
       title: Lab Members
       subtitle: ''
       text: 'A view of the current lab. For full current roster and alumni, see the [People page](/people).'
-      user_groups:
-        - Principal Investigator
-        - Instructor
-        - MD-PhD Student
-        - PhD Student
-        - Postdoctoral Fellow
       sort_by: 'Params.last_name'
       sort_ascending: true
       cta:

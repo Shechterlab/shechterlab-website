@@ -54,7 +54,11 @@ user_groups:
   - PhD Student
 ```
 
-Use `name.family` (not `last_name`) — that's the field the theme's sort-by-surname logic actually reads on the People/homepage team blocks. `role` and `user_groups` must be one of exactly: `Principal Investigator`, `Instructor`, `MD-PhD Student`, `PhD Student`, `Postdoctoral Fellow` — these are the values the homepage and People page team-showcase blocks filter on (`user_groups:` in `content/_index.md` and `content/people.md`). A person is listed **automatically** once their file exists with a matching role — there is no separate slug list to edit.
+Use `name.family` (not `last_name`) — that's the field the theme's sort-by-surname logic actually reads on the People/homepage team blocks.
+
+The homepage and People page team blocks show **everyone with a file in `data/authors/`** in one flat grid, sorted alphabetically by surname — there's no group filter and no separate slug list to edit. `role` is still shown on each person's card (and used in their bio sentence), so set it to whatever's accurate for them (e.g. `PhD Student`, `MD-PhD Student (MSTP)`, `Postdoctoral Fellow`) — it no longer has to match an exact list of allowed values.
+
+If someone leaves the lab, **delete or rename their file out of `data/authors/`** (or move them into `content/people.md`'s Alumni table and remove the data file) — otherwise they'll keep showing up in the current-members grid.
 
 2. Drop a headshot at `assets/media/authors/firstname-lastname.jpg` — 600×600 px, JPG, ~85% quality, under 200 KB. If there's no headshot yet, skip this — the theme shows a colored initials placeholder automatically (this is normal, not a broken image; see gotchas below).
 
