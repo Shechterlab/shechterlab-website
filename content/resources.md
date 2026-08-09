@@ -6,6 +6,10 @@ sections:
     content:
       title: Resources
       text: |
+        ## Lab Wiki
+
+        Current lab members: internal protocols, onboarding checklists, and equipment SOPs live on the [Lab Wiki ↗](https://wiki.shechterlab.org). (Login required — ask David or a current member for access.)
+
         ## Protocols
 
         Selected protocols from the lab are available on [protocols.io](https://www.protocols.io/researchers/shechter-lab) and in the publications listed below. For additional protocols, email David.
