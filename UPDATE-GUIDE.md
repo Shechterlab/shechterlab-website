@@ -56,7 +56,9 @@ user_groups:
 
 Use `name.family` (not `last_name`) — that's the field the theme's sort-by-surname logic actually reads on the People/homepage team blocks.
 
-The homepage and People page team blocks show **everyone with a file in `data/authors/`** in one flat grid, sorted alphabetically by surname — there's no group filter and no separate slug list to edit. `role` is still shown on each person's card (and used in their bio sentence), so set it to whatever's accurate for them (e.g. `PhD Student`, `MD-PhD Student (MSTP)`, `Postdoctoral Fellow`) — it no longer has to match an exact list of allowed values.
+The homepage and People page team blocks show **everyone with a file in `data/authors/`** in one flat grid — there's no group filter and no separate slug list to edit. `role` is still shown on each person's card (and used in their bio sentence), so set it to whatever's accurate for them (e.g. `PhD Student`, `MD-PhD Student (MSTP)`, `Postdoctoral Fellow`) — it no longer has to match an exact list of allowed values.
+
+**Sort order:** both blocks use `sort_by: 'weight'`. David (`me.yaml`) has `weight: 1` and Subray (`subray-hegde.yaml`) has `weight: 2`, so they always appear first, in that order. Everyone else has no `weight` field at all — the theme treats a missing weight as "very large," which pushes them after David/Subray, and sorts everyone in that tied group alphabetically by `name.family`. **This means new lab members need no `weight` field and no manual reordering** — just add their file per "Add a lab member" above and they'll automatically slot in alphabetically after David and Subray. Only add a `weight:` to someone else if you specifically want them pinned before the alphabetical group too.
 
 If someone leaves the lab, **delete or rename their file out of `data/authors/`** (or move them into `content/people.md`'s Alumni table and remove the data file) — otherwise they'll keep showing up in the current-members grid.
 

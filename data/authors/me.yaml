@@ -1,6 +1,7 @@
 schema: hugoblox/author/v1
 slug: me
 is_owner: true
+weight: 1
 name:
   display: David M. Shechter, PhD
   family: Shechter

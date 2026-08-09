@@ -196,7 +196,7 @@ sections:
       title: Lab Members
       subtitle: ''
       text: 'A view of the current lab. For full current roster and alumni, see the [People page](/people).'
-      sort_by: 'Params.last_name'
+      sort_by: 'weight'
       sort_ascending: true
       cta:
         text: View full roster
