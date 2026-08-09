@@ -25,12 +25,12 @@ sections:
         image:
           filename: "lab/david-with-colleague.jpg"
           filters:
-            brightness: 0.5
+            brightness: 0.65
             contrast: 1.05
           parallax: false
           position: center 30%
           size: cover
-        color: '#0f3b47'
+        color: '#155e75'
         text_color_light: true
       spacing:
         padding: ['96px', '0', '96px', '0']
@@ -39,9 +39,9 @@ sections:
   - block: stats
     content:
       items:
-        - statistic: "est. 2009"
-          description: Lab established at Einstein
-          sub_metric: Department of Biochemistry
+        - statistic: "17"
+          description: Years at Einstein
+          sub_metric: Lab founded 2009 · Department of Biochemistry
           icon: hero/building-library
         - statistic: "4"
           description: Active research areas

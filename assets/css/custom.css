@@ -35,3 +35,30 @@ a[class*="group/link"] {
 a[class*="group/link"]:hover {
   color: var(--color-accent-dark) !important;
 }
+
+/* Hero: true teal photo overlay (painted over the image, not hidden behind it) + orange trim/button. */
+#about {
+  border-bottom: 4px solid var(--color-accent);
+}
+#about .home-section-bg {
+  position: absolute;
+}
+#about .home-section-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(21, 94, 117, 0.55), rgba(15, 59, 71, 0.78));
+}
+#about a[href="#publications"] {
+  border: 1.5px solid var(--color-accent);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+#about a[href="#publications"]:hover {
+  background-color: var(--color-accent);
+  color: #fff !important;
+}
+#about a[href="#publications"]:hover span[aria-hidden] {
+  color: #fff;
+}
