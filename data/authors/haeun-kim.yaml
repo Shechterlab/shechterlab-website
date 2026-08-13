@@ -3,7 +3,7 @@ slug: haeun-kim
 avatar_filename: haeun-kim.jpg
 name:
   display: Haeun Kim
-  last_name: Kim
+  family: Kim
 role: PhD Student
 bio: New graduate student in the Shechter Lab, working on PRMT9 regulation of TDP-43 cryptic exon inclusion in ALS.
 affiliations:
@@ -15,4 +15,3 @@ interests:
   - Arginine methylation
 user_groups:
   - PhD Student
-last_name: Kim

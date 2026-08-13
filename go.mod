@@ -1,4 +1,4 @@
-module github.com/HugoBlox/kit/templates/research-lab
+module github.com/Shechterlab/shechterlab-website
 
 go 1.19
 

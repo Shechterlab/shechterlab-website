@@ -51,7 +51,7 @@ Add one environment variable under **Site settings → Environment variables**:
 
 | Key | Value |
 |-----|-------|
-| `HUGO_VERSION` | `0.128.0` |
+| `HUGO_VERSION` | `0.158.0` |
 
 This pins Hugo to a known version. Without it, Netlify's default Hugo version may not match what this site was built on. Click **Deploy**.
 

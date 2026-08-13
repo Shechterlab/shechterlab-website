@@ -7,7 +7,7 @@ sections:
       title: Contact
       text: |
         **Shechter Lab**
-        Department of Biochemistry
+        [Department of Biochemistry](https://einsteinmed.edu/departments/biochemistry)
         Albert Einstein College of Medicine
         Forchheimer Building, Room 304
         1300 Morris Park Avenue

@@ -26,13 +26,15 @@ date: "2025-04-07T00:00:00Z"
 publishDate: "2025-04-07T00:00:00Z"
 publication_types: ["article"]
 publication: "*bioRxiv*"
-abstract: "A disease-facing extension of the lab’s glutamylation program, this preprint identifies TTLL4 as a therapeutic target in NPM1-mutated AML and connects glutamylation to altered chromatin-associated behavior in leukemia."
-summary: "Positions TTLL4 as a mechanistically defined therapeutic target in NPM1-mutant AML."
+abstract: "NPM1-mutated acute myeloid leukemia (AML) is defined by aberrant cytoplasmic localization of the mutant NPM1c protein. We identify TTLL4, a mono-glutamate glutamyltransferase, as a selective vulnerability in NPM1c AML. TTLL4 catalyzes post-translational hyper-glutamylation of NPM1c at E126, stabilizing its cytoplasmic localization and promoting a differentiation block in leukemic cells. Multiple genetic TTLL4 inactivation approaches in human NPM1c-mutant cell lines reduce NPM1c glutamylation, trigger myeloid differentiation, and impair proliferation. Ttll4 knockout significantly prolongs survival in an NPM1c/NRAS-driven mouse AML model and promotes differentiation, and a small-molecule TTLL4 inhibitor, EN7, recapitulates these phenotypes in NPM1c+ cells. These findings identify glutamylation as a new axis of leukemic regulation and establish TTLL4 as a druggable epigenetic regulator in NPM1c AML."
+summary: "Identifies TTLL4-mediated glutamylation of NPM1c as a druggable vulnerability in NPM1-mutated AML."
 tags:
 - Chromatin
 - RNA biology
 featured: true
-links: []
+links:
+- name: bioRxiv
+  url: https://doi.org/10.1101/2025.04.07.647605
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: ""
@@ -40,5 +42,3 @@ image:
 projects: []
 slides: ""
 ---
-
-Draft site entry based on the uploaded CV and biosketch.

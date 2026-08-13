@@ -11,5 +11,3 @@ image:
 ---
 
 This program asks how TTLL4-mediated glutamylation affects NPM1 and related acidic nuclear proteins in NPM1-mutant AML. The core goal is to establish causality from enzyme activity to chromatin behavior, transcriptional output, and leukemia cell fitness.
-
-This is an especially strong public-facing story for the site because it is both mechanistically precise and translationally legible.

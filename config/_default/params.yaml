@@ -14,7 +14,7 @@ hugoblox:
     pack: "default"
     colors:
       primary: "#155e75"
-      secondary: ""
+      secondary: "#c2410c"
       neutral: ""
     colors_light: {}
     colors_dark: {}
@@ -28,8 +28,13 @@ hugoblox:
         background: ""
         foreground: ""
 
+  # NOTE: the theme's font-pack system below is superseded by hardcoded
+  # font declarations in assets/css/custom.css (IBM Plex Serif headings,
+  # Inter body). `pack:` is set to a valid value for correctness/fallback,
+  # but changing it will not visibly change the site's fonts — edit
+  # custom.css instead.
   typography:
-    font: "sans"
+    pack: "modern"
     size: "md"
 
   layout:

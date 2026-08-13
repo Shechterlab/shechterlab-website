@@ -22,8 +22,8 @@ date: "2026-05-29T00:00:00Z"
 publishDate: "2026-05-29T00:00:00Z"
 publication_types: ["article-journal"]
 publication: "*bioRxiv*"
-abstract: "We define how the GNMT N-terminus senses folate and tunes glycine N-methylation, establishing GNMT as a physiological regulator of the SAM:SAH ratio and the cellular methylation potential. This positions GNMT as a supply-side rheostat for the methyl economy."
-summary: "Defines GNMT as a folate-responsive supply-side regulator of cellular methylation potential."
+abstract: "Maintenance of S-adenosylmethionine (SAM) homeostasis is essential for methylation of biomolecules, nucleotide and polyamine synthesis, and redox homeostasis. While all methyltransferases consume SAM, only a subset of highly tissue-specific methyltransferases regulates SAM homeostasis directly. Among them, glycine N-methyltransferase (GNMT) is enriched in the liver, and its dysregulated activity has been linked to compromised liver function. We identify the GNMT N-terminal tail, and specifically phosphorylation at serine 9 (S9ph), as a regulatory modification linking folate-dependent feedback inhibition to SAM homeostasis. The N-terminal tail is required for catalytic turnover of SAM and for 5-methyltetrahydrofolate (5mTHF) binding; phosphoproteomic analysis shows GNMT S9ph is abundant in mouse liver and enriched with age, and distal N-terminal truncation or phosphomimetic substitution abolishes 5mTHF binding while preserving catalytic activity. These findings identify the GNMT N-terminus as a tunable phosphoregulatory domain that dynamically sets GNMT activity and cellular methylation potential."
+summary: "Identifies the GNMT N-terminal tail, and S9 phosphorylation specifically, as a folate-responsive rheostat for cellular SAM:SAH homeostasis."
 tags:
 - Methyl economy
 - One-carbon metabolism
