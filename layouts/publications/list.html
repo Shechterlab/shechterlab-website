@@ -6,6 +6,8 @@
       Reviews & Commentary, based on each page's `pub_category` param
       (lab | coauthored | review — defaults to "lab" if unset)
     - group each of those sections under year headings
+    - show a jump-link nav bar across the top linking to whichever
+      sections actually have entries
   Basic page chrome (title, page.Content) and the citation view
   itself (layouts/_partials/views/citation.html, also a local
   override) are unchanged from upstream.
@@ -43,15 +45,22 @@
 <div class="flex flex-col items-center">
   <div class="w-full max-w-4xl px-4">
 
+    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-8 text-sm font-medium">
+      {{ if gt (len $preprints) 0 }}<a href="#preprints" class="text-primary-600 dark:text-primary-400 hover:underline">Preprints</a>{{ end }}
+      {{ if gt (len $labPapers) 0 }}<a href="#lab-papers" class="text-primary-600 dark:text-primary-400 hover:underline">Lab Papers</a>{{ end }}
+      {{ if gt (len $coauthored) 0 }}<a href="#coauthored-work" class="text-primary-600 dark:text-primary-400 hover:underline">Co-authored Work</a>{{ end }}
+      {{ if gt (len $reviews) 0 }}<a href="#reviews-commentary" class="text-primary-600 dark:text-primary-400 hover:underline">Reviews &amp; Commentary</a>{{ end }}
+    </nav>
+
     {{ if gt (len $preprints) 0 }}
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-4 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Preprints</h2>
+    <h2 id="preprints" class="text-2xl font-bold text-gray-900 dark:text-white mt-4 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Preprints</h2>
     {{ range $preprints }}
       {{ partial "functions/render_view" (dict "page" . "item" . "view" "citation") }}
     {{ end }}
     {{ end }}
 
     {{ if gt (len $labPapers) 0 }}
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Lab Papers</h2>
+    <h2 id="lab-papers" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Lab Papers</h2>
     {{ $currentYear := "" }}
     {{ range $labPapers }}
       {{ $year := .Date.Format "2006" }}
@@ -64,7 +73,7 @@
     {{ end }}
 
     {{ if gt (len $coauthored) 0 }}
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Co-authored Work</h2>
+    <h2 id="coauthored-work" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Co-authored Work</h2>
     {{ $currentYear := "" }}
     {{ range $coauthored }}
       {{ $year := .Date.Format "2006" }}
@@ -77,7 +86,7 @@
     {{ end }}
 
     {{ if gt (len $reviews) 0 }}
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Reviews &amp; Commentary</h2>
+    <h2 id="reviews-commentary" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Reviews &amp; Commentary</h2>
     {{ $currentYear := "" }}
     {{ range $reviews }}
       {{ $year := .Date.Format "2006" }}

@@ -6,7 +6,7 @@ authors:
 date: "2016-01-01T00:00:00Z"
 publishDate: "2016-01-01T00:00:00Z"
 publication_types: ["article-journal"]
-pub_category: review
+pub_category: lab
 publication: "*International Journal of Developmental Biology, 60*(7-8-9), 271-276"
 summary: "Review of chaperone-mediated chromatin assembly and transcriptional regulation in Xenopus laevis."
 tags:

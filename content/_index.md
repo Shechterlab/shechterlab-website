@@ -108,7 +108,7 @@ sections:
     id: disease-focus
     content:
       title: Disease Focus
-      subtitle: Three diseases, one question each
+      subtitle: Understanding disease mechanisms
       text: In each case we start from an enzyme we understand mechanistically and ask whether that mechanism is actually driving disease — and whether it's a target.
       items:
         - name: C9orf72 Amyotrophic Lateral Sclerosis
