@@ -123,7 +123,7 @@ sections:
       items:
         - title: 'From enzyme mechanism to leukemia and ALS'
           text: |
-            Recent work in the lab identifies TTLL4-mediated glutamylation of NPM1c as a druggable vulnerability in NPM1-mutant acute myeloid leukemia, and is testing PRMT9-dependent regulation of TDP-43 cryptic exon splicing as a therapeutic angle in C9orf72 ALS. Both projects follow the same throughline: define the enzyme mechanism first, then trace it into a specific, testable disease target.
+            Recent work in the lab identifies TTLL4-mediated glutamylation of NPM1c as a druggable vulnerability in NPM1-mutant acute myeloid leukemia, and is testing PRMT-dependent regulation of TDP-43 cryptic exon splicing as a therapeutic angle in C9orf72 ALS. Both projects follow the same throughline: define the enzyme mechanism first, then trace it into a specific, testable disease target.
           image: research/nucleosome-cartoon.jpg
           feature_icon: hero/check-circle
           features:

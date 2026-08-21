@@ -1,6 +1,7 @@
 ---
 title: "The Methyl Economy of Cellular Proliferation"
 date: 2026-06-28
+draft: true
 summary: "Defining how proliferating cells allocate one-carbon methylation potential across competing SAM-dependent reactions, with GNMT as a supply-side rheostat and PRMT5-H4 methylation as a demand-side gate."
 tags:
   - Methyl economy

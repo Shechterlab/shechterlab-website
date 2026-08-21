@@ -48,7 +48,7 @@ sections:
         - GNMT and the supply side of the methyl economy
         - TTLL4 glutamyltransferase biology in NPM1-mutant AML
         - PTM control of acidic and intrinsically disordered nuclear proteins
-        - PRMT and PRMT9 biology in ALS
+        - PRMT biology in ALS
     design:
       columns: '1'
 
