@@ -4,9 +4,9 @@ date: 2026-06-28
 summary: 'PRMT-dependent regulation of RNA-binding proteins, stress granules, and TDP-43 cryptic exons in C9orf72 ALS.'
 ---
 
-Arginine methylation regulates RNA-binding proteins, stress granules, and nucleocytoplasmic transport. In the C9orf72 form of ALS, dipeptide repeat proteins and aberrant RNA-protein condensates depend on methylation-sensitive pathways.
+Arginine methylation shapes how RNA-binding proteins behave — where they go in the cell, whether they form stress granules, how they move between nucleus and cytoplasm. In C9orf72 ALS, the toxic dipeptide repeat proteins and the aberrant RNA-protein condensates they form both depend on methylation-sensitive pathways.
 
-The lab is examining how PRMT inhibition, and PRMT-dependent regulation of TDP-43 cryptic exons, may be therapeutically actionable. This work builds on our mechanistic work on PRMT5 substrates (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)) and is supported by the ALS Therapy Development Institute.
+We're asking whether PRMT inhibition, and PRMT-dependent control of TDP-43 cryptic exons specifically, could be turned into a therapy. This grows directly out of our PRMT5 substrate work (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)), and the ALS Therapy Development Institute supports it.
 
 **Questions we are pursuing:**
 

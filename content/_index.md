@@ -39,12 +39,12 @@ sections:
   - block: stats
     content:
       items:
-        - statistic: "17"
+        - statistic: "16"
           description: Years at Einstein
-          sub_metric: Lab founded 2009 · Department of Biochemistry
+          sub_metric: Joined November 2009 · Department of Biochemistry
           icon: hero/building-library
         - statistic: "2"
-          description: Mechanistic research programs
+          description: Molecular research areas
           sub_metric: Methylation and RNA processing · Glutamylation and chaperones — spanning 3 disease areas
           icon: hero/beaker
         - statistic: "30+"
@@ -65,25 +65,25 @@ sections:
     id: research
     content:
       title: Research Areas
-      subtitle: Two mechanistic programs
-      text: We focus on how chemically defined protein modifications reshape nuclear proteins, chromatin organization, and RNA fate.
+      subtitle: Two molecular research areas
+      text: Both areas start from the same question — how a specific chemical modification changes what a protein does — and follow it from purified enzymes into cells and disease models.
       items:
         - name: PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing
-          description: We define how PRMTs control chromatin, transcription, splicing, and transcript retention, with central work on PRMT5-dependent regulation of RNA processing, the discovery of GRIPPs as a chromatin-tethered mRNA reserve, and how GNMT gates the methyl-donor pool that supplies it all.
+          description: We study how PRMT5 methylates histones and splicing factors to control chromatin and mRNA processing, and how PRMT-dependent regulation may go wrong in C9orf72 ALS. GNMT sets the methyl-donor supply that all of this methylation draws on, tying the two together.
           icon: hero/document-text
           gradient: from-blue-400 to-indigo-600
           status: active
           topics:
             - PRMT5
             - GNMT and SAM homeostasis
-            - Splicing and intron detention
-            - GRIPPs and chromatin escape
+            - Splicing and RNA processing
             - Histone gene regulation
+            - C9orf72 ALS
           cta:
             text: Read more
             url: /research/arginine-methylation
         - name: Glutamylation, Histone Chaperones, and Intrinsically Disordered Regions
-          description: We define how acidic intrinsically disordered regions in histone chaperones encode DNA mimicry and chromatin assembly capacity, and how PTMs such as glutamylation tune those properties in normal physiology and disease.
+          description: Histone chaperones use long, acidic, disordered stretches to mimic DNA and grab onto histones. We're working out how modifications like glutamylation tune that behavior — and what happens when it's hijacked in NPM1-mutant leukemia.
           icon: hero/adjustments-horizontal
           gradient: from-fuchsia-400 to-rose-600
           status: active
@@ -92,7 +92,7 @@ sections:
             - TTLL4 glutamyltransferase
             - Acidic disordered regions
             - Chromatin assembly
-            - DNA mimicry
+            - NPM1-mutant AML
           cta:
             text: Read more
             url: /research/glutamylation-chaperones
@@ -108,23 +108,11 @@ sections:
     id: disease-focus
     content:
       title: Disease Focus
-      subtitle: Where the mechanisms matter clinically
-      text: Each program is anchored to enzymes the lab studies mechanistically, connected to disease biology with chemistry, structural biology, and clinical collaborators.
+      subtitle: Three diseases, one question each
+      text: In each case we start from an enzyme we understand mechanistically and ask whether that mechanism is actually driving disease — and whether it's a target.
       items:
-        - name: NPM1-Mutant Acute Myeloid Leukemia
-          description: We have identified the TTLL4 glutamyltransferase as a therapeutic target in NPM1c-mutant AML, where altered glutamylation of NPM1 and related proteins reshapes chromatin association and oncogenic transcriptional programs.
-          icon: hero/bolt
-          gradient: from-emerald-400 to-teal-600
-          status: active
-          topics:
-            - NPM1-mutant AML
-            - TTLL4 glutamyltransferase
-            - Target validation
-          cta:
-            text: Read more
-            url: /research/aml
         - name: C9orf72 Amyotrophic Lateral Sclerosis
-          description: Arginine methylation regulates RNA-binding proteins, stress granules, and nucleocytoplasmic transport. We are examining how PRMT inhibition and PRMT-dependent regulation of TDP-43 cryptic exons may be therapeutically actionable.
+          description: Arginine methylation shapes how RNA-binding proteins, stress granules, and nuclear transport behave. In C9orf72 ALS, we're asking whether PRMT inhibition — and PRMT-dependent control of TDP-43 cryptic exons — is a real therapeutic angle.
           icon: hero/beaker
           gradient: from-sky-400 to-blue-600
           status: active
@@ -135,8 +123,20 @@ sections:
           cta:
             text: Read more
             url: /research/als
+        - name: NPM1-Mutant Acute Myeloid Leukemia
+          description: We found that TTLL4 glutamylates NPM1c, the mutant driver of this leukemia, changing how it associates with chromatin and reshaping the oncogenic transcriptional program. That makes TTLL4 a therapeutic target we're now pursuing directly.
+          icon: hero/bolt
+          gradient: from-emerald-400 to-teal-600
+          status: active
+          topics:
+            - NPM1-mutant AML
+            - TTLL4 glutamyltransferase
+            - Target validation
+          cta:
+            text: Read more
+            url: /research/aml
         - name: Aging and One-Carbon Metabolism
-          description: Through GNMT and the broader methyl economy framework, we test whether modulation of methyl-donor flux can shift aging-related transcriptional and metabolic programs.
+          description: GNMT sits at the center of the methyl economy. With the Huffman and Gavathiotis labs, we're testing whether shifting methyl-donor flux through GNMT can move aging-related transcriptional and metabolic programs.
           icon: hero/clock
           gradient: from-amber-400 to-orange-600
           status: active
@@ -160,7 +160,7 @@ sections:
       items:
         - title: 'From enzyme mechanism to leukemia and ALS'
           text: |
-            Recent work in the lab identifies TTLL4-mediated glutamylation of NPM1c as a druggable vulnerability in NPM1-mutant acute myeloid leukemia, and is testing PRMT-dependent regulation of TDP-43 cryptic exon splicing as a therapeutic angle in C9orf72 ALS. Both projects follow the same throughline: define the enzyme mechanism first, then trace it into a specific, testable disease target.
+            Two projects show how this works in practice. TTLL4-mediated glutamylation of NPM1c looks like a real vulnerability in NPM1-mutant AML, and we're testing whether PRMT-dependent control of TDP-43 cryptic exon splicing can be turned into a therapeutic angle in C9orf72 ALS. In both cases we started with the enzyme mechanism and only then went looking for the disease connection.
           image: research/nucleosome-cartoon.jpg
           feature_icon: hero/check-circle
           features:

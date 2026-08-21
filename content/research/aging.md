@@ -4,9 +4,9 @@ date: 2026-06-28
 summary: 'GNMT and the methyl economy as a target for shifting aging-related transcriptional and metabolic programs.'
 ---
 
-Through GNMT and the broader methyl economy framework, we collaborate with the Huffman and Gavathiotis labs to test whether modulation of methyl-donor flux can shift aging-related transcriptional and metabolic programs.
+GNMT is the liver's main valve for the cellular methyl economy, and with the Huffman and Gavathiotis labs we're testing whether shifting methyl-donor flux through it can move aging-related transcriptional and metabolic programs.
 
-GNMT's N-terminal tail and folate-dependent feedback inhibition set S-adenosylmethionine (SAM) homeostasis (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)), and sarcosine — the direct product of the GNMT reaction — is itself modulated by aging and dietary restriction. This work is supported by the Hevolution Foundation.
+We've shown that GNMT's N-terminal tail and its folate-dependent feedback inhibition set S-adenosylmethionine (SAM) homeostasis (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)). Sarcosine, the direct product of the GNMT reaction, is itself modulated by aging and dietary restriction — one of the threads that got us interested in GNMT as an aging target in the first place. The Hevolution Foundation supports this work.
 
 **Questions we are pursuing:**
 
