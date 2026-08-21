@@ -92,6 +92,7 @@ authors:
 date: "2026-01-01T00:00:00Z"
 publishDate: "2026-01-01T00:00:00Z"
 publication_types: ["article-journal"]   # or ["article"] for a preprint
+pub_category: lab   # lab | coauthored | review — see below
 publication: "*Journal Name, volume*(issue), pages"   # markdown italics around the journal name
 abstract: "The actual published abstract — copy it verbatim from the paper, don't paraphrase or invent one."
 summary: "One sentence for the card preview."
@@ -111,6 +112,13 @@ slides: ""
 ```
 
 There is **no `doi:` field** — the DOI goes inside `links:` as a full URL, not as a bare identifier. Set `featured: true` to show the paper in the homepage publications strip. Double-check `publication:`, the date, and the DOI against the actual journal page (or PubMed/PMC) before publishing — several of these had wrong dates/volumes from earlier drafting and had to be corrected against the real record.
+
+**`pub_category:`** controls which section of the `/publications/` list page an entry appears in (see `layouts/publications/list.html`, a local override — it only applies to published articles; anything not `publication_types: ["article-journal"]` is always grouped under "Preprints" regardless of `pub_category`):
+- `lab` (default if omitted) — first-author or corresponding-author work driven by the lab. Shown under "Lab Papers".
+- `coauthored` — genuine collaborations where David is a middle author, not the paper's driver. Shown under "Co-authored Work".
+- `review` — reviews, commentaries, book chapters. Shown under "Reviews & Commentary".
+
+Each section is independently grouped by year and only renders at all if it has at least one entry, so adding the first `coauthored` or `review` publication is enough to make that heading appear — no template changes needed.
 
 ---
 
