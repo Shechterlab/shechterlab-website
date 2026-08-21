@@ -39,6 +39,9 @@ links:
 - name: Article
   type: doi
   url: https://doi.org/10.1126/scitranslmed.adr1471
+- name: bioRxiv preprint
+  type: preprint
+  url: https://doi.org/10.1101/2024.02.04.578798
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: Smart
