@@ -43,9 +43,9 @@ sections:
           description: Years at Einstein
           sub_metric: Lab founded 2009 · Department of Biochemistry
           icon: hero/building-library
-        - statistic: "4"
+        - statistic: "3"
           description: Active research areas
-          sub_metric: Methylation, chaperones, methyl economy, translational chromatin biology
+          sub_metric: Translational chromatin biology, arginine methylation, glutamylation
           icon: hero/beaker
         - statistic: "30+"
           description: Trainees mentored
@@ -66,8 +66,22 @@ sections:
     content:
       title: Research Areas
       subtitle: Mechanism first, disease relevance built in
-      text: We focus on how chemically defined protein modifications reshape nuclear proteins, chromatin organization, RNA fate, and the cellular allocation of methylation potential.
+      text: We focus on how chemically defined protein modifications reshape nuclear proteins, chromatin organization, and RNA fate — and how that biology goes wrong in cancer and neurodegeneration.
       items:
+        - name: Translational Chromatin Biology in Cancer, ALS, and Aging
+          description: We connect mechanistic biochemistry to disease biology in NPM1-mutant AML, C9orf72 ALS, and aging-related methylation, working with chemistry, structural biology, and clinical collaborators to identify and validate targets.
+          icon: hero/bolt
+          gradient: from-emerald-400 to-teal-600
+          status: active
+          topics:
+            - NPM1-mutant AML
+            - C9orf72 ALS
+            - PRMT inhibitor biology
+            - Aging and one-carbon metabolism
+            - Target validation
+          cta:
+            text: Read more
+            url: /research/disease-mechanisms
         - name: Protein Arginine Methylation and Gene Regulation
           description: We define how PRMTs control chromatin, transcription, splicing, and transcript retention, with central work on PRMT5-dependent regulation of RNA processing and the discovery of GRIPPs as a chromatin-tethered mRNA reserve.
           icon: hero/document-text
@@ -96,34 +110,6 @@ sections:
           cta:
             text: Read more
             url: /research/glutamylation-chaperones
-        - name: The Methyl Economy of Cellular Proliferation
-          description: We test the idea that proliferating cells solve an allocation problem for one-carbon methylation potential — tuning supply through GNMT and gating demand through PRMT5-dependent H4 methylation, which controls histone production and genome packaging.
-          icon: hero/scale
-          gradient: from-amber-400 to-orange-600
-          status: active
-          topics:
-            - SAM and SAH homeostasis
-            - GNMT and one-carbon flux
-            - Histone supply and S-phase
-            - Methyl-spending hierarchy
-            - PEMT and NNMT
-          cta:
-            text: Read more
-            url: /research/methyl-economy
-        - name: Translational Chromatin Biology in Cancer, ALS, and Aging
-          description: We connect mechanistic biochemistry to disease biology in NPM1-mutant AML, C9orf72 ALS, and aging-related methylation, working with chemistry, structural biology, and clinical collaborators to identify and validate targets.
-          icon: hero/bolt
-          gradient: from-emerald-400 to-teal-600
-          status: active
-          topics:
-            - NPM1-mutant AML
-            - C9orf72 ALS
-            - PRMT inhibitor biology
-            - Aging and one-carbon metabolism
-            - Target validation
-          cta:
-            text: Read more
-            url: /research/disease-mechanisms
       cta:
         text: Browse active projects
         url: /#projects
@@ -135,15 +121,15 @@ sections:
   - block: cta-image-paragraph
     content:
       items:
-        - title: 'A through-line from replication checkpoints to chromatin methylation'
+        - title: 'From enzyme mechanism to leukemia and ALS'
           text: |
-            Recent work in the lab shows how PRMT5 sustains S-phase histone production through H4 methylation, identifies GRIPPs as a class of chromatin-tethered incompletely spliced mRNA released post-transcriptionally on PRMT5 activity, and traces how the GNMT N-terminus couples folate feedback to SAM and SAH homeostasis. The common thread: how cells allocate a limited pool of methylation potential across competing reactions without losing control of proliferation.
+            Recent work in the lab identifies TTLL4-mediated glutamylation of NPM1c as a druggable vulnerability in NPM1-mutant acute myeloid leukemia, and is testing PRMT9-dependent regulation of TDP-43 cryptic exon splicing as a therapeutic angle in C9orf72 ALS. Both projects follow the same throughline: define the enzyme mechanism first, then trace it into a specific, testable disease target.
           image: research/nucleosome-cartoon.jpg
           feature_icon: hero/check-circle
           features:
+            - 'Disease-facing projects in AML, ALS, and aging'
             - 'Biochemistry and enzymology linked to cell-based and genomic readouts'
             - 'Mechanistic focus on PTMs in charged and intrinsically disordered regions'
-            - 'Disease-facing projects in AML, ALS, and aging'
           button:
             text: 'Featured projects'
             url: '/#projects'
@@ -220,10 +206,10 @@ sections:
       filters:
         folders:
           - projects
+        featured_only: true
       count: 0
     design:
-      view: article-grid
-      columns: 2
+      view: date-title-summary
 
   - block: collection
     id: publications

@@ -10,6 +10,7 @@ featured: true
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: Smart
+  preview_only: true
 ---
 
 We identified **GRIPPs** (Genomically Retained Incompletely Spliced Transcripts) as a class of chromatin-tethered, incompletely processed mRNA whose productive release is promoted by PRMT5 activity. This reframes the multi-day mRNA wave that follows PRMT5 inhibition as a post-transcriptional release event from a chromatin-tethered reserve, rather than a kinetic transcription lag.

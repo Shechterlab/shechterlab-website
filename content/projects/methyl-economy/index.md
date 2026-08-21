@@ -6,10 +6,11 @@ tags:
   - Methyl economy
   - GNMT
   - PRMT5
-featured: true
+featured: false
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: Smart
+  preview_only: true
 ---
 
 Proliferating cells must allocate finite methylation potential across DNA, RNA, protein, lipid, and small-molecule methylation while duplicating and packaging their genome. We are testing the hypothesis that this allocation follows a reproducible **methyl-spending hierarchy** that determines how cells respond to methyl-donor stress.
