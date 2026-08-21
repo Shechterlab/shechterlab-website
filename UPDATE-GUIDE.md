@@ -161,7 +161,12 @@ The news list (`content/news/_index.md`) shows the most recent 20 items sorted b
 
 ## Add a Lab Life photo
 
-Drop a JPG into `content/lab-life/`. Hugo Blox reads the folder. Optionally add a matching `.md` file with the same stem for a caption.
+This page is **not** a Hugo Blox photo-gallery block — it's a hand-built HTML grid inside `content/lab-life/_index.md`'s single `block: markdown` section. To add a photo:
+
+1. Drop the JPG into `assets/media/lab/`.
+2. In `content/lab-life/_index.md`, copy one of the existing `<figure>...</figure>` blocks inside the `<div style="display:grid;...">` and edit its `img src` (path is `/media/lab/<filename>.jpg`) and `<figcaption>` text.
+
+The grid is fixed at 2 columns regardless of how many photos are in it — with an odd number, the last one just doesn't have a pair. There's no cropping/resizing step, so use images that are already reasonably sized and roughly landscape/square; a huge original will slow the page down since nothing resizes it for you.
 
 ---
 
