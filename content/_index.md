@@ -47,9 +47,9 @@ sections:
           description: Molecular research areas
           sub_metric: Methylation and RNA processing · Glutamylation and chaperones — spanning 3 disease areas
           icon: hero/beaker
-        - statistic: "30+"
-          description: Trainees mentored
-          sub_metric: PhD, MD-PhD, postdoctoral, instructor, undergraduate, high-school
+        - statistic: "50+"
+          description: Trainees and mentees
+          sub_metric: PhD, MD-PhD, postdoctoral, instructor, rotation, undergraduate, high-school
           icon: hero/users
         - statistic: "h = 29"
           description: Google Scholar
