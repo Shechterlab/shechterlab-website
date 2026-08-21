@@ -39,17 +39,17 @@ sections:
   - block: stats
     content:
       items:
-        - statistic: "17"
+        - statistic: "16"
           description: Years at Einstein
-          sub_metric: Lab founded 2009 · Department of Biochemistry
+          sub_metric: Joined November 2009 · Department of Biochemistry
           icon: hero/building-library
-        - statistic: "4"
-          description: Active research areas
-          sub_metric: Methylation, chaperones, methyl economy, translational chromatin biology
+        - statistic: "2"
+          description: Molecular research areas
+          sub_metric: Methylation and RNA processing · Glutamylation and chaperones — spanning 3 disease areas
           icon: hero/beaker
-        - statistic: "30+"
-          description: Trainees mentored
-          sub_metric: PhD, MD-PhD, postdoctoral, instructor, undergraduate, high-school
+        - statistic: "50+"
+          description: Trainees and mentees
+          sub_metric: PhD, MD-PhD, postdoctoral, instructor, rotation, undergraduate, high-school
           icon: hero/users
         - statistic: "h = 29"
           description: Google Scholar
@@ -65,25 +65,25 @@ sections:
     id: research
     content:
       title: Research Areas
-      subtitle: Mechanism first, disease relevance built in
-      text: We focus on how chemically defined protein modifications reshape nuclear proteins, chromatin organization, RNA fate, and the cellular allocation of methylation potential.
+      subtitle: Two molecular research areas
+      text: Both areas start from the same question — how a specific chemical modification changes what a protein does — and follow it from purified enzymes into cells and disease models.
       items:
-        - name: Protein Arginine Methylation and Gene Regulation
-          description: We define how PRMTs control chromatin, transcription, splicing, and transcript retention, with central work on PRMT5-dependent regulation of RNA processing and the discovery of GRIPPs as a chromatin-tethered mRNA reserve.
+        - name: PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing
+          description: We study how PRMT5 methylates histones and splicing factors to control chromatin and mRNA processing, and how PRMT-dependent regulation may go wrong in C9orf72 ALS. GNMT sets the methyl-donor supply that all of this methylation draws on, tying the two together.
           icon: hero/document-text
           gradient: from-blue-400 to-indigo-600
           status: active
           topics:
             - PRMT5
-            - Splicing and intron detention
-            - GRIPPs and chromatin escape
+            - GNMT and SAM homeostasis
+            - Splicing and RNA processing
             - Histone gene regulation
-            - PRMT inhibitor biology
+            - C9orf72 ALS
           cta:
             text: Read more
             url: /research/arginine-methylation
-        - name: Histone Chaperones, Glutamylation, and Intrinsically Disordered Regions
-          description: We define how acidic intrinsically disordered regions in histone chaperones encode DNA mimicry and chromatin assembly capacity, and how PTMs such as glutamylation tune those properties in normal physiology and disease.
+        - name: Glutamylation, Histone Chaperones, and Intrinsically Disordered Regions
+          description: Histone chaperones use long, acidic, disordered stretches to mimic DNA and grab onto histones. We're working out how modifications like glutamylation tune that behavior — and what happens when it's hijacked in NPM1-mutant leukemia.
           icon: hero/adjustments-horizontal
           gradient: from-fuchsia-400 to-rose-600
           status: active
@@ -92,38 +92,10 @@ sections:
             - TTLL4 glutamyltransferase
             - Acidic disordered regions
             - Chromatin assembly
-            - DNA mimicry
+            - NPM1-mutant AML
           cta:
             text: Read more
             url: /research/glutamylation-chaperones
-        - name: The Methyl Economy of Cellular Proliferation
-          description: We test the idea that proliferating cells solve an allocation problem for one-carbon methylation potential — tuning supply through GNMT and gating demand through PRMT5-dependent H4 methylation, which controls histone production and genome packaging.
-          icon: hero/scale
-          gradient: from-amber-400 to-orange-600
-          status: active
-          topics:
-            - SAM and SAH homeostasis
-            - GNMT and one-carbon flux
-            - Histone supply and S-phase
-            - Methyl-spending hierarchy
-            - PEMT and NNMT
-          cta:
-            text: Read more
-            url: /research/methyl-economy
-        - name: Translational Chromatin Biology in Cancer, ALS, and Aging
-          description: We connect mechanistic biochemistry to disease biology in NPM1-mutant AML, C9orf72 ALS, and aging-related methylation, working with chemistry, structural biology, and clinical collaborators to identify and validate targets.
-          icon: hero/bolt
-          gradient: from-emerald-400 to-teal-600
-          status: active
-          topics:
-            - NPM1-mutant AML
-            - C9orf72 ALS
-            - PRMT inhibitor biology
-            - Aging and one-carbon metabolism
-            - Target validation
-          cta:
-            text: Read more
-            url: /research/disease-mechanisms
       cta:
         text: Browse active projects
         url: /#projects
@@ -132,18 +104,69 @@ sections:
       layout: cards
       css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
 
+  - block: research-areas
+    id: disease-focus
+    content:
+      title: Disease Focus
+      subtitle: Understanding disease mechanisms
+      text: In each case we start from an enzyme we understand mechanistically and ask whether that mechanism is actually driving disease — and whether it's a target.
+      items:
+        - name: C9orf72 Amyotrophic Lateral Sclerosis
+          description: Arginine methylation shapes how RNA-binding proteins, stress granules, and nuclear transport behave. In C9orf72 ALS, we're asking whether PRMT inhibition — and PRMT-dependent control of TDP-43 cryptic exons — is a real therapeutic angle.
+          icon: hero/beaker
+          gradient: from-sky-400 to-blue-600
+          status: active
+          topics:
+            - C9orf72 ALS
+            - TDP-43 cryptic exons
+            - PRMT inhibitor biology
+          cta:
+            text: Read more
+            url: /research/als
+        - name: NPM1-Mutant Acute Myeloid Leukemia
+          description: We found that TTLL4 glutamylates NPM1c, the mutant driver of this leukemia, changing how it associates with chromatin and reshaping the oncogenic transcriptional program. That makes TTLL4 a therapeutic target we're now pursuing directly.
+          icon: hero/bolt
+          gradient: from-emerald-400 to-teal-600
+          status: active
+          topics:
+            - NPM1-mutant AML
+            - TTLL4 glutamyltransferase
+            - Target validation
+          cta:
+            text: Read more
+            url: /research/aml
+        - name: Aging and One-Carbon Metabolism
+          description: GNMT sits at the center of the methyl economy. With the Huffman and Gavathiotis labs, we're testing whether shifting methyl-donor flux through GNMT can move aging-related transcriptional and metabolic programs.
+          icon: hero/clock
+          gradient: from-amber-400 to-orange-600
+          status: active
+          topics:
+            - GNMT
+            - One-carbon metabolism
+            - Dietary restriction
+          cta:
+            text: Read more
+            url: /research/aging
+      cta:
+        text: Browse active projects
+        url: /#projects
+        icon: hero/arrow-right
+    design:
+      layout: cards
+      css_class: "bg-white dark:bg-gray-800"
+
   - block: cta-image-paragraph
     content:
       items:
-        - title: 'A through-line from replication checkpoints to chromatin methylation'
+        - title: 'From enzyme mechanism to leukemia and ALS'
           text: |
-            Recent work in the lab shows how PRMT5 sustains S-phase histone production through H4 methylation, identifies GRIPPs as a class of chromatin-tethered incompletely spliced mRNA released post-transcriptionally on PRMT5 activity, and traces how the GNMT N-terminus couples folate feedback to SAM and SAH homeostasis. The common thread: how cells allocate a limited pool of methylation potential across competing reactions without losing control of proliferation.
+            Two projects show how this works in practice. TTLL4-mediated glutamylation of NPM1c looks like a real vulnerability in NPM1-mutant AML, and we're testing whether PRMT-dependent control of TDP-43 cryptic exon splicing can be turned into a therapeutic angle in C9orf72 ALS. In both cases we started with the enzyme mechanism and only then went looking for the disease connection.
           image: research/nucleosome-cartoon.jpg
           feature_icon: hero/check-circle
           features:
+            - 'Disease-facing projects in AML, ALS, and aging'
             - 'Biochemistry and enzymology linked to cell-based and genomic readouts'
             - 'Mechanistic focus on PTMs in charged and intrinsically disordered regions'
-            - 'Disease-facing projects in AML, ALS, and aging'
           button:
             text: 'Featured projects'
             url: '/#projects'
@@ -161,6 +184,27 @@ sections:
             url: '/opportunities'
     design:
       css_class: "bg-white dark:bg-gray-800"
+
+  - block: team-showcase
+    id: team
+    content:
+      title: Lab Members
+      subtitle: ''
+      text: 'A view of the current lab. For full current roster and alumni, see the [People page](/people).'
+      sort_by: 'weight'
+      sort_ascending: true
+      cta:
+        text: View full roster
+        url: /people
+        icon: user-group
+    design:
+      show_role: true
+      show_organizations: false
+      show_interests: true
+      show_social: true
+      css_class: "bg-gray-50 dark:bg-gray-900"
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
 
   - block: features
     id: values
@@ -190,27 +234,6 @@ sections:
     design:
       css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
 
-  - block: team-showcase
-    id: team
-    content:
-      title: Lab Members
-      subtitle: ''
-      text: 'A view of the current lab. For full current roster and alumni, see the [People page](/people).'
-      sort_by: 'weight'
-      sort_ascending: true
-      cta:
-        text: View full roster
-        url: /people
-        icon: user-group
-    design:
-      show_role: true
-      show_organizations: false
-      show_interests: true
-      show_social: true
-      css_class: "bg-gray-50 dark:bg-gray-900"
-      spacing:
-        padding: ["3rem", 0, "3rem", 0]
-
   - block: collection
     id: projects
     content:
@@ -220,10 +243,10 @@ sections:
       filters:
         folders:
           - projects
+        featured_only: true
       count: 0
     design:
-      view: article-grid
-      columns: 2
+      view: date-title-summary
 
   - block: collection
     id: publications

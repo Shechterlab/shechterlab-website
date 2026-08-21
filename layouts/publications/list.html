@@ -1,0 +1,104 @@
+{{/*
+  Publications list page — overrides the generic Hugo Blox
+  layouts/list.html (vendored) for this section only, so it can:
+    - separate preprints from published articles
+    - split published articles into Lab Papers / Co-authored Work /
+      Reviews & Commentary, based on each page's `pub_category` param
+      (lab | coauthored | review — defaults to "lab" if unset)
+    - group each of those sections under year headings
+    - show a jump-link nav bar across the top linking to whichever
+      sections actually have entries
+  Basic page chrome (title, page.Content) and the citation view
+  itself (layouts/_partials/views/citation.html, also a local
+  override) are unchanged from upstream.
+*/}}
+{{ define "main" }}
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl">{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+
+{{ $allPages := .Pages.ByDate.Reverse }}
+{{ $preprints := slice }}
+{{ $labPapers := slice }}
+{{ $coauthored := slice }}
+{{ $reviews := slice }}
+{{ range $allPages }}
+  {{ $types := .Params.publication_types }}
+  {{ if in $types "article-journal" }}
+    {{ $category := .Params.pub_category | default "lab" }}
+    {{ if eq $category "coauthored" }}
+      {{ $coauthored = $coauthored | append . }}
+    {{ else if eq $category "review" }}
+      {{ $reviews = $reviews | append . }}
+    {{ else }}
+      {{ $labPapers = $labPapers | append . }}
+    {{ end }}
+  {{ else }}
+    {{ $preprints = $preprints | append . }}
+  {{ end }}
+{{ end }}
+
+<div class="flex flex-col items-center">
+  <div class="w-full max-w-4xl px-4">
+
+    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-8 text-sm font-medium">
+      {{ if gt (len $preprints) 0 }}<a href="#preprints" class="text-primary-600 dark:text-primary-400 hover:underline">Preprints</a>{{ end }}
+      {{ if gt (len $labPapers) 0 }}<a href="#lab-papers" class="text-primary-600 dark:text-primary-400 hover:underline">Lab Papers</a>{{ end }}
+      {{ if gt (len $coauthored) 0 }}<a href="#coauthored-work" class="text-primary-600 dark:text-primary-400 hover:underline">Co-authored Work</a>{{ end }}
+      {{ if gt (len $reviews) 0 }}<a href="#reviews-commentary" class="text-primary-600 dark:text-primary-400 hover:underline">Reviews &amp; Commentary</a>{{ end }}
+    </nav>
+
+    {{ if gt (len $preprints) 0 }}
+    <h2 id="preprints" class="text-2xl font-bold text-gray-900 dark:text-white mt-4 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Preprints</h2>
+    {{ range $preprints }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" "citation") }}
+    {{ end }}
+    {{ end }}
+
+    {{ if gt (len $labPapers) 0 }}
+    <h2 id="lab-papers" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Lab Papers</h2>
+    {{ $currentYear := "" }}
+    {{ range $labPapers }}
+      {{ $year := .Date.Format "2006" }}
+      {{ if ne $year $currentYear }}
+        {{ $currentYear = $year }}
+        <h3 class="text-lg font-semibold text-gray-500 dark:text-gray-400 mt-8 mb-3">{{ $year }}</h3>
+      {{ end }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" "citation") }}
+    {{ end }}
+    {{ end }}
+
+    {{ if gt (len $coauthored) 0 }}
+    <h2 id="coauthored-work" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Co-authored Work</h2>
+    {{ $currentYear := "" }}
+    {{ range $coauthored }}
+      {{ $year := .Date.Format "2006" }}
+      {{ if ne $year $currentYear }}
+        {{ $currentYear = $year }}
+        <h3 class="text-lg font-semibold text-gray-500 dark:text-gray-400 mt-8 mb-3">{{ $year }}</h3>
+      {{ end }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" "citation") }}
+    {{ end }}
+    {{ end }}
+
+    {{ if gt (len $reviews) 0 }}
+    <h2 id="reviews-commentary" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Reviews &amp; Commentary</h2>
+    {{ $currentYear := "" }}
+    {{ range $reviews }}
+      {{ $year := .Date.Format "2006" }}
+      {{ if ne $year $currentYear }}
+        {{ $currentYear = $year }}
+        <h3 class="text-lg font-semibold text-gray-500 dark:text-gray-400 mt-8 mb-3">{{ $year }}</h3>
+      {{ end }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" "citation") }}
+    {{ end }}
+    {{ end }}
+
+  </div>
+</div>
+
+{{ end }}

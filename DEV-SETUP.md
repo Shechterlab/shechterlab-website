@@ -18,6 +18,28 @@ npm install -g pnpm
 
 Download Hugo (extended edition) from https://github.com/gohugoio/hugo/releases — get the `extended` variant. Add it to your PATH. Install Node from https://nodejs.org, then `npm install -g pnpm`.
 
+## WSL (Windows Subsystem for Linux)
+
+WSL runs actual Linux (usually Ubuntu), so it needs Linux instructions, not the Windows ones above — and `apt install hugo` alone isn't enough, since Ubuntu's `hugo` package is typically an old, non-`extended` build that can't do this site's image processing.
+
+```bash
+sudo apt update
+sudo apt install -y golang-go nodejs npm git
+npm install -g pnpm
+
+# Get the extended Linux binary directly, pinned to the version
+# this site actually builds with (see HUGO_VERSION in netlify.toml):
+cd /tmp
+curl -LO https://github.com/gohugoio/hugo/releases/download/v0.158.0/hugo_extended_0.158.0_linux-amd64.tar.gz
+tar -xzf hugo_extended_0.158.0_linux-amd64.tar.gz
+sudo mv hugo /usr/local/bin/
+hugo version   # confirm it says "+extended linux/amd64"
+```
+
+**Clone the repo inside the WSL filesystem** (e.g. `~/shechterlab-website`), not under `/mnt/c/Users/...`. Editing Windows-drive files from WSL is slow and makes Hugo's live-reload file-watcher unreliable — a very common source of "the dev server isn't picking up my changes" confusion that has nothing to do with Hugo itself.
+
+`http://localhost:1313` opens fine from your regular Windows browser — WSL2 forwards `localhost` automatically.
+
 ---
 
 ## First-time setup (do once after cloning)

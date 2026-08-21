@@ -8,6 +8,7 @@ featured: false
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: Smart
+  preview_only: true
 ---
 
 This work develops the basic mechanistic framework for how glutamylation shapes histone chaperone function. It emphasizes intrinsically disordered acidic regions, DNA mimicry, and PTM control of chromatin assembly-related activities.

@@ -1,3 +1,4 @@
 ---
 title: Publications
+view: citation
 ---

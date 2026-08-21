@@ -92,6 +92,7 @@ authors:
 date: "2026-01-01T00:00:00Z"
 publishDate: "2026-01-01T00:00:00Z"
 publication_types: ["article-journal"]   # or ["article"] for a preprint
+pub_category: lab   # lab | coauthored | review — see below
 publication: "*Journal Name, volume*(issue), pages"   # markdown italics around the journal name
 abstract: "The actual published abstract — copy it verbatim from the paper, don't paraphrase or invent one."
 summary: "One sentence for the card preview."
@@ -99,7 +100,8 @@ tags:
 - Topic tag
 featured: false
 links:
-- name: Article        # or "bioRxiv" for a preprint
+- name: Article        # or "bioRxiv" for a preprint — this is the visible label
+  type: doi             # or "preprint" for a bioRxiv/arXiv link — this picks the icon; see below
   url: https://doi.org/10.xxxx/xxxxx
 image:
   filename: "research/nucleosome-cartoon.jpg"
@@ -112,6 +114,15 @@ slides: ""
 
 There is **no `doi:` field** — the DOI goes inside `links:` as a full URL, not as a bare identifier. Set `featured: true` to show the paper in the homepage publications strip. Double-check `publication:`, the date, and the DOI against the actual journal page (or PubMed/PMC) before publishing — several of these had wrong dates/volumes from earlier drafting and had to be corrected against the real record.
 
+Every `links:` entry needs both `name:` (the visible label — "Article", "bioRxiv", etc.) and `type:` (`doi` for a published article, `preprint` for bioRxiv/arXiv — this is what picks the icon). `name:` alone still displays fine but silently falls back to a generic link icon instead of the one that actually matches what the link is.
+
+**`pub_category:`** controls which section of the `/publications/` list page an entry appears in (see `layouts/publications/list.html`, a local override — it only applies to published articles; anything not `publication_types: ["article-journal"]` is always grouped under "Preprints" regardless of `pub_category`):
+- `lab` (default if omitted) — first-author or corresponding-author work driven by the lab. Shown under "Lab Papers".
+- `coauthored` — genuine collaborations where David is a middle author, not the paper's driver. Shown under "Co-authored Work".
+- `review` — reviews, commentaries, book chapters. Shown under "Reviews & Commentary".
+
+Each section is independently grouped by year and only renders at all if it has at least one entry, so adding the first `coauthored` or `review` publication is enough to make that heading appear — no template changes needed. The jump-links bar across the top of the page follows the same rule automatically (it's generated from the same non-empty checks), so there's nothing extra to update there either.
+
 ---
 
 ## Update a publication status (preprint → published)
@@ -120,7 +131,7 @@ Open `content/publications/<slug>/index.md` and edit:
 - `publication_types:` from `["article"]` to `["article-journal"]`
 - `publication:` from `"*bioRxiv*"` to the journal citation, e.g. `"*Nature Communications, 17*(1), 1234"`
 - `date:` / `publishDate:` to the journal's online-publish date (not the bioRxiv posting date)
-- `links:` — add or replace with the journal DOI; you can keep the bioRxiv link as a second entry if useful
+- `links:` — add or replace with the journal DOI (`name: Article`, `type: doi`); you can keep the bioRxiv link as a second entry (`name: bioRxiv`, `type: preprint`) if useful
 
 ---
 
@@ -150,7 +161,12 @@ The news list (`content/news/_index.md`) shows the most recent 20 items sorted b
 
 ## Add a Lab Life photo
 
-Drop a JPG into `content/lab-life/`. Hugo Blox reads the folder. Optionally add a matching `.md` file with the same stem for a caption.
+This page is **not** a Hugo Blox photo-gallery block — it's a hand-built HTML grid inside `content/lab-life/_index.md`'s single `block: markdown` section. To add a photo:
+
+1. Drop the JPG into `assets/media/lab/`.
+2. In `content/lab-life/_index.md`, copy one of the existing `<figure>...</figure>` blocks inside the `<div style="display:grid;...">` and edit its `img src` (path is `/media/lab/<filename>.jpg`) and `<figcaption>` text.
+
+The grid is fixed at 2 columns regardless of how many photos are in it — with an odd number, the last one just doesn't have a pair. There's no cropping/resizing step, so use images that are already reasonably sized and roughly landscape/square; a huge original will slow the page down since nothing resizes it for you.
 
 ---
 
@@ -174,7 +190,14 @@ Replace `static/uploads/shechter-cv-2026.pdf`. Keep the filename so existing lin
 
 ## Research area text
 
-Each area has its own file in `content/research/`. Edit the body or the `summary:` in front matter.
+The lab's research is organized as two mechanistic programs and three disease-focus areas, each with its own file in `content/research/`:
+
+- **Mechanism:** `arginine-methylation.md` (PRMTs, GNMT, methylation in gene regulation and RNA processing), `glutamylation-chaperones.md` (glutamylation, histone chaperones, disordered regions)
+- **Disease focus:** `aml.md` (NPM1-mutant AML), `als.md` (C9orf72 ALS), `aging.md` (aging and one-carbon metabolism)
+
+Edit the body or the `summary:` in front matter for any of these directly. The homepage (`content/_index.md`) has two separate `block: research-areas` sections — one titled "Research Areas" (the 2 mechanism cards), one titled "Disease Focus" (the 3 disease cards) — each card's `cta.url` links to the matching page above. If you rename a research page's filename (which changes its URL), update the matching `cta.url` in both places.
+
+`methyl-economy.md` still exists in `content/research/` but isn't linked from anywhere on the site (its content was folded into `arginine-methylation.md`'s GNMT section) — it's an orphan page, reachable only by direct URL, kept in case it's useful as a deeper reference later.
 
 ---
 
@@ -204,6 +227,12 @@ Things that look like they should work but will silently break the layout or pro
 - **A missing headshot is not a bug.** If `data/authors/<slug>.yaml` has no `avatar_filename`, or the file listed doesn't exist, the team card shows a colored circle with the person's initials instead of a photo. That's the theme's intended fallback, not broken image loading.
 - **A missing `image:` on a news/publication/project entry is not a bug either**, but it does make the card look worse — it falls back to a generic gray gradient. Always set one (see "Add a news item" above).
 - **The `Contact` link only lives in one place on purpose.** It used to appear both as a nav-bar link and as the header's `Contact` button (both pointing to `/contact`), which read as a mistake. The nav-bar entry was removed; if `Contact` reappears in `config/_default/menus.yaml`, it'll be duplicated again.
+- **`/publications/` and `/projects/` are set to text-only views on purpose.** Both `_index.md` files have `view: citation` / `view: date-title-summary` in their front matter. Without that line, Hugo Blox's default archive template falls back to `view: card`, which shows a big image above every single entry — and since every publication/project reuses the same placeholder image, that made the whole list look repetitive and hard to scan. If you add a real, distinct photo/figure for an entry and want it to actually show, you'd need to switch that entry's list back to a view that renders images (`card`) — the per-item `image.preview_only: true` (see below) would also need removing.
+- **`image.preview_only: true` hides the figure from the article body, not from search/social previews.** Every publication and project has this set — the big banner image that used to sit above the abstract/body text on each detail page is now suppressed, but the image is still available for link-preview (OG) metadata. Leave it `true` unless you specifically want a figure to show inline.
+- **The publications citation format (`layouts/_partials/views/citation.html`) is a local override, not the stock Hugo Blox one.** It exists only to bold the title/journal/year in the Publications list. Because it's a full copy of the vendored file living at the same path in our own repo, Hugo always prefers ours — which also means it will **not** pick up any future upstream fixes/improvements to that file automatically. If citations ever look broken after an `hugo mod get -u`, compare this file against the current vendored copy under `$(hugo mod vendor)`'s cache and re-apply the bold/underline changes by hand.
+- **To pull a project or publication off the site without deleting it, set `draft: true`** in its front matter (see `content/projects/methyl-economy/index.md`). Hugo excludes drafts from the build entirely — the page won't render at its URL, won't appear in any list, and won't 404-link from anywhere. Remove the line to bring it back.
+- **The Projects list shows a small thumbnail instead of a date, and it's also a local override.** `layouts/_partials/views/date-title-summary.html` replaces the vendored view (same override mechanism as the citation view above) so it pulls each project's featured image (`image.filename`) into a small square next to the title/summary instead of the publish date. Right now all 4 projects reuse the same generic placeholder (`assets/media/research/nucleosome-cartoon.jpg`), so the thumbnails all look identical — give a project a real, distinct image via its `image.filename` front matter to make this useful. This view is only used for Projects; it does not affect news, publications, or anything else.
+- **The Publications list bibliography does not (yet) include everything in the CV.** Original-research entries (Lab Papers, Co-authored Work, Preprints) start from 2010, verified against the CV (`static/uploads/shechter-cv-2026.pdf`) and a PubMed export cross-check — David's own scoping call on where the lab's own experimental work starts, plus the one 2007 Nature Protocols methods paper that predates that cutoff but is still commonly cited. Reviews & Commentary is scoped more broadly and does include earlier ones from David's graduate work with Jean Gautier and postdoc with C. David Allis (2004-2007) — those are explicitly wanted even though the primary-research papers from that era are not. When adding older papers, check both the CV and PubMed for the real DOI/date/author order — don't invent one from the title alone.
 
 ---
 

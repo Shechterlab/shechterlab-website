@@ -1,7 +1,7 @@
 ---
-title: "PRMT5, GRIPPs, and Productive mRNA Chromatin Escape"
+title: "PRMT5 and the Release of Chromatin-Tethered mRNA"
 date: 2026-06-28
-summary: "How PRMT5-dependent methylation gates the release of chromatin-tethered incompletely spliced mRNA, with implications for splicing-factor biology and PRMT inhibitor mechanism."
+summary: "How PRMT5-dependent methylation gates the release of incompletely spliced mRNA from chromatin, and what that means for PRMT inhibitors in cancer and PRMT-dependent RNA biology in C9orf72 ALS."
 tags:
   - PRMT5
   - RNA processing
@@ -10,8 +10,9 @@ featured: true
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: Smart
+  preview_only: true
 ---
 
-We identified **GRIPPs** (Genomically Retained Incompletely Spliced Transcripts) as a class of chromatin-tethered, incompletely processed mRNA whose productive release is promoted by PRMT5 activity. This reframes the multi-day mRNA wave that follows PRMT5 inhibition as a post-transcriptional release event from a chromatin-tethered reserve, rather than a kinetic transcription lag.
+We found that a large pool of incompletely spliced mRNA sits tethered to chromatin, held there until PRMT5 activity releases it. That explains a puzzle in the field: the mRNA changes that follow PRMT5 inhibition take days to show up, not hours. It turns out that's because PRMT5 is gating release from an existing chromatin-bound reserve, not slowing down transcription itself.
 
-Current questions in this project include which substrate methylation events are causal for transcript retention or release, how the GRIPP reserve is established and depleted under PRMT5 inhibition, and what these dynamics mean for the timing and mechanism of PRMT5 inhibitor responses in cancer.
+We're now working out which specific methylation events on splicing factors like Sm and CHTOP control that release, how the chromatin-tethered pool builds up and empties as PRMT5 activity changes, and what that means for the timing of PRMT5 inhibitor responses in cancer. Because PRMT5 also methylates RNA-binding proteins implicated in C9orf72 ALS, we're asking whether the same release mechanism is relevant there too.
