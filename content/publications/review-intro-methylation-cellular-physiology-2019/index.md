@@ -13,6 +13,7 @@ tags:
 featured: false
 links:
 - name: Article
+  type: doi
   url: https://doi.org/10.1007/s00018-019-03141-1
 image:
   filename: "research/nucleosome-cartoon.jpg"

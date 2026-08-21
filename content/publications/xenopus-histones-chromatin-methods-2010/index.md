@@ -16,6 +16,7 @@ tags:
 featured: false
 links:
 - name: Article
+  type: doi
   url: https://doi.org/10.1016/j.ymeth.2009.12.014
 image:
   filename: "research/nucleosome-cartoon.jpg"

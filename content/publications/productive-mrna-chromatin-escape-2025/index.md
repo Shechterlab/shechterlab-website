@@ -27,6 +27,7 @@ tags:
 featured: true
 links:
 - name: Article
+  type: doi
   url: https://doi.org/10.1016/j.molcel.2025.09.021
 image:
   filename: "research/nucleosome-cartoon.jpg"

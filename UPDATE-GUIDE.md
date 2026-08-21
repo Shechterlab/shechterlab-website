@@ -100,7 +100,8 @@ tags:
 - Topic tag
 featured: false
 links:
-- name: Article        # or "bioRxiv" for a preprint
+- name: Article        # or "bioRxiv" for a preprint — this is the visible label
+  type: doi             # or "preprint" for a bioRxiv/arXiv link — this picks the icon; see below
   url: https://doi.org/10.xxxx/xxxxx
 image:
   filename: "research/nucleosome-cartoon.jpg"
@@ -112,6 +113,8 @@ slides: ""
 ```
 
 There is **no `doi:` field** — the DOI goes inside `links:` as a full URL, not as a bare identifier. Set `featured: true` to show the paper in the homepage publications strip. Double-check `publication:`, the date, and the DOI against the actual journal page (or PubMed/PMC) before publishing — several of these had wrong dates/volumes from earlier drafting and had to be corrected against the real record.
+
+Every `links:` entry needs both `name:` (the visible label — "Article", "bioRxiv", etc.) and `type:` (`doi` for a published article, `preprint` for bioRxiv/arXiv — this is what picks the icon). `name:` alone still displays fine but silently falls back to a generic link icon instead of the one that actually matches what the link is.
 
 **`pub_category:`** controls which section of the `/publications/` list page an entry appears in (see `layouts/publications/list.html`, a local override — it only applies to published articles; anything not `publication_types: ["article-journal"]` is always grouped under "Preprints" regardless of `pub_category`):
 - `lab` (default if omitted) — first-author or corresponding-author work driven by the lab. Shown under "Lab Papers".
@@ -128,7 +131,7 @@ Open `content/publications/<slug>/index.md` and edit:
 - `publication_types:` from `["article"]` to `["article-journal"]`
 - `publication:` from `"*bioRxiv*"` to the journal citation, e.g. `"*Nature Communications, 17*(1), 1234"`
 - `date:` / `publishDate:` to the journal's online-publish date (not the bioRxiv posting date)
-- `links:` — add or replace with the journal DOI; you can keep the bioRxiv link as a second entry if useful
+- `links:` — add or replace with the journal DOI (`name: Article`, `type: doi`); you can keep the bioRxiv link as a second entry (`name: bioRxiv`, `type: preprint`) if useful
 
 ---
 

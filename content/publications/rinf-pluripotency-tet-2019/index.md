@@ -24,6 +24,7 @@ tags:
 featured: false
 links:
 - name: Article
+  type: doi
   url: https://doi.org/10.1016/j.celrep.2019.07.080
 image:
   filename: "research/nucleosome-cartoon.jpg"

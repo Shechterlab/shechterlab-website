@@ -32,8 +32,10 @@ tags:
 featured: true
 links:
 - name: Article
+  type: doi
   url: https://doi.org/10.1016/j.jbc.2026.113468
 - name: bioRxiv preprint
+  type: preprint
   url: https://doi.org/10.64898/2026.05.26.727678
 image:
   filename: "research/nucleosome-cartoon.jpg"
