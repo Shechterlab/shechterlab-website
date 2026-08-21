@@ -1,0 +1,52 @@
+{{/*
+  Local override of Hugo Blox Kit's blox/date-title-summary view partial
+  (vendored at layouts/_partials/views/date-title-summary.html in the
+  github.com/HugoBlox/kit/modules/blox module). A file at this same
+  path in our own repo takes precedence over the module's version.
+
+  This view is only used for the Projects lists (content/_index.md's
+  Featured Projects block and content/projects/_index.md), so this
+  override only affects projects.
+
+  Changes from upstream: replace the date column with a small square
+  thumbnail of the project's featured image. If a project has no
+  distinct image (several currently reuse the same generic placeholder
+  in assets/media/research/), this just shows that same thumbnail for
+  each one — add a real per-project image via `image.filename` in the
+  project's front matter to make the thumbnail meaningful.
+*/}}
+{{ $item := .item }}
+{{ $summary := partial "functions/get_summary" $item }}
+{{ $summary = $summary | page.RenderString }}
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+<article class="md:grid md:grid-cols-4 md:items-start md:gap-4">
+  <div class="md:col-span-3 group relative flex flex-col items-start">
+    <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+      <div
+        class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
+      <a href="{{$item.RelPermalink}}"><span
+        class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span class="relative z-10">{{$item.Title}}</span></a>
+    </h2>
+    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">{{$summary}}</p>
+    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-primary-500">
+    {{ T "read_more" | default "Read more" }}
+      <svg aria-hidden="true" class="ml-1 h-4 w-4 stroke-current" fill="none" viewBox="0 0 16 16">
+        <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+      </svg>
+    </div>
+  </div>
+  <div class="mt-3 md:mt-1 relative z-10 order-first md:order-last">
+    <a href="{{$item.RelPermalink}}" class="block w-16 h-16 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+      {{ with $resource }}
+        {{ if reflect.IsImageResourceProcessable . }}
+          {{ $thumb := .Fill "128x128 Center webp" }}
+          <img src="{{ $thumb.RelPermalink }}" width="64" height="64" loading="lazy" decoding="async"
+               class="w-full h-full object-cover" alt="{{ $item.Title | plainify }} thumbnail">
+        {{ else }}
+          <img src="{{ .RelPermalink }}" width="64" height="64" loading="lazy" decoding="async"
+               class="w-full h-full object-cover" alt="{{ $item.Title | plainify }} thumbnail">
+        {{ end }}
+      {{ end }}
+    </a>
+  </div>
+</article>

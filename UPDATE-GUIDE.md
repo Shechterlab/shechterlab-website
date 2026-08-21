@@ -182,7 +182,14 @@ Replace `static/uploads/shechter-cv-2026.pdf`. Keep the filename so existing lin
 
 ## Research area text
 
-Each area has its own file in `content/research/`. Edit the body or the `summary:` in front matter.
+The lab's research is organized as two mechanistic programs and three disease-focus areas, each with its own file in `content/research/`:
+
+- **Mechanism:** `arginine-methylation.md` (PRMTs, GNMT, methylation in gene regulation and RNA processing), `glutamylation-chaperones.md` (glutamylation, histone chaperones, disordered regions)
+- **Disease focus:** `aml.md` (NPM1-mutant AML), `als.md` (C9orf72 ALS), `aging.md` (aging and one-carbon metabolism)
+
+Edit the body or the `summary:` in front matter for any of these directly. The homepage (`content/_index.md`) has two separate `block: research-areas` sections — one titled "Research Areas" (the 2 mechanism cards), one titled "Disease Focus" (the 3 disease cards) — each card's `cta.url` links to the matching page above. If you rename a research page's filename (which changes its URL), update the matching `cta.url` in both places.
+
+`methyl-economy.md` still exists in `content/research/` but isn't linked from anywhere on the site (its content was folded into `arginine-methylation.md`'s GNMT section) — it's an orphan page, reachable only by direct URL, kept in case it's useful as a deeper reference later.
 
 ---
 
@@ -216,6 +223,8 @@ Things that look like they should work but will silently break the layout or pro
 - **`image.preview_only: true` hides the figure from the article body, not from search/social previews.** Every publication and project has this set — the big banner image that used to sit above the abstract/body text on each detail page is now suppressed, but the image is still available for link-preview (OG) metadata. Leave it `true` unless you specifically want a figure to show inline.
 - **The publications citation format (`layouts/_partials/views/citation.html`) is a local override, not the stock Hugo Blox one.** It exists only to bold the title/journal/year in the Publications list. Because it's a full copy of the vendored file living at the same path in our own repo, Hugo always prefers ours — which also means it will **not** pick up any future upstream fixes/improvements to that file automatically. If citations ever look broken after an `hugo mod get -u`, compare this file against the current vendored copy under `$(hugo mod vendor)`'s cache and re-apply the bold/underline changes by hand.
 - **To pull a project or publication off the site without deleting it, set `draft: true`** in its front matter (see `content/projects/methyl-economy/index.md`). Hugo excludes drafts from the build entirely — the page won't render at its URL, won't appear in any list, and won't 404-link from anywhere. Remove the line to bring it back.
+- **The Projects list shows a small thumbnail instead of a date, and it's also a local override.** `layouts/_partials/views/date-title-summary.html` replaces the vendored view (same override mechanism as the citation view above) so it pulls each project's featured image (`image.filename`) into a small square next to the title/summary instead of the publish date. Right now all 4 projects reuse the same generic placeholder (`assets/media/research/nucleosome-cartoon.jpg`), so the thumbnails all look identical — give a project a real, distinct image via its `image.filename` front matter to make this useful. This view is only used for Projects; it does not affect news, publications, or anything else.
+- **The Publications list bibliography does not (yet) include everything in the CV.** The site only lists papers verified against the CV (`static/uploads/shechter-cv-2026.pdf`) and a PubMed export cross-check; it deliberately excludes pre-2009 work from before the lab existed (grad school with Jean Gautier, postdoc with C. David Allis), except the one 2007 Nature Protocols methods paper that predates the lab but is still commonly cited. When adding older papers, check both the CV and PubMed for the real DOI/date/author order — don't invent one from the title alone.
 
 ---
 
