@@ -4,8 +4,10 @@
   github.com/HugoBlox/kit/modules/blox module). A file at this same
   path in our own repo takes precedence over the module's version.
 
-  Only change from upstream: bold the title, publication, and year
-  in addition to the existing title underline, per request.
+  Changes from upstream: bold the title, publication, and year in
+  addition to the existing title underline; link the journal/venue
+  text to the article's external URL (first entry in `links:`) when
+  one is set, same as the "Article"/"bioRxiv" badge below it.
   If Hugo Blox Kit changes citation.html upstream, this override
   will NOT pick up those changes automatically — compare against
   the vendored file if publication citations ever look stale.
@@ -14,6 +16,11 @@
 {{ $year_value := $item.Params.event_start | default $item.Date }}
 {{ $year := (time $year_value).Format "2006" }}
 {{ $has_attachments := partial "functions/has_attachments" $item }}
+{{ $links := $item.Params.links }}
+{{ $journal_url := "" }}
+{{ if and $links (gt (len $links) 0) }}
+  {{ $journal_url = (index $links 0).url }}
+{{ end }}
 
 <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
   <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
@@ -26,10 +33,9 @@
   </span>
   (<strong>{{- $year -}}</strong>).
   <a href="{{ $item.RelPermalink }}" class="underline font-semibold">{{ $item.Title }}</a>.
-  {{ if $item.Params.publication_short }}
-    <strong>{{- $item.Params.publication_short | markdownify -}}</strong>.
-  {{ else if $item.Params.publication }}
-    <strong>{{- $item.Params.publication | markdownify -}}</strong>.
+  {{ $pub := $item.Params.publication_short | default $item.Params.publication }}
+  {{ if $pub }}
+    {{ if $journal_url }}<a href="{{ $journal_url }}" target="_blank" rel="noopener" class="hover:underline">{{ end }}<strong>{{- $pub | markdownify -}}</strong>{{ if $journal_url }}</a>{{ end }}.
   {{ end }}
 
   {{ if $has_attachments }}
@@ -45,10 +51,9 @@
     {{ partial "page_metadata_authors" $item }}.
   </span>
   <a href="{{ $item.RelPermalink }}" class="underline font-semibold">{{ $item.Title }}</a>.
-  {{ if $item.Params.publication_short }}
-    <strong>{{- $item.Params.publication_short | markdownify -}}</strong>,
-  {{ else if $item.Params.publication }}
-    <strong>{{- $item.Params.publication | markdownify -}}</strong>,
+  {{ $pub := $item.Params.publication_short | default $item.Params.publication }}
+  {{ if $pub }}
+    {{ if $journal_url }}<a href="{{ $journal_url }}" target="_blank" rel="noopener" class="hover:underline">{{ end }}<strong>{{- $pub | markdownify -}}</strong>{{ if $journal_url }}</a>{{ end }},
   {{ end }}
   <strong>{{- $year -}}</strong>.
 

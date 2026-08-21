@@ -1,0 +1,57 @@
+{{/*
+  Publications list page — overrides the generic Hugo Blox
+  layouts/list.html (vendored) for this section only, so it can:
+    - separate preprints from published articles
+    - group published articles under year headings
+  Basic page chrome (title, page.Content) and the citation view
+  itself (layouts/_partials/views/citation.html, also a local
+  override) are unchanged from upstream.
+*/}}
+{{ define "main" }}
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl">{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+
+{{ $allPages := .Pages.ByDate.Reverse }}
+{{ $preprints := slice }}
+{{ $published := slice }}
+{{ range $allPages }}
+  {{ $types := .Params.publication_types }}
+  {{ if in $types "article-journal" }}
+    {{ $published = $published | append . }}
+  {{ else }}
+    {{ $preprints = $preprints | append . }}
+  {{ end }}
+{{ end }}
+
+<div class="flex flex-col items-center">
+  <div class="w-full max-w-4xl px-4">
+
+    {{ if gt (len $preprints) 0 }}
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-4 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Preprints</h2>
+    {{ range $preprints }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" "citation") }}
+    {{ end }}
+    {{ end }}
+
+    {{ if gt (len $published) 0 }}
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Publications</h2>
+    {{ $currentYear := "" }}
+    {{ range $published }}
+      {{ $year := .Date.Format "2006" }}
+      {{ if ne $year $currentYear }}
+        {{ $currentYear = $year }}
+        <h3 class="text-lg font-semibold text-gray-500 dark:text-gray-400 mt-8 mb-3">{{ $year }}</h3>
+      {{ end }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" "citation") }}
+    {{ end }}
+    {{ end }}
+
+  </div>
+</div>
+
+{{ end }}
