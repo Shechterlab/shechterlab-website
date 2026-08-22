@@ -62,49 +62,6 @@ sections:
         padding: ["3rem", 0, "3rem", 0]
 
   - block: research-areas
-    id: research
-    content:
-      title: Research Areas
-      subtitle: Two molecular research areas
-      text: Both areas start from the same question — how a specific chemical modification changes what a protein does — and follow it from purified enzymes into cells and disease models.
-      items:
-        - name: PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing
-          description: We study how PRMT5 methylates histones and splicing factors to control chromatin and mRNA processing, and how PRMT-dependent regulation may go wrong in C9orf72 ALS. GNMT sets the methyl-donor supply that all of this methylation draws on, tying the two together.
-          icon: hero/document-text
-          gradient: from-blue-400 to-indigo-600
-          status: active
-          topics:
-            - PRMT5
-            - GNMT and SAM homeostasis
-            - Splicing and RNA processing
-            - Histone gene regulation
-            - C9orf72 ALS
-          cta:
-            text: Read more
-            url: /research/arginine-methylation
-        - name: Glutamylation, Histone Chaperones, and Intrinsically Disordered Regions
-          description: Histone chaperones use long, acidic, disordered stretches to mimic DNA and grab onto histones. We're working out how modifications like glutamylation tune that behavior — and what happens when it's hijacked in NPM1-mutant leukemia.
-          icon: hero/adjustments-horizontal
-          gradient: from-fuchsia-400 to-rose-600
-          status: active
-          topics:
-            - NPM1, NPM2, Nap1, PTMA
-            - TTLL4 glutamyltransferase
-            - Acidic disordered regions
-            - Chromatin assembly
-            - NPM1-mutant AML
-          cta:
-            text: Read more
-            url: /research/glutamylation-chaperones
-      cta:
-        text: Browse active projects
-        url: /#projects
-        icon: hero/arrow-right
-    design:
-      layout: cards
-      css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
-
-  - block: research-areas
     id: disease-focus
     content:
       title: Disease Focus
@@ -147,6 +104,49 @@ sections:
           cta:
             text: Read more
             url: /research/aging
+      cta:
+        text: Browse active projects
+        url: /#projects
+        icon: hero/arrow-right
+    design:
+      layout: cards
+      css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+
+  - block: research-areas
+    id: research
+    content:
+      title: Research Areas
+      subtitle: Two molecular research areas
+      text: Both areas start from the same question — how a specific chemical modification changes what a protein does — and follow it from purified enzymes into cells and disease models.
+      items:
+        - name: PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing
+          description: We study how PRMT5 methylates histones and splicing factors to control chromatin and mRNA processing, and how PRMT-dependent regulation may go wrong in C9orf72 ALS. GNMT sets the methyl-donor supply that all of this methylation draws on, tying the two together.
+          icon: hero/document-text
+          gradient: from-blue-400 to-indigo-600
+          status: active
+          topics:
+            - PRMT5
+            - GNMT and SAM homeostasis
+            - Splicing and RNA processing
+            - Histone gene regulation
+            - C9orf72 ALS
+          cta:
+            text: Read more
+            url: /research/arginine-methylation
+        - name: Glutamylation, Histone Chaperones, and Intrinsically Disordered Regions
+          description: Histone chaperones use long, acidic, disordered stretches to mimic DNA and grab onto histones. We're working out how modifications like glutamylation tune that behavior — and what happens when it's hijacked in NPM1-mutant leukemia.
+          icon: hero/adjustments-horizontal
+          gradient: from-fuchsia-400 to-rose-600
+          status: active
+          topics:
+            - NPM1, NPM2, Nap1, PTMA
+            - TTLL4 glutamyltransferase
+            - Acidic disordered regions
+            - Chromatin assembly
+            - NPM1-mutant AML
+          cta:
+            text: Read more
+            url: /research/glutamylation-chaperones
       cta:
         text: Browse active projects
         url: /#projects

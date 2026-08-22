@@ -168,6 +168,8 @@ This page is **not** a Hugo Blox photo-gallery block — it's a hand-built HTML 
 
 The grid is fixed at 2 columns regardless of how many photos are in it — with an odd number, the last one just doesn't have a pair. There's no cropping/resizing step, so use images that are already reasonably sized and roughly landscape/square; a huge original will slow the page down since nothing resizes it for you.
 
+There's also `content/lab-life/archive.md` (`/lab-life/archive/`) for photos from prior years, linked from both the current Lab Life page and the People page. It's currently a placeholder ("Photos to be added") — same hand-built grid pattern as above once there's something to put in it.
+
 ---
 
 ## Contact page
@@ -195,9 +197,13 @@ The lab's research is organized as two mechanistic programs and three disease-fo
 - **Mechanism:** `arginine-methylation.md` (PRMTs, GNMT, methylation in gene regulation and RNA processing), `glutamylation-chaperones.md` (glutamylation, histone chaperones, disordered regions)
 - **Disease focus:** `aml.md` (NPM1-mutant AML), `als.md` (C9orf72 ALS), `aging.md` (aging and one-carbon metabolism)
 
-Edit the body or the `summary:` in front matter for any of these directly. The homepage (`content/_index.md`) has two separate `block: research-areas` sections — one titled "Research Areas" (the 2 mechanism cards), one titled "Disease Focus" (the 3 disease cards) — each card's `cta.url` links to the matching page above. If you rename a research page's filename (which changes its URL), update the matching `cta.url` in both places.
+Edit the body or the `summary:` in front matter for any of these directly. The homepage (`content/_index.md`) has two separate `block: research-areas` sections — **Disease Focus comes first** (ALS, then AML, then aging), **Research Areas comes second** (the 2 mechanism cards) — each card's `cta.url` links to the matching page above. If you rename a research page's filename (which changes its URL), update the matching `cta.url` in both places.
 
 `methyl-economy.md` still exists in `content/research/` but isn't linked from anywhere on the site (its content was folded into `arginine-methylation.md`'s GNMT section) — it's an orphan page, reachable only by direct URL, kept in case it's useful as a deeper reference later.
+
+Both `research-areas` blocks render through a **local override** of the vendored block (`layouts/_partials/hbx/blocks/research-areas/block.html`) — a compact card style (small icon/image square beside the title, smaller text) rather than the vendored version's big banner-image card. Only the "cards" layout is ported; `design.layout: hexagon` or `timeline` won't render anything useful here. Each card can carry an `image:` field (page-bundle path, `assets/media/...` path, or a remote URL) instead of `icon:` — set it and a real photo/figure replaces the gradient icon square automatically, no template changes needed.
+
+Research detail pages (`content/research/*.md`) render through their own local override too (`layouts/research/single.html`), with a smaller prose size than the sitewide default — this only affects the Research section, not projects/publications/news.
 
 ---
 
@@ -233,6 +239,7 @@ Things that look like they should work but will silently break the layout or pro
 - **To pull a project or publication off the site without deleting it, set `draft: true`** in its front matter (see `content/projects/methyl-economy/index.md`). Hugo excludes drafts from the build entirely — the page won't render at its URL, won't appear in any list, and won't 404-link from anywhere. Remove the line to bring it back.
 - **The Projects list shows a small thumbnail instead of a date, and it's also a local override.** `layouts/_partials/views/date-title-summary.html` replaces the vendored view (same override mechanism as the citation view above) so it pulls each project's featured image (`image.filename`) into a small square next to the title/summary instead of the publish date. Right now all 4 projects reuse the same generic placeholder (`assets/media/research/nucleosome-cartoon.jpg`), so the thumbnails all look identical — give a project a real, distinct image via its `image.filename` front matter to make this useful. This view is only used for Projects; it does not affect news, publications, or anything else.
 - **The Publications list bibliography does not (yet) include everything in the CV.** Original-research entries (Lab Papers, Co-authored Work, Preprints) start from 2010, verified against the CV (`static/uploads/shechter-cv-2026.pdf`) and a PubMed export cross-check — David's own scoping call on where the lab's own experimental work starts, plus the one 2007 Nature Protocols methods paper that predates that cutoff but is still commonly cited. Reviews & Commentary is scoped more broadly and does include earlier ones from David's graduate work with Jean Gautier and postdoc with C. David Allis (2004-2007) — those are explicitly wanted even though the primary-research papers from that era are not. When adding older papers, check both the CV and PubMed for the real DOI/date/author order — don't invent one from the title alone.
+- **The People page photo is a contained image, not a `block: hero`.** It used to be a full-bleed banner with a fixed short height (`css_class: 'h-64 md:h-80'`) that force-cropped the group photo to fill that width — with a wide landscape photo, that crops off people's heads. It's now a plain `<img>` inside the page's `block: markdown` section, capped at `max-width:640px` so the whole photo shows at its real aspect ratio. If you swap in a new group photo, no crop math is needed — just replace the file and update the caption; very tall or very wide originals will just make the box taller/wider, they won't get force-cropped.
 
 ---
 

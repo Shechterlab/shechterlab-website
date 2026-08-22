@@ -1,0 +1,32 @@
+{{/*
+  Research section single-page override — overrides the generic Hugo
+  Blox layouts/single.html (vendored) for this section only.
+
+  Research pages (content/research/*.md) are plain markdown: title,
+  date, summary front matter and a body — no abstract, publication
+  metadata, cover icon, or event fields, so this skips all of that
+  vendored logic rather than rendering it unused. The one real change
+  from upstream: prose-lg instead of lg:prose-xl and a smaller h1,
+  since prose-xl read oversized for these fairly dense pages.
+  If Hugo Blox Kit changes single.html upstream, this override will
+  NOT pick up those changes automatically.
+*/}}
+{{ define "main" }}
+
+<div class="mx-auto flex max-w-screen-xl">
+  <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 px-6 pt-4 md:px-12">
+    <main class="w-full min-w-0 max-w-3xl">
+
+      <h1 class="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{ .Title }}</h1>
+
+      <div class="prose prose-slate prose-lg dark:prose-invert mt-6" data-pagefind-body>
+        {{ .Content }}
+      </div>
+
+      {{ partial "components/last-edited.html" . }}
+
+    </main>
+  </article>
+</div>
+
+{{ end }}
