@@ -74,3 +74,10 @@ a[class*="group/link"]:hover {
     margin-right: auto;
   }
 }
+
+/* People page jump-nav (Current Lab Members / Alumni / Rotation & Summer
+   Students): offset the anchor targets so the sticky navbar doesn't cover
+   the section heading when you jump to it. */
+#current, #alumni, #rotation-summer-students {
+  scroll-margin-top: 6rem;
+}

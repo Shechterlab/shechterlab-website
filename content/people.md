@@ -14,6 +14,12 @@ sections:
         **Shechter Lab, 2026.** From left: Jacob Roth, Haeun Kim, Aliza Silverstein, Liana Valin, Subray Hegde, David Shechter, Isaac Kraz. Not pictured: additional collaborators and rotation students.
 
         [Lab History →](/history) &ensp;|&ensp; [Photo Archive →](/lab-life/archive)
+
+        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin-top:1.5rem;font-size:0.95rem;font-weight:600">
+          <a href="#current">Current Lab Members</a>
+          <a href="#alumni">Alumni</a>
+          <a href="#rotation-summer-students">Rotation &amp; Summer Students</a>
+        </nav>
     design:
       spacing:
         padding: ['2rem', '0', '0.5rem', '0']
