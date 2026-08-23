@@ -16,7 +16,7 @@ sections:
 
         ## 2025
 
-        DeAngelo, Maron et al. published in *Molecular Cell* — the GRIPP paper showing that PRMT5-dependent Sm methylation licenses productive mRNA release from chromatin. The paper was selected for the journal cover. TTLL4 glutamyltransferase work (Schurer, Ilyas, Maron et al.) posted as a preprint; the Einstein 2030 Acceleration Fund awarded for TTLL4 in NPM1c-mutant AML. Joseph DeAngelo graduates and begins a PSTP fellowship at Massachusetts General Hospital. Maxim Maron graduates and begins a PSTP fellowship at Memorial Sloan Kettering.
+        DeAngelo, Maron et al. published in *Molecular Cell* — the GRIPP (genomically retained, incompletely processed polyadenylated transcripts) paper showing that PRMT5-dependent Sm methylation licenses productive mRNA release from chromatin. The paper was selected for the journal cover. TTLL4 glutamyltransferase work (Schurer, Ilyas, Maron et al.) posted as a preprint; the Einstein 2030 Acceleration Fund awarded for TTLL4 in NPM1c-mutant AML. Joseph DeAngelo graduates and begins a PSTP fellowship at Massachusetts General Hospital. Maxim Maron graduates and begins a PSTP fellowship at Memorial Sloan Kettering.
 
         ## 2024
 

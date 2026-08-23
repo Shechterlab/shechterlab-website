@@ -1,24 +1,19 @@
 ---
 title: 'PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing'
 date: 2026-06-28
-summary: 'How PRMTs and GNMT control chromatin, transcription, splicing, the productive release of mRNA from chromatin, and the methyl-donor pool that supplies all of it.'
+summary: 'How PRMT5 methylation controls chromatin and mRNA maturation, and how GNMT sets the methyl-donor budget the whole cell spends from.'
 ---
 
-Protein arginine methyltransferases (PRMTs) regulate chromatin, transcription, and RNA processing through methylation of histones, RNA-binding proteins, and chromatin-associated factors. The lab has a long-standing focus on **PRMT5** and its substrates, including histones H2A, H3, and H4, the Sm and CHTOP splicing factors, and SNRPB.
+Methylation is one of the cell's most heavily used regulatory marks: enzymes transfer a methyl group from the donor molecule S-adenosylmethionine (SAM) onto proteins, DNA, and RNA, changing how those molecules behave. We study the protein arginine methyltransferases (PRMTs) — above all **PRMT5**, which methylates histones (H2A, H3, H4) and RNA-binding proteins (the Sm proteins, CHTOP) to control both how genes are packaged and how their messages mature.
 
-Recent work from the lab has organized these findings around two coupled ideas:
+Much of our recent work grew out of a puzzle about PRMT5 inhibitors, which are in clinical trials for cancer. Inhibit PRMT5 in cells and the gene expression changes take *days* to appear — far longer than it takes the drug to hit its target. We found the missing piece on chromatin itself. Cells hold a substantial pool of polyadenylated but incompletely spliced mRNAs physically tethered to the genome, and PRMT5 methylation of the Sm proteins is the signal that licenses their final processing and release into the cytoplasm. We named these parked messages **GRIPPs** — genomically retained, incompletely processed polyadenylated transcripts ([*Molecular Cell*, 2025](/publications/productive-mrna-chromatin-escape-2025/)). When PRMT5 is inhibited, the release valve closes: transcripts pile up on chromatin instead of maturing, and the delayed drug response follows from that.
 
-**A chromatin-as-mRNA-reserve model.** We identified **GRIPPs** (Genomically Retained Incompletely Spliced Transcripts) as a class of chromatin-tethered, incompletely processed transcripts whose **release** from chromatin is promoted by PRMT5 activity. This reframes the long-noticed multi-day mRNA wave following PRMT5 inhibition as a post-transcriptional release event from a chromatin-tethered reserve, rather than a kinetic transcription lag.
+A second thread connects PRMT5 to the supply of histones themselves. Methylation of newly made histone H4 by PRMT5 is required to sustain histone production during S phase — lose it, and cells run short of histones mid-replication, with replication stress and genome instability as the consequence.
 
-**A methylation gate for histone supply.** PRMT5-dependent methylation of newly synthesized histone H4 sustains S-phase histone production. Loss of PRMT5 activity disrupts histone gene regulation, depletes histones, and causes replication stress and genome instability. This positions PRMT5-H4 methylation as a demand-side gate in the cellular methyl economy.
-
-**A supply-side counterpart in GNMT.** Every methylation event above draws on the same S-adenosylmethionine (SAM) pool. **Glycine N-methyltransferase (GNMT)** is the liver's main valve for that pool, and we have defined how its N-terminal tail and folate-dependent feedback inhibition set SAM:SAH homeostasis. This gives us a mechanistic link between the demand side of gene regulation (PRMT5 methylating chromatin and RNA-processing factors) and the supply side of the methyl economy (GNMT gating methyl-donor flux).
-
-Together, these strands frame our work on PRMT inhibitor biology, where the timing and ordering of post-transcriptional and chromatin-assembly consequences shape both the mechanism and the therapeutic interpretation of PRMT5 inhibitors.
+All of this methylation spends from a single budget: the cellular SAM pool. That is why we also study **glycine N-methyltransferase (GNMT)**, the liver's main valve on that pool. We showed that GNMT's N-terminal tail — and a phosphorylation site within it — controls the enzyme's feedback inhibition by folate, linking diet and one-carbon metabolism to how much methylation the cell can afford. We think of the whole system as a *methyl economy*: enzymes like PRMT5 are the spenders, and GNMT sets the budget.
 
 **Questions we are pursuing:**
 
-- How does PRMT5-dependent methylation rewire macromolecular interactions in RNA-processing complexes?
-- Which methylation events are causal for transcript retention, release, and translation?
-- How does the same enzyme couple chromatin assembly to RNA fate, and what does this mean for PRMT inhibitor strategies in cancer?
-- How does GNMT-dependent methyl-donor flux set the ceiling on SAM-dependent chromatin and RNA methylation elsewhere in the cell?
+- Which specific methylation events on splicing factors are causal for holding transcripts on chromatin versus releasing them?
+- How does one enzyme, PRMT5, coordinate histone supply with mRNA maturation — and what does that coupling mean for PRMT5 inhibitors in cancer?
+- How does GNMT-controlled methyl-donor flux set the ceiling on methylation elsewhere in the cell, and can that ceiling be moved?
