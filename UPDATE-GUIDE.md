@@ -203,6 +203,8 @@ Edit the body or the `summary:` in front matter for any of these directly. The h
 
 Both `research-areas` blocks render through a **local override** of the vendored block (`layouts/_partials/hbx/blocks/research-areas/block.html`) — a compact card style (small icon/image square beside the title, smaller text) rather than the vendored version's big banner-image card. Only the "cards" layout is ported; `design.layout: hexagon` or `timeline` won't render anything useful here. Each card can carry an `image:` field (page-bundle path, `assets/media/...` path, or a remote URL) instead of `icon:` — set it and a real photo/figure replaces the gradient icon square automatically, no template changes needed.
 
+**`content/research/_index.md`** is its own `type: landing` page (not the generic auto-listing archive it used to be) with five hand-built `block: markdown` sections: an overview (David's Einstein faculty-bio text, expanded with CV detail) with a jump-nav row, brief link lists to the Molecular Research Areas and Disease Focus pages, Collaborators, and Funding (current grant support, pulled from the CV — dollar amounts intentionally left off, matching how the homepage funders strip handles this). If you add/remove a research page, update the matching bullet list here too — there's no automatic sync between this page and the actual `content/research/*.md` files anymore, since converting to `type: landing` turned off the auto-listing.
+
 Research detail pages (`content/research/*.md`) render through their own local override too (`layouts/research/single.html`), with a smaller prose size than the sitewide default — this only affects the Research section, not projects/publications/news.
 
 ---
