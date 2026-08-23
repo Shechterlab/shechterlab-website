@@ -81,3 +81,9 @@ a[class*="group/link"]:hover {
 #current, #alumni, #rotation-summer-students {
   scroll-margin-top: 6rem;
 }
+
+/* Research index page jump-nav (Molecular Research Areas / Disease Focus /
+   Collaborators / Funding): same offset fix. */
+#research-areas, #disease-focus, #collaborators, #funding {
+  scroll-margin-top: 6rem;
+}
