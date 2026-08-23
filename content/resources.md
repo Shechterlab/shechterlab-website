@@ -20,7 +20,7 @@ sections:
 
         ## Plasmids
 
-        Lab constructs are available upon request. Email David with the specific vector and insert you need. Selected plasmids will be deposited to [Addgene — Shechter Lab](https://www.addgene.org/David_Shechter/) as deposits are made; the PI page will activate once the first deposit is live.
+        Most lab constructs are available on [Addgene — Shechter Lab](https://www.addgene.org/David_Shechter/). For anything not yet deposited, email David with the specific vector and insert you need.
 
         ## Data
 
