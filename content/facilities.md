@@ -33,7 +33,9 @@ sections:
     content:
       title: 'Institutional home'
       text: |
-        The lab is part of the [Department of Biochemistry](https://einsteinmed.edu/departments/biochemistry) at [Albert Einstein College of Medicine](https://einsteinmed.edu), part of Montefiore Einstein in the Bronx, NY. Einstein is a research-intensive medical school with major strengths in cancer biology, structural biology, chromatin and epigenetics, and aging — several of which we draw on directly as collaborators (see [Collaborators →](/research/#collaborators)).
+        The lab is part of the [Department of Biochemistry](https://einsteinmed.edu/departments/biochemistry) at [Albert Einstein College of Medicine](https://einsteinmed.edu), on the Jack and Pearl Resnick Campus in the Bronx, NY, and part of the Montefiore Einstein academic medical center. Einstein trains MD, PhD, and MD-PhD (MSTP) students and is home to research-intensive departments spanning cancer biology, structural biology, chromatin and epigenetics, genetics, and aging.
+
+        The Department of Biochemistry, chaired by Steven Almo, brings together labs working across structural biology, enzymology, chromatin, and chemical biology — a natural fit for the lab's own mechanistic, reconstitution-driven approach to chromatin and RNA-processing enzymes. Within the department and across Einstein we collaborate directly with structural biology, mass spectrometry/proteomics, and chemical biology groups (see [Collaborators →](/research/#collaborators)), and we draw on Einstein-wide resources including the Montefiore Einstein Comprehensive Cancer Center and the Einstein Institute for Aging Studies for the lab's cancer- and aging-focused projects.
     design:
       columns: '1'
 
