@@ -20,26 +20,14 @@ sections:
         For a history of how these directions developed, see [Lab History →](/history).
 
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin-top:1.5rem;font-size:0.95rem;font-weight:600">
-          <a href="#research-areas">Molecular Research Areas</a>
           <a href="#disease-focus">Disease Focus</a>
+          <a href="#research-areas">Molecular Research Areas</a>
           <a href="#collaborators">Collaborators</a>
           <a href="#funding">Funding</a>
         </nav>
     design:
       spacing:
         padding: ['2rem', '0', '0.5rem', '0']
-
-  - block: markdown
-    id: research-areas
-    content:
-      title: Molecular Research Areas
-      text: |
-        - **[PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)** — how PRMT5 methylation controls chromatin and mRNA maturation, and how GNMT sets the methyl-donor budget the whole cell spends from.
-        - **[Glutamylation, Histone Chaperones, and Intrinsically Disordered Regions →](/research/glutamylation-chaperones)** — how histone chaperones mimic DNA using acidic disordered regions, and how glutamylation tunes that mimicry.
-    design:
-      css_class: "bg-gray-50 dark:bg-gray-900"
-      spacing:
-        padding: ['1.5rem', '0', '1.5rem', '0']
 
   - block: markdown
     id: disease-focus
@@ -50,6 +38,18 @@ sections:
         - **[NPM1-Mutant Acute Myeloid Leukemia →](/research/aml)** — TTLL4-mediated glutamylation of the mutant NPM1 protein that drives this leukemia.
         - **[Aging and One-Carbon Metabolism →](/research/aging)** — GNMT and the methyl economy as a lever on aging-related transcriptional and metabolic programs.
     design:
+      css_class: "bg-gray-50 dark:bg-gray-900"
+      spacing:
+        padding: ['1.5rem', '0', '1.5rem', '0']
+
+  - block: markdown
+    id: research-areas
+    content:
+      title: Molecular Research Areas
+      text: |
+        - **[PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)** — how PRMT5 methylation controls chromatin and mRNA maturation, and how GNMT sets the methyl-donor budget the whole cell spends from.
+        - **[Glutamylation, Histone Chaperones, and Intrinsically Disordered Regions →](/research/glutamylation-chaperones)** — how histone chaperones mimic DNA using acidic disordered regions, and how glutamylation tunes that mimicry.
+    design:
       spacing:
         padding: ['1.5rem', '0', '1.5rem', '0']
 
@@ -58,7 +58,7 @@ sections:
     content:
       title: Collaborators
       text: |
-        Much of this work is collaborative. Our primary partner on C9orf72 ALS is the [ALS Therapy Development Institute](https://www.als.net). At Einstein, we work closely with [Matthew Gamble](https://einsteinmed.edu/faculty/gamble) (chromatin), [Charles Query](https://einsteinmed.edu/faculty/query) (splicing), [Simone Sidoli](https://einsteinmed.edu/faculty/sidoli) (proteomics), [Kira Gritsman](https://einsteinmed.edu/faculty/gritsman) (leukemia biology), [Seiya Kitamura](https://einsteinmed.edu/faculty/kitamura) (medicinal chemistry), [Steven Almo](https://einsteinmed.edu/faculty/almo) (structural biology), [Derek Huffman](https://einsteinmed.edu/faculty/huffman) and [Evripidis Gavathiotis](https://einsteinmed.edu/faculty/gavathiotis) (aging and metabolism) — as well as [Jie Jiang](https://www.emory.edu) (Emory, ALS) and [David Cowburn](https://einsteinmed.edu/faculty/cowburn) (NMR).
+        Much of this work is collaborative. Our primary partner on C9orf72 ALS is the [ALS Therapy Development Institute](https://www.als.net). At Einstein, we work closely with [Matthew Gamble](https://einsteinmed.edu/faculty/11838/matthew-gamble) (chromatin), [Charles Query](https://einsteinmed.edu/faculty/6996/charles-c-query) (splicing), [Simone Sidoli](https://einsteinmed.edu/faculty/16080/simone-sidoli) (proteomics), [Kira Gritsman](https://einsteinmed.edu/faculty/14128/kira-gritsman) (leukemia biology), [Seiya Kitamura](https://einsteinmed.edu/faculty/17244/seiya-kitamura) (medicinal chemistry), [Steven Almo](https://einsteinmed.edu/faculty/7091/steven-c-almo) (structural biology), [Derek Huffman](https://einsteinmed.edu/faculty/11000/derek-m-huffman) and [Evripidis Gavathiotis](https://einsteinmed.edu/faculty/12958/evripidis-gavathiotis) (aging and metabolism) — as well as [Jie Jiang](https://www.emory.edu) (Emory, ALS) and [David Cowburn](https://einsteinmed.edu/faculty/12344/david-cowburn) (NMR).
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
       spacing:
@@ -69,17 +69,11 @@ sections:
     content:
       title: Funding
       text: |
-        **Current grant support**
+        Funders across the lab's history, current and past — see the [CV](/uploads/shechter-cv-2026.pdf) for grant-by-grant detail.
 
-        - **ALS Therapy Development Institute** — *Role of Protein Arginine Methyltransferases in ALS-mutant C9orf72 Cellular Cytotoxicity* (2024–2026)
-        - **Hevolution Foundation** — *GNMT as a novel therapeutic target for aging* (2024–2029; Co-PI, with Derek Huffman and Evripidis Gavathiotis)
-        - **Einstein 2030 Acceleration Fund** — *Targeting the TTLL4 glutamyltransferase as a first-in-class NPM1c-mutant AML therapeutic* (2025–2026; PI, with Kira Gritsman and Seiya Kitamura)
-        - **Montefiore Einstein Comprehensive Cancer Center Transdisciplinary Science Grant** — *Targeting the TTLL4 glutamyltransferase as a first-in-class NPM1c-mutant AML therapeutic* (2025–2026)
-        - **NIH / NIA (R61AG096065)** — *Connecting surgical stress to sex-dependent vulnerabilities in aging and aging hallmarks* (2025–2027; Collaborator, PI Derek Huffman)
-        - **Irma T. Hirschl Trust Career Award** — *Protein arginine methyltransferases in cancer* (2021–2025)
-
-        See the [CV](/uploads/shechter-cv-2026.pdf) for completed grant support and full details.
+        [NIH / NIGMS](https://www.nigms.nih.gov) &ensp;·&ensp; [NIH / NIA](https://www.nia.nih.gov) &ensp;·&ensp; [ALS Therapy Development Institute](https://www.als.net) &ensp;·&ensp; [Hevolution Foundation](https://hevolution.com) &ensp;·&ensp; [Irma T. Hirschl Trust](https://irmatrust.org) &ensp;·&ensp; [Montefiore Einstein Comprehensive Cancer Center](https://einsteinmed.edu/centers/cancer/) &ensp;·&ensp; [Einstein 2030 Fund](https://einsteinmed.edu) &ensp;·&ensp; [American Cancer Society](https://www.cancer.org) &ensp;·&ensp; [American Lung Association](https://www.lung.org) &ensp;·&ensp; [Department of Defense (CDMRP)](https://cdmrp.health.mil) &ensp;·&ensp; Alexandrine and Alexander Sinsheimer Foundation &ensp;·&ensp; [Cambrian Biopharma](https://www.cambrianbio.com)
     design:
+      css_class: "text-center"
       spacing:
         padding: ['1.5rem', '0', '2rem', '0']
 ---

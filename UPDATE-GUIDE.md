@@ -186,7 +186,9 @@ Replace `static/uploads/shechter-cv-2026.pdf`. Keep the filename so existing lin
 
 ## Funders strip
 
-`content/_index.md` → the `block: logos` section. Add, remove, or reorder entries.
+`content/_index.md`, section `id: funders` ("Supported by"), and the matching Funding section on `content/research/_index.md` — both are plain `block: markdown` with a centered, dot-separated list of `[Name](url)` links. Add, remove, or reorder entries by editing that list directly.
+
+**This is deliberately not `block: logos`,** the vendored Hugo Blox block that name suggests. That block requires an `image:` per entry — if you don't give it one, the entry renders as an *invisible* clickable box (a `title` attribute a mouse-hover shows, nothing else — there's no plain-text fallback in the vendored template). We don't have logo image files for any of these funders, and both sections rendered completely empty this way for a long time before anyone noticed (the section title showed, the actual funder list didn't). If you ever do get real logo files and want the logo-grid look back, switch back to `block: logos` and note it uses `logos:` as the list key, not `items:` — that was the original bug here, easy to reintroduce by copying a `research-areas` or similar block's `items:` pattern by habit.
 
 ---
 
@@ -205,7 +207,9 @@ Both `research-areas` blocks render through a **local override** of the vendored
 
 **`content/research/_index.md`** is its own `type: landing` page (not the generic auto-listing archive it used to be) with five hand-built `block: markdown` sections: an overview (David's Einstein faculty-bio text, expanded with CV detail) with a jump-nav row, brief link lists to the Molecular Research Areas and Disease Focus pages, Collaborators, and Funding (current grant support, pulled from the CV — dollar amounts intentionally left off, matching how the homepage funders strip handles this). If you add/remove a research page, update the matching bullet list here too — there's no automatic sync between this page and the actual `content/research/*.md` files anymore, since converting to `type: landing` turned off the auto-listing.
 
-Research detail pages (`content/research/*.md`) render through their own local override too (`layouts/research/single.html`), with a smaller prose size than the sitewide default — this only affects the Research section, not projects/publications/news.
+Research detail pages (`content/research/*.md`) render through their own local override too (`layouts/research/single.html`), with a smaller prose size than the sitewide default — this only affects the Research section, not projects/publications/news. That override also supports a `image:` front-matter field (same `filename`/`focal_point` shape as projects and publications) — set it and a contained figure renders below the title, above the body text. No research page has one yet.
+
+Einstein faculty links (in `content/_index.md`'s Collaborators section and the matching one on `content/research/_index.md`) use the real `einsteinmed.edu/faculty/<id>/<slug>` URL pattern, not the shorter `einsteinmed.edu/faculty/<lastname>` guess that seven of these links originally used (all silently 404ing). If you add a new Einstein collaborator, look up their actual numeric faculty ID rather than guessing the URL — the short form doesn't resolve.
 
 ---
 
