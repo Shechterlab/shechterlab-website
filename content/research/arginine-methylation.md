@@ -2,6 +2,8 @@
 title: 'PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing'
 date: 2026-06-28
 summary: 'How PRMT5 methylation controls chromatin and mRNA maturation, and how GNMT sets the methyl-donor budget the whole cell spends from.'
+image:
+  filename: "research/PLACEHOLDER-methylation-figure.jpg"
 ---
 
 Methylation is one of the cell's most heavily used regulatory marks: enzymes transfer a methyl group from the donor molecule S-adenosylmethionine (SAM) onto proteins, DNA, and RNA, changing how those molecules behave. We have long studied the protein arginine methyltransferases (PRMTs) **PRMT1** and **PRMT5** — above all PRMT5, which methylates histones (H2A, H3, H4) and RNA-binding proteins (the Sm proteins, CHTOP) to control both how genes are packaged and how their messages mature.

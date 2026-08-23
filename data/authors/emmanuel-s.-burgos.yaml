@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: emmanuel-s.-burgos
+weight: 7
+name:
+  display: "Emmanuel S. Burgos, PhD"
+  family: Burgos
+role: "Instructor / Research Associate, 2014–2020"
+affiliations:
+  - name: "Now: Drug Design Consultant"
+user_groups:
+  - Alumni

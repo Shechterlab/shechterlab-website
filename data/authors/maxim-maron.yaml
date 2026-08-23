@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: maxim-maron
+weight: 3
+name:
+  display: "Maxim I. Maron, PhD"
+  family: Maron
+role: "MSTP Student, 2017–2022"
+affiliations:
+  - name: "Now: PSTP, Memorial Sloan Kettering"
+user_groups:
+  - Alumni

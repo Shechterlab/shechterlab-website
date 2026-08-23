@@ -1,0 +1,172 @@
+{{/*
+  Local override of Hugo Blox Kit's authors/term.html (vendored at that
+  same path in the github.com/HugoBlox/kit/modules/blox module) — this
+  is the template for individual profile pages at /authors/<slug>/.
+
+  Changes from upstream: the vendored page only renders avatar, name,
+  role, affiliations, bio, and links, then a list of the person's
+  authored content below. It resolves `education` and `interests` into
+  the profile dict (see functions/get_author_profile.html) but never
+  actually displays them. This override adds three optional sections
+  between bio and the content list: Interests (bullet list), Education
+  (degree — institution, year), and Teaching & Service — the last one
+  reads a `teaching:` list directly from data/authors/<slug>.yaml
+  (fields: title, detail, dates), since that field isn't part of the
+  vendored profile schema at all. Only David's profile sets it today;
+  any author can use it.
+  If Hugo Blox Kit changes term.html upstream, this override will NOT
+  pick up those changes automatically.
+*/}}
+{{ define "main" }}
+
+{{ $slug := .Data.Term | urlize }}
+{{ $profile := partial "functions/get_author_profile" (dict "slug" $slug) }}
+{{ $avatar := $profile.avatar }}
+{{ $avatar_shape := site.Params.hugoblox.layout.avatar_shape | default "circle" }}
+{{ $rawAuthors := partialCached "functions/get_authors_data" . site.Language.Lang }}
+{{ $rawData := index $rawAuthors $slug }}
+
+<section class="max-w-5xl mx-auto px-6 py-10">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+    <div class="flex-shrink-0">
+      {{ if $avatar }}
+        {{ if not (reflect.IsImageResourceProcessable $avatar) }}
+        <img
+          class="h-32 w-32 sm:h-40 sm:w-40 {{ if ne $avatar_shape "square" }}rounded-full{{ end }}"
+          src="{{ $avatar.RelPermalink }}"
+          width="160"
+          height="160"
+          alt="{{ $profile.title }}"
+          loading="lazy"
+        />
+        {{ else }}
+        {{ $responsive := partial "functions/process_responsive_image.html" (dict
+          "image" $avatar
+          "mode" "fill"
+          "aspect_ratio" "1:1"
+          "anchor" "Center"
+          "sizes" (slice 160 240 320 480)
+        ) }}
+        <img
+          class="h-32 w-32 sm:h-40 sm:w-40 {{ if ne $avatar_shape "square" }}rounded-full{{ end }}"
+          srcset="{{ $responsive.srcset }}"
+          sizes="160px"
+          src="{{ $responsive.fallback.RelPermalink }}"
+          width="160"
+          height="160"
+          alt="{{ $profile.title }}"
+          loading="lazy"
+        />
+        {{ end }}
+      {{ else }}
+        <div class="h-32 w-32 sm:h-40 sm:w-40 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+          {{ partial "functions/get_icon" (dict "name" "hero/user" "attributes" "class=\"h-12 w-12 text-gray-400\"") }}
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="space-y-2">
+      <div class="flex items-center gap-2">
+        <h1 class="text-3xl sm:text-4xl font-bold">{{ $profile.title }}</h1>
+        {{ with $profile.status }}
+          {{ with .icon }}
+            <span class="text-2xl" aria-hidden="true">{{ . }}</span>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{ with $profile.role }}
+        <div class="text-lg font-semibold text-neutral-700 dark:text-neutral-200">{{ . | markdownify | emojify }}</div>
+      {{ end }}
+
+      {{ with $profile.affiliations }}
+        <div class="text-neutral-600 dark:text-neutral-300">
+          {{ range $index, $org := . }}
+            {{ if gt $index 0 }} · {{ end }}
+            {{ if $org.url }}<a href="{{ $org.url }}" class="underline">{{ $org.name }}</a>{{ else }}{{ $org.name }}{{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with $profile.bio }}
+        <div class="prose prose-slate dark:prose-invert max-w-none">
+          {{ . | markdownify | emojify }}
+        </div>
+      {{ end }}
+
+      {{ if $profile.links }}
+        <div class="pt-2">
+          {{ partial "social_links" (dict "Params" (dict "profiles" $profile.links)) }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ with $profile.interests }}
+  <div class="mt-8 max-w-3xl">
+    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Research Interests</h2>
+    <div class="flex flex-wrap gap-2">
+      {{ range . }}
+      <span class="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{ with $profile.education }}
+  <div class="mt-8 max-w-3xl">
+    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Education</h2>
+    <ul class="space-y-2">
+      {{ range . }}
+      <li class="text-neutral-700 dark:text-neutral-300">
+        <span class="font-semibold">{{ .degree }}</span>
+        {{ with .institution }} — {{ . }}{{ end }}
+        {{ with .end }}<span class="text-neutral-500 dark:text-neutral-400"> ({{ (time .).Format "2006" }})</span>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ with $rawData.teaching }}
+  <div class="mt-8 max-w-3xl">
+    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Teaching &amp; Service</h2>
+    <ul class="space-y-2">
+      {{ range . }}
+      <li class="text-neutral-700 dark:text-neutral-300">
+        <span class="font-semibold">{{ .title }}</span>
+        {{ with .detail }} — {{ . }}{{ end }}
+        {{ with .dates }}<span class="text-neutral-500 dark:text-neutral-400"> ({{ . }})</span>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+
+{{/*
+  Upstream uses view "card" here, which shows a full image banner per
+  item — fine for a handful of items, but every publication on this
+  site reuses the same generic placeholder image (see the same reasoning
+  behind why /publications/ and /projects/ don't use "card" either), so
+  on a profile page with dozens of authored papers it turned into a long
+  scroll of near-identical banners. Using "citation" instead, same as
+  the Publications page.
+*/}}
+{{ $view := "citation" }}
+{{ $block := . }}
+{{ $paginator := .Paginate .Pages.ByDate.Reverse }}
+
+{{ if gt (len $paginator.Pages) 0 }}
+<div class="flex flex-col items-center px-6 mt-8">
+  <div class="w-full max-w-3xl">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Publications</h2>
+    {{ range $index, $item := $paginator.Pages }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" $view "index" $index) }}
+    {{ end }}
+  </div>
+</div>
+{{ partial "components/paginator" . }}
+{{ end }}
+
+{{ end }}

@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: wei-lin-wang
+weight: 9
+name:
+  display: "Wei-Lin Wang, PhD"
+  family: Wang
+role: "Postdoctoral Fellow, 2011–2013"
+affiliations:
+  - name: "Now: CureVac"
+user_groups:
+  - Alumni

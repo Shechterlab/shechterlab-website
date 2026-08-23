@@ -1,10 +1,10 @@
 ---
 title: "A TGFβ-PRMT5-MEP50 axis regulates cancer cell invasion through histone H3 and H4 arginine methylation coupled transcriptional activation and repression"
 authors:
-- "H. Chen"
-- "B. Lorton"
-- "V. Gupta"
-- "D. Shechter"
+- "Hongshan Chen"
+- "Benjamin Lorton"
+- "Varun Gupta"
+- me
 date: "2017-01-19T00:00:00Z"
 publishDate: "2017-01-19T00:00:00Z"
 publication_types: ["article-journal"]

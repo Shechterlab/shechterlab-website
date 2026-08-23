@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: humaira-ilyas
+weight: 1
+name:
+  display: "Humaira Ilyas, PhD"
+  family: Ilyas
+role: "Postdoctoral Fellow, 2021–2025"
+affiliations:
+  - name: "Now: Independent position"
+user_groups:
+  - Alumni

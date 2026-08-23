@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: takashi-onikubo
+weight: 6
+name:
+  display: "Takashi Onikubo, PhD"
+  family: Onikubo
+role: "Graduate Student, 2010–2015"
+affiliations:
+  - name: "Now: The Rockefeller University"
+user_groups:
+  - Alumni

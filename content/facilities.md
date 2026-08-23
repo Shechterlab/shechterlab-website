@@ -31,6 +31,14 @@ sections:
 
   - block: markdown
     content:
+      title: 'Institutional home'
+      text: |
+        The lab is part of the [Department of Biochemistry](https://einsteinmed.edu/departments/biochemistry) at [Albert Einstein College of Medicine](https://einsteinmed.edu), part of Montefiore Einstein in the Bronx, NY. Einstein is a research-intensive medical school with major strengths in cancer biology, structural biology, chromatin and epigenetics, and aging — several of which we draw on directly as collaborators (see [Collaborators →](/research/#collaborators)).
+    design:
+      columns: '1'
+
+  - block: markdown
+    content:
       title: 'Research environment'
       text: |
         The lab combines biochemical and mechanistic work with cell-based and genome-wide approaches. Typical project directions include enzyme mechanism, substrate recognition, chromatin-associated regulation, RNA maturation and retention, and therapeutic target validation.
