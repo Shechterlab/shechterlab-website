@@ -48,6 +48,10 @@ sections:
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/4G56">4G56 ↗</a></p>
           </div>
           <div>
+            <div id="pdb-viewer-12yi" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/12YI">12YI ↗</a></p>
+          </div>
+          <div>
             <div id="pdb-viewer-6w4l" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6W4L">6W4L ↗</a></p>
           </div>
@@ -78,7 +82,7 @@ sections:
         <script>
         document.addEventListener('DOMContentLoaded', function () {
           if (typeof PDBeMolstarPlugin === 'undefined') return;
-          ['4g56','6w4l','6oi0','6oi1','6oi2','6oi3','6ofz'].forEach(function (id) {
+          ['4g56','12yi','6w4l','6oi0','6oi1','6oi2','6oi3','6ofz'].forEach(function (id) {
             var el = document.getElementById('pdb-viewer-' + id);
             if (!el) return;
             new PDBeMolstarPlugin().render(el, {
