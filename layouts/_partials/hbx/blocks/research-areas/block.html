@@ -1,0 +1,219 @@
+{{/*
+  Local override of Hugo Blox Kit's research-areas block
+  (vendored at blox/research-areas/block.html in the
+  github.com/HugoBlox/kit/modules/blox module, mounted into
+  layouts/_partials/hbx/blocks/research-areas/block.html — a file at
+  that same virtual path in our own repo takes precedence over the
+  module's version).
+
+  Why this exists: the vendored block only offers "cards" (a big h-48
+  gradient banner + text below, sized for long copy), "hexagon", and
+  "timeline" layouts. Ours felt oversized — the banner dominated the
+  card and the title/description text was larger than the content
+  needed. This is a leaner, compact-only replacement: a small square
+  icon/image sits beside the title instead of above it, and text runs
+  one size down throughout. It reuses the vendored file's own
+  data-parsing logic (item fields, image resolution, CTA/link
+  building) verbatim — only the markup layout changed.
+
+  Deliberately NOT ported: hexagon/timeline layouts, and the
+  team_size/publications/funding stat row (nothing in our content
+  sets those fields). If a future need calls for either, copy the
+  relevant section back from the vendored file above rather than
+  extending this one to do everything.
+  If Hugo Blox Kit changes the vendored block.html upstream, this
+  override will NOT pick up those changes automatically.
+*/}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $title := "" }}
+{{ with index $content "title" }}{{ $title = strings.TrimSpace (printf "%v" .) }}{{ end }}
+{{ if $title }}{{ $title = $title | emojify | $page.RenderString }}{{ end }}
+
+{{ $subtitle := "" }}
+{{ with index $content "subtitle" }}{{ $subtitle = strings.TrimSpace (printf "%v" .) }}{{ end }}
+{{ if $subtitle }}{{ $subtitle = $subtitle | emojify | $page.RenderString }}{{ end }}
+
+{{ $text := "" }}
+{{ with index $content "text" }}{{ $text = strings.TrimSpace (printf "%v" .) }}{{ end }}
+{{ if $text }}{{ $text = $text | emojify | $page.RenderString }}{{ end }}
+
+{{ $items_raw := index $content "items" }}
+{{ $items_iter := slice }}
+{{ if reflect.IsSlice $items_raw }}
+  {{ $items_iter = $items_raw }}
+{{ else if and $items_raw (reflect.IsMap $items_raw) }}
+  {{ $items_iter = slice $items_raw }}
+{{ end }}
+
+{{ $cta := index $content "cta" }}
+{{ if not (reflect.IsMap $cta) }}{{ $cta = dict }}{{ end }}
+{{ $cta_text := "" }}
+{{ $cta_link := "" }}
+{{ $cta_icon := "" }}
+{{ with index $cta "text" }}{{ $cta_text = strings.TrimSpace (printf "%v" .) }}{{ end }}
+{{ with index $cta "url" }}{{ $cta_link = strings.TrimSpace (printf "%v" .) }}{{ end }}
+{{ with index $cta "icon" }}{{ $cta_icon = printf "%v" . }}{{ end }}
+
+<div class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center max-w-3xl mx-auto mb-10 lg:mb-12">
+      {{ with $title }}
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white tracking-tight mb-3">{{ . }}</h2>
+      {{ end }}
+      {{ with $subtitle }}
+      <p class="text-lg text-primary-600 dark:text-primary-400 font-medium mb-2">{{ . }}</p>
+      {{ end }}
+      {{ with $text }}
+      <p class="text-base text-gray-600 dark:text-gray-400">{{ . }}</p>
+      {{ end }}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range $items_iter }}
+        {{ if reflect.IsMap . }}
+          {{ $name := "" }}
+          {{ $description := "" }}
+          {{ $icon := "" }}
+          {{ $image := "" }}
+          {{ $gradient := "from-primary-400 to-secondary-400" }}
+          {{ $status := "" }}
+          {{ $topics := slice }}
+          {{ $cta_url := "" }}
+          {{ $cta_text_item := "" }}
+
+          {{ with index . "name" }}{{ $name = strings.TrimSpace (printf "%v" .) }}{{ end }}
+          {{ with index . "description" }}{{ $description = strings.TrimSpace (printf "%v" .) }}{{ end }}
+          {{ with index . "icon" }}{{ $icon = printf "%v" . }}{{ end }}
+          {{ with index . "image" }}{{ $image = strings.TrimSpace (printf "%v" .) }}{{ end }}
+          {{ with index . "gradient" }}{{ $gradient = strings.TrimSpace (printf "%v" .) }}{{ end }}
+          {{ with index . "status" }}{{ $status = lower (strings.TrimSpace (printf "%v" .)) }}{{ end }}
+
+          {{ $topics_raw := index . "topics" }}
+          {{ if reflect.IsSlice $topics_raw }}
+            {{ range $topics_raw }}
+              {{ $topic := strings.TrimSpace (printf "%v" .) }}
+              {{ if $topic }}{{ $topics = $topics | append $topic }}{{ end }}
+            {{ end }}
+          {{ end }}
+
+          {{ $item_cta_raw := index . "cta" }}
+          {{ if reflect.IsMap $item_cta_raw }}
+            {{ with index $item_cta_raw "url" }}{{ $cta_url = strings.TrimSpace (printf "%v" .) }}{{ end }}
+            {{ with index $item_cta_raw "text" }}{{ $cta_text_item = strings.TrimSpace (printf "%v" .) }}{{ end }}
+          {{ end }}
+
+          {{/* Resolve a small thumbnail if `image:` is set (page bundle, site assets, or remote URL); otherwise fall back to the icon. */}}
+          {{ $graphic := "" }}
+          {{ if $image }}
+            {{ $image_resource := false }}
+            {{ $image_url := "" }}
+            {{ $is_remote := or (strings.HasPrefix $image "http://") (strings.HasPrefix $image "https://") }}
+            {{ if $is_remote }}
+              {{ $remote := try (resources.GetRemote $image) }}
+              {{ if and $remote (not $remote.Err) }}
+                {{ $image_resource = $remote.Value }}
+              {{ else }}
+                {{ $image_url = $image }}
+              {{ end }}
+            {{ else }}
+              {{ $normalized := path.Clean (strings.TrimPrefix "media/" (strings.TrimPrefix "assets/" (strings.TrimPrefix "./" (strings.TrimPrefix "/" $image)))) }}
+              {{ if and $normalized (ne $normalized ".") }}
+                {{ with $page }}{{ $image_resource = (.Resources.ByType "image").GetMatch $normalized }}{{ end }}
+                {{ if not $image_resource }}{{ $image_resource = resources.Get (path.Join "media" $normalized) }}{{ end }}
+                {{ if not $image_resource }}{{ $image_url = printf "/media/%s" $normalized }}{{ end }}
+              {{ end }}
+            {{ end }}
+            {{ if $image_resource }}
+              {{ if reflect.IsImageResourceProcessable $image_resource }}
+                {{ $thumb := $image_resource.Fill "160x160 Center webp" }}
+                {{ $graphic = printf "<img src=\"%s\" alt=\"%s\" class=\"w-full h-full object-cover\">" $thumb.RelPermalink ($name | plainify) }}
+              {{ else }}
+                {{ $graphic = printf "<img src=\"%s\" alt=\"%s\" class=\"w-full h-full object-cover\">" $image_resource.RelPermalink ($name | plainify) }}
+              {{ end }}
+            {{ else if $image_url }}
+              {{ $graphic = printf "<img src=\"%s\" alt=\"%s\" class=\"w-full h-full object-cover\">" ($image_url | relURL) ($name | plainify) }}
+            {{ end }}
+          {{ end }}
+          {{ if and (not $graphic) $icon }}
+            {{ $graphic = partial "functions/get_icon" (dict "name" $icon "attributes" "class=\"w-7 h-7 text-white\"") }}
+          {{ end }}
+
+          {{ $item_link := "" }}
+          {{ $item_target := "" }}
+          {{ if $cta_url }}
+            {{ $item_link = $cta_url }}
+            {{ $item_scheme := (urls.Parse $item_link).Scheme }}
+            {{ if not $item_scheme }}
+              {{ if not (hasPrefix $item_link "#") }}{{ $item_link = $item_link | relLangURL }}{{ end }}
+            {{ else if in (slice "http" "https") $item_scheme }}
+              {{ $item_target = "target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+          {{ end }}
+
+          <div class="h-full bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-5 flex gap-4 items-start">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br {{ $gradient }} overflow-hidden flex items-center justify-center">
+              {{ $graphic | safeHTML }}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2 mb-1">
+                <h3 class="text-base font-bold text-gray-900 dark:text-white leading-snug">
+                  {{ if $item_link }}
+                  <a href="{{ $item_link | safeURL }}" {{ $item_target | safeHTMLAttr }} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{{ $name }}</a>
+                  {{ else }}
+                  {{ $name }}
+                  {{ end }}
+                </h3>
+                {{ with $status }}
+                <span class="flex-shrink-0 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 text-[11px] font-semibold rounded-full
+                  {{ if eq . "active" }}text-green-600 dark:text-green-400
+                  {{ else if eq . "emerging" }}text-yellow-600 dark:text-yellow-400
+                  {{ else if eq . "planning" }}text-blue-600 dark:text-blue-400{{ end }}">{{ . | title }}</span>
+                {{ end }}
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ $description | $page.RenderString }}</p>
+              {{ with $topics }}
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                {{ range first 3 . }}
+                <span class="inline-block px-2 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-[11px] rounded">{{ . }}</span>
+                {{ end }}
+                {{ if gt (len .) 3 }}
+                <span class="inline-block px-2 py-0.5 text-gray-500 dark:text-gray-400 text-[11px]">+{{ sub (len .) 3 }} more</span>
+                {{ end }}
+              </div>
+              {{ end }}
+              {{ if and $item_link $cta_text_item }}
+              <a href="{{ $item_link | safeURL }}" {{ $item_target | safeHTMLAttr }} class="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium text-sm">
+                {{ $cta_text_item }}
+                {{ partial "functions/get_icon" (dict "name" "hero/arrow-right" "attributes" "class=\"ml-1 w-4 h-4\"") }}
+              </a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    {{ if and $cta_link $cta_text }}
+      {{ $cta_scheme := (urls.Parse $cta_link).Scheme }}
+      {{ $cta_target := "" }}
+      {{ if not $cta_scheme }}
+        {{ $cta_link = $cta_link | relLangURL }}
+      {{ else if in (slice "http" "https") $cta_scheme }}
+        {{ $cta_target = "target=\"_blank\" rel=\"noopener\"" }}
+      {{ end }}
+      <div class="mt-10 text-center">
+        <a href="{{ $cta_link | safeURL }}" {{ $cta_target | safeHTMLAttr }}
+           class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow hover:shadow-lg transition-all duration-300">
+          {{ $cta_text }}
+          {{ with $cta_icon }}{{ partial "functions/get_icon" (dict "name" . "attributes" "class=\"ml-2 w-5 h-5\"") }}{{ end }}
+        </a>
+      </div>
+    {{ end }}
+
+  </div>
+</div>

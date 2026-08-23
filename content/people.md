@@ -3,33 +3,26 @@ title: People
 type: landing
 sections:
 
-  - block: hero
-    content:
-      title: ''
-      text: ''
-    design:
-      background:
-        image:
-          filename: lab/lab-photo-2026.jpg
-          filters:
-            brightness: 0.95
-          parallax: false
-          position: center
-          size: cover
-      spacing:
-        padding: ['0', '0', '0', '0']
-      css_class: 'h-64 md:h-80'
-
   - block: markdown
     content:
       title: The Lab
       text: |
+        <div style="max-width:640px;margin:0 auto 1.5rem">
+          <img src="/media/lab/lab-photo-2026.jpg" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12)">
+        </div>
+
         **Shechter Lab, 2026.** From left: Jacob Roth, Haeun Kim, Aliza Silverstein, Liana Valin, Subray Hegde, David Shechter, Isaac Kraz. Not pictured: additional collaborators and rotation students.
 
-        [Lab History →](/history)
+        [Lab History →](/history) &ensp;|&ensp; [Photo Archive →](/lab-life/archive)
+
+        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin-top:1.5rem;font-size:0.95rem;font-weight:600">
+          <a href="#current">Current Lab Members</a>
+          <a href="#alumni">Alumni</a>
+          <a href="#rotation-summer-students">Rotation &amp; Summer Students</a>
+        </nav>
     design:
       spacing:
-        padding: ['1.5rem', '0', '0.5rem', '0']
+        padding: ['2rem', '0', '0.5rem', '0']
 
   - block: team-showcase
     id: current

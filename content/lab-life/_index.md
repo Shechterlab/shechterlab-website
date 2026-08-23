@@ -6,7 +6,7 @@ sections:
     content:
       title: Lab Life
       text: |
-        A look at day-to-day science in Forchheimer 304.
+        A look at day-to-day science in Forchheimer 304. For photos from prior years, see the [Photo Archive →](/lab-life/archive).
 
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:1.5rem">
           <figure>
