@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: carola-wilczek
+weight: 10
+name:
+  display: "Carola Wilczek, PhD"
+  family: Wilczek
+role: "Postdoctoral Fellow, 2010–2013"
+affiliations:
+  - name: "Now: Application Specialist, Sartorius Stedim Biotech"
+user_groups:
+  - Alumni

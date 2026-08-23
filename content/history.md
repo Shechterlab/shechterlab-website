@@ -38,21 +38,21 @@ sections:
 
         Lorton and Shechter publish a review on arginine methylation in *Cellular and Molecular Life Sciences*. Wang, Onikubo, and Shechter publish chromatin protocols in *Cold Spring Harbor Protocols*. Warren et al. publish on intramolecular regulation of nucleoplasmin.
 
-        ## 2017
+        ## 2017–2018
 
-        Warren and Shechter publish "Fly Fishing for Histones: Catch and Release by Histone Chaperone Intrinsically Disordered Regions and Acidic Stretches" in the *Journal of Molecular Biology* — selected for the cover. Burgos et al. publish the EZ-MTase methyltransferase activity assay. Shannon Wilczek graduates and joins Sartorius.
+        Warren and Shechter publish "Fly Fishing for Histones: Catch and Release by Histone Chaperone Intrinsically Disordered Regions and Acidic Stretches" in the *Journal of Molecular Biology* — selected for the cover. Burgos et al. publish the EZ-MTase methyltransferase activity assay. Christopher Warren graduates and joins Merck.
 
         ## 2014–2016
 
-        Emmanuel Burgos joins as Instructor and Research Associate. Lab expands into Xenopus developmental chromatin biology, nucleoplasmin structure-function, and early PRMT5 mechanistic work. *(Add milestones here.)*
+        Emmanuel Burgos joins as Instructor and Research Associate. Hongshan Chen joins as a postdoctoral fellow. Lab expands into Xenopus developmental chromatin biology, nucleoplasmin structure-function, and early PRMT5 mechanistic work. *(Add milestones here.)*
 
         ## 2013
 
-        PRMT5-MEP50 structural and biochemical paper published. Wei-Lin Wang and Takashi Onikubo join as postdoctoral fellows.
+        PRMT5-MEP50 structural and biochemical paper published. Wei-Lin Wang graduates from his postdoctoral fellowship and joins CureVac.
 
         ## 2010–2012
 
-        Lab founded. David Shechter joins Einstein as Assistant Professor in the Department of Biochemistry, coming from a postdoctoral fellowship with C. David Allis at The Rockefeller University. Early work focuses on histone chaperone biochemistry, *Xenopus laevis* egg extract chromatin assembly, and the relationship between histone modifications and DNA replication. *(Early trainees and first papers — to be filled in.)*
+        Lab founded. David Shechter joins Einstein as Assistant Professor in the Department of Biochemistry, coming from a postdoctoral fellowship with C. David Allis at The Rockefeller University. Early work focuses on histone chaperone biochemistry, *Xenopus laevis* egg extract chromatin assembly, and the relationship between histone modifications and DNA replication. Carola Wilczek and Wei-Lin Wang join as postdoctoral fellows; Takashi Onikubo joins as a graduate student. *(Early papers — to be filled in.)*
 
         ---
 

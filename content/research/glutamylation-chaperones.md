@@ -2,6 +2,8 @@
 title: 'Histone Chaperones, Glutamylation, and Intrinsically Disordered Regions'
 date: 2026-06-28
 summary: 'How histone chaperones use acidic disordered regions to impersonate DNA — and how glutamylation tunes that trick, in normal biology and in leukemia.'
+image:
+  filename: "research/PLACEHOLDER-glutamylation-figure.jpg"
 ---
 
 Histones are among the most positively charged proteins in the cell, and DNA is a dense ribbon of negative charge. Getting the two together in an orderly way — without everything clumping into a mess — is the job of **histone chaperones**. The chaperones we study (nucleoplasmin/NPM2, NPM1, Nap1, PTMA) all share a striking feature: long, floppy, intensely acidic stretches with no fixed structure. These acidic disordered regions work by *impersonating DNA* — they present a negatively charged surface that histones grab onto, so the chaperone can hold histones safely and hand them off when chromatin is being built.

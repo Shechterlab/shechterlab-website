@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: joseph-d.-deangelo
+weight: 2
+name:
+  display: "Joseph D. DeAngelo, MD-PhD"
+  family: DeAngelo
+role: "MSTP Student, 2020–2025"
+affiliations:
+  - name: "Now: PSTP, Massachusetts General Hospital"
+user_groups:
+  - Alumni

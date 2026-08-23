@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: hongshan-chen
+weight: 8
+name:
+  display: "Hongshan Chen, PhD"
+  family: Chen
+role: "Postdoctoral Fellow, 2016–2017"
+affiliations:
+  - name: "Now: Professor, Nanjing Medical University"
+user_groups:
+  - Alumni

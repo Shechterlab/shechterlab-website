@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: christopher-warren
+weight: 5
+name:
+  display: "Christopher Warren, PhD"
+  family: Warren
+role: "Graduate Student, 2013–2018"
+affiliations:
+  - name: "Now: Merck"
+user_groups:
+  - Alumni

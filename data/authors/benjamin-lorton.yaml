@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: benjamin-lorton
+weight: 4
+name:
+  display: "Benjamin M. Lorton, PhD"
+  family: Lorton
+role: "Graduate Student & Postdoctoral Fellow, 2015–2023"
+affiliations:
+  - name: "Now: Drug Design Consultant"
+user_groups:
+  - Alumni
