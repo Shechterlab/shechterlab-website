@@ -38,6 +38,61 @@ sections:
 
         Purified recombinant proteins (PRMT5-MEP50 complex, nucleoplasmin, NPM1, NAP1, and others) are shared with collaborators on request.
 
+        ## Deposited structures
+
+        Interactive viewers for structures the lab has deposited to the [PDB](https://www.rcsb.org). Each links through to its full RCSB entry (sequence, experimental data, citation) below the viewer.
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:1.5rem">
+          <div>
+            <div id="pdb-viewer-4g56" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/4G56">4G56 ↗</a></p>
+          </div>
+          <div>
+            <div id="pdb-viewer-6w4l" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6W4L">6W4L ↗</a></p>
+          </div>
+          <div>
+            <div id="pdb-viewer-6oi0" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI0">6OI0 ↗</a></p>
+          </div>
+          <div>
+            <div id="pdb-viewer-6oi1" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI1">6OI1 ↗</a></p>
+          </div>
+          <div>
+            <div id="pdb-viewer-6oi2" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI2">6OI2 ↗</a></p>
+          </div>
+          <div>
+            <div id="pdb-viewer-6oi3" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI3">6OI3 ↗</a></p>
+          </div>
+          <div>
+            <div id="pdb-viewer-6ofz" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OFZ">6OFZ ↗</a></p>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdbe-molstar@latest/build/pdbe-molstar-light.css">
+        <script src="https://cdn.jsdelivr.net/npm/pdbe-molstar@latest/build/pdbe-molstar-plugin.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          if (typeof PDBeMolstarPlugin === 'undefined') return;
+          ['4g56','6w4l','6oi0','6oi1','6oi2','6oi3','6ofz'].forEach(function (id) {
+            var el = document.getElementById('pdb-viewer-' + id);
+            if (!el) return;
+            new PDBeMolstarPlugin().render(el, {
+              moleculeId: id,
+              bgColor: { r: 248, g: 250, b: 252 },
+              hideControls: true,
+              hideCanvasControls: ['selection', 'animation', 'controls-info', 'controls-help', 'controls-full-screen'],
+              sequencePanel: false,
+              landscape: false
+            });
+          });
+        });
+        </script>
+
         ## Key tools we rely on
 
         | Tool | Use |
