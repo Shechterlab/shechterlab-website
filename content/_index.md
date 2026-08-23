@@ -262,27 +262,14 @@ sections:
       view: citation
 
 
-  - block: logos
+  - block: markdown
     id: funders
     content:
       title: Supported by
-      subtitle: ''
-      items:
-        - name: NIH / NIGMS
-          url: https://www.nigms.nih.gov
-        - name: NIH / NIA
-          url: https://www.nia.nih.gov
-        - name: ALS Therapy Development Institute
-          url: https://www.als.net
-        - name: Hevolution Foundation
-          url: https://hevolution.com
-        - name: Irma T. Hirschl Trust
-          url: https://irmatrust.org
-        - name: Montefiore Einstein Cancer Center
-          url: https://einsteinmed.edu/centers/cancer/
-        - name: Einstein 2030 Fund
-          url: https://einsteinmed.edu
+      text: |
+        [NIH / NIGMS](https://www.nigms.nih.gov) &ensp;·&ensp; [NIH / NIA](https://www.nia.nih.gov) &ensp;·&ensp; [ALS Therapy Development Institute](https://www.als.net) &ensp;·&ensp; [Hevolution Foundation](https://hevolution.com) &ensp;·&ensp; [Irma T. Hirschl Trust](https://irmatrust.org) &ensp;·&ensp; [Montefiore Einstein Comprehensive Cancer Center](https://einsteinmed.edu/centers/cancer/) &ensp;·&ensp; [Einstein 2030 Fund](https://einsteinmed.edu)
     design:
+      css_class: "text-center"
       spacing:
         padding: ["3rem", 0, "3rem", 0]
 
@@ -292,7 +279,7 @@ sections:
       title: Collaborators
       subtitle: ''
       text: |
-        We work closely with [ALS Therapy Development Institute](https://www.als.net) (primary partner on C9orf72 ALS) and with colleagues at Einstein — [Matthew Gamble](https://einsteinmed.edu/faculty/gamble) (chromatin), [Charles Query](https://einsteinmed.edu/faculty/query) (splicing), [Simone Sidoli](https://einsteinmed.edu/faculty/sidoli) (proteomics), [Kira Gritsman](https://einsteinmed.edu/faculty/gritsman) (leukemia), [Seiya Kitamura](https://einsteinmed.edu/faculty/kitamura) (medicinal chemistry), and [Steven Almo](https://einsteinmed.edu/faculty/almo) (structural biology) — as well as [Jie Jiang](https://www.emory.edu) (Emory, ALS) and [David Cowburn](https://einsteinmed.edu/faculty/cowburn) (NMR).
+        We work closely with [ALS Therapy Development Institute](https://www.als.net) (primary partner on C9orf72 ALS) and with colleagues at Einstein — [Matthew Gamble](https://einsteinmed.edu/faculty/11838/matthew-gamble) (chromatin), [Charles Query](https://einsteinmed.edu/faculty/6996/charles-c-query) (splicing), [Simone Sidoli](https://einsteinmed.edu/faculty/16080/simone-sidoli) (proteomics), [Kira Gritsman](https://einsteinmed.edu/faculty/14128/kira-gritsman) (leukemia), [Seiya Kitamura](https://einsteinmed.edu/faculty/17244/seiya-kitamura) (medicinal chemistry), and [Steven Almo](https://einsteinmed.edu/faculty/7091/steven-c-almo) (structural biology) — as well as [Jie Jiang](https://www.emory.edu) (Emory, ALS) and [David Cowburn](https://einsteinmed.edu/faculty/12344/david-cowburn) (NMR).
     design:
       spacing:
         padding: ["3rem", 0, "2rem", 0]
