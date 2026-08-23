@@ -24,9 +24,18 @@ sections:
 
         ## Data
 
-        Published datasets are deposited to GEO and linked in the relevant publications. Direct links to selected datasets:
+        Published datasets are deposited to [GEO](https://www.ncbi.nlm.nih.gov/geo/) and linked in the relevant publications.
 
-        - Chen et al. 2017: [GSE80182](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE80182)
+        | Accession | Series |
+        |---|---|
+        | [GSE333723](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE333723) | The GNMT N-terminus Couples Folate Feedback to Methyl-donor Homeostasis |
+        | [GSE275220](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275220) | Productive mRNA Chromatin Escape is Promoted by PRMT5 Methylation of SNRPB — PRO-seq, PRMT inhibition (15m/3hr) |
+        | [GSE275217](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275217) | Productive mRNA Chromatin Escape is Promoted by PRMT5 Methylation of SNRPB — PRO-seq, PRMT inhibition + dexamethasone |
+        | [GSE275215](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275215) | Productive mRNA Chromatin Escape is Promoted by PRMT5 Activity — cytoplasm/nucleoplasm/chromatin fractions |
+        | [GSE275214](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275214) | Productive mRNA Chromatin Escape is Promoted by PRMT5 Activity — mRNA-seq, PRMT5/pICln/RIOK1/CoPR5 knockdown |
+        | [GSE163421](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163421) | Type I and II PRMTs Inversely Regulate Post-Transcriptional Intron Detention (SKaTER-seq) |
+        | [GSE158625](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE158625) | Transcriptomic and Proteomic Regulation through Abundant, Dynamic, and Independent Arginine Methylation by Type I and Type II PRMTs |
+        | [GSE80182](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE80182) | A TGFβ-PRMT5-MEP50 Axis Regulates Cancer Cell Invasion (Chen et al. 2017) |
 
         Additional datasets from recent papers are linked in each publication entry.
 
@@ -96,6 +105,29 @@ sections:
           });
         });
         </script>
+
+        ## Deposited EM maps
+
+        Cryo-EM reconstructions of nucleoplasmin (egg, oocyte, and recombinant forms) deposited to the [EMDB](https://www.ebi.ac.uk/emdb).
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:1.5rem">
+          <div>
+            <iframe src="https://molstar.org/viewer/?emdb=EMD-2866" style="width:100%;height:240px;border:0;border-radius:8px;overflow:hidden" loading="lazy" title="EMD-2866"></iframe>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.ebi.ac.uk/emdb/EMD-2866">EMD-2866 ↗</a></p>
+          </div>
+          <div>
+            <iframe src="https://molstar.org/viewer/?emdb=EMD-2868" style="width:100%;height:240px;border:0;border-radius:8px;overflow:hidden" loading="lazy" title="EMD-2868"></iframe>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.ebi.ac.uk/emdb/EMD-2868">EMD-2868 ↗</a></p>
+          </div>
+          <div>
+            <iframe src="https://molstar.org/viewer/?emdb=EMD-2869" style="width:100%;height:240px;border:0;border-radius:8px;overflow:hidden" loading="lazy" title="EMD-2869"></iframe>
+            <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.ebi.ac.uk/emdb/EMD-2869">EMD-2869 ↗</a></p>
+          </div>
+        </div>
+
+        ## Molecular dynamics simulations
+
+        *(Links to the lab's deposited MD simulation data — placeholder pending final repository/accession details.)*
 
         ## Key tools we rely on
 
