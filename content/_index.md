@@ -11,7 +11,7 @@ sections:
     id: about
     content:
       title: |
-        Decoding the molecular biochemistry behind cancer and ALS
+        Decoding the biochemistry behind cancer and ALS
       text: "The Shechter Lab at Albert Einstein College of Medicine studies how chromatin and RNA-processing proteins are chemically modified — and how that goes wrong in NPM1-mutant leukemia and C9orf72 ALS."
       primary_action:
         text: Explore Research
