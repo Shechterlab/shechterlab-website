@@ -4,3 +4,4 @@ resources/
 .hugo_build.lock
 *.lock
 err.log
+hugo_stats.json
