@@ -1,11 +1,11 @@
 ---
 title: "Productive mRNA Chromatin Escape is Promoted by PRMT5 Activity"
 authors:
-- "Joseph D. DeAngelo"
-- "Maxim I. Maron"
-- "Jacob S. Roth"
+- "Joseph DeAngelo"
+- "Maxim Maron"
+- "Jacob Roth"
 - "Subray Hegde"
-- "Aliza M. Silverstein"
+- "Aliza Silverstein"
 - "Varun Gupta"
 - "Stephanie Stransky"
 - "Joel Basken"

@@ -1,9 +1,9 @@
 ---
 title: "A Binary Arginine Methylation Switch on Histone H3 Arginine 2 Regulates Its Interaction with WDR5"
 authors:
-- "Benjamin M. Lorton"
+- "Benjamin Lorton"
 - "Rajesh K. Harijan"
-- "Emmanuel S. Burgos"
+- "Emmanuel Burgos"
 - "Jeffrey B. Bonanno"
 - "Steven C. Almo"
 - me

@@ -49,17 +49,17 @@ a[class*="group/link"]:hover {
   inset: 0;
   background: linear-gradient(160deg, rgba(21, 94, 117, 0.55), rgba(15, 59, 71, 0.78));
 }
-#about a[href="#publications"] {
+#about a[href="/publications"] {
   border: 1.5px solid var(--color-accent);
   border-radius: 0.375rem;
   padding: 0.5rem 0.875rem;
   transition: background-color 0.2s, color 0.2s;
 }
-#about a[href="#publications"]:hover {
+#about a[href="/publications"]:hover {
   background-color: var(--color-accent);
   color: #fff !important;
 }
-#about a[href="#publications"]:hover span[aria-hidden] {
+#about a[href="/publications"]:hover span[aria-hidden] {
   color: #fff;
 }
 
@@ -86,6 +86,24 @@ a[class*="group/link"]:hover {
    Collaborators / Funding): same offset fix. */
 #research-areas, #disease-focus, #collaborators, #funding {
   scroll-margin-top: 6rem;
+}
+
+/* Navbar: below the "lg" breakpoint the hamburger menu and the desktop
+   "Contact" button were rendering at the same time with no gap between
+   them (they looked squashed together, sometimes overlapping). The
+   desktop CTA is meant to be lg-only ("hidden lg:inline-block") but was
+   still showing below that breakpoint, so force it explicitly and give
+   the remaining icon cluster breathing room next to the hamburger. */
+@media (max-width: 1023.98px) {
+  #site-header .navbar > div.order-1.ml-auto a[href="/contact"] {
+    display: none !important;
+  }
+}
+#site-header .navbar > div.order-1.ml-auto {
+  gap: 0.5rem;
+}
+#site-header .navbar > label[for="nav-toggle"] {
+  margin-left: 0.5rem;
 }
 
 /* Subtle scroll-in for page sections (not the first/hero section on a page).

@@ -5,7 +5,7 @@ authors:
 - "Omar Muñoz"
 - "Kyoohyun Kim"
 - "Carsten Hoege"
-- "Benjamin M. Lorton"
+- "Benjamin Lorton"
 - "Rainer Nikolay"
 - "Matthew L. Kraushar"
 - me

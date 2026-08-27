@@ -1,10 +1,10 @@
 ---
 title: "Type I and II PRMTs inversely regulate post-transcriptional intron detention through Sm and CHTOP methylation"
 authors:
-- "Maxim I. Maron"
+- "Maxim Maron"
 - "Alyssa D. Casill"
 - "Varun Gupta"
-- "Jacob S. Roth"
+- "Jacob Roth"
 - "Simone Sidoli"
 - "Charles C. Query"
 - "Matthew J. Gamble"

@@ -7,7 +7,7 @@ authors:
 - "Christopher Warren"
 - "Brandon Anson"
 - "Wei-Lin Wang"
-- "Emmanuel S. Burgos"
+- "Emmanuel Burgos"
 - "Sophie E. Ruff"
 - "Jeffrey Shabanowitz"
 - "R. Holland Cheng"

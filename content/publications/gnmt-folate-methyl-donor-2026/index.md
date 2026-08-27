@@ -4,7 +4,7 @@ authors:
 - "Isaac Kraz"
 - "Oi Wei Mak"
 - "Subray Hegde"
-- "Benjamin M. Lorton"
+- "Benjamin Lorton"
 - "Harrison Hector"
 - "Michael K. Broussalian"
 - "Sarah Graff"

@@ -1,7 +1,7 @@
 ---
 title: "Histone H2A and H4 N-terminal tails are positioned by the MEP50 WD repeat protein for efficient methylation by the PRMT5 arginine methyltransferase"
 authors:
-- "Emmanuel S. Burgos"
+- "Emmanuel Burgos"
 - "Carola Wilczek"
 - "Takashi Onikubo"
 - "Jeffrey B. Bonanno"

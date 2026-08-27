@@ -5,7 +5,7 @@ authors:
 - "Mona A. AlQazzaz"
 - "Felipe E. Ciamponi"
 - "Jolene C. Ho"
-- "Maxim I. Maron"
+- "Maxim Maron"
 - "Aiden M. Sababi"
 - "Graham MacLeod"
 - "Moloud Ahmadi"

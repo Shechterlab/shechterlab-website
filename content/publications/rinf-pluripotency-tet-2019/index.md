@@ -8,7 +8,7 @@ authors:
 - "Joun Lee"
 - "Liyang Ma"
 - "Stephanie Chrysanthou"
-- "Benjamin M. Lorton"
+- "Benjamin Lorton"
 - "Ales Cvekl"
 - me
 - "Deyou Zheng"
