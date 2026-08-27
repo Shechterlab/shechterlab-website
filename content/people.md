@@ -7,6 +7,12 @@ sections:
     content:
       title: The Lab
       text: |
+        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin:0.5rem 0 1.5rem;font-size:0.95rem;font-weight:600">
+          <a href="#current">Current Lab Members</a>
+          <a href="#alumni">Alumni</a>
+          <a href="#rotation-summer-students">Rotation &amp; Summer Students</a>
+        </nav>
+
         <div style="max-width:640px;margin:0 auto 1.5rem">
           <img src="/media/lab/lab-photo-2026.jpg" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12)">
         </div>
@@ -14,12 +20,6 @@ sections:
         **Shechter Lab, 2026.** From left: Jacob Roth, Haeun Kim, Aliza Silverstein, Liana Valin, Subray Hegde, David Shechter, Isaac Kraz. Not pictured: additional collaborators and rotation students.
 
         [Lab History →](/history) &ensp;|&ensp; [Photo Archive →](/lab-life/archive)
-
-        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin-top:1.5rem;font-size:0.95rem;font-weight:600">
-          <a href="#current">Current Lab Members</a>
-          <a href="#alumni">Alumni</a>
-          <a href="#rotation-summer-students">Rotation &amp; Summer Students</a>
-        </nav>
     design:
       spacing:
         padding: ['2rem', '0', '0.5rem', '0']
@@ -58,15 +58,15 @@ sections:
     content:
       title: Rotation & Summer Students
       text: |
-        Short-term trainees who have worked in the lab, listed by name only.
+        Short-term trainees who have worked in the lab, listed by name and year only.
 
-        **College / undergraduate summer students**
+        **Rotation students**
 
-        *(Names to be added.)*
+        Paromita Mukherjee (2010) &ensp;·&ensp; Sara Rouhanifard (2010) &ensp;·&ensp; Jason Ford (2010) &ensp;·&ensp; Penelope Ruiz (2012) &ensp;·&ensp; Yizhou Zhu (2012) &ensp;·&ensp; Michael Lesser (2012) &ensp;·&ensp; Sean Healton (2013) &ensp;·&ensp; Chayim Goldberg (2013) &ensp;·&ensp; Karishma Smart (2015) &ensp;·&ensp; Prasoon Jaya (2018) &ensp;·&ensp; Harmony Ketchum (2019) &ensp;·&ensp; Victor Paulino (2019) &ensp;·&ensp; Michael Broussalian (2024) &ensp;·&ensp; Samantha Ciervo (MSTP rotation, 2024) &ensp;·&ensp; Noah Jacobs (MSTP rotation, 2025) &ensp;·&ensp; Shanivi Srikonda (MSTP rotation, 2026)
 
-        **High school summer students**
+        **Undergraduate and high school trainees**
 
-        *(Names to be added.)*
+        Rebecca Mazur (High school, 2010–2011) &ensp;·&ensp; Paul Bailey (Medical student, 2012) &ensp;·&ensp; Elizabeth Goldberger (SURP, 2012) &ensp;·&ensp; Sophie Ruff (SURP, 2013) &ensp;·&ensp; Jacob Shteingart (High school, 2013) &ensp;·&ensp; Alexandru Barbulescu (SURP, 2015) &ensp;·&ensp; Ahava Muskat (SURP, 2015) &ensp;·&ensp; Anniya Gu (SURP, 2016) &ensp;·&ensp; Adam Haimowitz (SURP, 2017) &ensp;·&ensp; Rachel Fortinsky (High school, 2017) &ensp;·&ensp; Neda Shokrian (SURP, 2018) &ensp;·&ensp; Philip Nagler (SURP, 2019) &ensp;·&ensp; Jonathan Caradonna (SURP, 2022) &ensp;·&ensp; Abdulrahman Altairi (BEYOND ALBERT, 2023) &ensp;·&ensp; Brianna Webber (Montefiore Einstein HS program, 2023) &ensp;·&ensp; Habibatou Diallo (BEYOND ALBERT, 2024) &ensp;·&ensp; Aby Sylla (BEYOND ALBERT, 2025)
     design:
       spacing:
         padding: ['0.5rem', '0', '2rem', '0']

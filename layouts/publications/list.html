@@ -16,7 +16,7 @@
 
 <div class="max-w-prose mx-auto flex justify-center">
   <article class="prose prose-slate lg:prose-xl dark:prose-invert">
-    <h1 class="lg:text-6xl">{{ .Title }}</h1>
+    <h1 class="lg:text-4xl">{{ .Title }}</h1>
     {{ .Content }}
   </article>
 </div>
@@ -45,11 +45,11 @@
 <div class="flex flex-col items-center">
   <div class="w-full max-w-4xl px-4">
 
-    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-8 text-sm font-medium">
+    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 mb-8 text-base font-medium">
       {{ if gt (len $preprints) 0 }}<a href="#preprints" class="text-primary-600 dark:text-primary-400 hover:underline">Preprints</a>{{ end }}
       {{ if gt (len $labPapers) 0 }}<a href="#lab-papers" class="text-primary-600 dark:text-primary-400 hover:underline">Lab Papers</a>{{ end }}
-      {{ if gt (len $coauthored) 0 }}<a href="#coauthored-work" class="text-primary-600 dark:text-primary-400 hover:underline">Co-authored Work</a>{{ end }}
       {{ if gt (len $reviews) 0 }}<a href="#reviews-commentary" class="text-primary-600 dark:text-primary-400 hover:underline">Reviews &amp; Commentary</a>{{ end }}
+      {{ if gt (len $coauthored) 0 }}<a href="#coauthored-work" class="text-primary-600 dark:text-primary-400 hover:underline">Co-authored Work</a>{{ end }}
     </nav>
 
     {{ if gt (len $preprints) 0 }}
@@ -72,10 +72,10 @@
     {{ end }}
     {{ end }}
 
-    {{ if gt (len $coauthored) 0 }}
-    <h2 id="coauthored-work" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Co-authored Work</h2>
+    {{ if gt (len $reviews) 0 }}
+    <h2 id="reviews-commentary" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Reviews &amp; Commentary</h2>
     {{ $currentYear := "" }}
-    {{ range $coauthored }}
+    {{ range $reviews }}
       {{ $year := .Date.Format "2006" }}
       {{ if ne $year $currentYear }}
         {{ $currentYear = $year }}
@@ -85,10 +85,10 @@
     {{ end }}
     {{ end }}
 
-    {{ if gt (len $reviews) 0 }}
-    <h2 id="reviews-commentary" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Reviews &amp; Commentary</h2>
+    {{ if gt (len $coauthored) 0 }}
+    <h2 id="coauthored-work" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Co-authored Work</h2>
     {{ $currentYear := "" }}
-    {{ range $reviews }}
+    {{ range $coauthored }}
       {{ $year := .Date.Format "2006" }}
       {{ if ne $year $currentYear }}
         {{ $currentYear = $year }}

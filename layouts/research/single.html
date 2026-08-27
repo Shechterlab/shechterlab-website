@@ -28,14 +28,19 @@
 
       {{ $figure := partial "functions/get_featured_image.html" . }}
       {{ with $figure }}
-      <div class="mt-6" style="max-width:520px">
+      <div class="mt-6 mx-auto" style="max-width:520px">
         {{ if reflect.IsImageResourceProcessable . }}
           {{ $fig := .Fit "1040x1040" }}
-          <img src="{{ $fig.RelPermalink }}" width="{{ $fig.Width }}" height="{{ $fig.Height }}" loading="lazy"
-               class="rounded-xl shadow-md" alt="{{ $.Title | plainify }}">
+          <a href="{{ .RelPermalink }}" target="_blank" rel="noopener">
+            <img src="{{ $fig.RelPermalink }}" width="{{ $fig.Width }}" height="{{ $fig.Height }}" loading="lazy"
+                 class="rounded-xl shadow-md mx-auto" alt="{{ $.Title | plainify }}">
+          </a>
         {{ else }}
-          <img src="{{ .RelPermalink }}" loading="lazy" class="rounded-xl shadow-md" alt="{{ $.Title | plainify }}">
+          <a href="{{ .RelPermalink }}" target="_blank" rel="noopener">
+            <img src="{{ .RelPermalink }}" loading="lazy" class="rounded-xl shadow-md mx-auto" alt="{{ $.Title | plainify }}">
+          </a>
         {{ end }}
+        <p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-1.5">Click to view full size</p>
       </div>
       {{ end }}
 
