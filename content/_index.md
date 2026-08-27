@@ -19,7 +19,7 @@ sections:
         icon: hero/beaker
       secondary_action:
         text: View Publications
-        url: '#publications'
+        url: '/publications'
     design:
       background:
         image:
@@ -36,27 +36,38 @@ sections:
         padding: ['96px', '0', '96px', '0']
       no_padding: true
 
-  - block: stats
+  - block: markdown
+    id: stats
     content:
-      items:
-        - statistic: "16"
-          description: Years at Einstein
-          sub_metric: Joined November 2009 · Department of Biochemistry
-          icon: hero/building-library
-        - statistic: "2"
-          description: Molecular research areas
-          sub_metric: Methylation and RNA processing · Glutamylation and chaperones — spanning 3 disease areas
-          icon: hero/beaker
-        - statistic: "50+"
-          description: Trainees and mentees
-          sub_metric: PhD, MD-PhD, postdoctoral, instructor, rotation, undergraduate, high-school
-          icon: hero/users
-        - statistic: "h = 29"
-          description: Google Scholar
-          sub_metric: 6000+ citations across original research and reviews
-          icon: hero/document-text
+      text: |
+        <div class="stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:80rem;margin:0 auto">
+          <a href="/facilities" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
+            <div style="font-size:2.75rem;font-weight:900;line-height:1">16</div>
+            <div style="margin-top:0.5rem;font-weight:600">Years at Einstein</div>
+            <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">Started November 2009 · Department of Biochemistry</div>
+          </a>
+          <a href="/research" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
+            <div style="font-size:2.75rem;font-weight:900;line-height:1">2</div>
+            <div style="margin-top:0.5rem;font-weight:600">Molecular research areas</div>
+            <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">Methylation and RNA processing · Glutamylation and chaperones — spanning 3 disease areas</div>
+          </a>
+          <a href="/people" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
+            <div style="font-size:2.75rem;font-weight:900;line-height:1">50+</div>
+            <div style="margin-top:0.5rem;font-weight:600">Trainees and mentees</div>
+            <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">PhD, MD-PhD, postdoctoral, instructor, rotation, undergraduate, high-school</div>
+          </a>
+          <a href="https://scholar.google.com/citations?user=Mz9sZUoAAAAJ" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
+            <div style="font-size:2.75rem;font-weight:900;line-height:1">h = 30</div>
+            <div style="margin-top:0.5rem;font-weight:600">Google Scholar</div>
+            <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">6000+ citations across original research and reviews</div>
+          </a>
+        </div>
+        <style>
+          .stat-card, .stat-card * { color: var(--hb-color-foreground, #111827) !important; }
+          .stat-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important; }
+          .stat-card > div:first-child { color: var(--color-primary-600, #0f766e) !important; }
+        </style>
     design:
-      layout: cards
       css_class: "bg-gradient-to-b from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800"
       spacing:
         padding: ["3rem", 0, "3rem", 0]
@@ -206,34 +217,6 @@ sections:
       spacing:
         padding: ["3rem", 0, "3rem", 0]
 
-  - block: features
-    id: values
-    content:
-      title: Lab Values
-      subtitle: How we work
-      text: ''
-      items:
-        - name: Mechanistic Curiosity
-          description: We want to know how things actually work at the molecular level, not just that they happen.
-          icon: hero/magnifying-glass
-        - name: Biochemistry First
-          description: In vitro reconstitution and quantitative enzymology tell us what's mechanistically possible before we interpret what's happening in cells and genomes.
-          icon: hero/beaker
-        - name: Integrative Thinking
-          description: Molecular biology, genomics, structural biology, and metabolomics each catch something the others miss — we use whichever tool answers the question.
-          icon: hero/puzzle-piece
-        - name: Discovery with Purpose
-          description: A new mechanism matters more when it connects to a disease context — cancer, ALS, or aging — where it can eventually be tested.
-          icon: hero/light-bulb
-        - name: Rigor, Reproducibility, and Openness
-          description: Careful experimental design, and data and methods shared openly enough for others to build on.
-          icon: hero/check-badge
-        - name: Mentorship and Growth
-          description: Independence and intellectual risk-taking, supported at every career stage from rotation student to postdoc.
-          icon: hero/users
-    design:
-      css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
-
   - block: collection
     id: projects
     content:
@@ -247,20 +230,6 @@ sections:
       count: 0
     design:
       view: date-title-summary
-
-  - block: collection
-    id: publications
-    content:
-      title: Selected Publications
-      text: 'A curated selection. The full bibliography is available in the [CV](/uploads/shechter-cv-2026.pdf).'
-      filters:
-        folders:
-          - publications
-        exclude_featured: false
-      count: 8
-    design:
-      view: citation
-
 
   - block: markdown
     id: funders
@@ -279,7 +248,7 @@ sections:
       title: Collaborators
       subtitle: ''
       text: |
-        We work closely with [ALS Therapy Development Institute](https://www.als.net) (primary partner on C9orf72 ALS) and with colleagues at Einstein — [Matthew Gamble](https://einsteinmed.edu/faculty/11838/matthew-gamble) (chromatin), [Charles Query](https://einsteinmed.edu/faculty/6996/charles-c-query) (splicing), [Simone Sidoli](https://einsteinmed.edu/faculty/16080/simone-sidoli) (proteomics), [Kira Gritsman](https://einsteinmed.edu/faculty/14128/kira-gritsman) (leukemia), [Seiya Kitamura](https://einsteinmed.edu/faculty/17244/seiya-kitamura) (medicinal chemistry), and [Steven Almo](https://einsteinmed.edu/faculty/7091/steven-c-almo) (structural biology) — as well as [Jie Jiang](https://www.emory.edu) (Emory, ALS) and [David Cowburn](https://einsteinmed.edu/faculty/12344/david-cowburn) (NMR).
+        We work closely with [ALS Therapy Development Institute](https://www.als.net) (primary partner on C9orf72 ALS) and with colleagues at Einstein — [David Cowburn](https://einsteinmed.edu/faculty/12344/david-cowburn) (NMR), [Matthew Gamble](https://einsteinmed.edu/faculty/11838/matthew-gamble) (chromatin), [Charles Query](https://einsteinmed.edu/faculty/6996/charles-c-query) (splicing), [Simone Sidoli](https://einsteinmed.edu/faculty/16080/simone-sidoli) (proteomics), [Kira Gritsman](https://einsteinmed.edu/faculty/14128/kira-gritsman) (leukemia), [Seiya Kitamura](https://einsteinmed.edu/faculty/17244/seiya-kitamura) (chemical biology), and [Steven Almo](https://einsteinmed.edu/faculty/7091/steven-c-almo) (structural biology) — as well as [Jie Jiang](https://cellbio.emory.edu/jiang/index.html) (Emory, ALS).
     design:
       spacing:
         padding: ["3rem", 0, "2rem", 0]

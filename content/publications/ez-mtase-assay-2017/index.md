@@ -1,7 +1,7 @@
 ---
 title: "A simplified characterization of S-adenosyl-l-methionine-consuming enzymes with 1-Step EZ-MTase: a universal and straightforward coupled-assay for in vitro and in vivo setting"
 authors:
-- "Emmanuel S. Burgos"
+- "Emmanuel Burgos"
 - "Ryan O. Walters"
 - "Derek M. Huffman"
 - me

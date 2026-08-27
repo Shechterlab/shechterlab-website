@@ -1,10 +1,10 @@
 ---
 title: "PRMT5 activity sustains histone production to maintain genome integrity"
 authors:
-- "Jacob S. Roth"
-- "Joseph D. DeAngelo"
+- "Jacob Roth"
+- "Joseph DeAngelo"
 - "Dejauwne L. Young"
-- "Maxim I. Maron"
+- "Maxim Maron"
 - "Anjana Saha"
 - "Helena Pinto"
 - "Varun Gupta"

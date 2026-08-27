@@ -1,12 +1,12 @@
 ---
 title: "Independent transcriptomic and proteomic regulation by type I and II protein arginine methyltransferases"
 authors:
-- "Maxim I. Maron"
+- "Maxim Maron"
 - "Stephanie M. Lehman"
 - "Sitaram Gayatri"
-- "Joseph D. DeAngelo"
+- "Joseph DeAngelo"
 - "Subray Hegde"
-- "Benjamin M. Lorton"
+- "Benjamin Lorton"
 - "Yan Sun"
 - "Dina L. Bai"
 - "Simone Sidoli"

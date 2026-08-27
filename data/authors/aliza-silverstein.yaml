@@ -2,7 +2,7 @@ schema: hugoblox/author/v1
 slug: aliza-silverstein
 avatar_filename: aliza-silverstein.jpg
 name:
-  display: Aliza M. Silverstein
+  display: Aliza Silverstein
   family: Silverstein
 role: MD-PhD Student
 bio: MD-PhD graduate student in the Shechter Lab, working on PRMT5-dependent regulation of mRNA chromatin escape and the GRIPP class of chromatin-tethered transcripts.

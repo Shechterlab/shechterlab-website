@@ -49,39 +49,39 @@ sections:
 
         ## Deposited structures
 
-        Interactive viewers for structures the lab has deposited to the [PDB](https://www.rcsb.org). Each links through to its full RCSB entry (sequence, experimental data, citation) below the viewer.
+        Interactive viewers for structures the lab has deposited to the [PDB](https://www.rcsb.org). Click a card to load its 3D viewer (loaded on demand, one at a time, to avoid overloading the browser's graphics context — this is why the old version of this section could go blank). Each links through to its full RCSB entry (sequence, experimental data, citation) below the viewer.
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:1.5rem">
-          <div>
-            <div id="pdb-viewer-4g56" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+        <div class="pdb-viewer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:1.5rem">
+          <div class="pdb-viewer-card" data-pdb-id="4g56">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/4G56">4G56 ↗</a></p>
           </div>
-          <div>
-            <div id="pdb-viewer-12yi" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+          <div class="pdb-viewer-card" data-pdb-id="12yi">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/12YI">12YI ↗</a></p>
           </div>
-          <div>
-            <div id="pdb-viewer-6w4l" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+          <div class="pdb-viewer-card" data-pdb-id="6w4l">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6W4L">6W4L ↗</a></p>
           </div>
-          <div>
-            <div id="pdb-viewer-6oi0" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+          <div class="pdb-viewer-card" data-pdb-id="6oi0">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI0">6OI0 ↗</a></p>
           </div>
-          <div>
-            <div id="pdb-viewer-6oi1" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+          <div class="pdb-viewer-card" data-pdb-id="6oi1">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI1">6OI1 ↗</a></p>
           </div>
-          <div>
-            <div id="pdb-viewer-6oi2" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+          <div class="pdb-viewer-card" data-pdb-id="6oi2">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI2">6OI2 ↗</a></p>
           </div>
-          <div>
-            <div id="pdb-viewer-6oi3" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+          <div class="pdb-viewer-card" data-pdb-id="6oi3">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OI3">6OI3 ↗</a></p>
           </div>
-          <div>
-            <div id="pdb-viewer-6ofz" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc"></div>
+          <div class="pdb-viewer-card" data-pdb-id="6ofz">
+            <div class="pdb-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.rcsb.org/structure/6OFZ">6OFZ ↗</a></p>
           </div>
         </div>
@@ -90,17 +90,22 @@ sections:
         <script src="https://cdn.jsdelivr.net/npm/pdbe-molstar@latest/build/pdbe-molstar-plugin.js"></script>
         <script>
         document.addEventListener('DOMContentLoaded', function () {
-          if (typeof PDBeMolstarPlugin === 'undefined') return;
-          ['4g56','12yi','6w4l','6oi0','6oi1','6oi2','6oi3','6ofz'].forEach(function (id) {
-            var el = document.getElementById('pdb-viewer-' + id);
-            if (!el) return;
-            new PDBeMolstarPlugin().render(el, {
-              moleculeId: id,
-              bgColor: { r: 248, g: 250, b: 252 },
-              hideControls: true,
-              hideCanvasControls: ['selection', 'animation', 'controls-info', 'controls-help', 'controls-full-screen'],
-              sequencePanel: false,
-              landscape: false
+          document.querySelectorAll('.pdb-viewer-card').forEach(function (card) {
+            var slot = card.querySelector('.pdb-viewer-slot');
+            slot.addEventListener('click', function loadViewer() {
+              if (typeof PDBeMolstarPlugin === 'undefined') return;
+              slot.removeEventListener('click', loadViewer);
+              slot.style.cursor = 'default';
+              slot.style.border = 'none';
+              slot.textContent = '';
+              new PDBeMolstarPlugin().render(slot, {
+                moleculeId: card.getAttribute('data-pdb-id'),
+                bgColor: { r: 248, g: 250, b: 252 },
+                hideControls: true,
+                hideCanvasControls: ['selection', 'animation', 'controls-info', 'controls-help', 'controls-full-screen'],
+                sequencePanel: false,
+                landscape: false
+              });
             });
           });
         });
@@ -108,22 +113,41 @@ sections:
 
         ## Deposited EM maps
 
-        Cryo-EM reconstructions of nucleoplasmin (egg, oocyte, and recombinant forms) deposited to the [EMDB](https://www.ebi.ac.uk/emdb).
+        Cryo-EM reconstructions of nucleoplasmin (egg, oocyte, and recombinant forms) deposited to the [EMDB](https://www.ebi.ac.uk/emdb). Click a card to load its viewer, same as above.
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:1.5rem">
-          <div>
-            <iframe src="https://molstar.org/viewer/?emdb=EMD-2866" style="width:100%;height:240px;border:0;border-radius:8px;overflow:hidden" loading="lazy" title="EMD-2866"></iframe>
+          <div class="em-viewer-card" data-emdb-id="EMD-2866">
+            <div class="em-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.ebi.ac.uk/emdb/EMD-2866">EMD-2866 ↗</a></p>
           </div>
-          <div>
-            <iframe src="https://molstar.org/viewer/?emdb=EMD-2868" style="width:100%;height:240px;border:0;border-radius:8px;overflow:hidden" loading="lazy" title="EMD-2868"></iframe>
+          <div class="em-viewer-card" data-emdb-id="EMD-2868">
+            <div class="em-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.ebi.ac.uk/emdb/EMD-2868">EMD-2868 ↗</a></p>
           </div>
-          <div>
-            <iframe src="https://molstar.org/viewer/?emdb=EMD-2869" style="width:100%;height:240px;border:0;border-radius:8px;overflow:hidden" loading="lazy" title="EMD-2869"></iframe>
+          <div class="em-viewer-card" data-emdb-id="EMD-2869">
+            <div class="em-viewer-slot" style="width:100%;height:240px;border-radius:8px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px dashed #cbd5e1"><span style="font-size:0.875rem;color:#64748b">▶ Load viewer</span></div>
             <p style="text-align:center;margin-top:0.4rem;font-size:0.875rem"><a href="https://www.ebi.ac.uk/emdb/EMD-2869">EMD-2869 ↗</a></p>
           </div>
         </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('.em-viewer-card').forEach(function (card) {
+            var slot = card.querySelector('.em-viewer-slot');
+            slot.addEventListener('click', function loadViewer() {
+              slot.removeEventListener('click', loadViewer);
+              slot.style.cursor = 'default';
+              slot.style.border = 'none';
+              slot.innerHTML = '';
+              var iframe = document.createElement('iframe');
+              iframe.src = 'https://molstar.org/viewer/?emdb=' + card.getAttribute('data-emdb-id');
+              iframe.style.cssText = 'width:100%;height:100%;border:0';
+              iframe.title = card.getAttribute('data-emdb-id');
+              slot.appendChild(iframe);
+            });
+          });
+        });
+        </script>
 
         ## Molecular dynamics simulations
 

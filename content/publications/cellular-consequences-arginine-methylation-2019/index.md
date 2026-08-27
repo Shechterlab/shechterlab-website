@@ -1,7 +1,7 @@
 ---
 title: "Cellular consequences of arginine methylation"
 authors:
-- "Benjamin M. Lorton"
+- "Benjamin Lorton"
 - me
 date: "2019-08-01T00:00:00Z"
 publishDate: "2019-08-01T00:00:00Z"

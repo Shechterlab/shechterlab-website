@@ -4,7 +4,7 @@ authors:
 - "Ryan O. Walters"
 - "Esperanza Arias"
 - "Antonio Diaz"
-- "Emmanuel S. Burgos"
+- "Emmanuel Burgos"
 - "Fangxia Guan"
 - "Simoni Tiano"
 - "Kai Mao"

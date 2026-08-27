@@ -1,7 +1,7 @@
 ---
 title: "Glutamylation of Npm2 and Nap1 acidic disordered regions increases DNA mimicry and histone chaperone efficiency"
 authors:
-- "Benjamin M. Lorton"
+- "Benjamin Lorton"
 - "Christopher Warren"
 - "Humaira Ilyas"
 - "Prithviraj Nandigrami"
