@@ -7,13 +7,14 @@
   role, affiliations, bio, and links, then a list of the person's
   authored content below. It resolves `education` and `interests` into
   the profile dict (see functions/get_author_profile.html) but never
-  actually displays them. This override adds three optional sections
+  actually displays them. This override adds four optional sections
   between bio and the content list: Interests (bullet list), Education
-  (degree — institution, year), and Teaching & Service — the last one
-  reads a `teaching:` list directly from data/authors/<slug>.yaml
-  (fields: title, detail, dates), since that field isn't part of the
-  vendored profile schema at all. Only David's profile sets it today;
-  any author can use it.
+  (degree — institution, year), Service, and Teaching — the last two
+  read `service:`/`teaching:` lists directly from
+  data/authors/<slug>.yaml (fields: title, detail, dates, url — url is
+  optional and turns the title into a link), since those fields aren't
+  part of the vendored profile schema at all. Only David's profile sets
+  them today; any author can use them.
   If Hugo Blox Kit changes term.html upstream, this override will NOT
   pick up those changes automatically.
 */}}
@@ -128,13 +129,28 @@
   </div>
   {{ end }}
 
-  {{ with $rawData.teaching }}
+  {{ with $rawData.service }}
   <div class="mt-8 max-w-3xl">
-    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Teaching &amp; Service</h2>
+    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Service</h2>
     <ul class="space-y-2">
       {{ range . }}
       <li class="text-neutral-700 dark:text-neutral-300">
-        <span class="font-semibold">{{ .title }}</span>
+        {{ if .url }}<a href="{{ .url }}" class="font-semibold underline">{{ .title }}</a>{{ else }}<span class="font-semibold">{{ .title }}</span>{{ end }}
+        {{ with .detail }} — {{ . }}{{ end }}
+        {{ with .dates }}<span class="text-neutral-500 dark:text-neutral-400"> ({{ . }})</span>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ with $rawData.teaching }}
+  <div class="mt-8 max-w-3xl">
+    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Teaching</h2>
+    <ul class="space-y-2">
+      {{ range . }}
+      <li class="text-neutral-700 dark:text-neutral-300">
+        {{ if .url }}<a href="{{ .url }}" class="font-semibold underline">{{ .title }}</a>{{ else }}<span class="font-semibold">{{ .title }}</span>{{ end }}
         {{ with .detail }} — {{ . }}{{ end }}
         {{ with .dates }}<span class="text-neutral-500 dark:text-neutral-400"> ({{ . }})</span>{{ end }}
       </li>

@@ -41,23 +41,27 @@ education:
   - degree: BS in Biochemistry
     institution: Cornell University
     end: "1995-05-01"
-teaching:
-  - title: "Course Director, Gene Expression: Beyond the Double Helix"
-    detail: "5-credit core PhD/MSTP graduate course, annual Block II"
-    dates: "2012–present"
-  - title: "Lecturer, Biochemistry"
-    detail: "3+ lectures annually"
-    dates: "2009–present"
-  - title: "Discussion group facilitator, Chemical Biology"
-    dates: "2023–present"
+service:
   - title: "Assistant Dean for Graduate Educational Innovation"
     dates: "from July 2026"
   - title: "Chair, Graduate Curriculum Committee"
     dates: "2023–present"
   - title: "Co-Chair, Standing Artificial Intelligence Review Committee"
     dates: "2025–present"
-  - title: "Founding organizer, NYC Chromatin Club"
-    dates: "2020–present"
+  - title: "Strategic Plan for AI in Education Initiative"
+  - title: "Middle States Working Group, Co-Chair"
+  - title: "Founding organizer and steering committee, Einstein Chromatin Club"
+    detail: "Joint lab meetings since 2011; continued as the NYC Chromatin Club"
+    dates: "2011–present"
+    url: "https://www.nycchromatinclub.org/"
+teaching:
+  - title: "Course Director, Gene Expression: Beyond the Double Helix"
+    detail: "5-credit core PhD/MSTP graduate course, annual Block II"
+    dates: "2012–2026"
+  - title: "Lecturer, Biochemistry"
+    dates: "2009–present"
+  - title: "Discussion group facilitator, Chemical Biology"
+    dates: "2023–present"
 highlight_name: true
 website: "https://www.shechterlab.org/"
 user_groups:
