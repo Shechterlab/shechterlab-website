@@ -50,7 +50,7 @@ sections:
 
         ## 2026
 
-        [Haeun Kim](/authors/haeun-kim/) (PhD, PRMT9/TDP-43/ALS) and [Liana Valin](/authors/liana-valin/) (MSTP) join the lab. [Isaac Kraz](/authors/isaac-kraz/) and collaborators publish the [GNMT N-terminus paper](/publications/gnmt-folate-methyl-donor-2026/) in the *Journal of Biological Chemistry* (first posted on bioRxiv in May), framing GNMT as the supply-side regulator in the methyl economy. [Jacob Roth](/authors/jacob-roth/)'s paper on [PRMT5-dependent histone production](/publications/prmt5-histone-production-2025/) is under invited revision at *Nature Communications*, with a *Nature Structural and Molecular Biology* News and Views. The [TTLL4/NPM1c AML paper](/publications/ttll4-aml-preprint-2025/) is also under revision at *Nature Communications*.
+        [Haeun Kim](/authors/haeun-kim/) (PhD, PRMT9/TDP-43/ALS) and [Liana Valin](/authors/liana-valin/) (MSTP) join the lab. [Isaac Kraz](/authors/isaac-kraz/) and collaborators publish the [GNMT N-terminus paper](/publications/gnmt-folate-methyl-donor-2026/) in the *Journal of Biological Chemistry* (first posted on bioRxiv in May), framing GNMT as the supply-side regulator in the methyl economy. [Jacob Roth](/authors/jacob-roth/)'s paper on [PRMT5-dependent histone production](/publications/prmt5-histone-production-2025/) is provisionally accepted at *Nature Communications*, with a *Nature Structural and Molecular Biology* News and Views. The [TTLL4/NPM1c AML paper](/publications/ttll4-aml-preprint-2025/) is also under revision at *Nature Communications*.
 
         ## 2025
 
