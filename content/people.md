@@ -66,7 +66,7 @@ sections:
 
         **Undergraduate and high school trainees**
 
-        Rebecca Mazur (High school, 2010–2011) &ensp;·&ensp; Paul Bailey (Medical student, 2012) &ensp;·&ensp; Elizabeth Goldberger (SURP, 2012) &ensp;·&ensp; Sophie Ruff (SURP, 2013) &ensp;·&ensp; Jacob Shteingart (High school, 2013) &ensp;·&ensp; Alexandru Barbulescu (SURP, 2015) &ensp;·&ensp; Ahava Muskat (SURP, 2015) &ensp;·&ensp; Anniya Gu (SURP, 2016) &ensp;·&ensp; Adam Haimowitz (SURP, 2017) &ensp;·&ensp; Rachel Fortinsky (High school, 2017) &ensp;·&ensp; Neda Shokrian (SURP, 2018) &ensp;·&ensp; Philip Nagler (SURP, 2019) &ensp;·&ensp; Jonathan Caradonna (SURP, 2022) &ensp;·&ensp; Abdulrahman Altairi (BEYOND ALBERT, 2023) &ensp;·&ensp; Brianna Webber (Montefiore Einstein HS program, 2023) &ensp;·&ensp; Habibatou Diallo (BEYOND ALBERT, 2024) &ensp;·&ensp; Aby Sylla (BEYOND ALBERT, 2025)
+        Rebecca Mazur (High school, 2010–2011) &ensp;·&ensp; Elizabeth Goldberger (SURP, 2012) &ensp;·&ensp; Sophie Ruff (SURP, 2013) &ensp;·&ensp; Jacob Shteingart (High school, 2013) &ensp;·&ensp; Alexandru Barbulescu (SURP, 2015) &ensp;·&ensp; Ahava Muskat (SURP, 2015) &ensp;·&ensp; Anniya Gu (SURP, 2016) &ensp;·&ensp; Adam Haimowitz (SURP, 2017) &ensp;·&ensp; Rachel Fortinsky (High school, 2017) &ensp;·&ensp; Neda Shokrian (SURP, 2018) &ensp;·&ensp; Philip Nagler (SURP, 2019) &ensp;·&ensp; Jonathan Caradonna (SURP, 2022) &ensp;·&ensp; Abdulrahman Altairi (BEYOND ALBERT, 2023) &ensp;·&ensp; Brianna Webber (Montefiore Einstein HS program, 2023) &ensp;·&ensp; Habibatou Diallo (BEYOND ALBERT, 2024) &ensp;·&ensp; Aby Sylla (BEYOND ALBERT, 2025)
     design:
       spacing:
         padding: ['0.5rem', '0', '2rem', '0']

@@ -108,6 +108,26 @@ a[class*="group/link"]:hover {
   margin-left: 0.5rem;
 }
 
+/* Tighten the main menu's per-item padding so all six items comfortably
+   fit on one line at typical laptop window widths (~1100-1300px),
+   instead of only fitting from the "xl" breakpoint up. */
+#nav-menu .nav-link {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* People page: team-showcase cards stretch the photo to fill the card's
+   full width via .aspect-square. Left uncapped, that scales with the
+   number of grid columns actually in effect at the current viewport
+   width — below the "xl" breakpoint (1280px) the 4-column grid drops to
+   2 or 3 columns, so each card (and its photo) balloons. Cap the photo
+   to a fixed square size instead, decoupling it from column count. */
+#current .aspect-square, #alumni .aspect-square {
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto;
+}
+
 /* People page: David's card doesn't need the research-interest tag
    list (his role/bio text already covers it) — hide just that card's
    interests row rather than turning show_interests off for the whole
