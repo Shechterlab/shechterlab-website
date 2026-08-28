@@ -117,15 +117,17 @@ a[class*="group/link"]:hover {
 }
 
 /* People page: team-showcase cards stretch the photo to fill the card's
-   full width via .aspect-square. Left uncapped, that scales with the
-   number of grid columns actually in effect at the current viewport
-   width — below the "xl" breakpoint (1280px) the 4-column grid drops to
-   2 or 3 columns, so each card (and its photo) balloons. Cap the photo
-   to a fixed square size instead, decoupling it from column count. */
-#current .aspect-square, #alumni .aspect-square {
-  max-width: 200px;
-  max-height: 200px;
-  margin: 0 auto;
+   full width via .aspect-square, and the block's own grid only reaches
+   4 columns at the "xl" breakpoint (1280px) — below that it's 2 or 3
+   columns, so at a typical laptop window width each card (and its
+   photo) balloons, and a fixed pixel cap just left lots of dead space
+   in an oversized card instead. Force 4 columns from a lower breakpoint
+   so the photo stays a reasonably sized square at any normal desktop
+   width, without needing to cap its pixel size directly. */
+@media (min-width: 900px) {
+  #current .grid, #alumni .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 /* People page: David's card doesn't need the research-interest tag

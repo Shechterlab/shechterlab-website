@@ -72,8 +72,8 @@
     {{ $align_menu := site.Params.hugoblox.header.align | default "center" }}
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden md:flex w-full pb-6 md:order-1 md:w-auto md:space-x-1 md:pb-0 lg:space-x-4 justify-start text-sm
-      {{ if in (slice "l" "left") $align_menu }}mr-auto ml-6{{ else if (in (slice "r" "right") $align_menu) }}ml-auto mr-6{{end}}">
+      class="navbar-nav order-3 hidden md:flex w-full pb-6 md:order-1 md:w-auto md:ml-6 md:space-x-1 md:pb-0 lg:space-x-4 justify-start text-sm
+      {{ if in (slice "l" "left") $align_menu }}mr-auto{{ else if (in (slice "r" "right") $align_menu) }}ml-auto mr-6{{end}}">
       {{ $currentPage := . }}
       {{ range site.Menus.main }}
       {{ $menuURL := .URL | absLangURL }}

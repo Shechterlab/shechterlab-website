@@ -86,48 +86,56 @@ sections:
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:1rem;font-size:0.85rem">
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">PRMT5–MEP50 complex</p>
+            <img src="https://cdn.rcsb.org/images/structures/4g56_assembly-1.jpeg" alt="4G56 structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=4G56" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/4G56" target="_blank" rel="noopener" style="display:block">4G56 (RCSB) ↗</a>
             <a href="/publications/prmt5-mep50-structure-2013/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">GNMT</p>
+            <img src="https://cdn.rcsb.org/images/structures/12yi_assembly-1.jpeg" alt="12YI structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=12YI" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/12YI" target="_blank" rel="noopener" style="display:block">12YI (RCSB) ↗</a>
             <a href="/publications/gnmt-folate-methyl-donor-2026/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">H2A–H2B histone chimera</p>
+            <img src="https://cdn.rcsb.org/images/structures/6w4l_assembly-1.jpeg" alt="6W4L structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=6W4L" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/6W4L" target="_blank" rel="noopener" style="display:block">6W4L (RCSB) ↗</a>
             <a href="/publications/single-chain-h2a-h2b-structure-2020/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">WDR5 (apo)</p>
+            <img src="https://cdn.rcsb.org/images/structures/6ofz_assembly-1.jpeg" alt="6OFZ structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=6OFZ" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/6OFZ" target="_blank" rel="noopener" style="display:block">6OFZ (RCSB) ↗</a>
             <a href="/publications/h3r2-methylation-wdr5-switch-2020/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">WDR5 + L-arginine</p>
+            <img src="https://cdn.rcsb.org/images/structures/6oi0_assembly-1.jpeg" alt="6OI0 structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=6OI0" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/6OI0" target="_blank" rel="noopener" style="display:block">6OI0 (RCSB) ↗</a>
             <a href="/publications/h3r2-methylation-wdr5-switch-2020/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">WDR5 + monomethylarginine</p>
+            <img src="https://cdn.rcsb.org/images/structures/6oi1_assembly-1.jpeg" alt="6OI1 structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=6OI1" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/6OI1" target="_blank" rel="noopener" style="display:block">6OI1 (RCSB) ↗</a>
             <a href="/publications/h3r2-methylation-wdr5-switch-2020/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">WDR5 + symmetric dimethylarginine</p>
+            <img src="https://cdn.rcsb.org/images/structures/6oi2_assembly-1.jpeg" alt="6OI2 structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=6OI2" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/6OI2" target="_blank" rel="noopener" style="display:block">6OI2 (RCSB) ↗</a>
             <a href="/publications/h3r2-methylation-wdr5-switch-2020/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">WDR5 + H3R2 methylarginine peptide</p>
+            <img src="https://cdn.rcsb.org/images/structures/6oi3_assembly-1.jpeg" alt="6OI3 structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?pdb=6OI3" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/6OI3" target="_blank" rel="noopener" style="display:block">6OI3 (RCSB) ↗</a>
             <a href="/publications/h3r2-methylation-wdr5-switch-2020/" style="display:block">Publication →</a>
@@ -141,18 +149,21 @@ sections:
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:1rem;font-size:0.85rem">
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">Nucleoplasmin (egg)</p>
+            <img src="https://www.ebi.ac.uk/emdb/images/entry/EMD-2866/400_EMD-2866.gif" alt="EMD-2866 map preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?emdb=EMD-2866" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View map ↗</a>
             <a href="https://www.ebi.ac.uk/emdb/EMD-2866" target="_blank" rel="noopener" style="display:block">EMD-2866 (EMDB) ↗</a>
             <a href="/publications/nucleoplasmin-ptm-histone-sequestration-2015/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">Nucleoplasmin (oocyte)</p>
+            <img src="https://www.ebi.ac.uk/emdb/images/entry/EMD-2868/400_EMD-2868.gif" alt="EMD-2868 map preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?emdb=EMD-2868" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View map ↗</a>
             <a href="https://www.ebi.ac.uk/emdb/EMD-2868" target="_blank" rel="noopener" style="display:block">EMD-2868 (EMDB) ↗</a>
             <a href="/publications/nucleoplasmin-ptm-histone-sequestration-2015/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">Nucleoplasmin (recombinant)</p>
+            <img src="https://www.ebi.ac.uk/emdb/images/entry/EMD-2869/400_EMD-2869.gif" alt="EMD-2869 map preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?emdb=EMD-2869" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View map ↗</a>
             <a href="https://www.ebi.ac.uk/emdb/EMD-2869" target="_blank" rel="noopener" style="display:block">EMD-2869 (EMDB) ↗</a>
             <a href="/publications/nucleoplasmin-ptm-histone-sequestration-2015/" style="display:block">Publication →</a>
