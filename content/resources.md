@@ -41,7 +41,9 @@ sections:
 
         | Accession | Series |
         |---|---|
+        | [GSE334611](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE334611) | PRMT5 Activity Sustains Histone Production to Maintain Genome Integrity — CUT&Tag (Roth et al.) |
         | [GSE333723](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE333723) | The GNMT N-terminus Couples Folate Feedback to Methyl-donor Homeostasis |
+        | [GSE301721](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE301721) | PRMT5 Activity Sustains Histone Production to Maintain Genome Integrity — CUT&RUN (Roth et al.) |
         | [GSE275220](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275220) | Productive mRNA Chromatin Escape is Promoted by PRMT5 Methylation of SNRPB — PRO-seq, PRMT inhibition (15m/3hr) |
         | [GSE275217](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275217) | Productive mRNA Chromatin Escape is Promoted by PRMT5 Methylation of SNRPB — PRO-seq, PRMT inhibition + dexamethasone |
         | [GSE275215](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275215) | Productive mRNA Chromatin Escape is Promoted by PRMT5 Activity — cytoplasm/nucleoplasm/chromatin fractions |
@@ -52,7 +54,29 @@ sections:
 
         Additional datasets from recent papers are linked in each publication entry.
 
-        **Proteomics datasets** — mass spectrometry data from the lab is deposited to [Chorus](https://chorusproject.org) and [ProteomeXchange](http://www.proteomexchange.org)/[PRIDE](https://www.ebi.ac.uk/pride/). Accession list pending — check back soon, or email David for a specific dataset.
+        **Proteomics datasets** — mass spectrometry data from the lab is deposited to the [ProteomeXchange](http://www.proteomexchange.org) Consortium via the [PRIDE](https://www.ebi.ac.uk/pride/) partner repository, and older datasets to [Chorus](https://chorusproject.org).
+
+        | Accession | Repository | Dataset |
+        |---|---|---|
+        | [PXD065294](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD065294) | PRIDE / ProteomeXchange | Total cell and fractionated LC-MS/MS — [Roth et al.](/publications/prmt5-histone-production-2025/) |
+        | [PXD078525](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD078525) | PRIDE / ProteomeXchange | Proteomics — [Kraz et al.](/publications/gnmt-folate-methyl-donor-2026/) |
+        | [PXD054308](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD054308) | PRIDE / ProteomeXchange | Total cell and fractionated LC-MS/MS — [DeAngelo et al.](/publications/productive-mrna-chromatin-escape-2025/) |
+        | [CHORUS:1725](https://chorusproject.org) | Chorus | Total arginine analysis — [Maron et al., 2021](/publications/maron-prmts-iscience-2021/) |
+        | [CHORUS:1671](https://chorusproject.org) | Chorus | PTMScan methylarginine — [Maron et al., 2021](/publications/maron-prmts-iscience-2021/) |
+
+        **Metabolomics** — deposited to [MetaboLights](https://www.ebi.ac.uk/metabolights/).
+
+        | Accession | Dataset |
+        |---|---|
+        | [MTBLS15161](https://www.ebi.ac.uk/metabolights/MTBLS15161) | [Kraz et al.](/publications/gnmt-folate-methyl-donor-2026/) |
+
+        **Structural & biophysical data** — NMR chemical shifts deposited to the [BMRB](https://bmrb.io) and SAXS envelopes to [SASBDB](https://www.sasbdb.org).
+
+        | Accession | Repository | Dataset |
+        |---|---|---|
+        | [BMRB 52244](https://bmrb.io/data_library/summary/index.php?bmrbId=52244) | BMRB | NMR chemical shifts — [Lorton et al.](/publications/h3r2-methylation-wdr5-switch-2020/) |
+        | [BMRB 26809](https://bmrb.io/data_library/summary/index.php?bmrbId=26809) | BMRB | Npm tail domain chemical shifts — [Warren et al., 2017](/publications/nucleoplasmin-intramolecular-regulation-2017/) |
+        | [SASDBY4](https://www.sasbdb.org/data/SASDBY4/) | SASBDB | SAXS envelope — [Warren et al., 2017](/publications/nucleoplasmin-intramolecular-regulation-2017/) |
 
         <h2 id="code">Code</h2>
 
@@ -151,21 +175,21 @@ sections:
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:1rem;font-size:0.85rem">
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">Nucleoplasmin (egg)</p>
-            <img src="https://www.ebi.ac.uk/emdb/images/entry/EMD-2866/400_EMD-2866.gif" alt="EMD-2866 map preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
+            <img src="https://www.ebi.ac.uk/pdbe/static/entry/EMD-2866/400_EMD-2866.gif" alt="EMD-2866 map preview" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://www.ebi.ac.uk/emdb/images/entry/EMD-2866/400_EMD-2866.gif';}else{this.style.display='none';}" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?emdb=EMD-2866" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View map ↗</a>
             <a href="https://www.ebi.ac.uk/emdb/EMD-2866" target="_blank" rel="noopener" style="display:block">EMD-2866 (EMDB) ↗</a>
             <a href="/publications/nucleoplasmin-ptm-histone-sequestration-2015/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">Nucleoplasmin (oocyte)</p>
-            <img src="https://www.ebi.ac.uk/emdb/images/entry/EMD-2868/400_EMD-2868.gif" alt="EMD-2868 map preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
+            <img src="https://www.ebi.ac.uk/pdbe/static/entry/EMD-2868/400_EMD-2868.gif" alt="EMD-2868 map preview" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://www.ebi.ac.uk/emdb/images/entry/EMD-2868/400_EMD-2868.gif';}else{this.style.display='none';}" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?emdb=EMD-2868" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View map ↗</a>
             <a href="https://www.ebi.ac.uk/emdb/EMD-2868" target="_blank" rel="noopener" style="display:block">EMD-2868 (EMDB) ↗</a>
             <a href="/publications/nucleoplasmin-ptm-histone-sequestration-2015/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">Nucleoplasmin (recombinant)</p>
-            <img src="https://www.ebi.ac.uk/emdb/images/entry/EMD-2869/400_EMD-2869.gif" alt="EMD-2869 map preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
+            <img src="https://www.ebi.ac.uk/pdbe/static/entry/EMD-2869/400_EMD-2869.gif" alt="EMD-2869 map preview" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://www.ebi.ac.uk/emdb/images/entry/EMD-2869/400_EMD-2869.gif';}else{this.style.display='none';}" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
             <a href="https://molstar.org/viewer/?emdb=EMD-2869" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View map ↗</a>
             <a href="https://www.ebi.ac.uk/emdb/EMD-2869" target="_blank" rel="noopener" style="display:block">EMD-2869 (EMDB) ↗</a>
             <a href="/publications/nucleoplasmin-ptm-histone-sequestration-2015/" style="display:block">Publication →</a>
