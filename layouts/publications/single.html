@@ -1,0 +1,237 @@
+{{/*
+  Local override of Hugo Blox Kit's single.html (vendored at that same
+  path), scoped to the publications section only via this file's
+  location at layouts/publications/single.html.
+
+  Only change from upstream: the vendored template renders the page's
+  featured/cover image as a full-width "article-header" block above the
+  title — for publications that's a large placeholder or generic photo
+  taking up a lot of vertical space before the reader even sees the
+  citation. Replaced that with a small square thumbnail placed beside
+  the title/byline (right-aligned on a row, stacked above on narrow
+  screens), linking out to the article itself (its DOI/article link if
+  set, else its own page). Everything else — breadcrumb, TOC/sidebar,
+  metadata grid, abstract, prose body, page footer — is unchanged from
+  upstream.
+  If Hugo Blox Kit changes single.html upstream, this override will NOT
+  pick up those changes automatically.
+*/}}
+{{ define "main" }}
+
+{{ $pub_type_csl := "" }}
+{{ $pub_type_display := "" }}
+{{ if .Params.publication_types }}
+  {{ if reflect.IsSlice .Params.publication_types }}
+    {{ $pub_type_csl = index .Params.publication_types 0 }}
+    {{ $pub_type_display = i18n (printf "pub_%s" (strings.Replace $pub_type_csl "-" "_")) | default (strings.Title $pub_type_csl) }}
+  {{ end }}
+{{ end }}
+
+{{/* Page Cover */}}
+{{ partial "components/cover.html" . }}
+
+<div class="mx-auto flex max-w-screen-xl">
+  {{ partial "components/sidebar.html" (dict "context" . "no_sidebar" true) }}
+  {{ partial "components/toc.html" . }}
+  <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+
+      {{ if .Params.show_breadcrumb }}
+      <div class="mb-4">
+        {{ partial "components/breadcrumb.html" . }}
+      </div>
+      {{ end }}
+
+      {{/* Resolve an article URL for the thumbnail link: prefer a "doi"-typed
+           link, else the first link entry, else the page's own permalink. */}}
+      {{ $articleURL := "" }}
+      {{ with .Params.links }}
+        {{ range . }}
+          {{ if and (not $articleURL) (eq .type "doi") }}{{ $articleURL = .url }}{{ end }}
+        {{ end }}
+        {{ if not $articleURL }}{{ with index . 0 }}{{ $articleURL = .url }}{{ end }}{{ end }}
+      {{ end }}
+      {{ if not $articleURL }}{{ $articleURL = .Permalink }}{{ end }}
+      {{ $isExternal := hasPrefix $articleURL "http" }}
+
+      {{ $featured := partial "functions/get_featured_image.html" . }}
+      {{ $image_params := dict }}
+      {{ if and .Params.image (reflect.IsMap .Params.image) }}
+        {{ $image_params = .Params.image }}
+      {{ end }}
+
+      <div class="mt-2 flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div class="min-w-0">
+          <h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100" data-pagefind-meta="title" data-pagefind-body>
+            {{- .Title -}}
+          </h1>
+
+          {{ $display_date := .Params.event_start | default .Date }}
+          <div class="mt-4">
+          <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2">
+            {{- if $display_date | and (.Params.show_date | default true) -}}
+            <span class="mr-1">{{- (time $display_date) | time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") -}}</span>
+            {{- if .Params.authors }}<span class="mx-1">·</span>{{ end -}}
+            {{- end -}}
+
+            {{ if isset .Params "author_notes" }}
+              {{ .Store.Set "has_alpine" true }}
+            {{ end }}
+
+            {{ range $i, $slug := .Params.authors }}
+              {{ $profile := partial "functions/get_author_profile" $slug }}
+              {{ $avatar := $profile.avatar }}
+              {{ if and $i (not $avatar) }}<span class="mr-1">,</span>{{ end }}
+              <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+                {{ with $avatar }}
+                  {{ $avatar_32 := .Process "Fill 32x32 Center webp" }}
+                  <img src="{{ $avatar_32.RelPermalink }}"
+                       width="16"
+                       height="16"
+                       alt="{{ $profile.title }}"
+                       class="inline-block h-4 w-4 rounded-full border border-current"
+                       loading="lazy" />
+                {{ end }}
+                <div>{{ $profile.title }}</div>
+              </div>
+              {{- if isset $.Params "author_notes" -}}
+                {{- with (index $.Params.author_notes $i) -}}
+                  <span class="relative inline-block ml-1" x-data="{ tooltip: false }">
+                    <button
+                      @mouseenter="tooltip = true"
+                      @mouseleave="tooltip = false"
+                      @click="tooltip = !tooltip"
+                      class="author-notes text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-200 transition-colors cursor-help"
+                      data-tooltip="{{.}}"
+                      aria-label="{{.}}"
+                      type="button"
+                    >
+                      <svg class="inline-block w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    <div
+                      x-show="tooltip"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 transform scale-95"
+                      x-transition:enter-end="opacity-100 transform scale-100"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 transform scale-100"
+                      x-transition:leave-end="opacity-0 transform scale-95"
+                      @click.away="tooltip = false"
+                      class="absolute z-50 bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 text-sm text-white bg-gray-900 dark:bg-gray-700 rounded-lg shadow-lg whitespace-nowrap"
+                      x-cloak
+                    >
+                      {{.}}
+                      <div class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
+                    </div>
+                  </span>
+                {{- end -}}
+              {{- end -}}
+            {{ end }}
+
+            {{ if ne .Params.reading_time false }}
+            <span class="mx-1">·</span>
+            <span class="mx-1">
+              {{ .ReadingTime }} {{ i18n "minute_read" }}
+            </span>
+            {{ end }}
+            </div>
+
+            <div class="mt-3">
+              {{ partial "page_links_div.html" . }}
+            </div>
+          </div>
+        </div>
+
+        {{ if $featured }}
+        <a href="{{ $articleURL | safeURL }}" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}
+           class="block flex-shrink-0 w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow"
+           aria-label="View publication">
+          {{ if reflect.IsImageResourceProcessable $featured }}
+            {{ $thumb := $featured.Fill "256x256 Center q80" }}
+            <img src="{{ $thumb.RelPermalink }}" width="256" height="256"
+                 alt="{{ with $image_params.alt_text }}{{.}}{{ else }}{{ $.Title }}{{ end }}"
+                 class="w-full h-full object-cover" loading="lazy">
+          {{ else }}
+            <img src="{{ $featured.RelPermalink }}" alt="" class="w-full h-full object-cover" loading="lazy">
+          {{ end }}
+        </a>
+        {{ end }}
+      </div>
+
+      {{/* EVENT / PUBLICATION METADATA */}}
+      {{ if .Params.abstract | or (eq .Type "publications") | or (eq .Type "events") }}
+        <div class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
+
+        {{ if .Params.abstract }}
+          <div class="font-bold text-2xl">{{ i18n "abstract" }}</div>
+          <div>{{ .Params.abstract | markdownify }}</div>
+        {{ end }}
+
+        {{ if $pub_type_display }}
+          <div class="font-bold text-2xl">{{ i18n "publication_type" }}</div>
+          <div>
+            {{ if and .Params.publication_types (gt (len .Params.publication_types) 0) }}
+            <a href="{{ range first 1 (.GetTerms "publication_types") }}{{.RelPermalink}}{{end}}">
+            {{ $pub_type_display }}
+            </a>
+            {{ end }}
+          </div>
+        {{ end }}
+
+        {{ if .Params.publication }}
+          <div class="font-bold text-2xl">{{ i18n "publication" }}</div>
+          <div>{{ .Params.publication | markdownify }}</div>
+        {{ end }}
+
+        {{ if eq .Type "events" }}
+          <div class="font-bold text-2xl">{{ i18n "date" }}</div>
+          <div>
+            {{ partial "functions/get_event_dates" . }}
+          </div>
+        {{ end }}
+
+        {{ if .Params.event_name }}
+          <div class="font-bold text-2xl">{{ i18n "event" }}</div>
+          <div>
+            {{ with .Params.event_url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
+            {{ .Params.event_name | markdownify }}
+            {{ if .Params.event_url }}</a>{{ end }}
+          </div>
+        {{ end }}
+
+        {{ if .Params.location }}
+          <div class="font-bold text-2xl">{{ i18n "location" }}</div>
+          <div>
+            <p>{{ .Params.location | markdownify }}</p>
+            {{ if .Params.address }}
+              <p>{{partial "functions/get_address" (dict "root" . "address" .Params.address) }}</p>
+            {{end}}
+          </div>
+        {{ end }}
+
+      </div>
+      {{ end }}
+
+      <div class="prose prose-slate lg:prose-xl dark:prose-invert" data-pagefind-body>
+        {{ with .Section }}
+          <span data-pagefind-filter="type" style="display:none;">{{ . }}</span>
+        {{ end }}
+        {{ with .Params.categories }}
+          <span data-pagefind-filter="category" style="display:none;">{{ index . 0 }}</span>
+        {{ end }}
+        {{ .Content }}
+      </div>
+
+      {{ partial "components/last-edited.html" . }}
+
+      <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
+        {{ .Scratch.Set "invert_pager" true }}
+        {{ partial "page_footer" . }}
+      </div>
+
+    </main>
+  </article>
+</div>
+{{ end }}
