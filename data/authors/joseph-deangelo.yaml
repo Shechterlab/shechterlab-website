@@ -2,9 +2,9 @@ schema: hugoblox/author/v1
 slug: joseph-deangelo
 weight: 2
 name:
-  display: "Joseph DeAngelo, MD-PhD"
+  display: "Joseph DeAngelo, MD, PhD"
   family: DeAngelo
-role: "MSTP Student, 2020–2025"
+role: "MSTP Student, 2019–2025"
 affiliations:
   - name: "Now: Resident Physician, Physician Scientist Training Program (PSTP), Massachusetts General Hospital"
 user_groups:

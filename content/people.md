@@ -5,7 +5,7 @@ sections:
 
   - block: markdown
     content:
-      title: The Lab
+      title: ''
       text: |
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin:0.5rem 0 1.5rem;font-size:0.95rem;font-weight:600">
           <a href="#current">Current Lab Members</a>
@@ -45,7 +45,7 @@ sections:
     id: alumni
     content:
       title: Alumni
-      subtitle: 'Destinations are listed as of last contact and may not reflect current positions.'
+      subtitle: ''
       user_groups:
         - Alumni
       sort_by: 'weight'
