@@ -1,14 +1,14 @@
 {{/*
-  Local override of Hugo Blox Kit's page_metadata_authors.html (vendored at
-  that same path) — renders the author byline on publication pages and in
-  the citation/date-title-summary views.
+  Local override of Hugo Blox Kit's page_metadata_authors.html (vendored
+  at that same path) — renders the author list used by citation-style
+  bylines (Publications list page, and each author's own list of
+  authored publications on their /authors/<slug>/ page).
 
-  Only change from upstream: strips a trailing ", <degree>" suffix (PhD,
-  MD-PhD, MD, PhD, etc.) from the displayed name. data/authors/*.yaml's
-  name.display intentionally includes degrees for use on bio pages and
-  People cards, but showing "Jane Doe, PhD" as a publication byline reads
-  oddly next to co-authors who aren't in our data/authors/ (and so show
-  just their bare name) — so this view always shows bare names.
+  Only change from upstream: strip a trailing ", PhD"/", MD"/", MD-PhD"
+  from each author's displayed name. David's profile
+  (data/authors/me.yaml) has ", PhD" baked into its display name so it
+  shows on his People card and bio page heading, but citation-style
+  bylines should stay degree-free like every other author's name here.
   If Hugo Blox Kit changes page_metadata_authors.html upstream, this
   override will NOT pick up those changes automatically.
 */}}

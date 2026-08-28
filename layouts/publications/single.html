@@ -12,7 +12,11 @@
   screens), linking out to the article itself (its DOI/article link if
   set, else its own page). Everything else — breadcrumb, TOC/sidebar,
   metadata grid, abstract, prose body, page footer — is unchanged from
-  upstream.
+  upstream. Also strips a trailing ", PhD"/", MD"/", MD-PhD" from each
+  author's displayed name in the byline — David's own profile
+  (data/authors/me.yaml) has ", PhD" in its display name so it shows on
+  his People card and bio page, but citation-style bylines should stay
+  degree-free, same as every other author's name here.
   If Hugo Blox Kit changes single.html upstream, this override will NOT
   pick up those changes automatically.
 */}}
@@ -92,7 +96,7 @@
                        class="inline-block h-4 w-4 rounded-full border border-current"
                        loading="lazy" />
                 {{ end }}
-                <div>{{ $profile.title }}</div>
+                <div>{{ replaceRE `,\s*(MD-PhD|MD,\s*PhD|PhD|MD|MSTP)$` "" $profile.title }}</div>
               </div>
               {{- if isset $.Params "author_notes" -}}
                 {{- with (index $.Params.author_notes $i) -}}
