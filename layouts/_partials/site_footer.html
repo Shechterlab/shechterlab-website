@@ -3,13 +3,16 @@
   same path). The vendored file renders the site's actual footer content
   (address/copyright block, via components/footers/<style>.html) and
   then, separately, a "Made with Hugo Blox Kit" attribution line with a
-  "Clone this template" CTA — the vendored source comments this as
-  "PLEASE DO NOT REMOVE THIS, SUPPORT OPEN SOURCE" and only lets Pro
+  "Clone this template" / "Build yours" CTA button that promotes Hugo
+  Blox's own site-builder product — the vendored source comments this
+  as "PLEASE DO NOT REMOVE THIS, SUPPORT OPEN SOURCE" and only lets Pro
   license holders opt out cleanly. The theme itself is MIT-licensed, so
-  removing it is legal; this drops that attribution block per an
-  explicit site-owner request, at the cost of the courtesy the theme
-  author is asking for. If Hugo Blox Kit changes site_footer.html
-  upstream, this override will NOT pick up those changes automatically.
+  this override is legal; per site-owner request it keeps a plain
+  "Made with Hugo Blox" credit link but drops the CTA button (the
+  site owner doesn't want to promote that product) and all of the
+  vendored file's randomized brand-text/affiliate-link machinery around
+  it. If Hugo Blox Kit changes site_footer.html upstream, this override
+  will NOT pick up those changes automatically.
 -->
 <footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
 
@@ -22,5 +25,9 @@
     {{ errorf "Check your `params.yaml`. Cannot find footer block at `layouts/_partials/%s`" $footer_section_path }}
   {{ end }}
   {{ partial $footer_section_path . }}
+
+  <p class="text-center text-sm opacity-80 py-1">
+    Made with <a class="underline hover:opacity-100" href="https://hugoblox.com" target="_blank" rel="noopener">Hugo Blox</a>.
+  </p>
 
 </footer>
