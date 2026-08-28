@@ -91,9 +91,10 @@ sections:
             <a href="/publications/prmt5-mep50-structure-2013/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
-            <p style="font-weight:600;margin-bottom:0.4rem">(recent deposition — name pending)</p>
+            <p style="font-weight:600;margin-bottom:0.4rem">GNMT</p>
             <a href="https://molstar.org/viewer/?pdb=12YI" target="_blank" rel="noopener" style="display:block;margin-bottom:0.3rem">▶ View structure ↗</a>
             <a href="https://www.rcsb.org/structure/12YI" target="_blank" rel="noopener" style="display:block">12YI (RCSB) ↗</a>
+            <a href="/publications/gnmt-folate-methyl-donor-2026/" style="display:block">Publication →</a>
           </div>
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">H2A–H2B histone chimera</p>
