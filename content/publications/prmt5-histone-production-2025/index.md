@@ -21,7 +21,7 @@ date: "2025-07-03T00:00:00Z"
 publishDate: "2025-07-03T00:00:00Z"
 publication_types: ["article"]
 pub_category: lab
-publication: "*bioRxiv* (invited revision at Nature Communications)"
+publication: "*bioRxiv* (provisionally accepted at Nature Communications)"
 abstract: "Histone proteins package DNA into nucleosomes, forming chromatin and safeguarding genome integrity. Proper histone expression is essential for cell proliferation and chromatin organization, yet the upstream regulators of histone supply remain incompletely understood. PRMT5, a cell-essential type II protein arginine methyltransferase frequently overexpressed in cancer, catalyzes symmetric dimethylation of arginine residues. Using time-resolved nascent transcriptional profiling, quantitative proteomics, and imaging, we show that PRMT5 activity is required to sustain histone transcription and histone protein synthesis during S phase. PRMT5 inhibition or knockdown leads to rapid histone mRNA depletion, loss of histone proteins, and accumulation of replication-associated nuclear abnormalities, supporting a model in which PRMT5-mediated methylation of histone H4 regulates histone transcription and, in turn, genome integrity."
 summary: "Defines PRMT5-dependent H4 methylation as a metabolic gate for histone supply and genome packaging. Featured in a Nature Structural & Molecular Biology News & Views."
 tags:

@@ -25,7 +25,7 @@ sections:
 
         <h2 id="protocols">Protocols</h2>
 
-        Selected protocols from the lab are available on [protocols.io](https://www.protocols.io/researchers/shechter-lab) and in the publications listed below. For additional protocols, email David.
+        Selected protocols are below.
 
         - **EZ-MTase methyltransferase activity assay** — Burgos et al., 2017. The SAH deaminase plasmid (TM0936) is available from [DNASU](http://dnasu.org/DNASU/GetCloneDetail.do?cloneid=84735).
         - **Chromatin characterization in *Xenopus* egg extracts** — Wang, Onikubo & Shechter, *Cold Spring Harbor Protocols*, 2019.
@@ -33,7 +33,7 @@ sections:
 
         <h2 id="plasmids">Plasmids</h2>
 
-        Most lab constructs are available on [Addgene — Shechter Lab](https://www.addgene.org/David_Shechter/). For anything not yet deposited, email David with the specific vector and insert you need.
+        Most lab constructs are available on [Addgene — Shechter Lab](https://www.addgene.org/David_Shechter/).
 
         <h2 id="data">Data</h2>
 
