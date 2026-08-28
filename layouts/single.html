@@ -5,11 +5,16 @@
   (Publications and Research have their own — see layouts/publications/
   and layouts/research/).
 
-  Only change from upstream: the h1 was a flat text-4xl (36px) with no
-  responsive scaling, one of several different page-title sizes used
-  across the site (Publications list/single, author profile pages, and
-  Research pages each had their own). Standardized to text-2xl/text-3xl
-  here to match those.
+  Changes from upstream:
+  - The h1 was a flat text-4xl (36px) with no responsive scaling, one of
+    several different page-title sizes used across the site
+    (Publications list/single, author profile pages, and Research pages
+    each had their own). Standardized to text-2xl/text-3xl here to
+    match those.
+  - Strips a trailing ", PhD"/", MD"/", MD-PhD" from each author's
+    displayed name in the byline — David's profile (data/authors/me.yaml)
+    has ", PhD" in its display name so it shows on his People card and
+    bio page, but bylines here should stay degree-free.
   If Hugo Blox Kit changes single.html upstream, this override will NOT
   pick up those changes automatically.
 */}}
@@ -107,7 +112,7 @@
                    class="inline-block h-4 w-4 rounded-full border border-current"
                    loading="lazy" />
             {{ end }}
-            <div>{{ $profile.title }}</div>
+            <div>{{ replaceRE `,\s*(MD-PhD|MD,\s*PhD|PhD|MD|MSTP)$` "" $profile.title }}</div>
           </div>
           {{/* Add author note tooltip if available */}}
           {{- if isset $.Params "author_notes" -}}
