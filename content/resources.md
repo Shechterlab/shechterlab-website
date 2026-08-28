@@ -13,6 +13,7 @@ sections:
           <a href="#data">Data</a>
           <a href="#code">Code</a>
           <a href="#recombinant-proteins">Recombinant proteins</a>
+          <a href="#equipment">Equipment</a>
           <a href="#deposited-structures">Structures</a>
           <a href="#deposited-em-maps">EM maps</a>
           <a href="#molecular-dynamics-simulations">MD simulations</a>
@@ -58,6 +59,25 @@ sections:
         <h2 id="recombinant-proteins">Recombinant proteins</h2>
 
         Purified recombinant proteins (PRMT5-MEP50 complex, nucleoplasmin, NPM1, NAP1, and others) are shared with collaborators on request.
+
+        <h2 id="equipment">Lab equipment</h2>
+
+        The lab occupies renovated space on the 3rd floor of the Forchheimer Building at Einstein — two adjoining rooms (~2,100 sq ft total) with bench positions for 12, a dedicated tissue culture room, and David's office next door.
+
+        **In the lab:**
+
+        - Two FPLC systems (AKTA Pure 25M, AKTA Purifier 10) plus an Agilent 1270 HPLC for small-molecule/peptide/histone purification
+        - Keyence BZ-X810 automated fluorescence microscope (structured-illumination super-resolution, 4×–60× objectives)
+        - GE LAS-4000 chemiluminescence/fluorescence imager for blots and gels
+        - Reichert 2SPR (surface plasmon resonance) for binding studies
+        - Sorvall XTR and X1R centrifuges, Beckman 22R chilled microcentrifuge
+        - Nanodrop 2000C spectrophotometer; sonicator; Milli-Q water purification
+        - Tissue culture hood, CO₂ incubators, and liquid-nitrogen cryostorage
+        - −80°C and −30°C freezers on emergency power; Labconco lyophilizer/SpeedVac
+
+        **Department and campus core access:** additional ultracentrifuges and PCR/qPCR instruments (QuantStudio 6 Pro), an Octet BLI system, a Malvern PEAQ-ITC, and — through Einstein's shared cores — mass spectrometry (Orbitrap Fusion Lumos, Orbitrap Exploris 480, timsTOF HT), solution NMR up to 900 MHz via the NY Structural Biology Center, in-house and synchrotron X-ray crystallography, cryo-EM, and an institutional HPC cluster.
+
+        [Photos of lab &amp; department equipment →](/lab-life/#lab-dept-equipment)
 
         <h2 id="deposited-structures">Deposited structures</h2>
 

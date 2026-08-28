@@ -88,6 +88,14 @@ a[class*="group/link"]:hover {
   scroll-margin-top: 6rem;
 }
 
+/* Lab Life page jump-nav (Fun & Social / Lab Photos / Lab & Department
+   Equipment) and Resources page jump-nav anchors: same offset fix. */
+#fun-social, #lab-photos, #lab-dept-equipment,
+#lab-wiki, #protocols, #plasmids, #data, #code, #recombinant-proteins,
+#equipment, #deposited-structures, #deposited-em-maps, #molecular-dynamics-simulations {
+  scroll-margin-top: 6rem;
+}
+
 /* Navbar spacing: breathing room between the search icon and the
    hamburger toggle (visible together below the "md" breakpoint, since
    layouts/_partials/components/headers/navbar.html is a local override
@@ -102,12 +110,12 @@ a[class*="group/link"]:hover {
 
 /* People page: team-showcase cards stretch the photo to the card's full
    width via .aspect-square, which reads huge at typical (2-4 column)
-   card widths. With the page set to a 3-column max (design.max_columns
-   in content/people.md) cards are wider, so cap the photo to a bigger
-   centered circle rather than letting it fill the whole card width. */
+   card widths. With the page set to a 4-column max (design.max_columns
+   in content/people.md), cap the photo to a centered circle rather than
+   letting it fill the whole card width. */
 #current .aspect-square, #alumni .aspect-square {
-  max-width: 220px;
-  max-height: 220px;
+  max-width: 160px;
+  max-height: 160px;
   margin: 1.25rem auto 0;
   border-radius: 9999px;
 }

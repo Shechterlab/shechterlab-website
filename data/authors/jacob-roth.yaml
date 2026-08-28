@@ -1,5 +1,6 @@
 schema: hugoblox/author/v1
 slug: jacob-roth
+weight: 3
 name:
   display: Jacob Roth
   family: Roth
