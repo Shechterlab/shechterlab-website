@@ -1,5 +1,6 @@
 schema: hugoblox/author/v1
 slug: aliza-silverstein
+weight: 5
 name:
   display: Aliza Silverstein
   family: Silverstein
