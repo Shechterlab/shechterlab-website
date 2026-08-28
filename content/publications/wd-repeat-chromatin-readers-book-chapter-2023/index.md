@@ -18,9 +18,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/B978-0-12-823376-4.00001-X
 image:
-  filename: "research/nucleosome-cartoon.jpg"
+  filename: "placeholders/pub-cover-placeholder.jpg"
   focal_point: Smart
-  preview_only: true
 projects: []
 slides: ""
 ---

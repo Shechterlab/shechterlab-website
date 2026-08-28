@@ -52,6 +52,8 @@ sections:
 
         Additional datasets from recent papers are linked in each publication entry.
 
+        **Proteomics datasets** — mass spectrometry data from the lab is deposited to [Chorus](https://chorusproject.org) and [ProteomeXchange](http://www.proteomexchange.org)/[PRIDE](https://www.ebi.ac.uk/pride/). Accession list pending — check back soon, or email David for a specific dataset.
+
         <h2 id="code">Code</h2>
 
         Analysis code, bioinformatics pipelines (RNA-seq, ATAC-seq, CUT&RUN, PRO-seq, fractionated proteomics), and reproducible workflows are maintained at [github.com/shechterlab](https://github.com/Shechterlab).
