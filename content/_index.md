@@ -77,7 +77,7 @@ sections:
     content:
       title: Disease Focus
       subtitle: Understanding disease mechanisms
-      text: In each case we start from an enzyme we understand mechanistically and ask whether that mechanism is actually driving disease — and whether it's a target.
+      text: We start from mechanism — how the enzyme actually works — then ask whether that's what's driving disease, and whether it can be targeted.
       items:
         - name: C9orf72 Amyotrophic Lateral Sclerosis
           description: Arginine methylation shapes how RNA-binding proteins, stress granules, and nuclear transport behave. In C9orf72 ALS, we're asking whether PRMT inhibition — and PRMT-dependent control of TDP-43 cryptic exons — is a real therapeutic angle.
@@ -122,13 +122,15 @@ sections:
     design:
       layout: cards
       css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
 
   - block: research-areas
     id: research
     content:
       title: Research Areas
-      subtitle: Two molecular research areas
-      text: Both areas start from the same question — how a specific chemical modification changes what a protein does — and follow it from purified enzymes into cells and disease models.
+      subtitle: Post-translational modification of IDRs
+      text: "Both grew out of the same question: what does a specific chemical modification actually do to a protein? We chase that from purified enzymes in a test tube through to cells and disease models."
       items:
         - name: PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing
           description: We study how PRMT5 methylates histones and splicing factors to control chromatin and mRNA processing, and how PRMT-dependent regulation may go wrong in C9orf72 ALS. GNMT sets the methyl-donor supply that all of this methylation draws on, tying the two together.
@@ -165,6 +167,8 @@ sections:
     design:
       layout: cards
       css_class: "bg-white dark:bg-gray-800"
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
 
   - block: cta-image-paragraph
     content:
@@ -195,6 +199,8 @@ sections:
             url: '/opportunities'
     design:
       css_class: "bg-white dark:bg-gray-800"
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
 
   - block: team-showcase
     id: team
