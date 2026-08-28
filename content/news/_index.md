@@ -7,10 +7,13 @@ sections:
     content:
       title: News
       text: What's happening in the lab — papers, people, talks, and grants.
+    design:
+      spacing:
+        padding: ['2rem', '0', '0.5rem', '0']
   - block: collection
     id: news-recent
     content:
-      title: Recent
+      title: ''
       subtitle: ''
       filters:
         folders:
@@ -25,4 +28,6 @@ sections:
     design:
       view: article-grid
       columns: 2
+      spacing:
+        padding: ['0.5rem', '0', '2rem', '0']
 ---

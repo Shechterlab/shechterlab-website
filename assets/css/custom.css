@@ -108,18 +108,6 @@ a[class*="group/link"]:hover {
   margin-left: 0.5rem;
 }
 
-/* People page: team-showcase cards stretch the photo to the card's full
-   width via .aspect-square, which reads huge at typical (2-4 column)
-   card widths. With the page set to a 4-column max (design.max_columns
-   in content/people.md), cap the photo to a centered circle rather than
-   letting it fill the whole card width. */
-#current .aspect-square, #alumni .aspect-square {
-  max-width: 160px;
-  max-height: 160px;
-  margin: 1.25rem auto 0;
-  border-radius: 9999px;
-}
-
 /* People page: David's card doesn't need the research-interest tag
    list (his role/bio text already covers it) — hide just that card's
    interests row rather than turning show_interests off for the whole
