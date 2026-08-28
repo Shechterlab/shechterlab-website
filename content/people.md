@@ -37,6 +37,7 @@ sections:
       show_role: true
       show_interests: true
       show_social: true
+      max_columns: 3
 
   - block: team-showcase
     id: alumni
@@ -51,6 +52,7 @@ sections:
       show_role: true
       show_interests: false
       show_social: false
+      max_columns: 3
       css_class: "bg-gray-50 dark:bg-gray-900"
 
   - block: markdown

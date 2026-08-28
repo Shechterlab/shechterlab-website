@@ -1,0 +1,177 @@
+<!--
+  Local override of Hugo Blox Kit's navbar.html (vendored at that same
+  path in the github.com/HugoBlox/kit/modules/blox module).
+
+  Changes from upstream, per site-owner request:
+  - The horizontal text menu only appeared at the "lg" breakpoint
+    (1024px), which felt too narrow a window for it to disappear at.
+    Freed up room by dropping two header items (see below) and moved
+    every menu-related Tailwind breakpoint from `lg:` to `md:` (768px),
+    so the text menu now survives down to tablet-ish widths before
+    collapsing to the hamburger.
+  - Removed the theme (dark/light) toggle button and the "Contact" CTA
+    button from the header entirely — the site owner didn't want a
+    contact button inviting email on every page, and moved the theme
+    toggle to the footer instead (see site_footer.html /
+    components/footers/minimal.html).
+  - Dropped the search toggle's config guard duplication, template
+    picker, and language chooser blocks from upstream since this site
+    doesn't use any of those (single language, no theme picker) — kept
+    only what's actually reachable via this site's params.yaml.
+  If Hugo Blox Kit changes navbar.html upstream, this override will NOT
+  pick up those changes automatically.
+-->
+{{ $branding := partialCached "functions/get_branding" . "branding" }}
+{{ $logo := partialCached "functions/get_logo" (dict "constraint" "max_height" "size" 36) "navbar_logo" }}
+{{- $show_logo := site.Params.hugoblox.header.show_logo | default true -}}
+{{- $show_title := site.Params.hugoblox.header.show_title | default true -}}
+{{- $navbar_title := site.Params.hugoblox.header.title | default $branding.name -}}
+<header id="site-header" class="header">
+  <nav class="navbar px-3 flex justify-start">
+    <div class="order-0 h-full">
+      <!-- Brand -->
+      <a class="navbar-brand" href="{{ site.Home.RelPermalink }}" title="{{ $branding.site_title }}">
+        {{ if $show_logo }}
+        {{ with $logo.resource }}
+          {{ if $logo.is_svg }}
+            {{- .Content | safeHTML -}}
+          {{ else }}
+            <img
+              fetchpriority="high"
+              decoding="async"
+              class=""
+              width="{{ .Width }}"
+              height="{{ .Height }}"
+              src="{{ .RelPermalink }}"
+              alt="{{ $branding.name }}" />
+          {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ if $show_title }}{{ $navbar_title }}{{ end }}
+      </a>
+    </div>
+    <!-- Mobile menu toggle (below md) -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center md:hidden text-[var(--hb-color-header-fg)] md:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Open Menu</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Close Menu</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    <!-- /Mobile menu toggle -->
+
+    <!-- Main menu -->
+    {{ $align_menu := site.Params.hugoblox.header.align | default "center" }}
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden md:flex w-full pb-6 md:order-1 md:w-auto md:space-x-2 md:pb-0 lg:space-x-8 justify-start
+      {{ if in (slice "l" "left") $align_menu }}mr-auto ml-6{{ else if (in (slice "r" "right") $align_menu) }}ml-auto mr-6{{end}}">
+      {{ $currentPage := . }}
+      {{ range site.Menus.main }}
+      {{ $menuURL := .URL | absLangURL }}
+      {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+      {{ $active := eq $menuURL $pageURL }}
+      {{ if .HasChildren }}
+      <li class="nav-item nav-dropdown group relative">
+            <span
+              role="button"
+              tabindex="0"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link cursor-pointer select-none {{ range .Children }}
+                {{ $childURL := .URL | absLangURL }}
+                {{ $active := eq $childURL $pageURL }}
+                {{ if $active }}active{{ end }}
+              {{ end }} inline-flex items-center">
+              {{ .Name }}
+              <svg class="h-4 w-4 fill-current inline-block" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+        <ul
+          class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+          {{ range .Children }}
+          {{ $childURL := .URL | absLangURL }}
+          {{ $active := eq $childURL $pageURL }}
+          {{ $url := "" }}
+          {{- if findRE `^#` .URL -}}
+            {{- if not $.IsHome -}}
+              {{- $url = site.Home.RelPermalink -}}
+            {{- end }}
+            {{- $url = .URL -}}
+          {{- else -}}
+            {{- $url = .URL | relLangURL -}}
+          {{- end -}}
+          <li class="nav-dropdown-item">
+            <a
+              class="nav-dropdown-link {{ if $active }}active{{- end -}}"
+              {{ if findRE `^http` .URL }}
+              target="_blank" rel="noopener"
+              {{ end }}
+              href="{{$url}}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ else }}
+      {{ $url := "" }}
+      {{- if findRE `^#` .URL -}}
+        {{- if not $.IsHome -}}
+          {{- $url = site.Home.RelPermalink -}}
+        {{- end }}
+        {{- $url = .URL -}}
+        {{- else -}}
+        {{- $url = .URL | relLangURL -}}
+      {{- end -}}
+      <li class="nav-item">
+        <a
+          class="nav-link {{ if $active }}active{{- end -}}"
+          {{ if findRE `^http` .URL }}
+          target="_blank" rel="noopener"
+          {{ end }}
+          href="{{$url}}"
+        >{{ .Name }}</a
+        >
+      </li>
+      {{ end }}
+      {{ end }}
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+
+      {{/* Show site search? */}}
+      {{ $show_search := site.Params.hugoblox.header.search | default false }}
+      {{ with $show_search }}
+      <button
+        aria-label="toggle search"
+        class="inline-block px-3 text-xl text-[var(--hb-color-header-fg)] hover:text-primary-500 cursor-pointer"
+        data-search-toggle>
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </button>
+      {{ end }}
+
+      {{ $show_translations := site.Params.hugoblox.header.language_switcher | default true }}
+      {{ if .IsTranslated | and $show_translations }}
+      <div class="pl-1 mr-5 text-[var(--hb-color-header-fg)] hover:text-primary-500
+            [&.active]:font-bold [&.active]:text-primary-500">
+        {{- partial "components/language-chooser.html" (dict "page" .) -}}
+      </div>
+      {{ end }}
+    </div>
+  </nav>
+</header>
+
+{{ if $show_search }}
+  {{- partial "components/search-modal.html" . -}}
+{{ end }}
