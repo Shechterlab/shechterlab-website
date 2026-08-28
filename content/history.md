@@ -6,7 +6,7 @@ sections:
     content:
       title: Lab History
       text: |
-        The Shechter Lab opened at Albert Einstein College of Medicine in 2010. We started as a biochemistry lab focused on histone chaperones and Xenopus egg extract chromatin, and have expanded over sixteen years into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
+        The Shechter Lab opened at Albert Einstein College of Medicine in 2009. We started as a biochemistry lab focused on histone chaperones and Xenopus egg extract chromatin, and have expanded over seventeen years into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
 
         **Lab photos, by year** — click to enlarge.
 
@@ -88,7 +88,7 @@ sections:
 
         The [PRMT5-MEP50 structural and biochemical paper](/publications/prmt5-mep50-structure-2013/) is published; David Shechter receives the Robbie Sue Mudd Kidney Cancer Research Scholar award. [Wei-Lin Wang](/authors/wei-lin-wang/) and [Carola Wilczek](/authors/carola-wilczek/) leave their postdoctoral fellowships and return to Germany — Wang joins CureVac.
 
-        ## 2010–2012
+        ## 2009–2012
 
         Lab founded. David Shechter joins Einstein as Assistant Professor in the Department of Biochemistry, coming from a postdoctoral fellowship with C. David Allis at The Rockefeller University. Early work focuses on histone chaperone biochemistry, *Xenopus laevis* egg extract chromatin assembly, and the relationship between histone modifications and DNA replication. [Carola Wilczek](/authors/carola-wilczek/) and [Wei-Lin Wang](/authors/wei-lin-wang/) join as postdoctoral fellows; [Takashi Onikubo](/authors/takashi-onikubo/) joins as a graduate student. The Alexandrine and Alexander Sinsheimer Foundation Research Scholar award ("Exploring the Role of Histone Arginine Methylation in Breast Cancer") is received in 2011.
 
