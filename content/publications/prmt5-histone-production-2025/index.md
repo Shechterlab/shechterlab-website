@@ -36,7 +36,6 @@ links:
 image:
   filename: "research/nucleosome-cartoon.jpg"
   focal_point: ""
-  preview_only: true
 projects: []
 slides: ""
 ---

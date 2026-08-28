@@ -13,9 +13,8 @@ tags:
 - Review
 featured: false
 image:
-  filename: "research/nucleosome-cartoon.jpg"
+  filename: "placeholders/pub-cover-placeholder.jpg"
   focal_point: Smart
-  preview_only: true
 projects: []
 slides: ""
 ---
