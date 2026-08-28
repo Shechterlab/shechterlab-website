@@ -8,6 +8,44 @@ sections:
       text: |
         The Shechter Lab opened at Albert Einstein College of Medicine in 2010. We started as a biochemistry lab focused on histone chaperones and Xenopus egg extract chromatin, and have expanded over sixteen years into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
 
+        **Lab photos, by year** — click to enlarge.
+
+        <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:1rem">
+          <a href="#lb-2026" class="lb-thumb"><img src="/media/lab/archive-2026.jpg" alt="Shechter Lab, 2026" loading="lazy"><span>2026</span></a>
+          <a href="#lb-2025" class="lb-thumb"><img src="/media/lab/archive-2025.jpg" alt="Shechter Lab, 2025" loading="lazy"><span>2025</span></a>
+          <a href="#lb-2024" class="lb-thumb"><img src="/media/lab/archive-2024.jpg" alt="Shechter Lab, 2024" loading="lazy"><span>2024</span></a>
+          <a href="#lb-2022" class="lb-thumb"><img src="/media/lab/archive-2022.jpg" alt="Shechter Lab, 2022" loading="lazy"><span>2022</span></a>
+          <a href="#lb-2021" class="lb-thumb"><img src="/media/lab/archive-2021.jpg" alt="Shechter Lab, 2021" loading="lazy"><span>2021</span></a>
+          <a href="#lb-2018" class="lb-thumb"><img src="/media/lab/archive-2018.jpg" alt="Shechter Lab, 2018" loading="lazy"><span>2018</span></a>
+          <a href="#lb-2015" class="lb-thumb"><img src="/media/lab/archive-2015.jpg" alt="Shechter Lab, 2015" loading="lazy"><span>2015</span></a>
+          <a href="#lb-2013" class="lb-thumb"><img src="/media/lab/archive-2013.jpg" alt="Shechter Lab, 2013" loading="lazy"><span>2013</span></a>
+          <a href="#lb-2011" class="lb-thumb"><img src="/media/lab/archive-2011.jpg" alt="Shechter Lab, 2011" loading="lazy"><span>2011</span></a>
+        </div>
+
+        <div id="lb-2026" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2026.jpg" alt="Shechter Lab, 2026"><figcaption>2026</figcaption></figure></div>
+        <div id="lb-2025" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2025.jpg" alt="Shechter Lab, 2025"><figcaption>2025</figcaption></figure></div>
+        <div id="lb-2024" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2024.jpg" alt="Shechter Lab, 2024"><figcaption>2024</figcaption></figure></div>
+        <div id="lb-2022" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2022.jpg" alt="Shechter Lab, 2022"><figcaption>2022</figcaption></figure></div>
+        <div id="lb-2021" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2021.jpg" alt="Shechter Lab, 2021"><figcaption>2021</figcaption></figure></div>
+        <div id="lb-2018" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2018.jpg" alt="Shechter Lab, 2018"><figcaption>2018</figcaption></figure></div>
+        <div id="lb-2015" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2015.jpg" alt="Shechter Lab, 2015"><figcaption>2015</figcaption></figure></div>
+        <div id="lb-2013" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2013.jpg" alt="Shechter Lab, 2013"><figcaption>2013</figcaption></figure></div>
+        <div id="lb-2011" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/archive-2011.jpg" alt="Shechter Lab, 2011"><figcaption>2011</figcaption></figure></div>
+        <div id="lb-close"></div>
+
+        <style>
+          .lb-thumb { position: relative; display: block; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; text-decoration: none; }
+          .lb-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+          .lb-thumb:hover img { transform: scale(1.06); }
+          .lb-thumb span { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.3rem 0.5rem; font-size: 0.75rem; font-weight: 600; color: #fff; background: linear-gradient(to top, rgba(0,0,0,0.65), transparent); }
+          .lb-overlay { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 2rem; }
+          .lb-overlay:target { display: flex; }
+          .lb-overlay figure { margin: 0; max-width: 92vw; max-height: 90vh; text-align: center; }
+          .lb-overlay img { max-width: 92vw; max-height: 82vh; object-fit: contain; border-radius: 8px; }
+          .lb-overlay figcaption { color: #fff; margin-top: 0.75rem; font-size: 0.95rem; }
+          .lb-overlay-close { position: absolute; top: 1.5rem; right: 1.5rem; width: 2.5rem; height: 2.5rem; color: #fff; font-size: 1.75rem; line-height: 1; text-align: center; text-decoration: none; }
+        </style>
+
         ---
 
         ## 2026

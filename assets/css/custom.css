@@ -106,6 +106,16 @@ a[class*="group/link"]:hover {
   margin-left: 0.5rem;
 }
 
+/* People page: team-showcase cards stretch the photo to the card's full
+   width via .aspect-square, which reads huge at typical card widths.
+   Cap it to a small centered thumbnail instead. */
+#current .aspect-square, #alumni .aspect-square {
+  max-width: 140px;
+  max-height: 140px;
+  margin: 1.25rem auto 0;
+  border-radius: 9999px;
+}
+
 /* Subtle scroll-in for page sections (not the first/hero section on a page).
    Pure CSS scroll-driven animation — no JS, no library. Browsers without
    support (Firefox/Safari as of 2026) just show sections normally, so this

@@ -17,9 +17,9 @@ sections:
           <img src="/media/lab/lab-photo-2026.jpg" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12)">
         </div>
 
-        **Shechter Lab, 2026.** From left: Jacob Roth, Haeun Kim, Aliza Silverstein, Liana Valin, Subray Hegde, David Shechter, Isaac Kraz. Not pictured: additional collaborators and rotation students.
+        **Shechter Lab, Summer 2026.**
 
-        [Lab History →](/history) &ensp;|&ensp; [Photo Archive →](/lab-life/archive)
+        [Lab History →](/history) &ensp;|&ensp; [Lab Life →](/lab-life)
     design:
       spacing:
         padding: ['2rem', '0', '0.5rem', '0']
@@ -58,8 +58,6 @@ sections:
     content:
       title: Rotation & Summer Students
       text: |
-        Short-term trainees who have worked in the lab, listed by name and year only.
-
         **Rotation students**
 
         Paromita Mukherjee (2010) &ensp;·&ensp; Sara Rouhanifard (2010) &ensp;·&ensp; Jason Ford (2010) &ensp;·&ensp; Penelope Ruiz (2012) &ensp;·&ensp; Yizhou Zhu (2012) &ensp;·&ensp; Michael Lesser (2012) &ensp;·&ensp; Sean Healton (2013) &ensp;·&ensp; Chayim Goldberg (2013) &ensp;·&ensp; Karishma Smart (2015) &ensp;·&ensp; Prasoon Jaya (2018) &ensp;·&ensp; Harmony Ketchum (2019) &ensp;·&ensp; Victor Paulino (2019) &ensp;·&ensp; Michael Broussalian (2024) &ensp;·&ensp; Samantha Ciervo (MSTP rotation, 2024) &ensp;·&ensp; Noah Jacobs (MSTP rotation, 2025) &ensp;·&ensp; Shanivi Srikonda (MSTP rotation, 2026)
