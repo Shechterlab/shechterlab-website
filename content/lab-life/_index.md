@@ -18,7 +18,7 @@ sections:
 
         Conferences, celebrations, and the occasional beer. Click a photo to enlarge it.
 
-        <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:1rem">
+        <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:10px;margin-top:1rem;width:100%">
           <a href="#lb-social" class="lb-thumb"><img src="/media/lab/archive-lab-social-event.jpg" alt="Lab social event" loading="lazy"><span>Lab social, 2024</span></a>
           <a href="#lb-isaac-david-beer" class="lb-thumb"><img src="/media/lab/gallery/gallery-isaac-david-beer.jpg" alt="Isaac and David, FASEB Ireland" loading="lazy"><span>Isaac &amp; David, Ireland, 2026</span></a>
           <a href="#lb-david-aliza-beer" class="lb-thumb"><img src="/media/lab/gallery/gallery-david-aliza-beer.jpg" alt="David and Aliza, FASEB Ireland" loading="lazy"><span>David &amp; Aliza, Ireland, 2026</span></a>
@@ -52,7 +52,7 @@ sections:
 
         Bench and equipment views from Forchheimer 304. Click a photo to enlarge it.
 
-        <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:1rem">
+        <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:10px;margin-top:1rem;width:100%">
           <a href="#lb-tissue-culture" class="lb-thumb"><img src="/media/lab/lab-tissue-culture.jpg" alt="Tissue culture, Forchheimer 304B" loading="lazy"><span>Tissue culture</span></a>
           <a href="#lb-fplc" class="lb-thumb"><img src="/media/lab/lab-fplc.jpg" alt="Protein purification setup" loading="lazy"><span>Protein purification</span></a>
           <a href="#lb-notes" class="lb-thumb"><img src="/media/lab/lab-glass-experiment-notes.jpg" alt="Lab notebooks 1 through 5" loading="lazy"><span>Lab notebooks</span></a>

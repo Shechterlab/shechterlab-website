@@ -15,6 +15,19 @@
   every markdown block on the site gets the same, consistent sizing —
   the alternative (styling each page's block individually) would drift
   out of sync over time.
+
+  Also added `w-full` to the prose div: its parent is a flex container
+  with `items-center`, which sizes non-stretched children to fit-content
+  instead of the container's available width. That's invisible for
+  plain text (fit-content is still bounded by available space there),
+  but any CSS grid inside — several pages embed a raw `<div
+  style="display:grid;grid-template-columns:repeat(auto-fit,minmax(...))">`
+  for photo galleries / card layouts — contributes its track minimums
+  to the grid's own intrinsic width regardless of available space, so
+  without an explicit width the grid could render wider than the
+  viewport on narrow (phone) widths and force horizontal scrolling.
+  `w-full` gives every level of the chain a real width to resolve
+  percentages against.
   If Hugo Blox Kit changes the vendored markdown block upstream, this
   override will NOT pick up those changes automatically.
 */}}
@@ -35,5 +48,5 @@
   </div>
   {{ end }}
 
-  {{ with $text }}<div class="prose prose-slate prose-base dark:prose-invert max-w-prose">{{ . }}</div>{{ end }}
+  {{ with $text }}<div class="prose prose-slate prose-base dark:prose-invert max-w-prose w-full">{{ . }}</div>{{ end }}
 </div>

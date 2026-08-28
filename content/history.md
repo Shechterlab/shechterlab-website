@@ -10,7 +10,7 @@ sections:
 
         **Lab photos, by year** — click to enlarge.
 
-        <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:1rem">
+        <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:10px;margin-top:1rem;width:100%">
           <a href="#lb-2026" class="lb-thumb"><img src="/media/lab/archive-2026.jpg" alt="Shechter Lab, 2026" loading="lazy"><span>2026</span></a>
           <a href="#lb-2025" class="lb-thumb"><img src="/media/lab/archive-2025.jpg" alt="Shechter Lab, 2025" loading="lazy"><span>2025</span></a>
           <a href="#lb-2024" class="lb-thumb"><img src="/media/lab/archive-2024.jpg" alt="Shechter Lab, 2024" loading="lazy"><span>2024</span></a>

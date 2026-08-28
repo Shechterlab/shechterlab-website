@@ -109,7 +109,7 @@ sections:
 
         Structures the lab has deposited to the [PDB](https://www.rcsb.org). "View structure" opens an interactive 3D viewer in a new tab; each card also links directly to its RCSB entry and, where applicable, the associated publication.
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:1rem;font-size:0.85rem">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:16px;margin-top:1rem;font-size:0.85rem;width:100%">
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">PRMT5–MEP50 complex</p>
             <img src="https://cdn.rcsb.org/images/structures/4g56_assembly-1.jpeg" alt="4G56 structure preview" loading="lazy" onerror="this.style.display='none'" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">
@@ -172,7 +172,7 @@ sections:
 
         Cryo-EM reconstructions of nucleoplasmin (egg, oocyte, and recombinant forms) deposited to the [EMDB](https://www.ebi.ac.uk/emdb). "View map" opens an interactive viewer in a new tab.
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:1rem;font-size:0.85rem">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:16px;margin-top:1rem;font-size:0.85rem;width:100%">
           <div style="border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem;text-align:center">
             <p style="font-weight:600;margin-bottom:0.4rem">Nucleoplasmin (egg)</p>
             <img src="https://www.ebi.ac.uk/pdbe/static/entry/EMD-2866/400_EMD-2866.gif" alt="EMD-2866 map preview" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://www.ebi.ac.uk/emdb/images/entry/EMD-2866/400_EMD-2866.gif';}else{this.style.display='none';}" style="width:100%;border-radius:6px;margin-bottom:0.5rem;background:#f1f5f9">

@@ -12,7 +12,7 @@ sections:
     content:
       title: |
         Decoding the biochemistry behind cancer and ALS
-      text: "The Shechter Lab at Albert Einstein College of Medicine studies how chromatin and RNA-processing proteins are chemically modified — and how that goes wrong in NPM1-mutant leukemia and C9orf72 ALS."
+      text: "The Shechter Lab at Albert Einstein College of Medicine in New York City studies how chromatin and RNA-processing proteins are chemically modified — and how that goes wrong in NPM1-mutant leukemia and C9orf72 ALS."
       primary_action:
         text: Explore Research
         url: '/research'
@@ -40,7 +40,7 @@ sections:
     id: stats
     content:
       text: |
-        <div class="stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:80rem;margin:0 auto">
+        <div class="stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1.5rem;max-width:80rem;width:100%;margin:0 auto">
           <a href="/facilities" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
             <div style="font-size:2.75rem;font-weight:900;line-height:1">16</div>
             <div style="margin-top:0.5rem;font-weight:600">Years at Einstein</div>
