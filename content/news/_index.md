@@ -24,5 +24,5 @@ sections:
       count: 20
     design:
       view: article-grid
-      columns: 1
+      columns: 2
 ---

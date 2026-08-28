@@ -88,17 +88,11 @@ a[class*="group/link"]:hover {
   scroll-margin-top: 6rem;
 }
 
-/* Navbar: below the "lg" breakpoint the hamburger menu and the desktop
-   "Contact" button were rendering at the same time with no gap between
-   them (they looked squashed together, sometimes overlapping). The
-   desktop CTA is meant to be lg-only ("hidden lg:inline-block") but was
-   still showing below that breakpoint, so force it explicitly and give
-   the remaining icon cluster breathing room next to the hamburger. */
-@media (max-width: 1023.98px) {
-  #site-header .navbar > div.order-1.ml-auto a[href="/contact"] {
-    display: none !important;
-  }
-}
+/* Navbar spacing: breathing room between the search icon and the
+   hamburger toggle (visible together below the "md" breakpoint, since
+   layouts/_partials/components/headers/navbar.html is a local override
+   that dropped the header's Contact button and theme toggle — see that
+   file's docstring — leaving just search + hamburger on narrow widths). */
 #site-header .navbar > div.order-1.ml-auto {
   gap: 0.5rem;
 }
@@ -107,13 +101,24 @@ a[class*="group/link"]:hover {
 }
 
 /* People page: team-showcase cards stretch the photo to the card's full
-   width via .aspect-square, which reads huge at typical card widths.
-   Cap it to a small centered thumbnail instead. */
+   width via .aspect-square, which reads huge at typical (2-4 column)
+   card widths. With the page set to a 3-column max (design.max_columns
+   in content/people.md) cards are wider, so cap the photo to a bigger
+   centered circle rather than letting it fill the whole card width. */
 #current .aspect-square, #alumni .aspect-square {
-  max-width: 140px;
-  max-height: 140px;
+  max-width: 220px;
+  max-height: 220px;
   margin: 1.25rem auto 0;
   border-radius: 9999px;
+}
+
+/* People page: David's card doesn't need the research-interest tag
+   list (his role/bio text already covers it) — hide just that card's
+   interests row rather than turning show_interests off for the whole
+   #current block. His /authors/me/ profile page keeps the same
+   Research Interests section untouched. */
+#current .group:has(> div a[href="/authors/me/"]) div.mb-4:has(> div.flex-wrap) {
+  display: none;
 }
 
 /* Subtle scroll-in for page sections (not the first/hero section on a page).
