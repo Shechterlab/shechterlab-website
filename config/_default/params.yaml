@@ -47,7 +47,7 @@ hugoblox:
     style: navbar
     sticky: true
     align: center
-    search: true
+    search: false
     theme_toggle: true
     theme_picker: false
     language_switcher: false

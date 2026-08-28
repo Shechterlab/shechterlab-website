@@ -43,7 +43,7 @@ education:
     end: "1995-05-01"
 service:
   - title: "Assistant Dean for Graduate Educational Innovation"
-    dates: "from July 2026"
+    dates: "2026"
   - title: "Chair, Graduate Curriculum Committee"
     dates: "2023–present"
   - title: "Co-Chair, Standing Artificial Intelligence Review Committee"
@@ -51,8 +51,10 @@ service:
   - title: "Strategic Plan for AI in Education Initiative"
   - title: "Middle States Working Group, Co-Chair"
   - title: "Founding organizer and steering committee, Einstein Chromatin Club"
-    detail: "Joint lab meetings since 2011; continued as the NYC Chromatin Club"
+    detail: "Joint lab meetings"
     dates: "2011–present"
+  - title: "Steering committee, NYC Chromatin Club"
+    dates: "2020–present"
     url: "https://www.nycchromatinclub.org/"
 teaching:
   - title: "Course Director, Gene Expression: Beyond the Double Helix"
@@ -60,7 +62,11 @@ teaching:
     dates: "2012–2026"
   - title: "Lecturer, Biochemistry"
     dates: "2009–present"
+  - title: "Lecturer, Gene Expression"
+    dates: "2012–present"
   - title: "Discussion group facilitator, Chemical Biology"
+    dates: "2023–present"
+  - title: "Lecturer, Chemical Biology"
     dates: "2023–present"
 highlight_name: true
 website: "https://www.shechterlab.org/"

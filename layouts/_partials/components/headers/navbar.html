@@ -9,11 +9,13 @@
     every menu-related Tailwind breakpoint from `lg:` to `md:` (768px),
     so the text menu now survives down to tablet-ish widths before
     collapsing to the hamburger.
-  - Removed the theme (dark/light) toggle button and the "Contact" CTA
-    button from the header entirely — the site owner didn't want a
-    contact button inviting email on every page, and moved the theme
-    toggle to the footer instead (see site_footer.html /
+  - Removed the theme (dark/light) toggle button from the header
+    entirely, moving it to the footer instead (see site_footer.html /
     components/footers/minimal.html).
+  - The search icon (site.Params.hugoblox.header.search is set to false
+    in params.yaml) is replaced with a plain "Contact" link to /contact
+    — site search wasn't useful for a site this size, and the owner
+    wants a way to reach the lab from every page again.
   - Dropped the search toggle's config guard duplication, template
     picker, and language chooser blocks from upstream since this site
     doesn't use any of those (single language, no theme picker) — kept
@@ -159,6 +161,12 @@
         data-search-toggle>
         <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
       </button>
+      {{ end }}
+
+      {{ if not $show_search }}
+      <a href="/contact" class="inline-block px-3 py-1.5 text-sm font-semibold rounded-md text-[var(--hb-color-header-fg)] hover:text-primary-500 whitespace-nowrap">
+        Contact
+      </a>
       {{ end }}
 
       {{ $show_translations := site.Params.hugoblox.header.language_switcher | default true }}
