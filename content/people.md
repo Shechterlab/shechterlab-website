@@ -38,6 +38,8 @@ sections:
       show_interests: true
       show_social: true
       max_columns: 4
+      spacing:
+        padding: ['0.5rem', '0', '0.5rem', '0']
 
   - block: team-showcase
     id: alumni
@@ -54,6 +56,8 @@ sections:
       show_social: false
       max_columns: 4
       css_class: "bg-gray-50 dark:bg-gray-900"
+      spacing:
+        padding: ['0.5rem', '0', '0.5rem', '0']
 
   - block: markdown
     id: rotation-summer-students
