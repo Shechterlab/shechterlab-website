@@ -216,3 +216,84 @@ a:hover > .hb-readmore,
 a.hb-readmore:hover {
   color: var(--color-accent-dark);
 }
+
+/* Responsive tables (Resources page — the only page with tables).
+
+   The Data section lists accessions in 2- and 3-column markdown
+   tables whose cells hold long text ("Productive mRNA Chromatin
+   Escape is Promoted by PRMT5 Methylation of SNRPB — PRO-seq, PRMT
+   inhibition (15m/3hr)"). At phone width the 3-column table could not
+   fit its container and pushed past it, so the page scrolled
+   sideways; squeezing three columns into 390px would not have been
+   readable even if it fit.
+
+   Below the "sm" breakpoint each row becomes a stacked block instead:
+   the accession link sits on its own line with its description
+   beneath, everything wraps, and nothing scrolls horizontally. The
+   header row is hidden there since the accession/description roles
+   are self-evident once stacked. From 640px up the normal table
+   returns.
+
+   The wrapping value here is `break-word`, deliberately not
+   `anywhere`: `anywhere` also shrinks a cell's intrinsic min-content
+   width, which let the browser squeeze the accession column and split
+   the IDs mid-token on desktop ("GSE33 4611", "Access ion").
+   `break-word` only breaks a token that genuinely cannot fit, so the
+   accessions stay intact. */
+.prose table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+.prose table th,
+.prose table td {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 639px) {
+  .prose table,
+  .prose table tbody,
+  .prose table tr,
+  .prose table td {
+    display: block;
+    width: 100%;
+  }
+  .prose table thead {
+    display: none;
+  }
+  .prose table tr {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgb(203 213 225 / 0.7);
+  }
+  .dark .prose table tr {
+    border-bottom-color: rgb(71 85 105 / 0.7);
+  }
+  .prose table tr:last-child {
+    border-bottom: 0;
+  }
+  .prose table td {
+    padding: 0.15rem 0;
+    border: 0;
+  }
+  /* The accession is the first cell and the row's identifier — give it
+     a little more weight so each stacked row reads as a unit. */
+  .prose table td:first-child {
+    font-weight: 600;
+  }
+}
+
+/* Footer affiliation line: the department / college names in
+   `hugoblox.footer.text` (config/_default/params.yaml) are markdown
+   links out to einsteinmed.edu, but they sit outside `.prose`, so
+   they inherited the surrounding text colour with no underline and
+   read as plain text — nothing signalled they were clickable. Match
+   the "Made with Hugo Blox" credit link just below them. */
+footer p a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+footer p a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}

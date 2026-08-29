@@ -59,7 +59,7 @@ hugoblox:
   footer:
     style: minimal
     language_switcher: false
-    text: "Department of Biochemistry, Albert Einstein College of Medicine"
+    text: "[Department of Biochemistry](https://einsteinmed.edu/departments/biochemistry), [Albert Einstein College of Medicine](https://einsteinmed.edu)"
 
   copyright:
     notice: "© {year} {name}."
