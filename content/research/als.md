@@ -3,7 +3,7 @@ title: 'C9orf72 Amyotrophic Lateral Sclerosis'
 date: 2026-06-28
 summary: 'PRMT-dependent regulation of RNA-binding proteins, stress granules, and TDP-43 cryptic exons in C9orf72 ALS.'
 image:
-  filename: "research/PLACEHOLDER-als-figure.jpg"
+  filename: "research/als-motor-neuron.png"
 ---
 
 Arginine methylation shapes how RNA-binding proteins behave — where they go in the cell, whether they form stress granules, how they move between nucleus and cytoplasm. In C9orf72 ALS, the toxic dipeptide repeat proteins and the aberrant RNA-protein condensates they form both depend on methylation-sensitive pathways.

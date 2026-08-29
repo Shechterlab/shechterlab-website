@@ -41,10 +41,10 @@ sections:
     content:
       text: |
         <div class="stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1.5rem;max-width:80rem;width:100%;margin:0 auto">
-          <a href="/facilities" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
-            <div class="stat-num" data-count="16" style="font-size:2.75rem;font-weight:900;line-height:1">0</div>
+          <a href="/history" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
+            <div class="stat-num" data-count="17" style="font-size:2.75rem;font-weight:900;line-height:1">0</div>
             <div style="margin-top:0.5rem;font-weight:600">Years at Einstein</div>
-            <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">Started November 2009 · Department of Biochemistry</div>
+            <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">Lab founded 2009 · Department of Biochemistry</div>
           </a>
           <a href="/research" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
             <div class="stat-num" data-count="2" style="font-size:2.75rem;font-weight:900;line-height:1">0</div>
@@ -118,11 +118,9 @@ sections:
       subtitle: Understanding disease mechanisms
       text: We start from mechanism — how the enzyme actually works — then ask whether that's what's driving disease, and whether it can be targeted.
       items:
-        - name: C9orf72 Amyotrophic Lateral Sclerosis
+        - name: C9orf72 ALS
           description: Arginine methylation shapes how RNA-binding proteins, stress granules, and nuclear transport behave. In C9orf72 ALS, we're asking whether PRMT inhibition — and PRMT-dependent control of TDP-43 cryptic exons — is a real therapeutic angle.
-          icon: hero/beaker
-          gradient: from-sky-400 to-blue-600
-          status: active
+          image: research/als-motor-neuron.png
           topics:
             - C9orf72 ALS
             - TDP-43 cryptic exons
@@ -130,11 +128,9 @@ sections:
           cta:
             text: Read more
             url: /research/als
-        - name: NPM1-Mutant Acute Myeloid Leukemia
+        - name: NPM1-mutant AML
           description: We found that TTLL4 glutamylates NPM1c, the mutant driver of this leukemia, changing how it associates with chromatin and reshaping the oncogenic transcriptional program. That makes TTLL4 a therapeutic target we're now pursuing directly.
-          icon: hero/bolt
-          gradient: from-emerald-400 to-teal-600
-          status: active
+          image: research/aml-blast-cells.png
           topics:
             - NPM1-mutant AML
             - TTLL4 glutamyltransferase
@@ -142,11 +138,9 @@ sections:
           cta:
             text: Read more
             url: /research/aml
-        - name: Aging and One-Carbon Metabolism
+        - name: Aging and the methyl economy
           description: GNMT sits at the center of the methyl economy. With the Huffman and Gavathiotis labs, we're testing whether shifting methyl-donor flux through GNMT can move aging-related transcriptional and metabolic programs.
-          icon: hero/clock
-          gradient: from-amber-400 to-orange-600
-          status: active
+          image: research/methyl-cycle.png
           topics:
             - GNMT
             - One-carbon metabolism
@@ -171,11 +165,9 @@ sections:
       subtitle: Post-translational modification of IDRs
       text: "Both grew out of the same question: what does a specific chemical modification actually do to a protein? We chase that from purified enzymes in a test tube through to cells and disease models."
       items:
-        - name: PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing
+        - name: Methylation, gene regulation, and RNA processing
           description: We study how PRMT5 methylates histones and splicing factors to control chromatin and mRNA processing, and how PRMT-dependent regulation may go wrong in C9orf72 ALS. GNMT sets the methyl-donor supply that all of this methylation draws on, tying the two together.
-          icon: hero/document-text
-          gradient: from-blue-400 to-indigo-600
-          status: active
+          image: research/methylation-rna.png
           topics:
             - PRMT5
             - GNMT and SAM homeostasis
@@ -185,11 +177,9 @@ sections:
           cta:
             text: Read more
             url: /research/arginine-methylation
-        - name: Glutamylation, Histone Chaperones, and Intrinsically Disordered Regions
+        - name: Glutamylation and histone chaperones
           description: Histone chaperones use long, acidic, disordered stretches to mimic DNA and grab onto histones. We're working out how modifications like glutamylation tune that behavior — and what happens when it's hijacked in NPM1-mutant leukemia.
-          icon: hero/adjustments-horizontal
-          gradient: from-fuchsia-400 to-rose-600
-          status: active
+          image: research/chaperone-idr.png
           topics:
             - NPM1, NPM2, Nap1, PTMA
             - TTLL4 glutamyltransferase
@@ -212,10 +202,10 @@ sections:
   - block: cta-image-paragraph
     content:
       items:
-        - title: 'From enzyme mechanism to leukemia and ALS'
+        - title: 'From mechanism to disease'
           text: |
             Two projects show how this works in practice. TTLL4-mediated glutamylation of NPM1c looks like a real vulnerability in NPM1-mutant AML, and we're testing whether PRMT-dependent control of TDP-43 cryptic exon splicing can be turned into a therapeutic angle in C9orf72 ALS. In both cases we started with the enzyme mechanism and only then went looking for the disease connection.
-          image: research/nucleosome-cartoon.jpg
+          image: research/ttll4-npm1-glutamylation-graphic.png
           feature_icon: hero/check-circle
           features:
             - 'Disease-facing projects in AML, ALS, and aging'
