@@ -138,3 +138,81 @@ a[class*="group/link"]:hover {
 #current .group:has(> div a[href="/authors/me/"]) div.mb-4:has(> div.flex-wrap) {
   display: none;
 }
+
+/* Section-heading scale: normalize across landing-page blocks.
+
+   The vendored Hugo Blox blocks each pick their own heading size, and
+   the mix was visible on the homepage: research-areas (our local
+   override) rendered section titles at 36px, while team-showcase
+   ("Lab Members") and contact-info ("Contact") used
+   text-3xl/sm:text-4xl/lg:text-5xl = 48px, the collection block
+   ("Featured Projects") used a flat 30px, and the cta-card title
+   climbed to 72px at xl. 48px and 72px are both *larger than any page
+   h1 on this site* (page titles are 30px), which read as a mistake.
+
+   Rather than fork three 350-600 line vendored blocks to change one
+   class each, the sizes are normalized here to the same scale our
+   research-areas override uses (24px / 30px / 36px).
+
+   Matched by the utility signature every one of those block titles
+   carries (font-bold + tracking-tight), NOT by the bare `h2` element:
+   a plain `.hbb-section h2` rule also catches the `##` headings inside
+   markdown body copy — Resources' "Protocols"/"Plasmids", People's
+   "Rotation & Summer Students" — and blew those up to 36px, larger
+   than the page title above them.
+
+   Also excluded: `.text-2xl`, the size our own markdown-block override
+   gives its title. Those are sub-section headings (Supported by,
+   Collaborators) that should stay a step down from a major section
+   title. If a block is later forked locally for other reasons, set the
+   size in the fork and drop its rule here. */
+.hbb-section h2[class*="font-bold"][class*="tracking-tight"]:not(.text-2xl),
+.hbb-section [class*="mb-6"][class*="text-3xl"][class*="font-bold"] {
+  font-size: 1.5rem;      /* text-2xl */
+  line-height: 2rem;
+}
+@media (min-width: 640px) {
+  .hbb-section h2[class*="font-bold"][class*="tracking-tight"]:not(.text-2xl),
+  .hbb-section [class*="mb-6"][class*="text-3xl"][class*="font-bold"] {
+    font-size: 1.875rem;  /* text-3xl */
+    line-height: 2.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hbb-section h2[class*="font-bold"][class*="tracking-tight"]:not(.text-2xl),
+  .hbb-section [class*="mb-6"][class*="text-3xl"][class*="font-bold"] {
+    font-size: 2.25rem;   /* text-4xl */
+    line-height: 2.5rem;
+  }
+}
+
+/* The vendored collection block ("Featured Projects") renders its title
+   in a <div>, so it misses the h1..h5 display-font rule above and came
+   out in the body font next to serif section titles. Our own markdown
+   block override emits a real <h2> instead; this block is upstream, so
+   the font is applied here by hand. */
+.hbb-section [class*="mb-6"][class*="text-3xl"][class*="font-bold"] {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* "Read more" affordance: one colour everywhere.
+
+   The same link was rendering in three colours depending on which
+   template drew it — teal (text-primary-500) in the Featured Projects /
+   Projects list view, a slightly different teal (text-primary-600) on
+   the homepage research-area cards, and the orange accent on News,
+   where it goes through the prose link rule above. The stated intent
+   at the top of this file is that "Read more" links use the orange
+   accent, so the two teal ones were the outliers. Templates that draw
+   this link carry `.hb-readmore`; keep using that class for any new
+   one rather than picking a Tailwind colour. */
+.hb-readmore,
+.hb-readmore:visited {
+  color: var(--color-accent);
+}
+a:hover > .hb-readmore,
+a.hb-readmore:hover {
+  color: var(--color-accent-dark);
+}

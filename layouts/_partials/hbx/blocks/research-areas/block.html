@@ -185,7 +185,7 @@
               </div>
               {{ end }}
               {{ if and $item_link $cta_text_item }}
-              <a href="{{ $item_link | safeURL }}" {{ $item_target | safeHTMLAttr }} class="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium text-sm">
+              <a href="{{ $item_link | safeURL }}" {{ $item_target | safeHTMLAttr }} class="hb-readmore inline-flex items-center font-medium text-sm">
                 {{ $cta_text_item }}
                 {{ partial "functions/get_icon" (dict "name" "hero/arrow-right" "attributes" "class=\"ml-1 w-4 h-4\"") }}
               </a>

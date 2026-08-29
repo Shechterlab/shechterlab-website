@@ -13,7 +13,7 @@ publishDate: "2011-12-09T00:00:00Z"
 publication_types: ["article-journal"]
 pub_category: lab
 publication: "*Journal of Biological Chemistry, 286*(49), 42221-42231"
-summary: "First report that PRMT5/MEP50 methylates histones H2A and H4 and the histone chaperone nucleoplasmin in the Xenopus egg."
+summary: "First report that PRMT5-MEP50 methylates histones H2A and H4 and the histone chaperone nucleoplasmin in the Xenopus egg."
 tags:
 - PRMT5
 - Xenopus

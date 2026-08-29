@@ -1,5 +1,5 @@
 ---
-title: 'NPM1-Mutant Acute Myeloid Leukemia'
+title: 'NPM1-mutant Acute Myeloid Leukemia'
 date: 2026-06-28
 summary: 'TTLL4-dependent glutamylation of NPM1c as a therapeutic target in NPM1-mutant AML.'
 image:
