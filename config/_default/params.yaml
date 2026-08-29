@@ -10,7 +10,7 @@ hugoblox:
       twitter: ""
 
   theme:
-    mode: system
+    mode: light
     pack: "default"
     colors:
       primary: "#155e75"
