@@ -1,0 +1,64 @@
+{{/*
+  Local override of Hugo Blox Kit's layouts/list.html (vendored in the
+  github.com/HugoBlox/kit/modules/blox module). A file at this same path
+  in our own repo takes precedence over the module's version.
+
+  This is the generic list template — it renders /projects/, every
+  /tags/<tag>/ page, and every /publication_types/<type>/ page. (Sections
+  with their own list template — publications, news — do not use it.)
+
+  Only change from upstream: the page h1 was `lg:text-6xl` (60px on
+  desktop), which was far larger than every other page title on the
+  site — /publications, single publication pages, project pages, news
+  posts, and author pages all render their h1 at text-2xl/sm:text-3xl
+  (30px). Matched to that so a visitor moving between list pages
+  doesn't see the title size jump.
+
+  If Hugo Blox Kit changes the vendored list.html upstream, this
+  override will NOT pick up those changes automatically.
+*/}}
+{{ define "main" }}
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="!text-2xl sm:!text-3xl">{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+
+{{ $view := .Params.view | default "card" }}
+{{ $block := . }}
+
+{{ $paginator := .Paginate .Pages.ByDate.Reverse }}
+{{ $config := dict
+  "columns" (.Params.columns | default 2)
+  "len" (len $paginator.Pages)
+  "fill_image" (.Params.fill_image | default true)
+  "show_date" (.Params.show_date | default true)
+  "show_read_time" (.Params.show_read_time | default true)
+  "show_read_more" (.Params.show_read_more | default true)
+}}
+
+{{/* Check if any pages have author_notes to enable Alpine.js */}}
+{{ range .Pages }}
+  {{ if isset .Params "author_notes" }}
+    {{ $.Store.Set "has_alpine" true }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+<div class="flex flex-col items-center">
+
+  {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" $view "config" $config) }}
+
+  {{ range $index, $item := $paginator.Pages }}
+  {{ partial "functions/render_view" (dict "page" . "item" . "view" $view "index" $index "config" $config) }}
+  {{end}}
+
+  {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" $view) }}
+
+  {{ partial "components/paginator" . }}
+
+</div>
+
+{{ end }}

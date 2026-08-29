@@ -16,6 +16,12 @@
   the alternative (styling each page's block individually) would drift
   out of sync over time.
 
+  The block title is an <h2>, not the <div> upstream uses: a section
+  title that isn't a heading element is skipped by screen-reader
+  heading navigation, and it also misses the site's `h1..h5 {
+  font-family: var(--font-display) }` rule, so it rendered in the body
+  font while every neighbouring section title was serif.
+
   Also added `w-full` to the prose div: its parent is a flex container
   with `items-center`, which sizes non-stretched children to fit-content
   instead of the container's available width. That's invisible for
@@ -43,9 +49,9 @@
 <div class="flex flex-col items-center max-w-prose mx-auto gap-2 justify-center px-6">
 
   {{ with $title }}
-  <div class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+  <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
     {{ . }}
-  </div>
+  </h2>
   {{ end }}
 
   {{ with $text }}<div class="prose prose-slate prose-base dark:prose-invert max-w-prose w-full">{{ . }}</div>{{ end }}

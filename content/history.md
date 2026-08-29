@@ -6,7 +6,7 @@ sections:
     content:
       title: Lab History
       text: |
-        The Shechter Lab opened at Albert Einstein College of Medicine in 2009. We started as a biochemistry lab focused on histone chaperones and Xenopus egg extract chromatin, and have expanded over seventeen years into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
+        The Shechter Lab opened at Albert Einstein College of Medicine in 2009. We started as a biochemistry lab focused on histone chaperones and *Xenopus* egg extract chromatin, and have expanded over seventeen years into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
 
         **Lab photos, by year** — click to enlarge.
 
@@ -82,7 +82,7 @@ sections:
 
         ## 2014–2016
 
-        [Emmanuel Burgos](/authors/emmanuel-s.-burgos/) joins as Instructor and Research Associate. [Hongshan Chen](/authors/hongshan-chen/) joins as a postdoctoral fellow. The American Cancer Society Research Scholar Award and an NIH/NIGMS R01 ("Crosstalk to Histone Arginine Methylation") are awarded in 2014, and David Shechter is promoted to Associate Professor in 2015. Lab expands into Xenopus developmental chromatin biology, nucleoplasmin structure-function, and early PRMT5 mechanistic work.
+        [Emmanuel Burgos](/authors/emmanuel-s.-burgos/) joins as Instructor and Research Associate. [Hongshan Chen](/authors/hongshan-chen/) joins as a postdoctoral fellow. The American Cancer Society Research Scholar Award and an NIH/NIGMS R01 ("Crosstalk to Histone Arginine Methylation") are awarded in 2014, and David Shechter is promoted to Associate Professor in 2015. Lab expands into *Xenopus* developmental chromatin biology, nucleoplasmin structure-function, and early PRMT5 mechanistic work.
 
         ## 2013
 

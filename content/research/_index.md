@@ -35,7 +35,7 @@ sections:
       title: Disease Focus
       text: |
         - **[C9orf72 Amyotrophic Lateral Sclerosis →](/research/als)** — PRMT-dependent control of RNA-binding proteins, stress granules, and TDP-43 cryptic exons.
-        - **[NPM1-Mutant Acute Myeloid Leukemia →](/research/aml)** — TTLL4-mediated glutamylation of the mutant NPM1 protein that drives this leukemia.
+        - **[NPM1-mutant Acute Myeloid Leukemia →](/research/aml)** — TTLL4-mediated glutamylation of the mutant NPM1 protein that drives this leukemia.
         - **[Aging and One-Carbon Metabolism →](/research/aging)** — GNMT and the methyl economy as a lever on aging-related transcriptional and metabolic programs.
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
