@@ -42,22 +42,22 @@ sections:
       text: |
         <div class="stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1.5rem;max-width:80rem;width:100%;margin:0 auto">
           <a href="/facilities" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
-            <div style="font-size:2.75rem;font-weight:900;line-height:1">16</div>
+            <div class="stat-num" data-count="16" style="font-size:2.75rem;font-weight:900;line-height:1">0</div>
             <div style="margin-top:0.5rem;font-weight:600">Years at Einstein</div>
             <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">Started November 2009 · Department of Biochemistry</div>
           </a>
           <a href="/research" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
-            <div style="font-size:2.75rem;font-weight:900;line-height:1">2</div>
+            <div class="stat-num" data-count="2" style="font-size:2.75rem;font-weight:900;line-height:1">0</div>
             <div style="margin-top:0.5rem;font-weight:600">Molecular research areas</div>
             <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">Methylation and RNA processing · Glutamylation and chaperones — spanning 3 disease areas</div>
           </a>
           <a href="/people" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
-            <div style="font-size:2.75rem;font-weight:900;line-height:1">50+</div>
+            <div class="stat-num" data-count="50" data-suffix="+" style="font-size:2.75rem;font-weight:900;line-height:1">0</div>
             <div style="margin-top:0.5rem;font-weight:600">Trainees and mentees</div>
             <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">PhD, MD-PhD, postdoctoral, instructor, rotation, undergraduate, high-school</div>
           </a>
           <a href="https://scholar.google.com/citations?user=Mz9sZUoAAAAJ" class="stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s">
-            <div style="font-size:2.75rem;font-weight:900;line-height:1">h = 30</div>
+            <div class="stat-num" data-count="30" data-prefix="h = " style="font-size:2.75rem;font-weight:900;line-height:1">h = 0</div>
             <div style="margin-top:0.5rem;font-weight:600">Google Scholar</div>
             <div style="margin-top:0.4rem;font-size:0.8rem;opacity:0.65">6000+ citations across original research and reviews</div>
           </a>
@@ -67,6 +67,45 @@ sections:
           .stat-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important; }
           .stat-card > div:first-child { color: var(--color-primary-600, #0f766e) !important; }
         </style>
+        <script>
+          (function () {
+            var nums = document.querySelectorAll('.stat-num[data-count]');
+            if (!nums.length) return;
+            var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            function animate(el) {
+              var target = parseInt(el.getAttribute('data-count'), 10);
+              var prefix = el.getAttribute('data-prefix') || '';
+              var suffix = el.getAttribute('data-suffix') || '';
+              if (reduceMotion || isNaN(target)) {
+                el.textContent = prefix + target + suffix;
+                return;
+              }
+              var duration = 1200;
+              var start = null;
+              function step(ts) {
+                if (!start) start = ts;
+                var progress = Math.min((ts - start) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = prefix + Math.round(eased * target) + suffix;
+                if (progress < 1) window.requestAnimationFrame(step);
+              }
+              window.requestAnimationFrame(step);
+            }
+            if ('IntersectionObserver' in window) {
+              var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    animate(entry.target);
+                    observer.unobserve(entry.target);
+                  }
+                });
+              }, { threshold: 0.4 });
+              nums.forEach(function (el) { observer.observe(el); });
+            } else {
+              nums.forEach(animate);
+            }
+          })();
+        </script>
     design:
       css_class: "bg-gradient-to-b from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800"
       spacing:
