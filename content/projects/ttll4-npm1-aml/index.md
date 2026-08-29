@@ -6,7 +6,7 @@ tags:
   - Chromatin
 featured: true
 image:
-  filename: "research/nucleosome-cartoon.jpg"
+  filename: "research/aml-blast-cells.png"
   focal_point: Smart
   preview_only: true
 ---

@@ -8,7 +8,7 @@ tags:
   - Chromatin
 featured: true
 image:
-  filename: "research/nucleosome-cartoon.jpg"
+  filename: "research/methylation-rna.png"
   focal_point: Smart
   preview_only: true
 ---

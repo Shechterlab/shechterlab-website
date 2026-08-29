@@ -36,14 +36,14 @@
     </div>
   </div>
   <div class="mt-3 md:mt-1 relative z-10 order-first md:order-last">
-    <a href="{{$item.RelPermalink}}" class="block w-16 h-16 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+    <a href="{{$item.RelPermalink}}" class="block w-24 h-24 rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800">
       {{ with $resource }}
         {{ if reflect.IsImageResourceProcessable . }}
-          {{ $thumb := .Fill "128x128 Center webp" }}
-          <img src="{{ $thumb.RelPermalink }}" width="64" height="64" loading="lazy" decoding="async"
+          {{ $thumb := .Fill "192x192 Center webp" }}
+          <img src="{{ $thumb.RelPermalink }}" width="96" height="96" loading="lazy" decoding="async"
                class="w-full h-full object-cover" alt="{{ $item.Title | plainify }} thumbnail">
         {{ else }}
-          <img src="{{ .RelPermalink }}" width="64" height="64" loading="lazy" decoding="async"
+          <img src="{{ .RelPermalink }}" width="96" height="96" loading="lazy" decoding="async"
                class="w-full h-full object-cover" alt="{{ $item.Title | plainify }} thumbnail">
         {{ end }}
       {{ end }}

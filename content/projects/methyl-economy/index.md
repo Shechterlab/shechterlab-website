@@ -9,7 +9,7 @@ tags:
   - PRMT5
 featured: false
 image:
-  filename: "research/nucleosome-cartoon.jpg"
+  filename: "research/methyl-cycle.png"
   focal_point: Smart
   preview_only: true
 ---

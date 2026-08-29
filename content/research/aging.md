@@ -3,7 +3,7 @@ title: 'Aging and One-Carbon Metabolism'
 date: 2026-06-28
 summary: 'GNMT and the methyl economy as a target for shifting aging-related transcriptional and metabolic programs.'
 image:
-  filename: "research/PLACEHOLDER-aging-figure.jpg"
+  filename: "research/methyl-cycle.png"
 ---
 
 GNMT is the liver's main valve for the cellular methyl economy, and with the Huffman and Gavathiotis labs we're testing whether shifting methyl-donor flux through it can move aging-related transcriptional and metabolic programs.
