@@ -6,6 +6,13 @@ image:
   filename: "research/chaperone-idr.png"
 ---
 
+<figure class="fig-side">
+  <a href="/media/research/charge-mimicry.png" target="_blank" rel="noopener">
+    <img src="/media/research/charge-mimicry.png" alt="A positively charged histone flanked by negatively charged DNA on one side and a chaperone's acidic disordered tail presenting the same negative charges on the other">
+  </a>
+  <figcaption>DNA mimicry: a chaperone's acidic disordered tail (right) presents the histone the same negative charge that DNA does (left).</figcaption>
+</figure>
+
 Histones are among the most positively charged proteins in the cell, and DNA is a dense ribbon of negative charge. Getting the two together in an orderly way — without everything clumping into a mess — is the job of **histone chaperones**. The chaperones we study (nucleoplasmin/NPM2, NPM1, Nap1, PTMA) all share a striking feature: long, floppy, intensely acidic stretches with no fixed structure. These acidic disordered regions work by *impersonating DNA* — they present a negatively charged surface that histones grab onto, so the chaperone can hold histones safely and hand them off when chromatin is being built.
 
 We found that cells tune this mimicry chemically. **Glutamylation** — the enzymatic addition of extra glutamate residues, each adding more negative charge — of the acidic regions of NPM2 and Nap1 makes them better DNA mimics and measurably better chaperones. Phosphorylation and arginine methylation modify the same regions, and nucleoplasmin additionally regulates itself through intramolecular contacts that control when it holds histones tightly and when it releases them. Together, these modifications adjust chaperone activity by tuning the net charge of the disordered region.

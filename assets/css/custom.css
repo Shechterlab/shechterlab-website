@@ -297,3 +297,63 @@ footer p a:hover {
   color: var(--color-accent);
   text-decoration-color: var(--color-accent);
 }
+
+/* Inline side figures for the research pages.
+
+   The research topic pages are long stretches of unbroken text. These
+   let a small illustration sit alongside the paragraph it belongs to
+   on desktop, the way a journal figure does, while stacking to full
+   width on phones where a float would leave an unreadably narrow
+   column. Usage in a page's markdown (raw HTML passes through):
+
+     <figure class="fig-side">
+       <a href="/media/research/NAME.png" target="_blank" rel="noopener">
+         <img src="/media/research/NAME.png" alt="...">
+       </a>
+       <figcaption>Short caption.</figcaption>
+     </figure>
+
+   Put the <figure> immediately BEFORE the paragraph it should sit
+   beside. Add `fig-left` to float it left instead; alternating sides
+   down a long page reads better than stacking them all on one edge.
+   Headings clear the float so a figure never overlaps the next
+   section. */
+.prose .fig-side {
+  margin: 0 0 1.25rem;
+}
+.prose .fig-side img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.10);
+  margin: 0;
+}
+.prose .fig-side figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgb(100 116 139);
+  text-align: left;
+}
+.dark .prose .fig-side figcaption {
+  color: rgb(148 163 184);
+}
+
+@media (min-width: 768px) {
+  .prose .fig-side {
+    float: right;
+    width: 270px;
+    margin: 0.35rem 0 1rem 1.75rem;
+  }
+  .prose .fig-side.fig-left {
+    float: left;
+    margin: 0.35rem 1.75rem 1rem 0;
+  }
+}
+
+/* Keep floated figures from running under the next section. */
+.prose h2,
+.prose h3,
+.prose hr {
+  clear: both;
+}

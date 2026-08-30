@@ -8,7 +8,21 @@ image:
 
 Methylation is one of the cell's most heavily used regulatory marks: enzymes transfer a methyl group from the donor molecule S-adenosylmethionine (SAM) onto proteins, DNA, and RNA, changing how those molecules behave. We have long studied the protein arginine methyltransferases (PRMTs) **PRMT1** and **PRMT5** — above all PRMT5, which methylates histones (H2A, H3, H4) and RNA-binding proteins (the Sm proteins, CHTOP) to control both how genes are packaged and how their messages mature.
 
+<figure class="fig-side">
+  <a href="/media/research/grip-chromatin-escape.png" target="_blank" rel="noopener">
+    <img src="/media/research/grip-chromatin-escape.png" alt="Incompletely spliced transcripts tethered to a chromatin fibre, with one fully spliced transcript released after a methylation event">
+  </a>
+  <figcaption>GRIPPs: polyadenylated but incompletely spliced transcripts (orange segment) sit parked on chromatin. PRMT5 methylation of the Sm proteins licenses release.</figcaption>
+</figure>
+
 Much of our recent work grew out of a puzzle about PRMT5 inhibitors, which are in clinical trials for cancer. Inhibit PRMT5 in cells and the gene expression changes take *days* to appear — far longer than it takes the drug to hit its target. We found the missing piece on chromatin itself. Cells hold a substantial pool of polyadenylated but incompletely spliced mRNAs physically tethered to the genome, and PRMT5 methylation of the Sm proteins is the signal that licenses their final processing and release into the cytoplasm. We named these parked messages **GRIPPs** — genomically retained, incompletely processed polyadenylated transcripts ([*Molecular Cell*, 2025](/publications/productive-mrna-chromatin-escape-2025/)). When PRMT5 is inhibited, the release valve closes: transcripts pile up on chromatin instead of maturing, and the delayed drug response follows from that.
+
+<figure class="fig-side fig-left">
+  <a href="/media/research/histone-supply-fork.png" target="_blank" rel="noopener">
+    <img src="/media/research/histone-supply-fork.png" alt="A replication fork where one daughter strand receives methylated new nucleosomes and the other runs short, leaving unpackaged gaps">
+  </a>
+  <figcaption>At the replication fork, methylated new histones are packaged onto daughter DNA. Lose that step and the supply runs short mid-replication.</figcaption>
+</figure>
 
 A second thread connects PRMT5 to the supply of histones themselves. Methylation of newly made histone H4 by PRMT5 is required to sustain histone production during S phase — lose it, and cells run short of histones mid-replication, with replication stress and genome instability as the consequence.
 

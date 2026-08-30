@@ -6,7 +6,21 @@ image:
   filename: "research/als-motor-neuron.png"
 ---
 
+<figure class="fig-side">
+  <a href="/media/research/stress-granules.png" target="_blank" rel="noopener">
+    <img src="/media/research/stress-granules.png" alt="RNA-binding proteins dispersed in the nucleus versus clustered into cytoplasmic condensates, with a methyl mark on the transport step between them">
+  </a>
+  <figcaption>Methylation-sensitive steps govern where RNA-binding proteins go — dispersed in the nucleus, or clustered into cytoplasmic condensates.</figcaption>
+</figure>
+
 Arginine methylation shapes how RNA-binding proteins behave — where they go in the cell, whether they form stress granules, how they move between nucleus and cytoplasm. In C9orf72 ALS, the toxic dipeptide repeat proteins and the aberrant RNA-protein condensates they form both depend on methylation-sensitive pathways.
+
+<figure class="fig-side fig-left">
+  <a href="/media/research/cryptic-exon.png" target="_blank" rel="noopener">
+    <img src="/media/research/cryptic-exon.png" alt="A pre-mRNA in which a cryptic exon is normally spliced over, versus one in which it is mistakenly included">
+  </a>
+  <figcaption>A cryptic exon is normally spliced over (top). When TDP-43 regulation fails, it is included in the mature message (bottom).</figcaption>
+</figure>
 
 We're asking whether PRMT inhibition, and PRMT-dependent control of TDP-43 cryptic exons specifically, could be turned into a therapy. This grows directly out of our PRMT5 substrate work (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)).
 
