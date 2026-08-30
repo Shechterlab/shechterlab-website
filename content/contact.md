@@ -54,16 +54,10 @@ sections:
           </div>
 
           <div>
-            <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" name="subject" required>
-          </div>
-
-          <div>
             <label for="cf-message">Message</label>
             <textarea id="cf-message" name="message" rows="7" required></textarea>
           </div>
 
           <button type="submit">Send message</button>
-          <p class="hb-form-note">Goes straight to David. Your email is only used to reply.</p>
         </form>
 ---

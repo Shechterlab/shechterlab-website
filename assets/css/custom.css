@@ -444,11 +444,6 @@ footer p a:hover {
 .hb-form button[type="submit"]:hover {
   background: var(--color-accent);
 }
-.hb-form-note {
-  margin: 0;
-  font-size: 0.78rem;
-  color: rgb(100 116 139);
-}
 .dark .hb-form label { color: rgb(203 213 225); }
 .dark .hb-form input,
 .dark .hb-form select,
@@ -457,4 +452,3 @@ footer p a:hover {
   background: rgb(30 41 59);
   border-color: rgb(71 85 105);
 }
-.dark .hb-form-note { color: rgb(148 163 184); }
