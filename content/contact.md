@@ -20,7 +20,11 @@ sections:
 
         <h2 id="inquiry">Inquiry</h2>
 
-        We welcome inquiries from prospective graduate students (Einstein MSTP and PhD programs) and postdoctoral fellows. Use the form below — please include your CV and a brief description of your research interests, and it will reach David directly.
+        Use this form for anything — a question about the science, a possible collaboration, a request for a reagent or dataset, or joining the lab. It goes straight to David.
+
+        If you're asking about a paper or a result, say which one and what you want to know. If you're proposing a collaboration, a sentence on what each side would bring is more useful than a formal letter.
+
+        Prospective graduate students (Einstein MSTP and PhD programs), postdocs, and rotation students are welcome. Tell us what you actually want to work on rather than sending a generic note — you can attach your CV when David replies.
 
         **Lab members:** [Lab Wiki ↗](https://wiki.shechterlab.org)
 
@@ -40,12 +44,15 @@ sections:
           </div>
 
           <div>
-            <label for="cf-role">I am a…</label>
-            <select id="cf-role" name="role">
-              <option>Prospective graduate student</option>
-              <option>Prospective postdoc</option>
-              <option>Prospective rotation / undergraduate student</option>
-              <option>Collaborator or colleague</option>
+            <label for="cf-role">This is about…</label>
+            <select id="cf-role" name="topic">
+              <option>A question about the science</option>
+              <option>A possible collaboration</option>
+              <option>Reagents, plasmids, structures, or data</option>
+              <option>Joining the lab — graduate student (MSTP / PhD)</option>
+              <option>Joining the lab — postdoc</option>
+              <option>Joining the lab — rotation or undergraduate student</option>
+              <option>Teaching, seminars, or outreach</option>
               <option>Press or other</option>
             </select>
           </div>
