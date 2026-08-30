@@ -17,17 +17,42 @@
   --ncc-navy: #003884;
 }
 
-/* Headings in a grotesque to echo the logo wordmark; body text in Inter. */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+/* ---------------------------------------------------------------------
+   Typeface
 
-body {
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+   The logo wordmark ("chromatin club") is set in Helvetica — double-story
+   'a', horizontally cut 'c' terminals, the angled shear on the 't'. Inter
+   is the screen-native neo-grotesque in that same lineage, so headings and
+   body in Inter read as the same voice as the logo rather than as a second
+   opinion beside it. It is also what shechterlab.org uses, which keeps the
+   two sites recognisably related.
+
+   Inter is already self-hosted by the theme at /dist/font/Inter.var.woff2
+   and wired to the two variables below, so there is no webfont request to
+   make and nothing to allow through the CSP. An earlier draft paired
+   Archivo for headings off Google Fonts; that cost two external requests
+   and put a second grotesque next to the logo, for no gain.
+
+   TO CHANGE THE HEADING FACE: override --hb-font-heading here and nothing
+   else. If the replacement is not self-hosted, also add its origin to
+   hugoblox.security.csp in config/_default/params.yaml — style-src for the
+   stylesheet, font-src for the font files — or it is blocked silently.
+   ------------------------------------------------------------------- */
+
+:root {
+  --hb-font-heading: var(--hb-font-family-sans);
+  --hb-font-body: var(--hb-font-family-sans);
 }
 
-h1, h2, h3, h4,
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.015em;
+/* Inter tracks loose at display sizes; tighten headings so they set as
+   densely as the logo wordmark. */
+h1, h2,
+.prose h1, .prose h2 {
+  letter-spacing: -0.021em;
+}
+
+h1, .prose h1 {
+  letter-spacing: -0.028em;
 }
 
 /* ---------------------------------------------------------------------
@@ -235,4 +260,120 @@ a.aspect-square:not(:has(img)) > div {
 
 .cta-card-block-container .text-white\/80 {
   color: rgb(255 255 255 / 0.8);
+}
+
+/* ---------------------------------------------------------------------
+   History timeline
+
+   A two-column grid rather than an absolutely-positioned rail: the year
+   and the entry stay aligned however long the prose runs, and the whole
+   thing collapses to a single column on a phone without the connecting
+   line ending up somewhere absurd.
+   ------------------------------------------------------------------- */
+
+.ncc-timeline {
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0;
+  max-width: 56rem;
+}
+
+.ncc-timeline > li {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0 3rem;
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+/* The connecting rail, drawn between the dots rather than through them.
+   The last entry has no rail below it. */
+.ncc-timeline > li::before {
+  content: '';
+  position: absolute;
+  left: calc(7rem + 3rem / 2 - 1px);
+  top: 1.9rem;
+  bottom: 0;
+  width: 2px;
+  background: color-mix(in srgb, var(--ncc-gray) 45%, transparent);
+}
+
+.ncc-timeline > li:last-child::before {
+  display: none;
+}
+
+.ncc-timeline > li::after {
+  content: '';
+  position: absolute;
+  left: calc(7rem + 3rem / 2 - 7px);
+  top: 0.45rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--ncc-navy);
+  box-shadow: 0 0 0 4px var(--hb-color-background, #fff);
+}
+
+/* The one entry that has not happened yet reads as an outline, not a
+   filled dot. */
+.ncc-timeline > li.ncc-tl-next::after {
+  background: var(--hb-color-background, #fff);
+  border: 3px solid var(--ncc-orange);
+}
+
+.ncc-tl-year {
+  text-align: right;
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--ncc-navy);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.dark .ncc-tl-year {
+  color: #7ea6e0;
+}
+
+.ncc-tl-body h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  /* Explicitly normal: the entry titles set at body size, where the tight
+     display tracking used on h1/h2 just reads as cramped. */
+  letter-spacing: normal;
+}
+
+.ncc-tl-body p {
+  margin: 0 0 0.75rem;
+  line-height: 1.65;
+}
+
+.ncc-tl-body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .ncc-timeline > li {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding-left: 1.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .ncc-timeline > li::before {
+    left: 5px;
+    top: 1.6rem;
+  }
+
+  .ncc-timeline > li::after {
+    left: 0;
+    top: 0.35rem;
+  }
+
+  .ncc-tl-year {
+    text-align: left;
+    font-size: 1.1rem;
+  }
 }

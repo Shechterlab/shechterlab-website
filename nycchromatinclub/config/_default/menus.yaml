@@ -8,6 +8,9 @@ main:
   - name: About
     url: '/about/'
     weight: 40
+  - name: History
+    url: '/history/'
+    weight: 45
   - name: Join
     url: '/join/'
     weight: 50

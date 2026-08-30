@@ -142,8 +142,8 @@ hugoblox:
         frame-ancestors 'none';
         object-src 'none';
         img-src 'self' data:;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-        font-src 'self' https://fonts.gstatic.com;
+        style-src 'self' 'unsafe-inline';
+        font-src 'self';
         script-src 'self' 'unsafe-inline';
         connect-src 'self';
         manifest-src 'self'

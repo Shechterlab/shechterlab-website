@@ -21,7 +21,7 @@ Requires Hugo **extended** 0.158.0 and Go 1.21+ (Hugo pulls the theme as a Go mo
 | Site title, colors, nav, SEO, CSP | `config/_default/` |
 | Homepage | `content/_index.md` |
 | Symposium and meeting pages | `content/events/<slug>/index.md` |
-| About, Speakers, Join, Code of conduct | `content/*.md` |
+| About, History, Speakers, Join, Code of conduct | `content/*.md` |
 | Steering committee and speaker profiles | `data/authors/<slug>.yaml` |
 | Logo, favicon, custom CSS | `assets/` |
 | Images referenced from raw HTML | `static/media/` |
@@ -34,6 +34,18 @@ Two files in `layouts/` patch bugs in the upstream theme; each explains itself a
   Shechter Lab site, which hit the same bug.
 - `_partials/views/card--start.html` — the card view hardcodes `grid-cols-1`, so
   a collection's `design.columns` is silently ignored.
+
+## Typography
+
+Everything is set in **Inter**, which the theme already self-hosts at
+`/dist/font/Inter.var.woff2`. The logo wordmark is Helvetica, and Inter is the
+screen-native neo-grotesque in that lineage — so the page reads as the same
+voice as the logo. The site makes **zero external requests**: no Google Fonts,
+no CDN, nothing for the CSP to allow.
+
+To change the heading face, override `--hb-font-heading` in
+`assets/css/custom.css` — it is the only place to touch, and the comment there
+explains what else has to change if the new face is not self-hosted.
 
 ## Brand colors
 
@@ -113,6 +125,9 @@ Search the repo for `TODO (organizers)`. Currently:
 - `content/events/symposium-2026/index.md` — the running order is the club's usual shape, not a confirmed 2026 timetable; abstract submission link and deadline still needed.
 - `content/events/symposium-2024/index.md` — stub with a **placeholder date**; needs the real date, venue, and keynotes, or delete the file.
 - `content/join.md` — Slack invite link.
+- `content/history.md` — the 2020-23 entry describes the virtual era in general
+  terms; the speaker list from those years and the date the Slack forum started
+  are not recorded anywhere public.
 - `info@nycchromatinclub.org` is used throughout as the contact address. Change it everywhere if that is not the right inbox.
 
 ## Deploying
