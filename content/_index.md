@@ -313,7 +313,7 @@ sections:
           url: https://scholar.google.com/citations?user=Mz9sZUoAAAAJ
       prospective:
         title: Get in touch
-        text: Questions about the science, collaborations, and inquiries from prospective rotation students, graduate applicants, and postdocs are all welcome.
+        text: Science, collaborations, and inquiries from prospective students and postdocs.
         button:
           text: Send a message
           url: /contact#inquiry
