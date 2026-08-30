@@ -1,3 +1,6 @@
+# Six top-level items. About is a dropdown so that History and the code of
+# conduct stay one click away without stretching the bar to eight items —
+# the theme's navbar renders any entry with children as a dropdown.
 main:
   - name: Symposium
     url: '/events/'
@@ -5,20 +8,40 @@ main:
   - name: Speakers
     url: '/speakers/'
     weight: 20
-  - name: About
-    url: '/about/'
+  - name: Gallery
+    url: '/gallery/'
+    weight: 30
+  - name: Sponsors
+    url: '/sponsors/'
     weight: 40
+
+  - identifier: about
+    name: About
+    weight: 50
+  - name: The club
+    url: '/about/'
+    parent: about
+    weight: 1
   - name: History
     url: '/history/'
-    weight: 45
+    parent: about
+    weight: 2
+  - name: Code of conduct
+    url: '/code-of-conduct/'
+    parent: about
+    weight: 3
+
   - name: Join
     url: '/join/'
-    weight: 50
+    weight: 60
 
 footer:
   - name: Join the mailing list
     url: '/join/'
     weight: 10
+  - name: Sponsors
+    url: '/sponsors/'
+    weight: 20
   - name: Code of conduct
     url: '/code-of-conduct/'
-    weight: 20
+    weight: 30

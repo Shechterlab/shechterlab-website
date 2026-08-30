@@ -1,0 +1,79 @@
+{{/*
+  Gallery block — local to this site.
+
+  Renders site.Data.gallery as one section per symposium, with a CSS-only
+  lightbox. No JavaScript: each full-size image is a `:target` overlay, so
+  it works with JS disabled, needs no library, and the browser's back
+  button closes it. The cost is that every full-size image is in the HTML,
+  which is fine at symposium scale (tens of photos, not thousands) but
+  would want rethinking past a few hundred.
+
+  An album with no photos renders an empty state rather than being hidden,
+  so the page shows the full run of symposia and it is obvious where
+  photos are still wanted.
+*/}}
+
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $albums := (index site.Data.gallery "albums") | default slice }}
+
+<div class="ncc-container">
+  {{ range $albums }}
+    {{ $year := .year }}
+    {{ $photos := .photos | default slice }}
+
+    <section class="ncc-album">
+      <div class="ncc-album-head">
+        <h2>
+          {{ with .event_url }}<a href="{{ . }}">{{ end }}
+            {{ .title | default (printf "%v" $year) }}
+          {{ with .event_url }}</a>{{ end }}
+        </h2>
+        <div class="ncc-album-meta">
+          <span class="ncc-album-year">{{ $year }}</span>
+          {{ with .location }}<span>{{ . }}</span>{{ end }}
+        </div>
+      </div>
+
+      {{ if eq (len $photos) 0 }}
+        <p class="ncc-album-empty">
+          No photos posted from this one yet.
+          {{ with .event_url }}<a href="{{ . }}">About this symposium &rarr;</a>{{ end }}
+        </p>
+      {{ else }}
+        <div class="ncc-gallery-grid">
+          {{ range $i, $p := $photos }}
+            {{ $res := resources.Get (printf "media/%s" $p.src) }}
+            {{ if $res }}
+              {{ $id := printf "ph-%v-%d" $year $i }}
+              {{ $thumb := $res.Fill "600x450 Center q85 webp" }}
+              {{ $full := cond (gt $res.Width 1800) ($res.Resize "1800x q88") $res }}
+              {{ $alt := $p.caption | default (printf "%s, %v" ($.title | default "Symposium") $year) }}
+              <a href="#{{ $id }}" class="ncc-gallery-thumb">
+                <img src="{{ $thumb.RelPermalink }}" alt="{{ $alt }}"
+                     width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy">
+                {{ with $p.caption }}<span>{{ . }}</span>{{ end }}
+              </a>
+              <div id="{{ $id }}" class="ncc-lightbox">
+                <a href="#ncc-lb-close" class="ncc-lightbox-close" aria-label="Close">&times;</a>
+                <figure>
+                  <img src="{{ $full.RelPermalink }}" alt="{{ $alt }}"
+                       width="{{ $full.Width }}" height="{{ $full.Height }}">
+                  {{ with $p.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+                </figure>
+              </div>
+            {{ else }}
+              {{ warnf "gallery: no image found at assets/media/%s (listed in data/gallery.yaml under %v)" $p.src $year }}
+            {{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </section>
+  {{ end }}
+
+  {{/* Single shared close target for every lightbox on the page. */}}
+  <div id="ncc-lb-close"></div>
+</div>

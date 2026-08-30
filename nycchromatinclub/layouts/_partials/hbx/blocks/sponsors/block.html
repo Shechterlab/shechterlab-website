@@ -1,0 +1,145 @@
+{{/*
+  Sponsors block — local to this site.
+
+  Renders site.Data.sponsors. The kit's stock `logos` block was not enough
+  here: it takes a flat list with a required image per entry, and this site
+  needs tiers, a per-year history, and — most importantly — sponsors that
+  render fine with no logo at all. Chasing a vector file from every company
+  before their name can appear on the page is how a sponsors page ends up
+  perpetually out of date.
+
+  Content options
+    mode: 'current' (default) renders the year flagged `current: true` in
+          data/sponsors.yaml, grouped into tiers.
+          'past' renders every other year, newest first, as compact rows.
+    title / subtitle / text  standard block header
+    empty_text  shown in place of the grid when the selected year has no
+                sponsors yet. Omit to hide the section entirely when empty.
+
+  Sponsor fields: name (required), url, tier, logo, blurb.
+*/}}
+
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $mode := (index $content "mode") | default "current" }}
+{{ $data := site.Data.sponsors }}
+{{ $tiers := (index $data "tiers") | default slice }}
+{{ $years := (index $data "years") | default slice }}
+
+{{/* Split the year list into the current one and the rest. */}}
+{{ $current := dict }}
+{{ $past := slice }}
+{{ range $years }}
+  {{ if eq (index . "current") true }}
+    {{ $current = . }}
+  {{ else }}
+    {{ $past = $past | append . }}
+  {{ end }}
+{{ end }}
+{{ $past = sort $past "year" "desc" }}
+
+{{ $selected := cond (eq $mode "past") $past (slice $current) }}
+{{ $has_any := false }}
+{{ range $selected }}
+  {{ if gt (len ((index . "sponsors") | default slice)) 0 }}{{ $has_any = true }}{{ end }}
+{{ end }}
+
+{{ $empty_text := index $content "empty_text" }}
+
+{{ if or $has_any $empty_text }}
+<div class="ncc-container">
+
+  {{ with index $content "title" }}
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center">{{ . }}</h2>
+  {{ end }}
+  {{ with index $content "subtitle" }}
+    <p class="mt-2 text-center text-gray-600 dark:text-gray-400">{{ . }}</p>
+  {{ end }}
+  {{ with index $content "text" }}
+    <div class="mt-3 text-center text-gray-600 dark:text-gray-400 mx-auto max-w-2xl">{{ . | markdownify }}</div>
+  {{ end }}
+
+  {{ if not $has_any }}
+    <p class="ncc-sponsors-empty">{{ $empty_text | markdownify }}</p>
+  {{ else if eq $mode "past" }}
+
+    {{/* Historical: one compact row per year. */}}
+    {{ range $past }}
+      {{ $sponsors := (index . "sponsors") | default slice }}
+      {{ if gt (len $sponsors) 0 }}
+        <div class="ncc-sponsor-year">
+          <div class="ncc-sponsor-year-label">{{ .year }}</div>
+          <ul class="ncc-sponsor-year-list">
+            {{ range $sponsors }}
+              <li>
+                {{ with .url }}<a href="{{ . }}" rel="noopener sponsored">{{ end }}
+                {{ .name }}
+                {{ with .url }}</a>{{ end }}
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    {{ end }}
+
+  {{ else }}
+
+    {{/* Current year, grouped by tier. A tier with no sponsors is skipped
+         rather than rendered as an empty heading. */}}
+    {{ $sponsors := (index $current "sponsors") | default slice }}
+    {{ range $tiers }}
+      {{ $tier := . }}
+      {{ $in_tier := where $sponsors "tier" $tier.id }}
+      {{ if gt (len $in_tier) 0 }}
+        <div class="ncc-sponsor-tier">
+          <h3>{{ $tier.name }}</h3>
+          {{ with $tier.blurb }}<p class="ncc-sponsor-tier-blurb">{{ . }}</p>{{ end }}
+          <div class="ncc-sponsor-grid">
+            {{ range $in_tier }}
+              {{ $inner := "" }}
+              {{ with .logo }}
+                {{ with resources.Get (printf "media/%s" .) }}
+                  {{ $img := .Fit "480x240 Center q90" }}
+                  {{ $inner = printf `<img src="%s" alt="%s" width="%d" height="%d" loading="lazy">` $img.RelPermalink ($.name | default "") $img.Width $img.Height }}
+                {{ end }}
+              {{ end }}
+              <div class="ncc-sponsor-card">
+                {{ with .url }}<a href="{{ . }}" rel="noopener sponsored">{{ end }}
+                  {{ if $inner }}{{ $inner | safeHTML }}{{ else }}<span class="ncc-sponsor-name">{{ .name }}</span>{{ end }}
+                {{ with .url }}</a>{{ end }}
+                {{ with .blurb }}<p class="ncc-sponsor-blurb">{{ . }}</p>{{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
+
+    {{/* Anything without a recognised tier still gets shown rather than
+         silently dropped — a typo in `tier:` should be visible, not fatal. */}}
+    {{ $tier_ids := apply $tiers "index" "." "id" }}
+    {{ $untiered := slice }}
+    {{ range $sponsors }}
+      {{ if not (in $tier_ids ((index . "tier") | default "")) }}{{ $untiered = $untiered | append . }}{{ end }}
+    {{ end }}
+    {{ if gt (len $untiered) 0 }}
+      <div class="ncc-sponsor-tier">
+        <h3>Sponsors</h3>
+        <div class="ncc-sponsor-grid">
+          {{ range $untiered }}
+            <div class="ncc-sponsor-card">
+              {{ with .url }}<a href="{{ . }}" rel="noopener sponsored">{{ end }}
+                <span class="ncc-sponsor-name">{{ .name }}</span>
+              {{ with .url }}</a>{{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+  {{ end }}
+</div>
+{{ end }}

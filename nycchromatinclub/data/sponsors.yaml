@@ -1,0 +1,65 @@
+# Sponsors of the NYC Chromatin Club symposium.
+#
+# HOW TO EDIT
+#   Add a block under `years` for each symposium. The year flagged
+#   `current: true` is shown as "This year's sponsors" on /sponsors/ and
+#   as the logo strip on the home page; every other year falls into
+#   "Sponsors over the years", newest first.
+#
+#   A sponsor needs only a `name`. `url` and `tier` are optional, and
+#   `logo` is optional too — a sponsor with no logo renders as a
+#   typographic card, which is deliberate: it means the page never waits
+#   on chasing a vector file, and it keeps the grid tidy when half the
+#   sponsors have sent artwork and half have not.
+#
+#   Logos go in assets/media/sponsors/ and are referenced relative to
+#   that directory, e.g. `logo: sponsors/acme.svg`. Use the sponsor's own
+#   supplied artwork; do not scrape a logo off their website.
+#
+# TIERS
+#   Rename or re-order these freely — the page renders whatever is here,
+#   in this order, and silently skips a tier with no sponsors in it.
+
+tiers:
+  - id: lead
+    name: Lead sponsors
+    blurb: Underwrite the venue and catering for the whole day.
+  - id: supporting
+    name: Supporting sponsors
+    blurb: Cover the poster session and trainee travel.
+  - id: exhibitor
+    name: Exhibitors
+    blurb: Host a table alongside the poster session.
+
+years:
+  - year: 2027
+    current: true
+    sponsors: []
+
+  - year: 2026
+    sponsors: []
+
+  - year: 2025
+    sponsors: []
+
+  - year: 2024
+    sponsors: []
+
+# ---------------------------------------------------------------------
+# TODO (organizers): fill in the real sponsor lists above.
+#
+# Two companies published their own event pages for the symposium and are
+# very likely sponsors or exhibitors, but "published an event page" is not
+# the same as "sponsored" and neither is confirmed, so neither is listed
+# above. Confirm and move them into the right year and tier:
+#
+#   - name: biomodal
+#     url: https://biomodal.com/
+#     tier: exhibitor
+#   - name: Cantata Bio (Dovetail Genomics)
+#     url: https://cantatabio.com/
+#     tier: exhibitor
+#
+# Active Motif runs a general "chromatin clubs" sponsorship programme and
+# may be worth approaching: https://www.activemotif.com/chromatin-clubs
+# ---------------------------------------------------------------------

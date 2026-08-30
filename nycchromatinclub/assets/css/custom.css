@@ -377,3 +377,306 @@ a.aspect-square:not(:has(img)) > div {
     font-size: 1.1rem;
   }
 }
+
+/* ---------------------------------------------------------------------
+   Sponsors
+   ------------------------------------------------------------------- */
+
+.ncc-sponsors-empty {
+  margin: 1.5rem auto 0;
+  max-width: 36rem;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.9rem;
+  border: 1px dashed color-mix(in srgb, var(--ncc-gray) 55%, transparent);
+  color: color-mix(in srgb, currentColor 75%, transparent);
+}
+
+.ncc-sponsor-tier {
+  margin-top: 2.5rem;
+}
+
+.ncc-sponsor-tier {
+  text-align: center;
+}
+
+.ncc-sponsor-tier h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ncc-navy);
+  margin: 0;
+}
+
+.dark .ncc-sponsor-tier h3 {
+  color: #7ea6e0;
+}
+
+.ncc-sponsor-tier-blurb {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Flex, not grid. A grid of `1fr` tracks always fills the container, so
+   `justify-content: center` does nothing and a half-empty row hugs the
+   left edge. Flex items size to their basis and the row centres, which is
+   what a sponsor wall wants — full rows when there are twelve sponsors,
+   a centred pair when there are two. */
+.ncc-sponsor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.1rem;
+}
+
+.ncc-sponsor-card {
+  flex: 1 1 200px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 7rem;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--hb-color-background, #fff);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.dark .ncc-sponsor-card {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.ncc-sponsor-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.ncc-sponsor-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ncc-sponsor-card img {
+  max-height: 3.5rem;
+  width: auto;
+  object-fit: contain;
+}
+
+/* A sponsor with no logo file still gets a presentable card. */
+.ncc-sponsor-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.ncc-sponsor-blurb {
+  margin: 0;
+  font-size: 0.82rem;
+  opacity: 0.7;
+}
+
+.ncc-sponsor-year {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark .ncc-sponsor-year {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.ncc-sponsor-year-label {
+  font-weight: 800;
+  color: var(--ncc-navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.dark .ncc-sponsor-year-label {
+  color: #7ea6e0;
+}
+
+.ncc-sponsor-year-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 640px) {
+  .ncc-sponsor-year {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Gallery + CSS-only lightbox
+   ------------------------------------------------------------------- */
+
+.ncc-album {
+  margin-bottom: 3rem;
+}
+
+.ncc-album-head {
+  border-bottom: 2px solid var(--ncc-orange);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.ncc-album-head h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ncc-album-head h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ncc-album-head h2 a:hover {
+  color: var(--ncc-navy);
+}
+
+.ncc-album-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  opacity: 0.72;
+}
+
+.ncc-album-year {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.ncc-album-empty {
+  margin: 0;
+  padding: 1.75rem;
+  border-radius: 0.9rem;
+  border: 1px dashed color-mix(in srgb, var(--ncc-gray) 55%, transparent);
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.ncc-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 0.85rem;
+}
+
+.ncc-gallery-thumb {
+  position: relative;
+  display: block;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.ncc-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.ncc-gallery-thumb:hover img,
+.ncc-gallery-thumb:focus-visible img {
+  transform: scale(1.05);
+}
+
+.ncc-gallery-thumb span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.75rem 0.7rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+}
+
+.ncc-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.ncc-lightbox:target {
+  display: flex;
+}
+
+.ncc-lightbox figure {
+  margin: 0;
+  max-width: 92vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+.ncc-lightbox img {
+  max-width: 92vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.ncc-lightbox figcaption {
+  color: #fff;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.ncc-lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------------------------------------------------------------
+   Shared container for the local sponsors and gallery blocks.
+
+   Matches the width `.ncc-wide` gives a markdown block's prose wrapper, so
+   an intro paragraph and the block beneath it share a left edge instead of
+   sitting at two different measures.
+   ------------------------------------------------------------------- */
+
+.ncc-container {
+  max-width: min(76rem, 100%);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}

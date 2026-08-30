@@ -21,13 +21,19 @@ Requires Hugo **extended** 0.158.0 and Go 1.21+ (Hugo pulls the theme as a Go mo
 | Site title, colors, nav, SEO, CSP | `config/_default/` |
 | Homepage | `content/_index.md` |
 | Symposium and meeting pages | `content/events/<slug>/index.md` |
-| About, History, Speakers, Join, Code of conduct | `content/*.md` |
+| About, History, Speakers, Sponsors, Gallery, Join, Code of conduct | `content/*.md` |
+| Sponsor list | `data/sponsors.yaml` |
+| Gallery photo list | `data/gallery.yaml` |
+| Gallery image files | `assets/media/gallery/<year>/` |
 | Steering committee and speaker profiles | `data/authors/<slug>.yaml` |
 | Logo, favicon, custom CSS | `assets/` |
 | Images referenced from raw HTML | `static/media/` |
 | Local theme overrides | `layouts/` |
 
-Two files in `layouts/` patch bugs in the upstream theme; each explains itself at the top:
+`layouts/_partials/hbx/blocks/` holds two blocks written for this site —
+`sponsors` and `gallery`. Both read from `data/`, so adding a sponsor or a photo
+is a YAML edit, never a template edit. The rest of `layouts/` patches bugs in the
+upstream theme; each file explains itself at the top:
 
 - `index.headers` — the vendored Netlify `_headers` generator collapses its own
   whitespace and emits a file that sets **no headers at all**. Copied from the
@@ -91,6 +97,54 @@ featured: true              # pins it on the homepage
 > Netlify preview/branch builds pass `--buildFuture`. Without it Hugo silently drops
 > future-dated pages — which would delete the upcoming symposium page, the one thing
 > the site exists to announce. Do not remove it.
+
+## Adding a sponsor
+
+Edit `data/sponsors.yaml`. Only `name` is required:
+
+```yaml
+years:
+  - year: 2027
+    current: true              # this year's list, shown at the top of /sponsors/
+    sponsors:
+      - name: Acme Epigenetics
+        tier: lead             # lead | supporting | exhibitor (rename in `tiers:`)
+        url: https://example.com/
+        logo: sponsors/acme.svg   # OPTIONAL — assets/media/sponsors/acme.svg
+```
+
+A sponsor with no `logo` renders as a typographic card, deliberately: the page
+should never be blocked on chasing a vector file. Use artwork the sponsor
+supplies; don't scrape a logo off their site. A sponsor whose `tier` doesn't
+match any entry in `tiers:` is still displayed, under a generic heading, so a
+typo shows up instead of silently dropping the sponsor.
+
+Years without `current: true` fall into "Sponsors over the years", newest first.
+
+## Adding gallery photos
+
+1. Drop the files into `assets/media/gallery/<year>/`.
+2. List them in `data/gallery.yaml` under that year.
+
+```yaml
+albums:
+  - year: 2026
+    photos:
+      - src: gallery/2026/posters-01.jpg
+        caption: Poster session, Vagelos Education Center
+```
+
+Upload at full size — Hugo generates the thumbnails. `caption` doubles as the
+alt text, so it is worth writing. An album with no photos shows an empty state
+rather than disappearing, so it stays obvious where photos are still wanted.
+
+The lightbox is CSS-only (`:target`), so it works without JavaScript and the
+back button closes it. The trade-off is that every full-size image is in the
+page HTML — fine for tens of photos, worth revisiting past a few hundred.
+
+**Before posting:** these are photographs of identifiable people. Make sure
+attendees were told photos would be published, pull any photo on request, and
+don't post a slide or poster without the presenter's say-so.
 
 ## Adding a person
 

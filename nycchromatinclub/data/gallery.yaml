@@ -1,0 +1,44 @@
+# Photo gallery, grouped by symposium.
+#
+# HOW TO ADD PHOTOS
+#   1. Drop the image files into assets/media/gallery/<year>/
+#   2. Add one line per photo under that year's `photos`, with the path
+#      relative to assets/media/ — e.g. `gallery/2026/posters-01.jpg`.
+#
+#      photos:
+#        - src: gallery/2026/posters-01.jpg
+#          caption: Poster session, Vagelos Education Center
+#
+#   `caption` is optional but worth writing: it is the alt text as well as
+#   the lightbox caption, so it is what a screen reader announces and what
+#   a search engine indexes.
+#
+#   Hugo generates the thumbnails, so upload the images at full size —
+#   there is no need to resize anything by hand. JPEGs are preferred over
+#   PNGs for photographs.
+#
+# CONSENT
+#   These are photographs of identifiable people at a professional
+#   meeting. Before posting, make sure attendees were told photos would be
+#   taken and published, and pull any photo on request, no questions
+#   asked. Do not post a photo of a slide or a poster without the
+#   presenter's say-so — much of what is shown is unpublished.
+
+albums:
+  - year: 2026
+    title: 3rd Annual Symposium
+    location: Columbia University Irving Medical Center
+    event_url: /events/symposium-2026/
+    photos: []
+
+  - year: 2025
+    title: 2nd Annual Symposium
+    location: Albert Einstein College of Medicine
+    event_url: /events/symposium-2025/
+    photos: []
+
+  - year: 2024
+    title: 1st Annual Symposium
+    location: ''
+    event_url: /events/symposium-2024/
+    photos: []
