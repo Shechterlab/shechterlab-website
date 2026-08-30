@@ -217,6 +217,43 @@ Einstein faculty links (in `content/_index.md`'s Collaborators section and the m
 
 ---
 
+## Renaming or moving a page (keep the old URL working)
+
+If a page's URL changes, add the old path to `aliases:` in its front
+matter. Hugo generates a redirect at the old address, so links in
+published papers, emails, and other people's sites keep working.
+
+```yaml
+---
+title: "NPM1-mutant Acute Myeloid Leukemia"
+aliases:
+  - /research/leukemia/
+  - /aml/
+---
+```
+
+Keep the leading and trailing slashes, and list every old path a page
+has ever had — aliases cost nothing and there is no way to know which
+one someone bookmarked.
+
+**Do not hand-edit `_redirects`.** On this site `disableAliases: true`
+is set in `config/_default/hugo.yaml`, so Hugo does not write the usual
+meta-refresh redirect pages. Instead the `redirects` output format
+(`outputs.home` in the same file) collects every `aliases:` entry in the
+site and writes them into `public/_redirects` at build time, where
+Netlify serves them as real 301s — better than a meta refresh for both
+browsers and search engines. That file is generated on every build, so
+anything typed into it by hand is overwritten and lost. Front matter is
+the only place to put a redirect.
+
+Verify after a rename by checking the built file:
+
+```bash
+hugo --gc --minify && cat public/_redirects
+```
+
+---
+
 ## Sitewide settings (colors, fonts, social links)
 
 `config/_default/params.yaml` → `hugoblox.theme.colors` for brand colors and `hugoblox.identity.social` for social links/SEO.
