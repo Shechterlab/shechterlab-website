@@ -87,7 +87,7 @@ hugoblox:
         - /
       disallow: []
       note: "Public research-lab website."
-      contact: "david.shechter@einsteinmed.edu"
+      contact: "https://www.shechterlab.org/contact/"
 
   content:
     math:

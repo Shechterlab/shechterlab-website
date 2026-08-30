@@ -16,7 +16,7 @@ affiliations:
     url: https://einsteinmed.edu/
 links:
   - icon: hero/envelope
-    url: mailto:david.shechter@einsteinmed.edu
+    url: /contact
   - icon: brands/google-scholar
     url: https://scholar.google.com/citations?user=Mz9sZUoAAAAJ
   - icon: brands/orcid

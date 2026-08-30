@@ -305,7 +305,6 @@ sections:
           - Bronx, NY 10461
       office_hours:
         - "By appointment"
-      email: david.shechter@einsteinmed.edu
       phone: "+1 (718) 430-4120"
       social:
         - icon: brands/orcid

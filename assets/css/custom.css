@@ -357,3 +357,97 @@ footer p a:hover {
 .prose hr {
   clear: both;
 }
+
+/* Contact form (content/contact.md).
+
+   Posts to Netlify Forms — the address is deliberately not published
+   anywhere on the site, so this form is the only public route to
+   David's inbox. Netlify needs `data-netlify`, the hidden `form-name`
+   input, and the honeypot field to be present in the DEPLOYED HTML,
+   which is why the form is written as raw HTML in the page rather
+   than assembled by JS. `.hb-form-hp` hides the honeypot from people
+   while leaving it in the DOM for bots to trip over — do not switch
+   it to `display:none` on the input itself, Netlify matches on the
+   field being submitted empty. */
+.hb-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: left;
+}
+.hb-form-hp {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+.hb-form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+}
+@media (min-width: 640px) {
+  .hb-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.hb-form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgb(51 65 85);
+}
+.hb-form input,
+.hb-form select,
+.hb-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: rgb(15 23 42);
+  background: #fff;
+  border: 1px solid rgb(203 213 225);
+  border-radius: 0.5rem;
+  transition: border-color .15s, box-shadow .15s;
+}
+.hb-form textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+.hb-form input:focus,
+.hb-form select:focus,
+.hb-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-600, #0f766e);
+  box-shadow: 0 0 0 3px rgb(15 118 110 / 0.15);
+}
+.hb-form button[type="submit"] {
+  align-self: flex-start;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-primary-600, #0f766e);
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color .15s;
+}
+.hb-form button[type="submit"]:hover {
+  background: var(--color-accent);
+}
+.hb-form-note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgb(100 116 139);
+}
+.dark .hb-form label { color: rgb(203 213 225); }
+.dark .hb-form input,
+.dark .hb-form select,
+.dark .hb-form textarea {
+  color: rgb(226 232 240);
+  background: rgb(30 41 59);
+  border-color: rgb(71 85 105);
+}
+.dark .hb-form-note { color: rgb(148 163 184); }

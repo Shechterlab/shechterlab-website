@@ -56,10 +56,10 @@ sections:
     content:
       title: How to inquire
       text: |
-        Email David Shechter with a CV, a brief statement of interest, and a note about timing and current stage. Specific funded openings vary; please reach out for the current state of recruitment.
+        Send David a note through the contact form with a brief statement of interest and a note about timing and current stage — he'll reply directly, and you can attach your CV to that reply. Specific funded openings vary; please reach out for the current state of recruitment.
       button:
-        text: Email David Shechter
-        url: 'mailto:david.shechter@einsteinmed.edu?subject=Inquiry%20about%20the%20Shechter%20Lab'
+        text: Contact David Shechter
+        url: '/contact'
     design:
       card:
         css_class: 'bg-primary-300 dark:bg-primary-800'
