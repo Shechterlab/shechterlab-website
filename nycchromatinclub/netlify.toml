@@ -1,0 +1,37 @@
+[build]
+  command = """
+    set -e
+    echo "=== NYC Chromatin Club build ==="
+    echo "Node: $(node --version)  pnpm: $(pnpm --version)"
+    echo "Hugo: $(hugo version)"
+    pnpm install
+    hugo --gc --minify -b $URL
+  """
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.158.0"
+  GO_VERSION = "1.21.5"
+  NODE_VERSION = "22"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+
+[context.deploy-preview]
+  command = """
+    set -e
+    pnpm install
+    hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL
+  """
+
+[context.branch-deploy]
+  command = """
+    set -e
+    pnpm install
+    hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL
+  """
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"
+  [plugins.inputs]
+    debug = true

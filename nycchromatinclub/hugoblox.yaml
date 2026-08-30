@@ -1,0 +1,5 @@
+build:
+  hugo_version: '0.158.0'
+template:
+  id: "conference"
+  name: "NYC Chromatin Club"

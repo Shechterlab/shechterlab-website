@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: viviana-risca
+weight: 6
+name:
+  display: Viviana Risca
+  family: Risca
+role: Steering Committee
+bio: Biophysical approaches to chromatin architecture and genome organization.
+affiliations:
+  - name: The Rockefeller University
+    url: https://www.rockefeller.edu/
+interests:
+  - Chromatin architecture
+  - Genome organization
+  - Biophysics
+user_groups:
+  - Steering Committee

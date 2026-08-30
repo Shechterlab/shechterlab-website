@@ -1,0 +1,53 @@
+# Configuration of Hugo
+# Website name is set in params.yaml under hugoblox.identity.name
+title: 'NYC Chromatin Club'
+baseURL: 'https://www.nycchromatinclub.org/'
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+build:
+  writeStats: true
+enableGitInfo: false
+summaryLength: 30
+pagination:
+  pagerSize: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+disableAliases: true
+
+# `buildFuture` is REQUIRED for this site. Event pages carry a future
+# `date:` (the date of the meeting), and Hugo drops future-dated pages
+# from the build by default — which would silently delete the upcoming
+# symposium page, the thing the site exists to announce.
+buildFuture: true
+
+outputs:
+  home: [HTML, RSS, headers, redirects]
+  section: [HTML, RSS]
+imaging:
+  resampleFilter: lanczos
+  anchor: smart
+  jpeg:
+    quality: 90
+  webp:
+    quality: 90
+    hint: picture
+  avif:
+    quality: 90
+    hint: picture
+timeout: 600000
+taxonomies:
+  author: authors
+  tag: tags
+markup:
+  _merge: deep
+  highlight:
+    lineNos: false
+security:
+  _merge: deep
+sitemap:
+  _merge: deep

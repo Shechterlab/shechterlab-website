@@ -1,0 +1,238 @@
+/*
+  NYC Chromatin Club — site styling on top of Hugo Blox Kit.
+
+  The three brand colors are sampled directly from the club logo:
+    --ncc-orange  the "N" roundel
+    --ncc-gray    the skyline
+    --ncc-navy    the "C" roundel
+  `primary` and `secondary` in config/_default/params.yaml are set to the
+  navy and the orange; these variables exist so hand-written markup in the
+  content files (the schedule table, the date badge) can reach the same
+  values without hardcoding hexes in a dozen places.
+*/
+
+:root {
+  --ncc-orange: #ff6600;
+  --ncc-gray: #919191;
+  --ncc-navy: #003884;
+}
+
+/* Headings in a grotesque to echo the logo wordmark; body text in Inter. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, h4,
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* ---------------------------------------------------------------------
+   Homepage hero
+   The logo is a wide (1000x425) transparent-ish PNG with a lot of white
+   around the skyline, so it needs a generous max-width and no card frame
+   of its own.
+   ------------------------------------------------------------------- */
+
+.ncc-hero-logo {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto 1.5rem;
+  height: auto;
+}
+
+/* ---------------------------------------------------------------------
+   "Next symposium" date badge
+   ------------------------------------------------------------------- */
+
+.ncc-datebadge {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  text-align: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--ncc-orange);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.ncc-datebadge span {
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+/* ---------------------------------------------------------------------
+   Schedule table (used on the symposium pages)
+   Wrapped in .ncc-schedule so it can scroll horizontally on a phone
+   instead of forcing the whole page to scroll sideways.
+   ------------------------------------------------------------------- */
+
+.ncc-schedule {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+
+.ncc-schedule table {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.ncc-schedule th,
+.ncc-schedule td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  vertical-align: top;
+}
+
+.dark .ncc-schedule th,
+.dark .ncc-schedule td {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.ncc-schedule th {
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--ncc-navy);
+}
+
+.dark .ncc-schedule th {
+  color: #7ea6e0;
+}
+
+.ncc-schedule td:first-child {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--ncc-gray);
+}
+
+/* ---------------------------------------------------------------------
+   Institution list on the About page
+   ------------------------------------------------------------------- */
+
+.ncc-institutions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ncc-institutions li {
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 3px solid var(--ncc-orange);
+  font-weight: 500;
+}
+
+.dark .ncc-institutions li {
+  border-color: rgba(255, 255, 255, 0.12);
+  border-left-color: var(--ncc-orange);
+}
+
+/* Stat cards on the homepage inherit the theme's foreground so they stay
+   readable in both light and dark mode. */
+.ncc-stat-card,
+.ncc-stat-card * {
+  color: var(--hb-color-foreground, #111827) !important;
+}
+
+.ncc-stat-card > div:first-child {
+  color: var(--ncc-navy) !important;
+}
+
+.dark .ncc-stat-card > div:first-child {
+  color: #7ea6e0 !important;
+}
+
+/* ---------------------------------------------------------------------
+   Escaping the prose wrapper
+
+   The kit wraps every `markdown` block in `max-w-prose` (~65ch) — correct
+   for paragraphs, wrong for a full-width card grid: at 65ch a four-card
+   row collapses to three narrow columns with one orphan underneath.
+   Marking the grid `.ncc-wide` widens the wrapper for that section only,
+   leaving ordinary prose blocks at their readable measure.
+   ------------------------------------------------------------------- */
+
+.hbb-section:has(.ncc-wide) .max-w-prose {
+  /* min() and not a bare 76rem: on a phone a bare 76rem (1216px) makes the
+     section wider than the viewport and the whole page scrolls sideways. */
+  max-width: min(76rem, 100%);
+}
+
+.ncc-wide {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------
+   Team cards without a headshot
+
+   When `data/authors/<slug>.yaml` has no matching image in
+   assets/media/authors/, the kit still renders a full aspect-square panel
+   containing nothing but the person's first initial — which reads as a
+   broken image rather than as a deliberate placeholder. Collapse that
+   panel into a small navy monogram instead, so a card with no photo looks
+   finished. Cards WITH a photo are untouched: the selector only matches an
+   avatar link that contains no <img>.
+
+   Drop a headshot at assets/media/authors/<slug>.jpg and the card
+   automatically reverts to the normal photo treatment.
+   ------------------------------------------------------------------- */
+
+a.aspect-square:not(:has(img)) {
+  aspect-ratio: auto;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0;
+}
+
+a.aspect-square:not(:has(img)) > div {
+  position: static;
+  inset: auto;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--ncc-navy);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.dark a.aspect-square:not(:has(img)) > div {
+  background: var(--ncc-navy);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------------
+   cta-card paragraph color
+
+   The cta-card component builds its paragraph class at runtime as
+   `${textClasses}/80` — i.e. the string "text-white/80" is assembled in
+   JavaScript. Tailwind's scanner only ever reads source text, never a
+   class name concatenated at runtime, so that utility is never emitted
+   and the paragraph falls back to the inherited near-black — unreadable
+   on the navy gradient the card sits on. Define it by hand.
+   ------------------------------------------------------------------- */
+
+.cta-card-block-container .text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
+}

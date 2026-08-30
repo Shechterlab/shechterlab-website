@@ -1,0 +1,18 @@
+schema: hugoblox/author/v1
+slug: emily-bernstein
+weight: 2
+name:
+  display: Emily Bernstein
+  family: Bernstein
+role: Steering Committee
+bio: Histone variants and chromatin regulation in cancer.
+affiliations:
+  - name: Icahn School of Medicine at Mount Sinai
+    url: https://icahn.mssm.edu/
+interests:
+  - Histone variants
+  - Chromatin and cancer
+  - Melanoma epigenetics
+user_groups:
+  - Steering Committee
+  - 2026 Keynote Speakers

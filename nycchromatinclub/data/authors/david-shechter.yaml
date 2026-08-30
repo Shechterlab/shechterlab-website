@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: david-shechter
+weight: 7
+name:
+  display: David Shechter
+  family: Shechter
+role: Founder and Steering Committee
+bio: Founded the NYC Chromatin Club in 2020. Studies histone chaperones and the chemical modification of chromatin proteins.
+affiliations:
+  - name: Albert Einstein College of Medicine
+    url: https://einsteinmed.edu/
+interests:
+  - Histone chaperones
+  - Arginine methylation
+  - Chromatin biochemistry
+user_groups:
+  - Steering Committee

@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: karim-jean-armache
+weight: 1
+name:
+  display: Karim-Jean Armache
+  family: Armache
+role: Steering Committee
+bio: Structural biology of chromatin and nucleosome recognition.
+affiliations:
+  - name: NYU Grossman School of Medicine
+    url: https://med.nyu.edu/
+interests:
+  - Chromatin structure
+  - Structural biology
+  - Nucleosome recognition
+user_groups:
+  - Steering Committee

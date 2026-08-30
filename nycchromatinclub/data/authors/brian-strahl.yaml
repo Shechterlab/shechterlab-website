@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: brian-strahl
+weight: 1
+name:
+  display: Brian Strahl
+  family: Strahl
+role: Keynote Speaker
+bio: Professor of Biochemistry and Biophysics. Co-author of the histone code hypothesis.
+affiliations:
+  - name: UNC School of Medicine
+    url: https://www.med.unc.edu/
+interests:
+  - Histone code
+  - Chromatin readers and writers
+  - Transcription-coupled chromatin
+user_groups:
+  - 2026 Keynote Speakers

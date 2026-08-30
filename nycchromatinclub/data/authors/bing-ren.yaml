@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: bing-ren
+weight: 2
+name:
+  display: Bing Ren
+  family: Ren
+role: Keynote Speaker
+bio: Three-dimensional genome organization, enhancer biology, and single-cell epigenomics.
+affiliations:
+  - name: University of California San Diego
+    url: https://ucsd.edu/
+interests:
+  - 3D genome organization
+  - Enhancer biology
+  - Single-cell epigenomics
+user_groups:
+  - 2025 Keynote Speakers

@@ -1,0 +1,21 @@
+main:
+  - name: Symposium
+    url: '/events/'
+    weight: 10
+  - name: Speakers
+    url: '/speakers/'
+    weight: 20
+  - name: About
+    url: '/about/'
+    weight: 40
+  - name: Join
+    url: '/join/'
+    weight: 50
+
+footer:
+  - name: Join the mailing list
+    url: '/join/'
+    weight: 10
+  - name: Code of conduct
+    url: '/code-of-conduct/'
+    weight: 20

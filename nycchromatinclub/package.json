@@ -1,0 +1,19 @@
+{
+  "name": "nycchromatinclub-website",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.14.0",
+  "description": "Source for the NYC Chromatin Club website (nycchromatinclub.org) — Hugo + Hugo Blox Kit + Tailwind CSS v4.",
+  "scripts": {
+    "dev": "hugo server --disableFastRender",
+    "build": "hugo --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.20",
+    "preact": "^10.27.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "tailwindcss": "^4.3.2"
+  }
+}

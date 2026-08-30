@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: chao-lu
+weight: 5
+name:
+  display: Chao Lu
+  family: Lu
+role: Steering Committee
+bio: How metabolism shapes the chromatin landscape and cell fate.
+affiliations:
+  - name: Columbia University
+    url: https://www.columbia.edu/
+interests:
+  - Chromatin and metabolism
+  - Oncohistones
+  - Cell fate regulation
+user_groups:
+  - Steering Committee

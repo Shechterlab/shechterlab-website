@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: yael-david
+weight: 3
+name:
+  display: Yael David
+  family: David
+role: Steering Committee
+bio: Chemical biology approaches to histone modification and chromatin.
+affiliations:
+  - name: Memorial Sloan Kettering Cancer Center
+    url: https://www.mskcc.org/
+interests:
+  - Chemical biology
+  - Histone modifications
+  - Protein engineering
+user_groups:
+  - Steering Committee

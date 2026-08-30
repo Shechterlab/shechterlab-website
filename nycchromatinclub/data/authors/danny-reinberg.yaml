@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: danny-reinberg
+weight: 1
+name:
+  display: Danny Reinberg
+  family: Reinberg
+role: Keynote Speaker
+bio: Polycomb repression, epigenetic inheritance, and the mechanisms of transcription.
+affiliations:
+  - name: University of Miami Miller School of Medicine
+    url: https://med.miami.edu/
+interests:
+  - Polycomb repression
+  - Epigenetic inheritance
+  - Transcription mechanisms
+user_groups:
+  - 2025 Keynote Speakers

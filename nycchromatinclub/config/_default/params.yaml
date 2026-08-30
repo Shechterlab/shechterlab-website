@@ -1,0 +1,152 @@
+hugoblox:
+  schema: "2.0"
+  identity:
+    name: "NYC Chromatin Club"
+    organization: "NYC Chromatin Club"
+    type: organization
+    tagline: "The chromatin community of New York City"
+    description: "The NYC Chromatin Club connects chromatin, epigenetics, and nuclear-biology labs across New York City through an annual symposium, seminars, and a shared Slack forum."
+    social:
+      twitter: "nycchromatin"
+
+  # Colors are sampled from the club logo: the navy of the "C" roundel,
+  # the orange of the "N" roundel, and the gray of the skyline. Keep these
+  # three in sync with assets/media/logo/nyc-chromatin-club.png if the
+  # logo is ever redrawn.
+  theme:
+    mode: light
+    pack: "default"
+    colors:
+      primary: "#003884"
+      secondary: "#FF6600"
+      neutral: ""
+    colors_light: {}
+    colors_dark: {}
+    surfaces:
+      background: ""
+      foreground: ""
+      header:
+        background: ""
+        foreground: ""
+      footer:
+        background: ""
+        foreground: ""
+
+  typography:
+    pack: "modern"
+    size: "md"
+
+  layout:
+    radius: "md"
+    spacing: "comfortable"
+    avatar_shape: circle
+
+  header:
+    enable: true
+    style: navbar
+    sticky: true
+    align: center
+    search: false
+    theme_toggle: true
+    theme_picker: false
+    language_switcher: false
+    cta:
+      enable: true
+      text: "Join the club"
+      url: "/join/"
+
+  footer:
+    style: minimal
+    language_switcher: false
+    text: "An all-volunteer community of chromatin labs across New York City. Founded 2020."
+
+  copyright:
+    notice: "© {year} {name}."
+    license:
+      type: custom
+      allow_derivatives: false
+      share_alike: false
+      allow_commercial: false
+
+  seo:
+    title: "NYC Chromatin Club"
+    location:
+      address:
+        city: "New York"
+        region: "NY"
+        country: "United States"
+      coordinates:
+        latitude: null
+        longitude: null
+    ai:
+      allow:
+        - /
+      disallow: []
+      note: "Public academic community website."
+      contact: "https://www.nycchromatinclub.org/join/"
+
+  content:
+    math:
+      enable: false
+    toc:
+      enable: true
+    reading_time:
+      enable: false
+    citations:
+      style: apa
+
+  search:
+    enable: false
+
+  comments:
+    enable: false
+    provider: ""
+
+  analytics:
+    google:
+      measurement_id: ""
+    plausible:
+      domain: ""
+
+  verification:
+    google: ""
+
+  repository:
+    enable: false
+    url: ""
+    branch: main
+    content_dir: content
+
+  locale:
+    date_format: "Jan 2, 2006"
+    time_format: "3:04 PM"
+    address_format: en-us
+
+  # Rendered into the Netlify _headers file. Keep every directive on ONE
+  # line at this indentation: in a YAML folded scalar (>-) a line indented
+  # deeper than the first is kept verbatim, newline and all — and a
+  # newline inside an HTTP header value truncates the header.
+  #
+  # 'unsafe-inline' is unavoidable: the theme and the homepage use inline
+  # <style>/<script> that a static build cannot nonce. The remaining
+  # directives still close off clickjacking, form hijacking and plugin
+  # injection. Add an origin here before embedding anything from a new
+  # third party (a map, a registration widget, an analytics script) or it
+  # will be blocked with nothing but a console message to say so.
+  security:
+    csp:
+      policy: >-
+        default-src 'self';
+        base-uri 'self';
+        form-action 'self';
+        frame-ancestors 'none';
+        object-src 'none';
+        img-src 'self' data:;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        script-src 'self' 'unsafe-inline';
+        connect-src 'self';
+        manifest-src 'self'
+      report_only: false
+    frame_options: deny
+    permissions_policy: ""

@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: steve-josefowicz
+weight: 4
+name:
+  display: Steven Josefowicz
+  family: Josefowicz
+role: Steering Committee
+bio: Chromatin regulation of immune cell identity and innate immune memory.
+affiliations:
+  - name: Weill Cornell Medicine
+    url: https://weill.cornell.edu/
+interests:
+  - Chromatin and immunity
+  - Innate immune memory
+  - Signal-dependent histone modification
+user_groups:
+  - Steering Committee

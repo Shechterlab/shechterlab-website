@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: chenxu-zhu
+weight: 8
+name:
+  display: Chenxu Zhu
+  family: Zhu
+role: Steering Committee
+bio: Single-cell and multi-omic technologies for mapping gene regulation.
+affiliations:
+  - name: New York Genome Center
+    url: https://www.nygenome.org/
+interests:
+  - Single-cell epigenomics
+  - Multi-omic profiling
+  - Gene regulation
+user_groups:
+  - Steering Committee
