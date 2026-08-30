@@ -115,9 +115,20 @@ hugoblox:
     disqus:
       shortname: ""
 
+  # The theme injects the gtag snippet into <head> on every page via
+  # blox-analytics (site_head.html), so there is no script tag pasted
+  # into any template — set the key here and the theme does the rest.
+  # It also anonymises IPs and tracks outbound link clicks.
+  #
+  # The snippet is emitted whenever hugo.IsProduction is true. Note
+  # that a plain `hugo` build IS production by default, so Netlify
+  # DEPLOY PREVIEWS report hits too; only `hugo server` (development)
+  # is excluded. If preview traffic ever muddies the numbers, filter it
+  # out in GA by hostname — the previews serve from *.netlify.app,
+  # the real site from www.shechterlab.org.
   analytics:
     google:
-      measurement_id: ""
+      measurement_id: "G-PZEFBPYHJE"
     google_tag_manager:
       container_id: ""
     plausible:
@@ -170,26 +181,28 @@ hugoblox:
       #     on the Resources page
       #   'wasm-unsafe-eval' — Pagefind's search index is WebAssembly
       #
-      # ADDING GOOGLE ANALYTICS: it will be silently blocked until you
-      # extend three directives —
-      #   script-src:  https://www.googletagmanager.com
-      #   img-src:     https://www.google-analytics.com
-      #   connect-src: https://www.google-analytics.com
-      #                https://*.analytics.google.com
-      #                https://*.google-analytics.com
-      # Set report_only: true first if you want to see violations in the
-      # browser console without anything actually being blocked.
+      #   googletagmanager.com / google-analytics.com — Google Analytics
+      #     (hugoblox.analytics.google above). Adding another analytics
+      #     or embed service means adding its origin here too, or it
+      #     will be blocked with nothing but a console message to say
+      #     so. Set report_only: true to watch for violations without
+      #     anything actually being blocked.
+      #
+      # Keep every directive on ONE line at this exact indentation. In a
+      # YAML folded scalar (>-) a line indented deeper than the first is
+      # kept verbatim, newline and all — and a newline inside an HTTP
+      # header value truncates the header.
       policy: >-
         default-src 'self';
         base-uri 'self';
         form-action 'self';
         frame-ancestors 'none';
         object-src 'none';
-        img-src 'self' data: https://cdn.rcsb.org https://www.ebi.ac.uk;
+        img-src 'self' data: https://cdn.rcsb.org https://www.ebi.ac.uk https://www.google-analytics.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
         font-src 'self' https://fonts.gstatic.com;
-        script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval';
-        connect-src 'self';
+        script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://www.googletagmanager.com;
+        connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://*.google-analytics.com https://*.googletagmanager.com;
         manifest-src 'self'
       report_only: false
     # No page on this site is meant to be framed anywhere.
