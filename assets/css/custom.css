@@ -88,6 +88,13 @@ a[class*="group/link"]:hover {
   scroll-margin-top: 6rem;
 }
 
+/* Contact page: every "Contact" button on the site links to
+   /contact#inquiry so it lands on the form rather than the top of the
+   page, so this anchor needs the same sticky-navbar offset. */
+#inquiry {
+  scroll-margin-top: 6rem;
+}
+
 /* Lab Life page jump-nav (Fun & Social / Lab Photos / Lab & Department
    Equipment) and Resources page jump-nav anchors: same offset fix. */
 #fun-social, #lab-photos, #lab-dept-equipment,

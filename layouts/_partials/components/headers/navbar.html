@@ -13,7 +13,7 @@
     entirely, moving it to the footer instead (see site_footer.html /
     components/footers/minimal.html).
   - The search icon (site.Params.hugoblox.header.search is set to false
-    in params.yaml) is replaced with a plain "Contact" link to /contact
+    in params.yaml) is replaced with a plain "Contact" link to /contact#inquiry
     — site search wasn't useful for a site this size, and the owner
     wants a way to reach the lab from every page again.
   - Dropped the search toggle's config guard duplication, template
@@ -164,7 +164,7 @@
       {{ end }}
 
       {{ if not $show_search }}
-      <a href="/contact" class="inline-block px-3 py-1.5 text-sm font-semibold rounded-md text-[var(--hb-color-header-fg)] hover:text-primary-500 whitespace-nowrap">
+      <a href="/contact#inquiry" class="inline-block px-3 py-1.5 text-sm font-semibold rounded-md text-[var(--hb-color-header-fg)] hover:text-primary-500 whitespace-nowrap">
         Contact
       </a>
       {{ end }}

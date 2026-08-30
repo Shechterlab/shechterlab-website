@@ -18,7 +18,7 @@ sections:
 
         [Faculty page](https://www.einsteinmed.edu/faculty/1064/david-shechter/) &ensp;|&ensp; [ORCID 0000-0001-9388-6004](https://orcid.org/0000-0001-9388-6004) &ensp;|&ensp; [Google Scholar](https://scholar.google.com/citations?user=Mz9sZUoAAAAJ)
 
-        **Join the Lab**
+        <h2 id="inquiry">Inquiry</h2>
 
         We welcome inquiries from prospective graduate students (Einstein MSTP and PhD programs) and postdoctoral fellows. Use the form below — please include your CV and a brief description of your research interests, and it will reach David directly.
 
