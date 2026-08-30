@@ -54,7 +54,7 @@ hugoblox:
     cta:
       enable: true
       text: "Contact"
-      url: "/contact"
+      url: "/contact#inquiry"
 
   footer:
     style: minimal

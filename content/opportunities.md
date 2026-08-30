@@ -59,7 +59,7 @@ sections:
         Send David a note through the contact form with a brief statement of interest and a note about timing and current stage — he'll reply directly, and you can attach your CV to that reply. Specific funded openings vary; please reach out for the current state of recruitment.
       button:
         text: Contact David Shechter
-        url: '/contact'
+        url: '/contact#inquiry'
     design:
       card:
         css_class: 'bg-primary-300 dark:bg-primary-800'

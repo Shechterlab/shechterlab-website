@@ -316,7 +316,7 @@ sections:
         text: Rotation students, graduate applicants, postdocs, and collaborators are welcome to reach out.
         button:
           text: See opportunities
-          url: /contact
+          url: /contact#inquiry
       map_url: https://maps.google.com/?q=Albert+Einstein+College+of+Medicine+1300+Morris+Park+Ave+Bronx+NY+10461
       show_form: false
     design:
