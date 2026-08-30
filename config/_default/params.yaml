@@ -150,9 +150,48 @@ hugoblox:
     time_format: "3:04 PM"
     address_format: en-us
 
+  # Rendered into the Netlify _headers file by layouts/index.headers.
+  # NOTE: the vendored generator had a whitespace bug that made the
+  # generated file set no headers at all; layouts/index.headers is a
+  # local override that fixes it. See the comment at the top of that file.
   security:
     csp:
-      policy: ""
+      # 'unsafe-inline' is unavoidable here: the theme and several pages
+      # use inline <style> and <script> (the homepage stat counter, the
+      # lightbox styles, the card grids), and a static build has no way
+      # to nonce them. The remaining directives still do real work —
+      # frame-ancestors, form-action, base-uri and object-src close off
+      # clickjacking, form hijacking and plugin injection.
+      #
+      # External origins allowed, and why:
+      #   fonts.googleapis.com / fonts.gstatic.com — the webfont @import
+      #     in assets/css/custom.css
+      #   cdn.rcsb.org, www.ebi.ac.uk — structure and EM-map thumbnails
+      #     on the Resources page
+      #   'wasm-unsafe-eval' — Pagefind's search index is WebAssembly
+      #
+      # ADDING GOOGLE ANALYTICS: it will be silently blocked until you
+      # extend three directives —
+      #   script-src:  https://www.googletagmanager.com
+      #   img-src:     https://www.google-analytics.com
+      #   connect-src: https://www.google-analytics.com
+      #                https://*.analytics.google.com
+      #                https://*.google-analytics.com
+      # Set report_only: true first if you want to see violations in the
+      # browser console without anything actually being blocked.
+      policy: >-
+        default-src 'self';
+        base-uri 'self';
+        form-action 'self';
+        frame-ancestors 'none';
+        object-src 'none';
+        img-src 'self' data: https://cdn.rcsb.org https://www.ebi.ac.uk;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval';
+        connect-src 'self';
+        manifest-src 'self'
       report_only: false
-    frame_options: allow
+    # No page on this site is meant to be framed anywhere.
+    frame_options: deny
     permissions_policy: ""
