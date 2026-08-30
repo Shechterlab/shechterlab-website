@@ -312,10 +312,10 @@ sections:
         - icon: brands/google-scholar
           url: https://scholar.google.com/citations?user=Mz9sZUoAAAAJ
       prospective:
-        title: Prospective lab members
-        text: Rotation students, graduate applicants, postdocs, and collaborators are welcome to reach out.
+        title: Get in touch
+        text: Questions about the science, collaborations, and inquiries from prospective rotation students, graduate applicants, and postdocs are all welcome.
         button:
-          text: See opportunities
+          text: Send a message
           url: /contact#inquiry
       map_url: https://maps.google.com/?q=Albert+Einstein+College+of+Medicine+1300+Morris+Park+Ave+Bronx+NY+10461
       show_form: false
