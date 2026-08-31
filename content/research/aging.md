@@ -17,12 +17,12 @@ GNMT is the liver's main valve for the cellular methyl economy, and with the Huf
 
 We've shown that GNMT's N-terminal tail and its folate-dependent feedback inhibition set S-adenosylmethionine (SAM) homeostasis (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)). Sarcosine, the direct product of the GNMT reaction, is itself modulated by aging and dietary restriction — one of the threads that got us interested in GNMT as an aging target in the first place. The Hevolution Foundation supports this work.
 
-<figure class="fig-side fig-left">
-  <a href="/media/lab/gallery/gallery-david-subray-joe.jpg" target="_blank" rel="noopener">
-    <img src="/media/lab/gallery/gallery-david-subray-joe.jpg" alt="David Shechter, Subray Hegde and Joseph DeAngelo in the lab">
+<div style="clear:both;max-width:420px;margin:1.75rem auto">
+  <a href="/media/lab/scenes/coomassie-gel.jpg" target="_blank" rel="noopener">
+    <img src="/media/lab/scenes/coomassie-gel.jpg" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.10)" alt="A Coomassie-stained protein gel held up to the light">
   </a>
-  <figcaption>Discussing results in the lab.</figcaption>
-</figure>
+  <p style="text-align:center;font-size:0.78rem;color:#64748b;margin-top:0.4rem">Checking the prep by Coomassie.</p>
+</div>
 
 **Questions we are pursuing:**
 
