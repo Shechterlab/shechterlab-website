@@ -4,7 +4,7 @@ date: 2026-08-19
 tags: [Publication]
 summary: "Kraz et al. published in the Journal of Biological Chemistry. Establishes the GNMT N-terminus as a folate-responsive regulatory domain that controls cellular SAM availability."
 image:
-  filename: "lab/lab-glass-experiment-notes.jpg"
+  filename: "lab/scenes/coomassie-gel.jpg"
   focal_point: Smart
 ---
 

@@ -11,6 +11,10 @@ summary: "Commentary reflecting on gene expression and chromatin biology beyond 
 tags:
 - Review
 featured: false
+links:
+- name: Article
+  type: doi
+  url: https://journals.healio.com/doi/10.3928/01913913-20140819-06
 image:
   filename: "publications/seeing-beyond-the-double-helix-2014-first-page.jpg"
   focal_point: "Top"

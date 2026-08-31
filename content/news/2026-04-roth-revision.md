@@ -4,7 +4,7 @@ date: 2026-04-15
 tags: [Revision]
 summary: "Roth et al. invited revision at Nature Communications. The paper is also featured in a Nature Structural and Molecular Biology News and Views."
 image:
-  filename: "research/nucleosome-cartoon.jpg"
+  filename: "research/histone-supply-fork.png"
   focal_point: Smart
 ---
 

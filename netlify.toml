@@ -1,3 +1,7 @@
+# --buildFuture is on every context on purpose: the News feed announces
+# upcoming talks and conferences, and without it a future-dated item is not
+# built at all — an "Upcoming:" post would first appear on the live site
+# only once its date had passed, by which point it is no longer upcoming.
 [build]
   command = """
     set -e
@@ -11,7 +15,7 @@
     pnpm install --verbose
     
     echo "=== Running Hugo build ==="
-    hugo --gc --minify -b $URL --logLevel debug --printI18nWarnings --printPathWarnings
+    hugo --gc --minify --buildFuture -b $URL --logLevel debug --printI18nWarnings --printPathWarnings
     
     echo "=== Running Pagefind indexing ==="
     pnpm dlx pagefind --source 'public' --verbose
@@ -49,7 +53,7 @@
     echo "=== Branch Deploy Build ==="
     echo "Deploy URL: $DEPLOY_PRIME_URL"
     pnpm install --verbose
-    hugo --gc --minify -b $DEPLOY_PRIME_URL --logLevel debug --printI18nWarnings --printPathWarnings
+    hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL --logLevel debug --printI18nWarnings --printPathWarnings
     pnpm dlx pagefind --source 'public' --verbose
   """
 

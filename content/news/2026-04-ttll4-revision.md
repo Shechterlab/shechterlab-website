@@ -4,7 +4,7 @@ date: 2026-04-01
 tags: [Revision]
 summary: "Schurer, Ilyas, Maron et al. invited revision at Nature Communications."
 image:
-  filename: "lab/lab-fplc.jpg"
+  filename: "research/npm1c-mislocalization.png"
   focal_point: Smart
 ---
 
