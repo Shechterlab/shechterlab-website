@@ -55,20 +55,6 @@ h1, .prose h1 {
   letter-spacing: -0.028em;
 }
 
-/* ---------------------------------------------------------------------
-   Homepage hero
-   The logo is a wide (1000x425) transparent-ish PNG with a lot of white
-   around the skyline, so it needs a generous max-width and no card frame
-   of its own.
-   ------------------------------------------------------------------- */
-
-.ncc-hero-logo {
-  display: block;
-  width: 100%;
-  max-width: 620px;
-  margin: 0 auto 1.5rem;
-  height: auto;
-}
 
 /* ---------------------------------------------------------------------
    "Next symposium" date badge
@@ -865,4 +851,142 @@ a.aspect-square:not(:has(img)) > div {
   font-size: 1rem;
   font-weight: 600;
   opacity: 0.9;
+}
+
+/* ---------------------------------------------------------------------
+   Homepage hero
+
+   Full-bleed, left-aligned, with the stats inside it — the shape of the
+   premium conference template's hero-with-stats, in the club's colours.
+   The background image is set by the block's `design.background`, so this
+   only handles the content sitting on top of it.
+
+   Left-aligned rather than centred on purpose: it is the clearest
+   separation from shechterlab.org, which centres everything.
+   ------------------------------------------------------------------- */
+
+.ncc-hero {
+  max-width: 76rem;
+  margin-inline: auto;
+  padding: clamp(3.5rem, 8vw, 7rem) 1.5rem clamp(3rem, 6vw, 5rem);
+  color: #fff;
+  text-align: left;
+}
+
+.ncc-hero-wordmark {
+  display: block;
+  width: min(360px, 68%);
+  height: auto;
+  margin: 0 0 2.25rem;
+}
+
+.ncc-hero-kicker {
+  margin: 0 0 0.9rem;
+  font-size: clamp(0.72rem, 1.5vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ncc-orange);
+}
+
+.ncc-hero-title {
+  margin: 0;
+  font-size: clamp(2.9rem, 8.5vw, 6rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: #fff;
+}
+
+.ncc-hero-sub {
+  margin: 1rem 0 0;
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ncc-hero-lead {
+  margin: 1.25rem 0 0;
+  max-width: 34rem;
+  font-size: clamp(0.98rem, 1.6vw, 1.1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.ncc-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin: 2rem 0 0;
+}
+
+.ncc-hero-btn {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.55rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.ncc-hero-btn:hover {
+  transform: translateY(-1px);
+}
+
+.ncc-hero-btn-primary {
+  background: var(--ncc-orange);
+  color: #fff;
+}
+
+.ncc-hero-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.ncc-hero-btn-ghost {
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.ncc-hero-btn-ghost:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Stats inside the hero: label above value, as the conference template
+   sets them. A <dl> because that is what a label/value list is. */
+.ncc-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  margin: 3rem 0 0;
+  padding: 1.75rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.ncc-hero-stats > div {
+  min-width: 5.5rem;
+}
+
+.ncc-hero-stats dt {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ncc-hero-stats dd {
+  margin: 0.3rem 0 0;
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+/* The hero fills the section, so the theme's own padding would double up. */
+#hero .home-section-bg {
+  background-position: center bottom;
 }

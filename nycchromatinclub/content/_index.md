@@ -8,44 +8,63 @@ design:
 
 sections:
   # ------------------------------------------------------------------
-  # Masthead. This is a `markdown` block rather than the `hero` block
-  # because the club logo IS the headline — it carries the wordmark, the
-  # skyline and all three brand colors — and the hero block has no slot
-  # for a foreground logo, only a background image. Setting the logo as a
-  # hero background would darken it behind an overlay and bury the
-  # wordmark, so the masthead is hand-built here instead.
+  # Hero.
+  #
+  # Modelled on the premium conference template's hero-with-stats: a
+  # full-bleed coloured field, big left-aligned display type, and the
+  # numbers sitting INSIDE the hero rather than in a band underneath. The
+  # earlier draft was a centred logo on white, which read as a lab page —
+  # this site should not look like shechterlab.org.
+  #
+  # The background is generated from the club logo's own skyline (see
+  # assets/media/hero-skyline.build.py) so the art is the brand, not stock
+  # photography. The wordmark is a white knockout of the same logo, minus
+  # its skyline, which would otherwise be drawn twice.
   # ------------------------------------------------------------------
   - block: markdown
-    id: masthead
+    id: hero
     content:
       title: ''
       text: |
-        <div style="text-align:center;max-width:52rem;margin:0 auto">
-          <img class="ncc-hero-logo" src="/media/logo/nyc-chromatin-club.png"
-               alt="NYC Chromatin Club" width="1000" height="425">
+        <div class="ncc-hero ncc-wide">
+          <img class="ncc-hero-wordmark" src="/media/logo/wordmark-white.png"
+               alt="NYC Chromatin Club" width="1503" height="145">
 
-          <p style="font-size:1.3rem;line-height:1.6;font-weight:500;margin:0 auto 1.75rem;max-width:40rem">
-            The chromatin, epigenetics, and nuclear biology community of New York City — one symposium, many labs, five boroughs.
+          <p class="ncc-hero-kicker">Founded 2020 &middot; Eight institutions &middot; Five boroughs</p>
+
+          <h1 class="ncc-hero-title">4th Annual<br>Symposium</h1>
+
+          <p class="ncc-hero-sub">Summer 2027 &middot; New York City</p>
+
+          <p class="ncc-hero-lead">
+            A full day of chromatin science &mdash; two keynotes, selected talks and a poster
+            session, with the program built from submitted abstracts. Free at the door,
+            lunch included.
           </p>
 
-          <p style="margin-bottom:1.75rem">
-            <span class="ncc-datebadge">4th Annual Symposium &middot; Summer 2027 <span>· date to be announced</span></span>
+          <p class="ncc-hero-actions">
+            <a class="ncc-hero-btn ncc-hero-btn-primary" href="/join/">Join the mailing list</a>
+            <a class="ncc-hero-btn ncc-hero-btn-ghost" href="/events/symposium-2026/">See the 2026 program</a>
           </p>
 
-          <p style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin:0">
-            <a href="/join/"
-               style="display:inline-block;padding:0.7rem 1.5rem;border-radius:0.5rem;background:var(--ncc-navy);color:#fff;font-weight:600;text-decoration:none">
-              Join the mailing list
-            </a>
-            <a href="/events/symposium-2026/"
-               style="display:inline-block;padding:0.7rem 1.5rem;border-radius:0.5rem;border:2px solid var(--ncc-navy);color:var(--ncc-navy);font-weight:600;text-decoration:none">
-              The 2026 symposium
-            </a>
-          </p>
+          <dl class="ncc-hero-stats">
+            <div><dt>Symposia</dt><dd>3</dd></div>
+            <div><dt>Institutions</dt><dd>8</dd></div>
+            <div><dt>Cost to attend</dt><dd>$0</dd></div>
+            <div><dt>Founded</dt><dd>2020</dd></div>
+          </dl>
         </div>
     design:
+      background:
+        image:
+          filename: 'hero-skyline.jpg'
+          size: cover
+          position: center
+          parallax: false
+        text_color_light: true
       spacing:
-        padding: ['4rem', '0', '2.5rem', '0']
+        padding: ['0', '0', '0', '0']
+      no_padding: true
 
   # ------------------------------------------------------------------
   # Countdown to the next symposium, in the position the premium
@@ -62,9 +81,11 @@ sections:
     id: countdown
     content:
       date: ''
-      title: '4th Annual Symposium'
-      text: 'Summer 2027'
-      fallback_text: 'The date is being set now. It goes to the mailing list first.'
+      # Deliberately NOT repeating the hero's headline, which sits
+      # directly above this band.
+      title: 'Save the date'
+      text: ''
+      fallback_text: 'The 2027 date is being set now — it goes to the mailing list first.'
       elapsed_text: 'The symposium is under way — see you there.'
       text_after: 'Free to attend, as always.'
       button:
@@ -74,41 +95,6 @@ sections:
       css_class: "bg-primary-800"
       spacing:
         padding: ['2.5rem', '0', '2.5rem', '0']
-
-  # ------------------------------------------------------------------
-  # At-a-glance numbers. Hand-built rather than the `stats` block so the
-  # cards can be links — each one goes somewhere useful.
-  # ------------------------------------------------------------------
-  - block: markdown
-    id: at-a-glance
-    content:
-      text: |
-        <div class="ncc-wide" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:1.25rem;max-width:72rem;margin:0 auto">
-          <a href="/about/" class="ncc-stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:1.75rem;text-align:center;border:1px solid rgba(0,0,0,0.06)">
-            <div style="font-size:2.5rem;font-weight:800;line-height:1">2020</div>
-            <div style="margin-top:0.4rem;font-weight:600">Founded</div>
-            <div style="margin-top:0.35rem;font-size:0.8rem;opacity:0.65">Started as a virtual seminar series during the pandemic</div>
-          </a>
-          <a href="/about/#steering-committee" class="ncc-stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:1.75rem;text-align:center;border:1px solid rgba(0,0,0,0.06)">
-            <div style="font-size:2.5rem;font-weight:800;line-height:1">8</div>
-            <div style="margin-top:0.4rem;font-weight:600">Institutions represented</div>
-            <div style="margin-top:0.35rem;font-size:0.8rem;opacity:0.65">Columbia, Einstein, MSK, Mount Sinai, NYGC, NYU, Rockefeller, Weill Cornell</div>
-          </a>
-          <a href="/events/" class="ncc-stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:1.75rem;text-align:center;border:1px solid rgba(0,0,0,0.06)">
-            <div style="font-size:2.5rem;font-weight:800;line-height:1">3</div>
-            <div style="margin-top:0.4rem;font-weight:600">Symposia held</div>
-            <div style="margin-top:0.35rem;font-size:0.8rem;opacity:0.65">2024, 2025, 2026 — a full day of talks and posters each summer</div>
-          </a>
-          <a href="/join/" class="ncc-stat-card" style="display:block;text-decoration:none;background:var(--hb-color-background,#fff);border-radius:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:1.75rem;text-align:center;border:1px solid rgba(0,0,0,0.06)">
-            <div style="font-size:2.5rem;font-weight:800;line-height:1">$0</div>
-            <div style="margin-top:0.4rem;font-weight:600">Cost to join</div>
-            <div style="margin-top:0.35rem;font-size:0.8rem;opacity:0.65">Mailing list, Slack, and every event — no membership fee</div>
-          </a>
-        </div>
-    design:
-      css_class: "bg-gradient-to-b from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800"
-      spacing:
-        padding: ['3rem', '0', '3rem', '0']
 
   # ------------------------------------------------------------------
   - block: features

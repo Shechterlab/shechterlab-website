@@ -54,6 +54,29 @@ To change the heading face, override `--hb-font-heading` in
 `assets/css/custom.css` — it is the only place to touch, and the comment there
 explains what else has to change if the new face is not self-hosted.
 
+## The hero, and the generated art
+
+The home page hero is deliberately unlike shechterlab.org: full-bleed navy,
+left-aligned display type, and the numbers sitting *inside* the hero. That is
+the shape of the Hugo Blox premium **Conference** template's `hero-with-stats`,
+rebuilt here on the current stack (see the note at the end of this file).
+
+Two hero assets are **generated from the club logo**, not drawn by hand, each by
+a build script kept beside its output so it can be re-run if the logo changes:
+
+| Asset | Script | What it does |
+|---|---|---|
+| `assets/media/hero-skyline.jpg` | `hero-skyline.build.py` | Lifts the skyline silhouette out of the logo (masking off the wordmark and the mirrored reflection) and composites it over a navy gradient with a warm low-left glow. |
+| `assets/media/logo/wordmark-white.png` | `logo/wordmark-white.build.py` | White knockout of the wordmark alone — no skyline, since the hero background already is one. The letters inside the N/Y/C roundels stay transparent so the navy shows through them. |
+
+Re-run either with `python3 <script>` from the repo root (needs `pillow` and
+`numpy`). If the hero image is replaced with a photograph, keep it dark enough
+for white text, or set `text_color_light: false` on the block.
+
+`static/media/logo/wordmark-white.png` is a **copy** of the asset version: the
+hero uses a raw `<img src="/media/...">`, which resolves against `static/`, not
+`assets/`. Update both if you change it.
+
 ## Brand colors
 
 Sampled from the club logo and set in `config/_default/params.yaml`:
