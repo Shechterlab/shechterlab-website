@@ -81,7 +81,6 @@ hugoblox:
       coordinates:
         latitude: null
         longitude: null
-      phone: "+1-718-430-4120"
     ai:
       allow:
         - /

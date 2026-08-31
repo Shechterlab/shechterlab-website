@@ -6,9 +6,8 @@ sections:
     content:
       title: Contact
       text: |
-        **David Shechter, PhD** — Professor of Biochemistry
-
-        Email is the surest way to reach the lab: **[david.shechter@einsteinmed.edu](mailto:david.shechter@einsteinmed.edu)**
+        <p><strong>David Shechter, PhD</strong> — Professor of Biochemistry<br>
+        <a href="mailto:david.shechter@einsteinmed.edu">david.shechter@einsteinmed.edu</a></p>
 
         [Faculty page](https://www.einsteinmed.edu/faculty/1064/david-shechter/) &ensp;|&ensp; [ORCID 0000-0001-9388-6004](https://orcid.org/0000-0001-9388-6004) &ensp;|&ensp; [Google Scholar](https://scholar.google.com/citations?user=Mz9sZUoAAAAJ)
 
@@ -25,7 +24,7 @@ sections:
           Bronx, NY 10461
         </p>
 
-        Phone: [+1 (718) 430-4120](tel:+17184304120) &ensp;·&ensp; [Map ↗](https://maps.google.com/?q=Albert+Einstein+College+of+Medicine+1300+Morris+Park+Ave+Bronx+NY+10461)
+        [Map ↗](https://maps.google.com/?q=Albert+Einstein+College+of+Medicine+1300+Morris+Park+Ave+Bronx+NY+10461)
 
         <h2 id="inquiry">Send a message</h2>
 
