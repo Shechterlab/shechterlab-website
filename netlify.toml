@@ -1,3 +1,12 @@
+# The production build deliberately does NOT pass -b/--baseURL. That flag
+# overrides baseURL in config/_default/hugo.yaml, and $URL is whatever Netlify
+# currently considers the project's primary URL — so canonical tags, the
+# sitemap and the RSS feed followed a dashboard setting rather than the repo,
+# and silently became *.netlify.app whenever the primary domain was unset or
+# changed. The repo is now the single source of truth for the production URL.
+# Preview contexts below still pass $DEPLOY_PRIME_URL, which is correct: each
+# preview genuinely lives at its own generated address.
+
 # --buildFuture is on every context on purpose: the News feed announces
 # upcoming talks and conferences, and without it a future-dated item is not
 # built at all — an "Upcoming:" post would first appear on the live site
@@ -15,7 +24,7 @@
     pnpm install --verbose
     
     echo "=== Running Hugo build ==="
-    hugo --gc --minify --buildFuture -b $URL --logLevel debug --printI18nWarnings --printPathWarnings
+    hugo --gc --minify --buildFuture --logLevel debug --printI18nWarnings --printPathWarnings
     
     echo "=== Running Pagefind indexing ==="
     pnpm dlx pagefind --source 'public' --verbose

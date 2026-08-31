@@ -359,11 +359,42 @@ Things that look like they should work but will silently break the layout or pro
 
 ---
 
-## Preview locally
+## Preview changes without publishing them
+
+Three ways, cheapest first.
+
+**1. On your own machine — instant, sees nobody.**
 
 ```bash
 hugo server
-# opens http://localhost:1313
+# opens http://localhost:1313, rebuilds as you save
 ```
 
-Nothing publishes until you push.
+Nothing leaves your laptop. Best for wording and layout tweaks.
+
+**2. A deploy preview — the real site, at a private URL.**
+
+Push your work to a branch and open a pull request against `main` **without
+merging it**. Netlify builds that PR and comments a preview link on it
+(`deploy-preview-<number>--shechterlab-website.netlify.app`). It is the
+production build — same Hugo version, same images, same headers — just at a
+different address. Merge the PR when you are happy; that is the moment it goes
+live. Close it instead and nothing ever shipped.
+
+This is the one to use for anything structural, or when you want to send
+someone a link before committing to it.
+
+**3. A branch deploy** — push a branch and Netlify builds it at
+`<branch>--shechterlab-website.netlify.app` with no PR at all. Needs turning on
+first: Site configuration → Build & deploy → Branches and deploy contexts.
+Useful for a long-running draft.
+
+Previews are unlisted but not secret — anyone with the URL can open one. Netlify
+does send `X-Robots-Tag: noindex` on them, so they will not turn up in search
+results and compete with the real site.
+
+**One thing that differs between preview and production:** previews build with
+`-b $DEPLOY_PRIME_URL` so links work at the preview address, while production
+uses the `baseURL` in `config/_default/hugo.yaml`. So absolute URLs — canonical
+tags, the sitemap, the RSS feed — will read `deploy-preview-…netlify.app` in a
+preview. That is correct, not a bug.
