@@ -819,8 +819,18 @@ a.aspect-square:not(:has(img)) > div {
   color: #7ea6e0;
 }
 
+/* On a symposium that has happened, BOTH actions are inert — an abstract
+   button that still invites submissions to a meeting six weeks past is
+   worse than no button. The links stay in the markup as the historical
+   record of how people signed up. */
 .ncc-actions.is-closed .ncc-btn-primary {
   background: var(--ncc-gray);
+  pointer-events: none;
+}
+
+.ncc-actions.is-closed .ncc-btn-ghost {
+  border-color: var(--ncc-gray);
+  color: var(--ncc-gray);
   pointer-events: none;
 }
 
@@ -989,4 +999,32 @@ a.aspect-square:not(:has(img)) > div {
 /* The hero fills the section, so the theme's own padding would double up. */
 #hero .home-section-bg {
   background-position: center bottom;
+}
+
+/* Historical sponsor rows carry logos where a logo exists, names where it
+   does not, so a year is never blocked on artwork. */
+.ncc-sponsor-year-list li.has-logo img {
+  max-height: 2.2rem;
+  width: auto;
+  display: block;
+}
+
+.dark .ncc-sponsor-year-list li.has-logo img,
+.dark .ncc-sponsor-card img {
+  /* Most supplied logos are dark artwork on transparent; lift them so they
+     stay legible on the dark theme without shipping a second set. */
+  filter: brightness(0) invert(1) opacity(0.85);
+}
+
+/* A logo card gives the artwork room to breathe and drops the text
+   treatment meant for name-only cards. */
+.ncc-sponsor-card.has-logo {
+  padding: 1.25rem 1.5rem;
+}
+
+.ncc-sponsor-card.has-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }

@@ -1,10 +1,11 @@
 # Sponsors of the NYC Chromatin Club symposium.
 #
 # HOW TO EDIT
-#   Add a block under `years` for each symposium. The year flagged
-#   `current: true` is shown as "This year's sponsors" on /sponsors/ and
-#   as the logo strip on the home page; every other year falls into
-#   "Sponsors over the years", newest first.
+#   Add a block under `years` for each symposium. The most recent year
+#   that actually HAS sponsors leads /sponsors/ and the home-page strip;
+#   the rest fall into "Sponsors over the years", newest first. That is
+#   derived, so filling in 2027 promotes it automatically — there is no
+#   flag to remember to move.
 #
 #   A sponsor needs only a `name`. `url` and `tier` are optional, and
 #   `logo` is optional too — a sponsor with no logo renders as a
@@ -33,11 +34,23 @@ tiers:
 
 years:
   - year: 2027
-    current: true
     sponsors: []
 
   - year: 2026
-    sponsors: []
+    sponsors:
+      - name: Dovetail Genomics
+        blurb: Part of Cantata Bio, LLC
+        url: https://cantatabio.com/
+        logo: sponsors/dovetail-genomics.png
+      - name: Hologic Diagenode
+        url: https://www.diagenode.com/
+        logo: sponsors/hologic-diagenode.png
+      - name: 10x Genomics
+        url: https://www.10xgenomics.com/
+        logo: sponsors/10x-genomics.png
+      - name: EpiCypher
+        url: https://www.epicypher.com/
+        logo: sponsors/epicypher.png
 
   - year: 2025
     sponsors: []
@@ -46,20 +59,14 @@ years:
     sponsors: []
 
 # ---------------------------------------------------------------------
-# TODO (organizers): fill in the real sponsor lists above.
+# The 2026 list above is taken from the official symposium program
+# ("NYCCC organizers would like to thank symposium sponsors for their
+# valuable contributions and support"), and the logos in
+# assets/media/sponsors/ are extracted from that same PDF, so they are the
+# artwork each company supplied.
 #
-# Two companies published their own event pages for the symposium and are
-# very likely sponsors or exhibitors, but "published an event page" is not
-# the same as "sponsored" and neither is confirmed, so neither is listed
-# above. Confirm and move them into the right year and tier:
-#
-#   - name: biomodal
-#     url: https://biomodal.com/
-#     tier: exhibitor
-#   - name: Cantata Bio (Dovetail Genomics)
-#     url: https://cantatabio.com/
-#     tier: exhibitor
-#
-# Active Motif runs a general "chromatin clubs" sponsorship programme and
-# may be worth approaching: https://www.activemotif.com/chromatin-clubs
+# TODO (organizers): 2024, 2025 and 2027 are still empty. No tiers are
+# assigned for 2026 either — the program lists sponsors as one group. If
+# the club starts selling tiers, add `tier: lead` etc. and they will group
+# automatically; without a tier they render under one heading.
 # ---------------------------------------------------------------------

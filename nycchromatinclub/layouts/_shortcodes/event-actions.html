@@ -34,7 +34,7 @@
   {{ end }}
   {{ if $abs }}
     <a class="ncc-btn ncc-btn-ghost" href="{{ $abs }}"{{ if hasPrefix $abs "http" }} rel="noopener"{{ end }}>
-      Submit an abstract
+      {{ if $closed }}Abstract submission closed{{ else }}Submit an abstract{{ end }}
     </a>
   {{ end }}
   {{ with $p.abstract_deadline }}

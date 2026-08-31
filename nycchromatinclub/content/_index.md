@@ -192,7 +192,7 @@ sections:
   - block: sponsors
     id: sponsors
     content:
-      mode: current
+      mode: latest
       title: Sponsors
       text: 'The symposium is free to attend because sponsors cover the room, the catering and the poster boards.'
       empty_text: |

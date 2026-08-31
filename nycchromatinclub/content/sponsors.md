@@ -16,11 +16,11 @@ sections:
   - block: sponsors
     id: current
     content:
-      mode: current
-      title: This year's sponsors
-      subtitle: '4th Annual Symposium · Summer 2027'
+      mode: latest
+      title: Our sponsors
+      subtitle: 'Most recent symposium'
       empty_text: |
-        Sponsors for the 2027 symposium are being lined up now. If your company would like to be on this page, [get in touch](mailto:info@nycchromatinclub.org?subject=NYC%20Chromatin%20Club%20sponsorship).
+        Sponsors are being lined up now. If your company would like to be on this page, [get in touch](mailto:info@nycchromatinclub.org?subject=NYC%20Chromatin%20Club%20sponsorship).
     design:
       spacing:
         padding: ['1rem', '0', '2rem', '0']

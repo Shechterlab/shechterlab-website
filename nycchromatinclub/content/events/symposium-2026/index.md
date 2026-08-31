@@ -31,14 +31,20 @@ featured: true
 # {{< event-actions >}} shortcode below AND the "Registration open" badge
 # on the events list, so keep them here rather than hardcoding links in
 # the body text. Leave a field empty and its button disappears.
-registration_url: ''
-abstract_url: ''
-abstract_deadline: ''
+# From the official 2026 flyer and registration sheet. The meeting has
+# happened, so `registration_closed: true` greys the button — the link is
+# kept because it is the historical record of how people signed up, not
+# because anyone should click it now.
+registration_url: 'https://forms.gle/d2QNhA1np4w7HrAF7'
+abstract_url: 'https://forms.gle/d2QNhA1np4w7HrAF7'
+abstract_deadline: '2026-06-05'
 registration_closed: true
-registration_note: ''
+registration_note: 'This symposium has taken place. Talks and posters were selected from submitted abstracts.'
 ---
 
-The third annual symposium was held at the **Vagelos Education Center**, Columbia University Irving Medical Center, on Tuesday, July 21, 2026. It was free to attend, as always, and open to anyone in the New York area working on chromatin, epigenetics, or nuclear biology.
+The third annual symposium was held at the **Vagelos Education Center**, Columbia University Irving Medical Center, on Tuesday, July 21, 2026 — a full day, free to attend, open to anyone in the New York area working on chromatin, epigenetics, or nuclear biology.
+
+{{< event-actions >}}
 
 ## Keynote speakers
 
@@ -48,7 +54,7 @@ The third annual symposium was held at the **Vagelos Education Center**, Columbi
 
 ## Program
 
-The rest of the program — the selected talks and the poster session — was drawn from **submitted abstracts**, with priority given to graduate students, postdocs, and new investigators. Lunch and refreshments were served.
+Sixteen talks across four moderated sessions, and a two-part poster session over happy hour. Everything other than the two keynotes was drawn from **submitted abstracts**, with priority given to graduate students, postdocs, and new investigators — the abstract deadline was June 5, 2026.
 
 <div class="ncc-schedule">
 
@@ -62,10 +68,12 @@ The rest of the program — the selected talks and the poster session — was dr
   that opens in Excel or Numbers, which is the point: handing the program
   to whoever is running the day does not require them to touch Markdown.
 
-  TODO (organizers): the times below are the club's usual shape, not the
-  actual 2026 program. Replace agenda.csv with the real running order —
-  speaker names and talk titles — now that the meeting has happened.
+  This one is transcribed from NYC_Chromatin_Club_Symposium_2026_Schedule_FINAL.pdf.
 -->
+
+## Sponsors
+
+The day was supported by **Dovetail Genomics** (part of Cantata Bio), **Hologic Diagenode**, **10x Genomics**, and **EpiCypher** — see [sponsors](/sponsors/).
 
 ## Getting there
 

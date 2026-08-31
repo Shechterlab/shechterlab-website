@@ -1,10 +1,28 @@
 Time,Session,Location
-9:00,"Registration, coffee and poster setup",Foyer
-9:45,Welcome and opening remarks,Auditorium
-10:00,Keynote I — Brian Strahl,Auditorium
-11:00,Selected talks — session I,Auditorium
-12:15,Lunch and poster session,Foyer
-14:00,Selected talks — session II,Auditorium
-15:30,Coffee and posters,Foyer
-16:00,Keynote II — Emily Bernstein,Auditorium
-17:00,Closing remarks and reception,Foyer
+8:00–9:00,Registration — check-in and badge pickup,VEC Lobby
+9:00–9:10,Welcoming remarks,VEC 201
+9:10–10:20,Session 1 — moderator: David Shechter,VEC 201
+9:10–9:50,"KEYNOTE — Brian Strahl, University of North Carolina at Chapel Hill: ""Getting Engaged: How Chromatin Readers Recognize and Regulate the Genome""",VEC 201
+9:50–10:05,"Megha Padubidri, Icahn School of Medicine at Mount Sinai: ""Nuclear pore–insulator axis promotes genome reorganization for oocyte specification""",VEC 201
+10:05–10:20,"Calvin Leonen, The Rockefeller University: ""Single-molecule visualization of the innate immunity DNA sensor cGAS on chromatin""",VEC 201
+10:20–10:50,Coffee break,VEC Lobby
+10:50–12:05,Session 2 — moderator: Viviana Risca,VEC 201
+10:50–11:05,"Shawn Liu, Columbia University: ""Mutation-Agnostic Silencing of Pathological Alleles by CRISPR-IMPRINT""",VEC 201
+11:05–11:20,"Yang Xie, New York Genome Center: ""Single-Cell Multimodal Atlas Reveals Gene Regulatory Programs in the Human Brain""",VEC 201
+11:20–11:35,"Timothée Lionnet, New York University: ""Transcription clusters gate the timing of histone gene activation""",VEC 201
+11:35–11:50,"Ka Lung Cheung, Icahn School of Medicine at Mount Sinai: ""Targeting Epigenetic Regulators HDAC4 and HDAC7 in Multiple Sclerosis""",VEC 201
+11:50–12:05,"Ekaterina Gracheva, Hologic Diagenode: ""Universal CUT&Tag: all-in-one solution for chromatin profiling""",VEC 201
+12:05–13:30,Lunch (on own),
+13:30–14:45,Session 3 — moderator: Yael David,VEC 201
+13:30–13:45,"Jianfeng Sun, The Rockefeller University: ""Molecular mechanisms of the MLL4 complex in H3K4 methylation and p53-dependent transcription activation""",VEC 201
+13:45–14:00,"Isabella Pirozzolo, Columbia University: ""Greek Army Knives: Multifunctional enhancers modulating olfactory receptor choice""",VEC 201
+14:00–14:15,"Jessica Fyodorova, Albert Einstein College of Medicine: ""MacroH2A1.1 promotes PARP1-dependent repair of oxidative DNA damage""",VEC 201
+14:15–14:30,"Helen Mueller, Memorial Sloan Kettering Cancer Center: ""Overcoming clinical resistance to EZH2 inhibition using rational epigenetic combination therapy""",VEC 201
+14:30–14:45,"Michael Bronson, 10x Genomics: ""Mapping Epigenetic Complexity at Single Cell and Spatial Resolution""",VEC 201
+14:45–15:15,Coffee break and poster set-up,VEC Lobby / VEC 401
+15:15–16:10,Session 4 — moderator: Chao Lu,VEC 201
+15:15–15:30,"Zhen Sun, Memorial Sloan Kettering Cancer Center: ""Context dependent chromatin regulation in cancer cell fate plasticity""",VEC 201
+15:30–16:10,"KEYNOTE — Emily Bernstein, Icahn School of Medicine at Mount Sinai: ""Chromatin biology in the 21st century: How far have we come?""",VEC 201
+16:15–18:15,Poster session and happy hour,VEC 401
+16:15–17:15,Poster session A (odd-numbered posters),VEC 401
+17:15–18:15,Poster session B (even-numbered posters),VEC 401

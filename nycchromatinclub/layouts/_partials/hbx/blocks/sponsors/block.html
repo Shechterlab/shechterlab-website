@@ -9,9 +9,14 @@
   perpetually out of date.
 
   Content options
-    mode: 'current' (default) renders the year flagged `current: true` in
-          data/sponsors.yaml, grouped into tiers.
-          'past' renders every other year, newest first, as compact rows.
+    mode: 'latest' (default) renders the most recent year that actually
+          has sponsors, as a logo grid grouped into tiers. It is derived,
+          not flagged: whichever year has sponsors and the highest number
+          wins, so adding 2027's list automatically promotes it and demotes
+          2026 without anyone editing a `current:` flag.
+          'past' renders every OTHER year with sponsors, newest first, as
+          compact rows — with logos where there are logos.
+    year: pin to a specific year instead of deriving it.
     title / subtitle / text  standard block header
     empty_text  shown in place of the grid when the selected year has no
                 sponsors yet. Omit to hide the section entirely when empty.
@@ -29,17 +34,30 @@
 {{ $tiers := (index $data "tiers") | default slice }}
 {{ $years := (index $data "years") | default slice }}
 
-{{/* Split the year list into the current one and the rest. */}}
-{{ $current := dict }}
-{{ $past := slice }}
+{{/* The "current" year is derived: the newest one that has any sponsors.
+     A year with an empty list is not current, it is just unfilled. */}}
+{{ $withSponsors := slice }}
 {{ range $years }}
-  {{ if eq (index . "current") true }}
-    {{ $current = . }}
-  {{ else }}
+  {{ if gt (len ((index . "sponsors") | default slice)) 0 }}
+    {{ $withSponsors = $withSponsors | append . }}
+  {{ end }}
+{{ end }}
+{{ $withSponsors = sort $withSponsors "year" "desc" }}
+
+{{ $pin := index $content "year" }}
+{{ $current := dict }}
+{{ if $pin }}
+  {{ range $withSponsors }}{{ if eq (printf "%v" .year) (printf "%v" $pin) }}{{ $current = . }}{{ end }}{{ end }}
+{{ else if gt (len $withSponsors) 0 }}
+  {{ $current = index $withSponsors 0 }}
+{{ end }}
+
+{{ $past := slice }}
+{{ range $withSponsors }}
+  {{ if ne (printf "%v" .year) (printf "%v" ($current.year | default "")) }}
     {{ $past = $past | append . }}
   {{ end }}
 {{ end }}
-{{ $past = sort $past "year" "desc" }}
 
 {{ $selected := cond (eq $mode "past") $past (slice $current) }}
 {{ $has_any := false }}
@@ -74,9 +92,16 @@
           <div class="ncc-sponsor-year-label">{{ .year }}</div>
           <ul class="ncc-sponsor-year-list">
             {{ range $sponsors }}
-              <li>
-                {{ with .url }}<a href="{{ . }}" rel="noopener sponsored">{{ end }}
-                {{ .name }}
+              {{ $logo := "" }}
+              {{ with .logo }}
+                {{ with resources.Get (printf "media/%s" .) }}
+                  {{ $img := .Fit "300x90 Center q90" }}
+                  {{ $logo = printf `<img src="%s" alt="" width="%d" height="%d" loading="lazy">` $img.RelPermalink $img.Width $img.Height }}
+                {{ end }}
+              {{ end }}
+              <li{{ if $logo }} class="has-logo"{{ end }}>
+                {{ with .url }}<a href="{{ . }}" rel="noopener sponsored" title="{{ $.name }}">{{ end }}
+                {{ if $logo }}{{ $logo | safeHTML }}{{ else }}{{ .name }}{{ end }}
                 {{ with .url }}</a>{{ end }}
               </li>
             {{ end }}
@@ -87,53 +112,61 @@
 
   {{ else }}
 
-    {{/* Current year, grouped by tier. A tier with no sponsors is skipped
-         rather than rendered as an empty heading. */}}
+    {{/* Build the groups first — tiers that have members, then anything
+         with an unrecognised or missing tier — so the card markup below
+         is written once. An earlier version rendered tiered and untiered
+         cards in two separate blocks, and the untiered one silently
+         lacked logo support, which is exactly the sort of bug duplicated
+         markup produces. */}}
     {{ $sponsors := (index $current "sponsors") | default slice }}
+    {{ $groups := slice }}
+    {{ $tier_ids := slice }}
     {{ range $tiers }}
-      {{ $tier := . }}
-      {{ $in_tier := where $sponsors "tier" $tier.id }}
+      {{ $tier_ids = $tier_ids | append .id }}
+      {{ $in_tier := where $sponsors "tier" .id }}
       {{ if gt (len $in_tier) 0 }}
-        <div class="ncc-sponsor-tier">
-          <h3>{{ $tier.name }}</h3>
-          {{ with $tier.blurb }}<p class="ncc-sponsor-tier-blurb">{{ . }}</p>{{ end }}
-          <div class="ncc-sponsor-grid">
-            {{ range $in_tier }}
-              {{ $inner := "" }}
-              {{ with .logo }}
-                {{ with resources.Get (printf "media/%s" .) }}
-                  {{ $img := .Fit "480x240 Center q90" }}
-                  {{ $inner = printf `<img src="%s" alt="%s" width="%d" height="%d" loading="lazy">` $img.RelPermalink ($.name | default "") $img.Width $img.Height }}
-                {{ end }}
-              {{ end }}
-              <div class="ncc-sponsor-card">
-                {{ with .url }}<a href="{{ . }}" rel="noopener sponsored">{{ end }}
-                  {{ if $inner }}{{ $inner | safeHTML }}{{ else }}<span class="ncc-sponsor-name">{{ .name }}</span>{{ end }}
-                {{ with .url }}</a>{{ end }}
-                {{ with .blurb }}<p class="ncc-sponsor-blurb">{{ . }}</p>{{ end }}
-              </div>
-            {{ end }}
-          </div>
-        </div>
+        {{ $groups = $groups | append (dict "name" .name "blurb" .blurb "items" $in_tier) }}
       {{ end }}
     {{ end }}
 
-    {{/* Anything without a recognised tier still gets shown rather than
-         silently dropped — a typo in `tier:` should be visible, not fatal. */}}
-    {{ $tier_ids := apply $tiers "index" "." "id" }}
     {{ $untiered := slice }}
     {{ range $sponsors }}
-      {{ if not (in $tier_ids ((index . "tier") | default "")) }}{{ $untiered = $untiered | append . }}{{ end }}
+      {{ if not (in $tier_ids ((index . "tier") | default "")) }}
+        {{ $untiered = $untiered | append . }}
+      {{ end }}
     {{ end }}
     {{ if gt (len $untiered) 0 }}
+      {{/* Heading only if some sponsors ARE tiered; otherwise the single
+           group needs no label above the block's own title. */}}
+      {{ $label := cond (gt (len $groups) 0) "Also supported by" "" }}
+      {{ $groups = $groups | append (dict "name" $label "blurb" "" "items" $untiered) }}
+    {{ end }}
+
+    {{ range $groups }}
       <div class="ncc-sponsor-tier">
-        <h3>Sponsors</h3>
+        {{ with .name }}<h3>{{ . }}</h3>{{ end }}
+        {{ with .blurb }}<p class="ncc-sponsor-tier-blurb">{{ . }}</p>{{ end }}
         <div class="ncc-sponsor-grid">
-          {{ range $untiered }}
-            <div class="ncc-sponsor-card">
-              {{ with .url }}<a href="{{ . }}" rel="noopener sponsored">{{ end }}
-                <span class="ncc-sponsor-name">{{ .name }}</span>
-              {{ with .url }}</a>{{ end }}
+          {{ range .items }}
+            {{ $name := .name }}
+            {{ $url := .url }}
+            {{ $blurb := .blurb }}
+            {{ $img := "" }}
+            {{ with .logo }}
+              {{ with resources.Get (printf "media/%s" .) }}
+                {{ $img = .Fit "480x200 Center q90" }}
+              {{ end }}
+            {{ end }}
+            <div class="ncc-sponsor-card{{ if $img }} has-logo{{ end }}">
+              {{ if $url }}<a href="{{ $url }}" rel="noopener sponsored">{{ end }}
+                {{ if $img }}
+                  <img src="{{ $img.RelPermalink }}" alt="{{ $name }}"
+                       width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+                {{ else }}
+                  <span class="ncc-sponsor-name">{{ $name }}</span>
+                {{ end }}
+              {{ if $url }}</a>{{ end }}
+              {{ with $blurb }}<p class="ncc-sponsor-blurb">{{ . }}</p>{{ end }}
             </div>
           {{ end }}
         </div>

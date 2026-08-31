@@ -251,9 +251,18 @@ Drop a headshot at `assets/media/authors/<slug>.jpg` and it is picked up automat
 
 Search the repo for `TODO (organizers)`. Currently:
 
-- `content/events/symposium-2026/index.md` — the running order is the club's usual shape, not a confirmed 2026 timetable; abstract submission link and deadline still needed.
 - `content/events/symposium-2024/index.md` — stub with a **placeholder date**; needs the real date, venue, and keynotes, or delete the file.
+- `content/events/symposium-2025/agenda.csv` — placeholder times; replace with the real 2025 running order if it exists.
+- `content/events/symposium-2027/index.md` — placeholder date, no agenda or registration URLs yet.
+- `data/sponsors.yaml` — 2024, 2025 and 2027 sponsor lists are empty.
+- `data/gallery.yaml` — no photos yet.
+- `content/subscribe.md` — replace the `mailto:` with a hosted signup form if the club uses one.
 - `content/join.md` — Slack invite link.
+
+The 2026 symposium is fully populated from the official PDFs: the agenda is
+transcribed from the final schedule, the four sponsors and their logos come from
+the program, and the registration/abstract link and June 5 deadline come from
+the registration sheet.
 - `content/history.md` — the 2020-23 entry describes the virtual era in general
   terms; the speaker list from those years and the date the Slack forum started
   are not recorded anywhere public.
