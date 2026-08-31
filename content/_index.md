@@ -12,7 +12,7 @@ sections:
     content:
       title: |
         Decoding the biochemistry behind cancer and ALS
-      text: "The Shechter Lab at Albert Einstein College of Medicine in New York City studies how chromatin and RNA-processing proteins are chemically modified — and how that goes wrong in NPM1-mutant leukemia and C9orf72 ALS."
+      text: "The Shechter Lab at Albert Einstein College of Medicine in New York City studies how chemical modifications control chromatin and RNA processing: glutamylation of histone chaperones in NPM1-mutant leukemia, and arginine methylation of RNA-binding proteins in C9orf72 ALS."
       primary_action:
         text: Explore Research
         url: '/research'

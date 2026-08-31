@@ -1,0 +1,122 @@
+{{- /*
+  Local robots.txt template (Hugo generates this because `enableRobotsTXT:
+  true` is set in config/_default/hugo.yaml; without this file Hugo emits a
+  bare "User-agent: *" that allows everything, which is what the site had).
+
+  Policy: search engines and AI assistants that CITE AND LINK BACK are
+  welcome. Crawlers that only harvest text into a training corpus are not.
+
+  Two things worth knowing before editing:
+
+  1. Under RFC 9309 a crawler obeys exactly ONE group — the one naming its
+     own product token — and falls back to `User-agent: *` only when no
+     group names it. So a bot listed below ignores the `*` group entirely,
+     and the order of groups in this file does not matter.
+
+  2. This is a blocklist over an open default. That keeps search engines and
+     ordinary tools working without enumerating them, but it means a new
+     scraper is allowed until someone adds it here. Check Netlify's traffic
+     analytics occasionally and extend the list.
+
+  robots.txt is a request, not a fence. Several of these crawlers are
+  documented as ignoring it (Bytespider is the usual offender). Enforcement
+  needs Netlify's user-agent blocker at the edge — see UPDATE-GUIDE.md.
+*/ -}}
+# --- AI assistants that cite and link back: allowed ---
+# These surface the lab's pages in answers with a link, which is worth having.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Training and bulk-harvest crawlers: blocked ---
+# These take the text and give nothing back. Note the vendor split: OpenAI's
+# GPTBot and Anthropic's ClaudeBot are the training crawlers, and are blocked,
+# while the same vendors' search and user-triggered agents are allowed above.
+# Google-Extended and Applebot-Extended are training opt-out tokens only —
+# blocking them does NOT affect Google Search or Siri, which use Googlebot
+# and Applebot.
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Webzio-Extended
+Disallow: /
+
+# --- Everything else, including Googlebot, Bingbot and Applebot ---
+
+User-agent: *
+Allow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}
