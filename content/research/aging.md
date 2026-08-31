@@ -17,6 +17,13 @@ GNMT is the liver's main valve for the cellular methyl economy, and with the Huf
 
 We've shown that GNMT's N-terminal tail and its folate-dependent feedback inhibition set S-adenosylmethionine (SAM) homeostasis (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)). Sarcosine, the direct product of the GNMT reaction, is itself modulated by aging and dietary restriction — one of the threads that got us interested in GNMT as an aging target in the first place. The Hevolution Foundation supports this work.
 
+<figure class="fig-side fig-left">
+  <a href="/media/lab/gallery/gallery-david-subray-joe.jpg" target="_blank" rel="noopener">
+    <img src="/media/lab/gallery/gallery-david-subray-joe.jpg" alt="David Shechter, Subray Hegde and Joseph DeAngelo in the lab">
+  </a>
+  <figcaption>Discussing results in the lab.</figcaption>
+</figure>
+
 **Questions we are pursuing:**
 
 - Where in the methyl economy is intervention both tolerable and biologically consequential for aging?

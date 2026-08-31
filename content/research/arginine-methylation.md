@@ -19,9 +19,9 @@ Much of our recent work grew out of a puzzle about PRMT5 inhibitors, which are i
 
 <figure class="fig-side fig-left">
   <a href="/media/research/histone-supply-fork.png" target="_blank" rel="noopener">
-    <img src="/media/research/histone-supply-fork.png" alt="A replication fork where one daughter strand receives methylated new nucleosomes and the other runs short, leaving unpackaged gaps">
+    <img src="/media/research/histone-supply-fork.png" alt="A pool of newly made, methylated histones feeding a replication fork whose two daughter duplexes are packaged into nucleosomes">
   </a>
-  <figcaption>At the replication fork, methylated new histones are packaged onto daughter DNA. Lose that step and the supply runs short mid-replication.</figcaption>
+  <figcaption>PRMT5 methylation of newly made histone H4 sustains histone production through S phase, supplying the chromatin assembled behind the fork.</figcaption>
 </figure>
 
 A second thread connects PRMT5 to the supply of histones themselves. Methylation of newly made histone H4 by PRMT5 is required to sustain histone production during S phase — lose it, and cells run short of histones mid-replication, with replication stress and genome instability as the consequence.
