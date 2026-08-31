@@ -13,7 +13,7 @@ authors:
 - "Charles C. Query"
 - "Simone Sidoli"
 - "Matthew J. Gamble"
-- me
+- "David Shechter"
 date: "2025-10-13T00:00:00Z"
 publishDate: "2025-10-13T00:00:00Z"
 publication_types: ["article-journal"]

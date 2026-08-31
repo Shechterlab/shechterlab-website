@@ -1,7 +1,7 @@
 ---
 title: "Meeting report on FASEB protein arginine methylation: mechanism to therapeutics"
 authors:
-- me
+- "David Shechter"
 - "Rong Huang"
 - "Pooja Shah"
 - "Thierry Dubois"

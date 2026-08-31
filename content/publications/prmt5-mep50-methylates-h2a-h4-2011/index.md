@@ -7,7 +7,7 @@ authors:
 - "Jeffrey Shabanowitz"
 - "Brian T. Chait"
 - "Donald F. Hunt"
-- me
+- "David Shechter"
 date: "2011-12-09T00:00:00Z"
 publishDate: "2011-12-09T00:00:00Z"
 publication_types: ["article-journal"]

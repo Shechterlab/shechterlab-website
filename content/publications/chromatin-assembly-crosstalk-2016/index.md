@@ -2,7 +2,7 @@
 title: "Chromatin assembly and transcriptional cross-talk in Xenopus laevis oocyte and egg extracts"
 authors:
 - "Wei-Lin Wang"
-- me
+- "David Shechter"
 date: "2016-01-01T00:00:00Z"
 publishDate: "2016-01-01T00:00:00Z"
 publication_types: ["article-journal"]

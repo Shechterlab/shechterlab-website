@@ -1,7 +1,7 @@
 ---
 title: "MCM proteins and checkpoint kinases get together at the fork"
 authors:
-- me
+- "David Shechter"
 - "Jean Gautier"
 date: "2004-07-27T00:00:00Z"
 publishDate: "2004-07-27T00:00:00Z"

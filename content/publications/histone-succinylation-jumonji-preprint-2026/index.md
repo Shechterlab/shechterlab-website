@@ -9,7 +9,7 @@ authors:
 - "Adam Chatoff"
 - "Nathaniel W. Snyder"
 - "Scott Garforth"
-- me
+- "David Shechter"
 - "Juan Pablo Maianti"
 - "Simone Sidoli"
 date: "2026-06-01T00:00:00Z"

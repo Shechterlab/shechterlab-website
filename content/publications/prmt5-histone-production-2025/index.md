@@ -16,7 +16,7 @@ authors:
 - "Charles C. Query"
 - "Simone Sidoli"
 - "Arthur I. Skoultchi"
-- me
+- "David Shechter"
 date: "2025-07-03T00:00:00Z"
 publishDate: "2025-07-03T00:00:00Z"
 publication_types: ["article"]

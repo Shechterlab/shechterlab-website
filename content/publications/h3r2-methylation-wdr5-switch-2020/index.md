@@ -6,7 +6,7 @@ authors:
 - "Emmanuel Burgos"
 - "Jeffrey B. Bonanno"
 - "Steven C. Almo"
-- me
+- "David Shechter"
 date: "2020-10-06T00:00:00Z"
 publishDate: "2020-10-06T00:00:00Z"
 publication_types: ["article-journal"]

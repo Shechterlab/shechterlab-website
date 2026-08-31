@@ -1,7 +1,7 @@
 ---
 title: "Extraction, Purification, and Analysis of Histones"
 authors:
-- me
+- "David Shechter"
 - "Holger L. Dormann"
 - "C. David Allis"
 - "Sandra B. Hake"

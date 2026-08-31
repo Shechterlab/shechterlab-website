@@ -3,7 +3,7 @@ title: "The Human Touch: AI as Enabler of Human Connection in Medical and Gradua
 authors:
 - "Chris Hugill"
 - "Sunit Jariwala"
-- me
+- "David Shechter"
 date: "2026-03-20T00:00:00Z"
 publishDate: "2026-03-20T00:00:00Z"
 publication_types: ["article-journal"]

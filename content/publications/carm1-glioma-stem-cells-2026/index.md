@@ -18,7 +18,7 @@ authors:
 - "Beata Malachowska"
 - "Justin Vercellino"
 - "Brett I. Bell"
-- me
+- "David Shechter"
 - "Philip J. Tofilon"
 - "Richard E. Phillips"
 - "Jinan Behnan"

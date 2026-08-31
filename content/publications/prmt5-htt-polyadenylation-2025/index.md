@@ -27,7 +27,7 @@ authors:
 - "Ray Truant"
 - "Katlin B. Massirer"
 - "Dalia Barsyte-Lovejoy"
-- me
+- "David Shechter"
 - "Rachel J. Harding"
 - "Cheryl H. Arrowsmith"
 - "Panagiotis Prinos"

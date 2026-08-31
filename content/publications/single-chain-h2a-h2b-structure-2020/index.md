@@ -4,7 +4,7 @@ authors:
 - "Christopher Warren"
 - "Jeffrey B. Bonanno"
 - "Steven C. Almo"
-- me
+- "David Shechter"
 date: "2020-05-01T00:00:00Z"
 publishDate: "2020-05-01T00:00:00Z"
 publication_types: ["article-journal"]

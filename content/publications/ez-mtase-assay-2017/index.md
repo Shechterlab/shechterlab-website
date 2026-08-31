@@ -4,7 +4,7 @@ authors:
 - "Emmanuel Burgos"
 - "Ryan O. Walters"
 - "Derek M. Huffman"
-- me
+- "David Shechter"
 date: "2017-09-01T00:00:00Z"
 publishDate: "2017-09-01T00:00:00Z"
 publication_types: ["article-journal"]

@@ -14,7 +14,7 @@ authors:
 - "R. Holland Cheng"
 - "Ulf Reimer"
 - "Steven Almo"
-- me
+- "David Shechter"
 date: "2013-02-25T00:00:00Z"
 publishDate: "2013-02-25T00:00:00Z"
 publication_types: ["article-journal"]

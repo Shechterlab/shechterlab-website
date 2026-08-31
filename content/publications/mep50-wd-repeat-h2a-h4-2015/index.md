@@ -7,7 +7,7 @@ authors:
 - "Jeffrey B. Bonanno"
 - "Janina Jansong"
 - "Ulf Reimer"
-- me
+- "David Shechter"
 date: "2015-04-10T00:00:00Z"
 publishDate: "2015-04-10T00:00:00Z"
 publication_types: ["article-journal"]

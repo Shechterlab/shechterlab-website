@@ -8,7 +8,7 @@ authors:
 - "Benjamin Lorton"
 - "Rainer Nikolay"
 - "Matthew L. Kraushar"
-- me
+- "David Shechter"
 - "Jochen Guck"
 - "Vasily Zaburdaev"
 - "Simone Reber"

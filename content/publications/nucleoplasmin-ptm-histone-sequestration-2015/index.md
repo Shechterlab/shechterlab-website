@@ -12,7 +12,7 @@ authors:
 - "Jeffrey Shabanowitz"
 - "R. Holland Cheng"
 - "Donald F. Hunt"
-- me
+- "David Shechter"
 date: "2015-03-17T00:00:00Z"
 publishDate: "2015-03-17T00:00:00Z"
 publication_types: ["article-journal"]

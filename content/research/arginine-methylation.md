@@ -17,6 +17,13 @@ Methylation is one of the cell's most heavily used regulatory marks: enzymes tra
 
 Much of our recent work grew out of a puzzle about PRMT5 inhibitors, which are in clinical trials for cancer. Inhibit PRMT5 in cells and the gene expression changes take *days* to appear — far longer than it takes the drug to hit its target. We found the missing piece on chromatin itself. Cells hold a substantial pool of polyadenylated but incompletely spliced mRNAs physically tethered to the genome, and PRMT5 methylation of the Sm proteins is the signal that licenses their final processing and release into the cytoplasm. We named these parked messages **GRIPPs** — genomically retained, incompletely processed polyadenylated transcripts ([*Molecular Cell*, 2025](/publications/productive-mrna-chromatin-escape-2025/)). When PRMT5 is inhibited, the release valve closes: transcripts pile up on chromatin instead of maturing, and the delayed drug response follows from that.
 
+<div style="clear:both;max-width:760px;margin:1.75rem auto">
+  <a href="/media/lab/scenes/volcano-plots.png" target="_blank" rel="noopener">
+    <img src="/media/lab/scenes/volcano-plots.png" style="width:100%" alt="Volcano plots of differential RNA abundance after PRMT5 inhibition with GSK591 and type I PRMT inhibition with MS023, measured separately in poly(A) and chromatin-associated fractions">
+  </a>
+  <p style="text-align:center;font-size:0.8rem;color:#64748b;margin-top:0.4rem">Reading the response out genome-wide: differential RNA abundance after PRMT5 inhibition (GSK591, green) and type I PRMT inhibition (MS023, purple), measured separately in the poly(A) and chromatin-associated fractions. Click to view full size.</p>
+</div>
+
 <figure class="fig-side fig-left">
   <a href="/media/research/histone-supply-fork.png" target="_blank" rel="noopener">
     <img src="/media/research/histone-supply-fork.png" alt="A pool of newly made, methylated histones feeding a replication fork whose two daughter duplexes are packaged into nucleosomes">

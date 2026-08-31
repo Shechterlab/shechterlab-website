@@ -2,7 +2,7 @@
 title: "Fly Fishing for Histones: Catch and Release by Histone Chaperone Intrinsically Disordered Regions and Acidic Stretches"
 authors:
 - "Christopher Warren"
-- me
+- "David Shechter"
 date: "2017-08-04T00:00:00Z"
 publishDate: "2017-08-04T00:00:00Z"
 publication_types: ["article-journal"]

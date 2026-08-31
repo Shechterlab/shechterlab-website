@@ -8,7 +8,7 @@ authors:
 - "Shira Rockowitz"
 - "Carola Wilczek"
 - "Ruth Ashery-Padan"
-- me
+- "David Shechter"
 - "Deyou Zheng"
 - "Ales Cvekl"
 date: "2016-01-01T00:00:00Z"

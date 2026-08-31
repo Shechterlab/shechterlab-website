@@ -9,7 +9,7 @@ authors:
 - "Michael Brenowitz"
 - "David Cowburn"
 - "Mark Girvin"
-- me
+- "David Shechter"
 date: "2017-12-20T00:00:00Z"
 publishDate: "2017-12-20T00:00:00Z"
 publication_types: ["article-journal"]

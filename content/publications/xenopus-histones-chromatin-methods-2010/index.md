@@ -3,7 +3,7 @@ title: "Analysis of histones and chromatin in Xenopus laevis egg and oocyte extr
 authors:
 - "Laura A. Banaszynski"
 - "C. David Allis"
-- me
+- "David Shechter"
 date: "2010-05-01T00:00:00Z"
 publishDate: "2010-05-01T00:00:00Z"
 publication_types: ["article-journal"]
