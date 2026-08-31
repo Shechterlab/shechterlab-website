@@ -35,3 +35,18 @@ The second annual symposium was held at **Albert Einstein College of Medicine** 
 **Bing Ren, PhD** — on three-dimensional genome organization, enhancer biology, and single-cell epigenomics.
 
 The rest of the program was drawn from submitted abstracts, with talks and a poster session over lunch.
+
+## Agenda
+
+<div class="ncc-schedule">
+
+{{< table path="agenda.csv" header="true" >}}
+
+</div>
+
+<!--
+  Edit agenda.csv in this folder rather than this page.
+
+  TODO (organizers): times are the club's usual shape; replace with the
+  actual 2025 running order if you have it.
+-->

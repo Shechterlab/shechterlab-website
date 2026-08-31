@@ -22,6 +22,7 @@ Requires Hugo **extended** 0.158.0 and Go 1.21+ (Hugo pulls the theme as a Go mo
 | Homepage | `content/_index.md` |
 | Symposium and meeting pages | `content/events/<slug>/index.md` |
 | About, History, Speakers, Sponsors, Gallery, Join, Code of conduct | `content/*.md` |
+| Agendas | `content/events/<slug>/agenda.csv` |
 | Sponsor list | `data/sponsors.yaml` |
 | Gallery photo list | `data/gallery.yaml` |
 | Gallery image files | `assets/media/gallery/<year>/` |
@@ -97,6 +98,57 @@ featured: true              # pins it on the homepage
 > Netlify preview/branch builds pass `--buildFuture`. Without it Hugo silently drops
 > future-dated pages — which would delete the upcoming symposium page, the one thing
 > the site exists to announce. Do not remove it.
+
+## Agendas, registration and abstracts
+
+**The agenda for each symposium is a CSV** sitting next to that symposium's
+`index.md`, rendered by the theme's `table` shortcode:
+
+```
+content/events/symposium-2026/agenda.csv
+```
+
+```csv
+Time,Session,Location
+9:00,"Registration, coffee and poster setup",Foyer
+10:00,Keynote I — Brian Strahl,Auditorium
+```
+
+It opens in Excel or Numbers, so the program can be handed to whoever is running
+the day without them touching Markdown. Quote any cell containing a comma. The
+page pulls it in with:
+
+```
+<div class="ncc-schedule">
+
+{{</* table path="agenda.csv" header="true" */>}}
+
+</div>
+```
+
+Past agendas therefore stay with their symposium and never need migrating.
+
+**Registration and abstract links** are front matter on the event page:
+
+```yaml
+registration_url: 'https://forms.gle/...'   # any URL: Google Forms, Eventbrite, mailto:
+abstract_url: 'https://forms.gle/...'
+abstract_deadline: '2027-05-14'
+registration_closed: false                  # true greys the button out after the event
+registration_note: 'Registration is free.'
+```
+
+`{{</* event-actions */>}}` in the body renders them as buttons. Empty fields
+drop their button, so the page is safe to publish before anything opens — with
+only `registration_note` set it shows the note alone, which is what an announced
+but not-yet-open symposium needs. Because the URLs live in front matter rather
+than in body text, the events list can also read them.
+
+**A symposium with no date yet** still needs a `date:` so Hugo sorts it and
+counts it as upcoming. Set `date_text: 'To be announced'` so that placeholder is
+never shown to a reader, and set `lastmod:` too — the "Last updated on" line
+falls back to `date` and would otherwise print a date in the future. Delete both
+once the real date is set.
 
 ## Adding a sponsor
 

@@ -680,3 +680,189 @@ a.aspect-square:not(:has(img)) > div {
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
+
+/* ---------------------------------------------------------------------
+   Countdown
+   ------------------------------------------------------------------- */
+
+.ncc-countdown {
+  max-width: 48rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.ncc-countdown h2 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.021em;
+  color: #fff;
+}
+
+.ncc-cd-lead {
+  margin: 0.25rem 0 0;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+.ncc-cd-digits {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+}
+
+.ncc-cd-digits > div {
+  min-width: 5rem;
+  padding: 0.85rem 0.5rem;
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ncc-cd-digits span {
+  display: block;
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.ncc-cd-digits small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Shown instead of the digits when no date is set yet, or once it has
+   passed. Same visual weight, so the section does not collapse. */
+.ncc-cd-fallback {
+  margin: 1.5rem auto 0;
+  max-width: 34rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.ncc-cd-after {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.ncc-cd-cta {
+  margin: 1.25rem 0 0;
+}
+
+.ncc-cd-cta a {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.5rem;
+  background: var(--ncc-orange);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ncc-cd-cta a:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 560px) {
+  .ncc-cd-digits {
+    gap: 0.45rem;
+  }
+  .ncc-cd-digits > div {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 0.7rem 0.25rem;
+  }
+  .ncc-cd-digits span {
+    font-size: 1.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Registration / abstract buttons on an event page
+   ------------------------------------------------------------------- */
+
+.ncc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: color-mix(in srgb, var(--ncc-navy) 4%, transparent);
+}
+
+.dark .ncc-actions {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ncc-btn {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.ncc-btn-primary {
+  background: var(--ncc-navy);
+  color: #fff;
+}
+
+.ncc-btn-ghost {
+  border: 2px solid var(--ncc-navy);
+  color: var(--ncc-navy);
+}
+
+.dark .ncc-btn-ghost {
+  border-color: #7ea6e0;
+  color: #7ea6e0;
+}
+
+.ncc-actions.is-closed .ncc-btn-primary {
+  background: var(--ncc-gray);
+  pointer-events: none;
+}
+
+.ncc-actions-deadline {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.ncc-actions-note {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* The CSV agenda renders through the theme's `table` shortcode, which
+   emits a bare <table>; give it the same treatment as the hand-written
+   schedule tables so both look identical. */
+.ncc-schedule table th,
+.ncc-schedule table td {
+  padding: 0.7rem 0.9rem;
+}
+
+/* A registration note with no buttons beside it carries the box on its
+   own, so it needs the weight the buttons would otherwise give it. */
+.ncc-actions-note.is-standalone {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
+}

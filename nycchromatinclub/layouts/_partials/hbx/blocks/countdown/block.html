@@ -1,0 +1,102 @@
+{{/*
+  Countdown block — local to this site.
+
+  Modelled on the premium conference template's countdown, reimplemented on
+  the current kit (that block targets the older blox-tailwind generation and
+  its markup does not resolve here).
+
+  The important difference: this one copes with not knowing the date yet.
+  The club announces the symposium months before it fixes a date, and a
+  countdown that renders 00:00:00 against an unset target looks broken. With
+  no `date`, it shows `fallback_text` instead of digits; once the date has
+  passed, it shows `elapsed_text`.
+
+  Content options
+    date          target, e.g. '2027-07-20 09:00:00'. Leave empty until known.
+    title         heading above the digits
+    text          line above the digits
+    text_after    line below the digits
+    fallback_text shown in place of digits when `date` is empty
+    elapsed_text  shown once the target is in the past
+    button        { text, url }  optional call to action
+
+  Server-rendered digits are the real remaining time at build time, so a
+  visitor with JavaScript off still sees a sensible figure rather than
+  zeroes; the script then keeps it ticking.
+*/}}
+
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $raw := index $content "date" }}
+{{ $target := "" }}
+{{ if $raw }}{{ $target = time $raw }}{{ end }}
+
+{{ $elapsed := false }}
+{{ $d := 0 }}{{ $h := 0 }}{{ $m := 0 }}{{ $s := 0 }}
+{{ if $target }}
+  {{ $secs := int (div (sub $target.Unix now.Unix) 1) }}
+  {{ if le $secs 0 }}
+    {{ $elapsed = true }}
+  {{ else }}
+    {{ $d = div $secs 86400 }}
+    {{ $h = div (mod $secs 86400) 3600 }}
+    {{ $m = div (mod $secs 3600) 60 }}
+    {{ $s = mod $secs 60 }}
+  {{ end }}
+{{ end }}
+
+<div class="ncc-countdown">
+  {{ with index $content "title" }}<h2>{{ . | markdownify }}</h2>{{ end }}
+  {{ with index $content "text" }}<p class="ncc-cd-lead">{{ . | markdownify }}</p>{{ end }}
+
+  {{ if not $target }}
+    <p class="ncc-cd-fallback">{{ (index $content "fallback_text") | default "Date to be announced." | markdownify }}</p>
+  {{ else if $elapsed }}
+    <p class="ncc-cd-fallback">{{ (index $content "elapsed_text") | default "This one has been and gone." | markdownify }}</p>
+  {{ else }}
+    <div class="ncc-cd-digits" data-countdown="{{ $target.Format "2006-01-02T15:04:05Z07:00" }}"
+         data-elapsed-text="{{ (index $content "elapsed_text") | default "This one has been and gone." }}">
+      <div><span data-unit="days">{{ $d }}</span><small>{{ if eq $d 1 }}day{{ else }}days{{ end }}</small></div>
+      <div><span data-unit="hours">{{ $h }}</span><small>hours</small></div>
+      <div><span data-unit="minutes">{{ $m }}</span><small>min</small></div>
+      <div><span data-unit="seconds">{{ $s }}</span><small>sec</small></div>
+    </div>
+  {{ end }}
+
+  {{ with index $content "text_after" }}<p class="ncc-cd-after">{{ . | markdownify }}</p>{{ end }}
+
+  {{ with index $content "button" }}
+    {{ if .url }}<p class="ncc-cd-cta"><a href="{{ .url }}">{{ .text | default "Register" }}</a></p>{{ end }}
+  {{ end }}
+</div>
+
+<script>
+(function () {
+  var el = document.querySelector('[data-countdown]');
+  if (!el) return;
+  var target = new Date(el.getAttribute('data-countdown')).getTime();
+  if (isNaN(target)) return;
+  var units = {};
+  el.querySelectorAll('[data-unit]').forEach(function (n) { units[n.getAttribute('data-unit')] = n; });
+
+  function tick() {
+    var left = Math.floor((target - Date.now()) / 1000);
+    if (left <= 0) {
+      var p = document.createElement('p');
+      p.className = 'ncc-cd-fallback';
+      p.textContent = el.getAttribute('data-elapsed-text');
+      el.replaceWith(p);
+      clearInterval(timer);
+      return;
+    }
+    units.days.textContent = Math.floor(left / 86400);
+    units.hours.textContent = Math.floor((left % 86400) / 3600);
+    units.minutes.textContent = Math.floor((left % 3600) / 60);
+    units.seconds.textContent = left % 60;
+  }
+  var timer = setInterval(tick, 1000);
+  tick();
+})();
+</script>

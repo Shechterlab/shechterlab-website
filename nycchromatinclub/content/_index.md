@@ -48,6 +48,34 @@ sections:
         padding: ['4rem', '0', '2.5rem', '0']
 
   # ------------------------------------------------------------------
+  # Countdown to the next symposium, in the position the premium
+  # conference template puts it: immediately under the masthead, before
+  # anything else competes for attention.
+  #
+  # `date` is deliberately EMPTY. The 2027 date is not fixed, and a
+  # countdown ticking against a made-up target is worse than no countdown
+  # — the block renders `fallback_text` instead of zeroes until a real
+  # date is set here. Set it to e.g. '2027-07-20 09:00:00' and the digits
+  # appear on their own.
+  # ------------------------------------------------------------------
+  - block: countdown
+    id: countdown
+    content:
+      date: ''
+      title: '4th Annual Symposium'
+      text: 'Summer 2027'
+      fallback_text: 'The date is being set now. It goes to the mailing list first.'
+      elapsed_text: 'The symposium is under way — see you there.'
+      text_after: 'Free to attend, as always.'
+      button:
+        text: 'Get symposium announcements'
+        url: '/join/'
+    design:
+      css_class: "bg-primary-800"
+      spacing:
+        padding: ['2.5rem', '0', '2.5rem', '0']
+
+  # ------------------------------------------------------------------
   # At-a-glance numbers. Hand-built rather than the `stats` block so the
   # cards can be links — each one goes somewhere useful.
   # ------------------------------------------------------------------
@@ -128,10 +156,31 @@ sections:
         padding: ['3rem', '0', '3rem', '0']
 
   # ------------------------------------------------------------------
-  - block: collection
-    id: events
+  # ------------------------------------------------------------------
+  # Agenda. The premium conference template renders the running order
+  # straight on the landing page from a CSV; here the full agendas live
+  # on each symposium page (so past programs stay with their meeting) and
+  # the home page links through to them.
+  # ------------------------------------------------------------------
+  - block: markdown
+    id: agenda
     content:
-      title: Meetings
+      title: Agenda
+      text: |
+        The program is built from **submitted abstracts** — two keynotes, selected talks, and a poster session over lunch. Every symposium keeps its own running order, so past agendas stay online:
+
+        - [**2027 — 4th Annual**](/events/symposium-2027/) · summer, date to be announced · registration and abstracts open in the spring
+        - [**2026 — 3rd Annual**](/events/symposium-2026/) · Columbia University Irving Medical Center · [agenda](/events/symposium-2026/#agenda)
+        - [**2025 — 2nd Annual**](/events/symposium-2025/) · Albert Einstein College of Medicine · [agenda](/events/symposium-2025/#agenda)
+        - [**2024 — 1st Annual**](/events/symposium-2024/) · the first in-person meeting
+    design:
+      spacing:
+        padding: ['3rem', '0', '1rem', '0']
+
+  - block: collection
+    id: meetings
+    content:
+      title: ''
       subtitle: ''
       text: ''
       filters:
@@ -139,17 +188,33 @@ sections:
           - events
       sort_by: 'Date'
       sort_ascending: false
-      count: 6
+      count: 4
     design:
       view: card
       columns: 2
-      # A symposium card should show the meeting's date, not "1 min read".
       show_read_time: false
       css_class: "bg-gray-50 dark:bg-gray-900"
       spacing:
-        padding: ['3rem', '0', '3rem', '0']
+        padding: ['2rem', '0', '3rem', '0']
 
   # ------------------------------------------------------------------
+  # Sponsors, given a slot on the landing page rather than only living
+  # on /sponsors/ — sponsors are what keeps the day free at the door, and
+  # prospective ones need to see that the club puts them in front of the
+  # whole audience.
+  # ------------------------------------------------------------------
+  - block: sponsors
+    id: sponsors
+    content:
+      mode: current
+      title: Sponsors
+      text: 'The symposium is free to attend because sponsors cover the room, the catering and the poster boards.'
+      empty_text: |
+        Sponsors for 2027 are being lined up now — [your company could be here](/sponsors/).
+    design:
+      spacing:
+        padding: ['3rem', '0', '2rem', '0']
+
   - block: cta-card
     id: join-cta
     content:

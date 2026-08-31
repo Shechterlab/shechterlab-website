@@ -1,0 +1,45 @@
+{{/*
+  Registration / abstract call-to-action for an event page.
+
+  Reads the page's own front matter, so the URLs live somewhere machine
+  readable (the events list and the home page read the same fields to show
+  a "Registration open" badge) while this shortcode only decides where on
+  the page the buttons appear. Call it from an event page body wherever
+  you want the buttons to sit.
+
+  Front matter it reads:
+    registration_url    live registration link
+    registration_note   small print under the buttons
+    abstract_url        abstract submission link
+    abstract_deadline   date; shown beside the abstract button
+    registration_closed set true to grey both out after the meeting
+
+  With no URLs but a `registration_note`, it renders the note on its own —
+  which is what an announced-but-not-yet-open symposium needs, since the
+  page's whole job is to say "this is where registration will appear".
+  With none of the fields set it renders nothing.
+*/}}
+
+{{ $p := .Page.Params }}
+{{ $reg := $p.registration_url }}
+{{ $abs := $p.abstract_url }}
+{{ $closed := $p.registration_closed | default false }}
+
+{{ if or $reg $abs $p.registration_note }}
+<div class="ncc-actions{{ if $closed }} is-closed{{ end }}">
+  {{ if $reg }}
+    <a class="ncc-btn ncc-btn-primary" href="{{ $reg }}"{{ if hasPrefix $reg "http" }} rel="noopener"{{ end }}>
+      {{ if $closed }}Registration closed{{ else }}Register{{ end }}
+    </a>
+  {{ end }}
+  {{ if $abs }}
+    <a class="ncc-btn ncc-btn-ghost" href="{{ $abs }}"{{ if hasPrefix $abs "http" }} rel="noopener"{{ end }}>
+      Submit an abstract
+    </a>
+  {{ end }}
+  {{ with $p.abstract_deadline }}
+    <span class="ncc-actions-deadline">Abstracts close {{ (time .) | time.Format (site.Params.hugoblox.locale.date_format | default "Jan 2, 2006") }}</span>
+  {{ end }}
+  {{ with $p.registration_note }}<p class="ncc-actions-note{{ if not (or $reg $abs) }} is-standalone{{ end }}">{{ . | markdownify }}</p>{{ end }}
+</div>
+{{ end }}

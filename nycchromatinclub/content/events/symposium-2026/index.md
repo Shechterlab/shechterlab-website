@@ -26,6 +26,16 @@ tags:
   - Symposium
 
 featured: true
+
+# Registration and abstracts. These drive the buttons rendered by the
+# {{< event-actions >}} shortcode below AND the "Registration open" badge
+# on the events list, so keep them here rather than hardcoding links in
+# the body text. Leave a field empty and its button disappears.
+registration_url: ''
+abstract_url: ''
+abstract_deadline: ''
+registration_closed: true
+registration_note: ''
 ---
 
 The third annual symposium was held at the **Vagelos Education Center**, Columbia University Irving Medical Center, on Tuesday, July 21, 2026. It was free to attend, as always, and open to anyone in the New York area working on chromatin, epigenetics, or nuclear biology.
@@ -42,26 +52,19 @@ The rest of the program — the selected talks and the poster session — was dr
 
 <div class="ncc-schedule">
 
-| Time | Session |
-|---|---|
-| 9:00 | Registration, coffee, poster setup |
-| 9:45 | Welcome and opening remarks |
-| 10:00 | Keynote I |
-| 11:00 | Selected talks — session I |
-| 12:15 | Lunch and poster session |
-| 14:00 | Selected talks — session II |
-| 15:30 | Coffee and posters |
-| 16:00 | Keynote II |
-| 17:00 | Closing remarks and reception |
+{{< table path="agenda.csv" header="true" >}}
 
 </div>
 
 <!--
-  TODO (organizers): the running order above is the club's usual shape, NOT
-  the actual 2026 program. Replace it with the real schedule — speaker names
-  and talk titles — now that the meeting has happened, and add photos and
-  the poster-prize winners if you want them here. Times drive nothing in the
-  build; this is a plain table.
+  The running order comes from agenda.csv in this folder — edit that file,
+  not this page. It is a plain three-column CSV (Time, Session, Location)
+  that opens in Excel or Numbers, which is the point: handing the program
+  to whoever is running the day does not require them to touch Markdown.
+
+  TODO (organizers): the times below are the club's usual shape, not the
+  actual 2026 program. Replace agenda.csv with the real running order —
+  speaker names and talk titles — now that the meeting has happened.
 -->
 
 ## Getting there

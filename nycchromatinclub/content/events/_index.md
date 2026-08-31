@@ -20,44 +20,29 @@ sections:
       spacing:
         padding: ['3rem', '0', '0.5rem', '0']
 
-  # The "next symposium" notice is a markdown block rather than a
-  # `collection` with `exclude_past: true`, because an empty collection
-  # still renders its heading — a bare "Upcoming" with nothing under it
-  # reads as a broken page rather than as "not announced yet".
-  #
-  # TODO (organizers): once the 2027 date is set, create
-  # content/events/symposium-2027/index.md and replace this whole block
-  # with the collection below, which will then populate itself:
-  #
-  #   - block: collection
-  #     id: upcoming
-  #     content:
-  #       title: Upcoming
-  #       filters:
-  #         folders: [events]
-  #         exclude_past: true
-  #       sort_by: 'Date'
-  #       sort_ascending: true
-  #       count: 0
-  #     design:
-  #       view: card
-  #       columns: 2
-  - block: markdown
+  - block: collection
     id: upcoming
     content:
-      title: Next symposium
-      text: |
-        The **4th Annual NYC Chromatin Club Symposium** is planned for summer 2027. The date, the host campus, and the abstract deadline are announced on the mailing list first.
-
-        [Join the mailing list →](/join/)
+      title: Upcoming
+      subtitle: ''
+      filters:
+        folders:
+          - events
+        exclude_past: true
+      sort_by: 'Date'
+      sort_ascending: true
+      count: 0
     design:
+      view: card
+      columns: 2
+      show_read_time: false
       spacing:
         padding: ['0.5rem', '0', '2rem', '0']
 
   - block: collection
     id: past
     content:
-      title: Past symposia
+      title: Past symposia and agendas
       subtitle: ''
       filters:
         folders:
