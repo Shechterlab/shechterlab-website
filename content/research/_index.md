@@ -9,11 +9,25 @@ sections:
       text: |
         Decoding how protein modifications regulate chromatin and RNA to control gene expression in cancer, ALS, and aging.
 
+        <figure class="fig-side">
+          <a href="/media/lab/gallery/gallery-david-haeun-subray.jpg" target="_blank" rel="noopener">
+            <img src="/media/lab/gallery/gallery-david-haeun-subray.jpg" alt="David Shechter, Haeun Kim and Subray Hegde at the bench in Forchheimer 304">
+          </a>
+          <figcaption>At the bench in Forchheimer 304.</figcaption>
+        </figure>
+
         The Shechter Lab studies how chemical modifications of proteins regulate gene expression by coordinating chromatin dynamics, transcription, and RNA processing. We are driven by curiosity about fundamental molecular mechanisms, and we look for principles that connect those mechanisms to disease — cancer, aging, and neurodegeneration.
 
         Our work centers on post-translational modifications — arginine methylation and glutamylation, especially — that change the behavior of intrinsically disordered regions in RNA-binding proteins and chromatin regulators. These modifications reshape protein-protein and protein-RNA interactions, with consequences for transcription, RNA metabolism, and the biomolecular condensates cells build from these interactions.
 
         We have long studied **PRMT1** and **PRMT5**, arginine methyltransferases that regulate RNA-binding protein function and RNA processing events including splicing and nuclear export. In C9orf72 ALS, we are investigating how arginine methylation governs stress granules, phase-separated condensates, and nucleocytoplasmic transport — and whether PRMTs can be targeted therapeutically. In parallel, we are defining nuclear roles for TTLL4-mediated glutamylation of acidic chromatin-associated proteins, including the histone chaperones that go on to drive oncogenic transcriptional programs in NPM1c-mutant acute myeloid leukemia. We are also examining glycine N-methyltransferase (GNMT), which connects one-carbon metabolism to gene regulation, with implications for aging and the metabolic control of epigenetic pathways.
+
+        <figure class="fig-side fig-left">
+          <a href="/media/lab/lab-tissue-culture.jpg" target="_blank" rel="noopener">
+            <img src="/media/lab/lab-tissue-culture.jpg" alt="Tissue culture room in the Shechter Lab">
+          </a>
+          <figcaption>Tissue culture, Forchheimer 304B.</figcaption>
+        </figure>
 
         Using biochemistry, structural biology, functional genomics, and cellular models, we aim to define how these regulatory systems operate — and how their dysregulation creates vulnerabilities that can be leveraged for therapeutic discovery.
 
