@@ -502,3 +502,43 @@ footer p a:hover {
 .dark .hb-author-avatar {
   border-color: rgb(255 255 255 / 0.18);
 }
+
+/* Paper title on an individual publication page links straight out to
+   the journal (or bioRxiv). The URL is the same one the thumbnail and
+   the ARTICLE/BIORXIV badge use — layouts/publications/single.html
+   resolves it by preferring a `type: doi` entry in the page's `links:`,
+   falling back to the first entry.
+
+   The heading keeps its dark colour — an orange h1 shouts — so the
+   affordance is a faint underline that firms up and turns accent on
+   hover, plus a small ↗ marking it as leaving the site. The arrow is
+   a pseudo-element so it never ends up in the copied text or in the
+   Pagefind index (the h1 carries data-pagefind-meta="title"). */
+.hb-pub-h1,
+.hb-pub-h1:visited {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgb(100 116 139 / 0.35);
+  text-underline-offset: 0.18em;
+}
+.hb-pub-h1:hover {
+  color: var(--color-accent);
+  text-decoration-color: currentColor;
+}
+.hb-pub-h1::after {
+  content: "\2197";
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.7em;
+  font-weight: 500;
+  vertical-align: 0.25em;
+  color: rgb(100 116 139);
+  text-decoration: none;
+}
+.dark .hb-pub-h1::after {
+  color: rgb(148 163 184);
+}
+.dark .hb-pub-h1 {
+  text-decoration-color: rgb(148 163 184 / 0.4);
+}
