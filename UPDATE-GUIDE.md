@@ -114,7 +114,7 @@ There is **no `doi:` field** — the DOI goes inside `links:` as a full URL, not
 
 Every `links:` entry needs both `name:` (the visible label — "Article", "bioRxiv", etc.) and `type:` (`doi` for a published article, `preprint` for bioRxiv/arXiv — this is what picks the icon). `name:` alone still displays fine but silently falls back to a generic link icon instead of the one that actually matches what the link is.
 
-**`pub_category:`** controls which section of the `/publications/` list page an entry appears in (see `layouts/publications/list.html`, a local override — it only applies to published articles; anything not `publication_types: ["article-journal"]` is always grouped under "Preprints" regardless of `pub_category`):
+**`pub_category:`** controls which section of the `/publications/` list page an entry appears in (see `layouts/publications/list.html`, a local override). `pub_category: review` is checked first, so a review-ish item that is not a journal article — a book chapter, an application note — still lands under Reviews & Commentary. Anything else without `publication_types: ["article-journal"]` is grouped under "Preprints":
 - `lab` (default if omitted) — first-author or corresponding-author work driven by the lab. Shown under "Lab Papers".
 - `coauthored` — genuine collaborations where David is a middle author, not the paper's driver. Shown under "Co-authored Work".
 - `review` — reviews, commentaries, book chapters. Shown under "Reviews & Commentary".
@@ -253,6 +253,38 @@ hugo --gc --minify && cat public/_redirects
 ```
 
 ---
+
+## Who is allowed to crawl the site
+
+`layouts/robots.txt` is a local template (Hugo builds robots.txt because
+`enableRobotsTXT: true` is set). The policy: search engines and the AI
+assistants that **cite and link back** are allowed; crawlers that only harvest
+text into a training corpus are blocked.
+
+Two things to know before editing it:
+
+- **A crawler obeys exactly one group** — the one naming its own product
+  token — and falls back to `User-agent: *` only when nothing names it
+  (RFC 9309). So a named bot ignores the `*` group entirely, and group order
+  in the file does not matter.
+- **It is a blocklist over an open default.** Search engines keep working
+  without being enumerated, but a brand-new scraper is allowed until someone
+  adds it. Glance at Netlify's traffic analytics now and then and extend the
+  list.
+
+Watch the vendor split: OpenAI's `GPTBot` and Anthropic's `ClaudeBot` are the
+training crawlers and are blocked, while `OAI-SearchBot`/`ChatGPT-User` and
+`Claude-SearchBot`/`Claude-User` from the same vendors are allowed.
+`Google-Extended` and `Applebot-Extended` are **training opt-out tokens only** —
+blocking them does not affect Google Search or Siri, which use `Googlebot` and
+`Applebot`.
+
+**robots.txt is a request, not a fence.** Several crawlers are documented as
+ignoring it (Bytespider is the usual offender). To actually stop one, use
+Netlify's user-agent blocker: Site configuration → Traffic → User agent
+blocker, and add the token there. Do that only for bots you can see in the
+analytics ignoring the file — every rule is another thing to maintain, and the
+blocker cannot tell a spoofed user-agent from a real one either.
 
 ## Sitewide settings (colors, fonts, social links)
 
