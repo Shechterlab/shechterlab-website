@@ -21,8 +21,8 @@ links:
   type: doi
   url: https://doi.org/10.1038/nprot.2007.202
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/histone-protocols-2007-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

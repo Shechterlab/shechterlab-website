@@ -38,8 +38,8 @@ links:
   type: preprint
   url: https://doi.org/10.1101/2025.04.07.647605
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/ttll4-aml-preprint-2025-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

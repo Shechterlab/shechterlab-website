@@ -18,8 +18,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.dnarep.2004.03.020
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/atr-dna-replication-review-2004-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

@@ -13,8 +13,8 @@ tags:
 - Review
 featured: false
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/atm-atr-origins-review-2005-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

@@ -14,8 +14,8 @@ tags:
 - Review
 featured: false
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/wharton-ai-medical-education-2026-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

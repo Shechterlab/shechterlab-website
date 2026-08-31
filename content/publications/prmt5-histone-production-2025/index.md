@@ -5,8 +5,8 @@ authors:
 - "Joseph DeAngelo"
 - "Dejauwne L. Young"
 - "Maxim Maron"
-- "Anjana Saha"
-- "Helena Pinto"
+- "Ankita Saha"
+- "Hugo Pinto"
 - "Varun Gupta"
 - "Noah Jacobs"
 - "Subray Hegde"
@@ -34,8 +34,8 @@ links:
   type: preprint
   url: https://doi.org/10.1101/2025.07.03.663002
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/prmt5-histone-production-2025-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---
