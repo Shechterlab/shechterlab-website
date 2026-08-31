@@ -19,8 +19,16 @@
      whose page is a dead end listing the single paper they appear on.
      `$profile.has_data` is true only for people with a file in
      data/authors/, which is exactly the lab roster, so that is the test.
-     Everyone else renders as plain text. (David is `me` in front
-     matter across all 41 papers, so he resolves correctly.)
+     Everyone else renders as plain text.
+
+  3. Show each lab member's headshot inline before their name, the
+     same 16px circle the individual paper pages already use. The
+     avatar comes from `assets/media/authors/<slug>.*` and is nil for
+     everyone without one, so the same set of people who get a link
+     get a photo — no extra condition needed. Styling lives in
+     `.hb-author` / `.hb-author-avatar` in assets/css/custom.css.
+     Marked aria-hidden with an empty alt: the name is right beside
+     it, so announcing it again is noise for a screen reader.
 
   If Hugo Blox Kit changes page_metadata_authors.html upstream, this
   override will NOT pick up those changes automatically.
@@ -42,7 +50,12 @@
     {{- $highlight_name := false -}}
 
     {{- if gt $index 0 }}, {{ end -}}
-    <span {{ if $highlight_name }}class="font-bold"{{end}}>
+    <span class="hb-author{{ if $highlight_name }} font-bold{{ end }}">
+      {{- with $profile.avatar -}}
+        {{- $a := .Process "Fill 32x32 Center webp" -}}
+        <img src="{{ $a.RelPermalink }}" width="16" height="16" alt="" aria-hidden="true"
+             class="hb-author-avatar" loading="lazy" />
+      {{- end -}}
       {{- if and $termPage $profile.has_data -}}
         <a href="{{ $termPage.RelPermalink }}">{{ $display }}</a>
       {{- else -}}
