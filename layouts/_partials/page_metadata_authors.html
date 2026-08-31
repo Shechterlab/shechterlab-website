@@ -4,11 +4,24 @@
   bylines (Publications list page, and each author's own list of
   authored publications on their /authors/<slug>/ page).
 
-  Only change from upstream: strip a trailing ", PhD"/", MD"/", MD-PhD"
-  from each author's displayed name. David's profile
-  (data/authors/me.yaml) has ", PhD" baked into its display name so it
-  shows on his People card and bio page heading, but citation-style
-  bylines should stay degree-free like every other author's name here.
+  Changes from upstream:
+
+  1. Strip a trailing ", PhD"/", MD"/", MD-PhD" from each author's
+     displayed name. David's profile (data/authors/me.yaml) has ", PhD"
+     baked into its display name so it shows on his People card and bio
+     page heading, but citation-style bylines should stay degree-free
+     like every other author's name here.
+
+  2. Only link authors who are actually lab members, past or present.
+     Hugo creates an /authors/<slug>/ taxonomy page for EVERY name in a
+     paper's front matter, so upstream linked all of them — 377 links on
+     the Publications page alone, most of them external collaborators
+     whose page is a dead end listing the single paper they appear on.
+     `$profile.has_data` is true only for people with a file in
+     data/authors/, which is exactly the lab roster, so that is the test.
+     Everyone else renders as plain text. (David is `me` in front
+     matter across all 41 papers, so he resolves correctly.)
+
   If Hugo Blox Kit changes page_metadata_authors.html upstream, this
   override will NOT pick up those changes automatically.
 */}}
@@ -30,7 +43,7 @@
 
     {{- if gt $index 0 }}, {{ end -}}
     <span {{ if $highlight_name }}class="font-bold"{{end}}>
-      {{- if $termPage -}}
+      {{- if and $termPage $profile.has_data -}}
         <a href="{{ $termPage.RelPermalink }}">{{ $display }}</a>
       {{- else -}}
         {{ $display }}

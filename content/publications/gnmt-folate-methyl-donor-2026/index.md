@@ -37,6 +37,9 @@ links:
 - name: bioRxiv preprint
   type: preprint
   url: https://doi.org/10.64898/2026.05.26.727678
+image:
+  filename: "lab/scenes/coomassie-gel.jpg"
+  focal_point: Center
 projects: []
 slides: ""
 ---

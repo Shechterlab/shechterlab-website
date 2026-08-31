@@ -42,7 +42,7 @@
     {{ partial "page_metadata_authors" $item }}
   </span>
   (<strong>{{- $year -}}</strong>).
-  <a href="{{ $item.RelPermalink }}" class="underline font-semibold">{{ $item.Title }}</a>.
+  <a href="{{ $item.RelPermalink }}" class="hb-pub-title underline font-semibold">{{ $item.Title }}</a>.
   {{ $pub := $item.Params.publication_short | default $item.Params.publication }}
   {{ if $pub }}
     {{ if $journal_url }}<a href="{{ $journal_url }}" target="_blank" rel="noopener" class="hover:underline">{{ end }}<strong>{{- $pub | markdownify -}}</strong>{{ if $journal_url }}</a>{{ end }}.
@@ -60,7 +60,7 @@
   <span class="article-metadata li-cite-author">
     {{ partial "page_metadata_authors" $item }}.
   </span>
-  <a href="{{ $item.RelPermalink }}" class="underline font-semibold">{{ $item.Title }}</a>.
+  <a href="{{ $item.RelPermalink }}" class="hb-pub-title underline font-semibold">{{ $item.Title }}</a>.
   {{ $pub := $item.Params.publication_short | default $item.Params.publication }}
   {{ if $pub }}
     {{ if $journal_url }}<a href="{{ $journal_url }}" target="_blank" rel="noopener" class="hover:underline">{{ end }}<strong>{{- $pub | markdownify -}}</strong>{{ if $journal_url }}</a>{{ end }},

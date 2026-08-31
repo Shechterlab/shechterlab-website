@@ -452,3 +452,16 @@ footer p a:hover {
   background: rgb(30 41 59);
   border-color: rgb(71 85 105);
 }
+
+/* Publication titles in the citation view (Publications page, each
+   author's authored-papers list). They were near-black with an
+   underline, which did not read as a link — people could not tell the
+   paper title was the thing to click. Uses the same orange accent as
+   every other in-content link on the site. */
+.hb-pub-title,
+.hb-pub-title:visited {
+  color: var(--color-accent);
+}
+.hb-pub-title:hover {
+  color: var(--color-accent-dark);
+}
