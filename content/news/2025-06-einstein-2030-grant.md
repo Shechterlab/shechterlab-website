@@ -4,7 +4,7 @@ date: 2025-06-01
 tags: [Grant]
 summary: "Awarded the Einstein 2030 Acceleration Fund to pursue TTLL4 as a therapeutic target in NPM1-mutated AML."
 image:
-  filename: "lab/lab-instrumentation.jpg"
+  filename: "research/aml-blast-cells.png"
   focal_point: Smart
 ---
 

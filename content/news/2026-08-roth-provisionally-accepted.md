@@ -4,7 +4,7 @@ date: 2026-08-25
 tags: [Revision]
 summary: "Roth et al. is now provisionally accepted at Nature Communications, following invited revision earlier this year."
 image:
-  filename: "research/nucleosome-cartoon.jpg"
+  filename: "research/methylation-rna.png"
   focal_point: Smart
 ---
 

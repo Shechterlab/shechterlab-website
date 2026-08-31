@@ -4,7 +4,7 @@ date: 2026-06-15
 tags: [Talk]
 summary: "David gave an invited talk on the methyl economy and PRMT5-dependent histone production."
 image:
-  filename: "lab/hero-david-shechter.jpg"
+  filename: "lab/gallery-ireland-award.jpg"
   focal_point: Smart
 ---
 

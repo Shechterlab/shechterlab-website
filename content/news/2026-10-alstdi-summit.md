@@ -4,7 +4,7 @@ date: 2026-10-01
 tags: [Upcoming]
 summary: "Invited talk on protein arginine methyltransferases in C9orf72 ALS."
 image:
-  filename: "lab/isaac-david-beer-ireland.jpg"
+  filename: "research/als-motor-neuron.png"
   focal_point: Smart
 ---
 
