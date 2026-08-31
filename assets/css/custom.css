@@ -465,3 +465,40 @@ footer p a:hover {
 .hb-pub-title:hover {
   color: var(--color-accent-dark);
 }
+
+/* Author headshots in citation bylines (Publications page, each
+   author's own authored-papers list). The individual paper pages
+   already showed a small circular photo next to each lab member's
+   name; this carries the same treatment onto the list views.
+
+   Only people with a file in assets/media/authors/ have an avatar,
+   which is exactly the lab roster — external co-authors render as
+   plain names with no gap where a photo would be.
+
+   The wrapper stays `display: inline` on purpose. An inline-flex box
+   takes its baseline from its first flex item, and an <img> has no
+   baseline, so the whole span sits low and the comma that follows it
+   drops below the line of text. Plain inline keeps the name on the
+   byline's own baseline; `nowrap` is what stops the photo and name
+   breaking apart across a line ending, and the image is nudged into
+   place with vertical-align instead.
+
+   Sizing is in `em` so the circle tracks the byline's font size
+   rather than pinning to 16px — the byline is larger on an individual
+   paper page than in the list. */
+.hb-author {
+  white-space: nowrap;
+}
+.hb-author-avatar {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0 0.3em 0 0;
+  vertical-align: -0.25em;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 1px solid rgb(0 0 0 / 0.12);
+}
+.dark .hb-author-avatar {
+  border-color: rgb(255 255 255 / 0.18);
+}
