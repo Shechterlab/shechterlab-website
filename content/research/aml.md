@@ -16,10 +16,10 @@ image:
 NPM1-mutant AML, the most common genetic subtype of acute myeloid leukemia, is driven by a mutant form of the histone chaperone NPM1 that mislocalizes to the cytoplasm (NPM1c). We found that the **TTLL4 glutamyltransferase** modifies NPM1c and related proteins, changing how they associate with chromatin and rewiring the leukemic transcriptional program — which makes TTLL4 a therapeutic target we're now going after directly.
 
 <figure class="fig-side fig-left">
-  <a href="/media/lab/scenes/flask.jpg" target="_blank" rel="noopener">
-    <img src="/media/lab/scenes/flask.jpg" alt="A gloved hand holding a flask of amber culture medium">
+  <a href="/media/lab/scenes/electrophoresis.jpg" target="_blank" rel="noopener">
+    <img src="/media/lab/scenes/electrophoresis.jpg" alt="A gel running in an electrophoresis tank">
   </a>
-  <figcaption>Growing up protein for the biochemistry.</figcaption>
+  <figcaption>A gel on its way.</figcaption>
 </figure>
 
 This grew out of our basic biochemistry on glutamylation and histone chaperones (see [Glutamylation, Histone Chaperones, and Disordered Regions →](/research/glutamylation-chaperones)), and we're pursuing it with the [Gritsman](https://www.gritsmanlab.com/) and [Kitamura](https://www.skitalab.com/) labs at Einstein.

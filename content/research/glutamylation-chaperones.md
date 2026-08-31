@@ -31,6 +31,13 @@ We found that cells tune this mimicry chemically. **Glutamylation** — the enzy
   <p style="text-align:center;font-size:0.8rem;color:#64748b;margin-top:0.4rem">TTLL4 adds a glutamate onto the acidic disordered region (top); knocking down TTLL4 promotes differentiation of NPM1c-mutant AML cells (bottom right). Click to view full size.</p>
 </div>
 
+<figure class="fig-side" style="clear:both">
+  <a href="/media/lab/scenes/flask.jpg" target="_blank" rel="noopener">
+    <img src="/media/lab/scenes/flask.jpg" alt="A gloved hand holding a flask of amber culture medium">
+  </a>
+  <figcaption>Growing up protein for the biochemistry.</figcaption>
+</figure>
+
 This charge-tuning mechanism turned out to matter in disease. The **TTLL4 glutamyltransferase**, which writes many of these marks, also modifies the mutant NPM1 protein that drives the most common genetic subtype of acute myeloid leukemia — the discovery behind our [AML program](/research/aml).
 
 **Questions we are pursuing:**
