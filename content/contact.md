@@ -28,7 +28,7 @@ sections:
 
         <h2 id="inquiry">Send a message</h2>
 
-        Science, collaborations, reagents and data, or joining the lab. Replies come from the address above, so it is worth checking your spam folder.
+        Science, collaborations, reagents and data, or joining the lab.
 
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/" class="hb-form not-prose">
           <input type="hidden" name="form-name" value="contact">
