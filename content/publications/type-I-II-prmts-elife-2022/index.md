@@ -8,7 +8,7 @@ authors:
 - "Simone Sidoli"
 - "Charles C. Query"
 - "Matthew J. Gamble"
-- me
+- "David Shechter"
 date: "2022-01-05T00:00:00Z"
 publishDate: "2022-01-05T00:00:00Z"
 publication_types: ["article-journal"]

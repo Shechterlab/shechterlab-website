@@ -3,7 +3,7 @@ title: "Chromatin Characterization in Xenopus laevis Cell-Free Egg Extracts and 
 authors:
 - "Wei-Lin Wang"
 - "Takashi Onikubo"
-- me
+- "David Shechter"
 date: "2019-02-01T00:00:00Z"
 publishDate: "2019-02-01T00:00:00Z"
 publication_types: ["article-journal"]

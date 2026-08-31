@@ -49,6 +49,19 @@ sections:
     design:
       columns: '1'
 
+  - block: markdown
+    content:
+      title: 'Around the lab'
+      text: |
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem">
+          <figure style="margin:0"><img src="/media/lab/scenes/electrophoresis.jpg" alt="A gel running in a tank" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin:0"></figure>
+          <figure style="margin:0"><img src="/media/lab/scenes/thermocyclers.jpg" alt="A thermocycler on the bench" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin:0"></figure>
+          <figure style="margin:0"><img src="/media/lab/scenes/freezer-racks.jpg" alt="Frosted boxes in a minus-eighty freezer rack" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin:0"></figure>
+          <figure style="margin:0"><img src="/media/lab/scenes/conical-tubes.jpg" alt="Hand-labelled conical tubes of buffers" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin:0"></figure>
+        </div>
+    design:
+      columns: '1'
+
   - block: features
     content:
       title: Current strengths

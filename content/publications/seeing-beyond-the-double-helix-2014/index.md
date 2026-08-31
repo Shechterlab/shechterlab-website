@@ -1,7 +1,7 @@
 ---
 title: "Seeing Beyond the Double Helix"
 authors:
-- me
+- "David Shechter"
 date: "2014-01-01T00:00:00Z"
 publishDate: "2014-01-01T00:00:00Z"
 publication_types: ["article-journal"]

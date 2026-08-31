@@ -4,7 +4,7 @@ authors:
 - "Hongshan Chen"
 - "Benjamin Lorton"
 - "Varun Gupta"
-- me
+- "David Shechter"
 date: "2017-01-19T00:00:00Z"
 publishDate: "2017-01-19T00:00:00Z"
 publication_types: ["article-journal"]

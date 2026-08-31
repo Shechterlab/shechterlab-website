@@ -1,7 +1,7 @@
 ---
 title: "A lasting marriage: histones and DNA tie a knot that is here to stay"
 authors:
-- me
+- "David Shechter"
 - "C. David Allis"
 date: "2007-01-01T00:00:00Z"
 publishDate: "2007-01-01T00:00:00Z"

@@ -10,7 +10,7 @@ authors:
 - "Stephanie Chrysanthou"
 - "Benjamin Lorton"
 - "Ales Cvekl"
-- me
+- "David Shechter"
 - "Deyou Zheng"
 - "Meelad M. Dawlaty"
 date: "2019-08-20T00:00:00Z"

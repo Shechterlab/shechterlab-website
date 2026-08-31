@@ -1,7 +1,7 @@
 ---
 title: "Regulation of DNA replication by ATR: signaling in response to DNA intermediates"
 authors:
-- me
+- "David Shechter"
 - "Vincenzo Costanzo"
 - "Jean Gautier"
 date: "2004-08-01T00:00:00Z"

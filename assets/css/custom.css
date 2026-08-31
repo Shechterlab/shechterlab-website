@@ -140,9 +140,9 @@ a[class*="group/link"]:hover {
 /* People page: David's card doesn't need the research-interest tag
    list (his role/bio text already covers it) — hide just that card's
    interests row rather than turning show_interests off for the whole
-   #current block. His /authors/me/ profile page keeps the same
+   #current block. His /authors/david-shechter/ profile page keeps the same
    Research Interests section untouched. */
-#current .group:has(> div a[href="/authors/me/"]) div.mb-4:has(> div.flex-wrap) {
+#current .group:has(> div a[href="/authors/david-shechter/"]) div.mb-4:has(> div.flex-wrap) {
   display: none;
 }
 

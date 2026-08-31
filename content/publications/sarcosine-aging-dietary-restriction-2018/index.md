@@ -15,7 +15,7 @@ authors:
 - "Adam D. Hudgins"
 - "Tahmineh Tabrizian"
 - "Valeria Tosti"
-- me
+- "David Shechter"
 - "Luigi Fontana"
 - "Irwin J. Kurland"
 - "Nir Barzilai"

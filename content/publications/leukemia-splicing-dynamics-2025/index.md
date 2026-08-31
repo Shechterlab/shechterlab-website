@@ -10,7 +10,7 @@ authors:
 - "Shanisha Gordon-Mitchell"
 - "Ariel Fromowitz"
 - "Kith Pradhan"
-- me
+- "David Shechter"
 - "Srabani Sahu"
 - "Diane Heiser"
 - "Peggy Scherle"

@@ -21,7 +21,7 @@ authors:
 - "R. Belizaire"
 - "Seiya Kitamura"
 - "Kira Gritsman"
-- me
+- "David Shechter"
 date: "2025-04-07T00:00:00Z"
 publishDate: "2025-04-07T00:00:00Z"
 publication_types: ["article"]

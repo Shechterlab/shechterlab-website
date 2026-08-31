@@ -6,6 +6,13 @@ sections:
     content:
       title: Lab History
       text: |
+        <figure class="fig-side">
+          <a href="/media/lab/scenes/david-shechter-microscope.jpg" target="_blank" rel="noopener">
+            <img src="/media/lab/scenes/david-shechter-microscope.jpg" alt="David Shechter at a microscope in the lab">
+          </a>
+          <figcaption>David Shechter at the scope.</figcaption>
+        </figure>
+
         The Shechter Lab opened at Albert Einstein College of Medicine in 2009. We started as a biochemistry lab focused on histone chaperones and *Xenopus* egg extract chromatin, and have expanded over seventeen years into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
 
         **Lab photos, by year** — click to enlarge.
@@ -54,7 +61,7 @@ sections:
 
         ## 2025
 
-        DeAngelo, Maron et al. published the [GRIPP paper](/publications/productive-mrna-chromatin-escape-2025/) (genomically retained, incompletely processed polyadenylated transcripts) in *Molecular Cell*, showing that PRMT5-dependent Sm methylation licenses productive mRNA release from chromatin. The paper was selected for the journal cover. [TTLL4 glutamyltransferase work](/publications/ttll4-aml-preprint-2025/) (Schurer, Ilyas, Maron et al.) posted as a preprint; the Einstein 2030 Acceleration Fund awarded for TTLL4 in NPM1c-mutant AML. [Joseph DeAngelo](/authors/joseph-d.-deangelo/) graduates and begins a PSTP fellowship at Massachusetts General Hospital.
+        DeAngelo, Maron et al. published the [GRIPP paper](/publications/productive-mrna-chromatin-escape-2025/) (genomically retained, incompletely processed polyadenylated transcripts) in *Molecular Cell*, showing that PRMT5-dependent Sm methylation licenses productive mRNA release from chromatin. The paper was selected for the journal cover. [TTLL4 glutamyltransferase work](/publications/ttll4-aml-preprint-2025/) (Schurer, Ilyas, Maron et al.) posted as a preprint; the Einstein 2030 Acceleration Fund awarded for TTLL4 in NPM1c-mutant AML. [Joseph DeAngelo](/authors/joseph-deangelo/) graduates and begins a PSTP fellowship at Massachusetts General Hospital.
 
         ## 2024
 
@@ -82,7 +89,7 @@ sections:
 
         ## 2014–2016
 
-        [Emmanuel Burgos](/authors/emmanuel-s.-burgos/) joins as Instructor and Research Associate. [Hongshan Chen](/authors/hongshan-chen/) joins as a postdoctoral fellow. The American Cancer Society Research Scholar Award and an NIH/NIGMS R01 ("Crosstalk to Histone Arginine Methylation") are awarded in 2014, and David Shechter is promoted to Associate Professor in 2015. Lab expands into *Xenopus* developmental chromatin biology, nucleoplasmin structure-function, and early PRMT5 mechanistic work.
+        [Emmanuel Burgos](/authors/emmanuel-burgos/) joins as Instructor and Research Associate. [Hongshan Chen](/authors/hongshan-chen/) joins as a postdoctoral fellow. The American Cancer Society Research Scholar Award and an NIH/NIGMS R01 ("Crosstalk to Histone Arginine Methylation") are awarded in 2014, and David Shechter is promoted to Associate Professor in 2015. Lab expands into *Xenopus* developmental chromatin biology, nucleoplasmin structure-function, and early PRMT5 mechanistic work.
 
         ## 2013
 

@@ -2,7 +2,7 @@
 title: "Chaperone-mediated chromatin assembly and transcriptional regulation in Xenopus laevis"
 authors:
 - "Takashi Onikubo"
-- me
+- "David Shechter"
 date: "2016-01-01T00:00:00Z"
 publishDate: "2016-01-01T00:00:00Z"
 publication_types: ["article-journal"]

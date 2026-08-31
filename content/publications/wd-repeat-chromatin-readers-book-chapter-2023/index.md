@@ -2,7 +2,7 @@
 title: "Chromatin Readers of the WD Repeat-containing Protein Family"
 authors:
 - "Benjamin Lorton"
-- me
+- "David Shechter"
 date: "2023-01-01T00:00:00Z"
 publishDate: "2023-01-01T00:00:00Z"
 publication_types: ["article-journal"]

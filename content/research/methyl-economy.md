@@ -4,11 +4,25 @@ date: 2026-06-28
 summary: 'How dividing cells allocate one-carbon methylation potential across competing SAM-dependent reactions, and how that allocation determines proliferation, chromatin assembly, RNA processing, and genome stability.'
 ---
 
+<figure class="fig-side">
+  <a href="/media/lab/scenes/plate-handling.jpg" target="_blank" rel="noopener">
+    <img src="/media/lab/scenes/plate-handling.jpg" alt="Gloved hands loading a 96-well plate into a plate reader">
+  </a>
+  <figcaption>Ranking methyl-spending across many conditions at once.</figcaption>
+</figure>
+
 Cell proliferation may depend on a hidden **methyl economy** that allocates one-carbon resources across DNA, RNA, protein, lipid, and small-molecule methylation. Every dividing cell must solve this allocation problem while duplicating and packaging its genome.
 
 One-carbon metabolism supplies **S-adenosylmethionine (SAM)**, the universal methyl donor, while methyltransferases consume SAM and generate the inhibitory product **S-adenosylhomocysteine (SAH)**. The **SAM:SAH ratio** sets cellular methylation potential, but how dividing cells prioritize this resource among competing reactions remains an open question.
 
 The lab provides two complementary entry points into this system that build on long-standing work on PRMTs, RNA processing, and chromatin assembly:
+
+<figure class="fig-side fig-left">
+  <a href="/media/lab/scenes/tissue-culture-room.jpg" target="_blank" rel="noopener">
+    <img src="/media/lab/scenes/tissue-culture-room.jpg" alt="A tissue culture hood in use, lit blue">
+  </a>
+  <figcaption>Every dividing cell has to solve the allocation problem.</figcaption>
+</figure>
 
 **Supply side.** We have shown that **glycine N-methyltransferase (GNMT)** responds to folate and tunes the SAM:SAH ratio, establishing GNMT as a physiological regulator of methylation potential.
 

@@ -24,6 +24,13 @@ Arginine methylation shapes how RNA-binding proteins behave — where they go in
 
 We're asking whether PRMT inhibition, and PRMT-dependent control of TDP-43 cryptic exons specifically, could be turned into a therapy. This grows directly out of our PRMT5 substrate work (see [PRMTs, GNMT, and Methylation in Gene Regulation and RNA Processing →](/research/arginine-methylation)).
 
+<figure class="fig-side" style="clear:both">
+  <a href="/media/lab/scenes/tissue-culture-hood.jpg" target="_blank" rel="noopener">
+    <img src="/media/lab/scenes/tissue-culture-hood.jpg" alt="Reagent racks and a hand-written protocol inside a tissue culture hood">
+  </a>
+  <figcaption>Where the cell models get built.</figcaption>
+</figure>
+
 A related question is how acute versus chronic cellular stress shapes these same pathways — whether the stress-granule and RNA-processing changes triggered by an acute insult differ mechanistically from the chronic, low-grade stress thought to drive both C9orf72 and sporadic ALS, and whether PRMT-dependent regulation sits at that distinction.
 
 **Questions we are pursuing:**
