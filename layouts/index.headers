@@ -38,7 +38,22 @@
   {{- $lines = $lines | append (printf "  X-Frame-Options: %s" (cond (eq $frame_options "sameorigin") "SAMEORIGIN" "DENY")) -}}
 {{- end -}}
 {{- $lines = $lines | append "  X-Content-Type-Options: nosniff" -}}
-{{- $lines = $lines | append "  Strict-Transport-Security: max-age=31536000; includeSubDomains" -}}
+{{- /* HSTS deliberately WITHOUT includeSubDomains.
+
+     The apex serves the redirect to www, so a browser hitting
+     https://shechterlab.org gets this header for the bare domain. With
+     includeSubDomains that policy would cover every *.shechterlab.org —
+     including mail.shechterlab.org (Fastmail) and wiki.shechterlab.org,
+     which this site does not serve and does not control. Any subdomain
+     that cannot do HTTPS becomes hard-unreachable in every browser that
+     has seen the header, for a year, with no way to reach those users to
+     undo it. The gain would be protecting subdomains we do not host; the
+     downside is losing them. Not worth it.
+
+     Do NOT add `preload` either: that submits the domain to a list baked
+     into browser binaries, requires includeSubDomains, and is effectively
+     permanent. */ -}}
+{{- $lines = $lines | append "  Strict-Transport-Security: max-age=31536000" -}}
 {{- $lines = $lines | append "  Referrer-Policy: strict-origin-when-cross-origin" -}}
 {{- with $csp_policy -}}
   {{- $name := cond $csp_report_only "Content-Security-Policy-Report-Only" "Content-Security-Policy" -}}

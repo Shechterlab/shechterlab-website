@@ -254,6 +254,45 @@ hugo --gc --minify && cat public/_redirects
 
 ---
 
+## HTTPS and security headers
+
+Two halves, in two different places.
+
+**The certificate is Netlify's job, in the UI.** Site configuration → Domain
+management → HTTPS. Once DNS points at Netlify it provisions a Let's Encrypt
+certificate automatically and renews it forever; if it has not, use "Verify DNS
+configuration" then "Provision certificate". Turn **Force HTTPS** on in the same
+panel so `http://` is redirected rather than served.
+
+**The headers are this repo's job.** `layouts/index.headers` generates
+`public/_headers`, which Netlify reads at deploy time. Values come from
+`config/_default/params.yaml` under `hugoblox.security` — edit them there, not
+in the generated file. Currently shipping:
+
+| Header | What it does |
+|---|---|
+| `Strict-Transport-Security` | after one visit, the browser refuses plain HTTP for a year |
+| `Content-Security-Policy` | only lets the page load scripts, styles, fonts and images from listed origins |
+| `X-Frame-Options: DENY` | no one can embed the site in an iframe |
+| `X-Content-Type-Options: nosniff` | browser trusts declared MIME types instead of guessing |
+| `Referrer-Policy` | no full URL leaks to other sites |
+| `Permissions-Policy` | camera, microphone, geolocation etc. denied outright |
+
+**Two things not to "improve" without reading first.**
+
+`Strict-Transport-Security` has **no `includeSubDomains`**, on purpose — see the
+comment in `layouts/index.headers`. The apex serves the redirect to www, so that
+directive would cover every `*.shechterlab.org`, including the Fastmail-hosted
+subdomains this site neither serves nor controls. And never add `preload`: it is
+effectively permanent.
+
+The **CSP is the thing that breaks when you add a widget.** Any new external
+script, font, embed or analytics tag is blocked silently — no error on the page,
+the resource simply never loads. Add its origin to the right directive in
+`params.yaml` at the same time you add the widget. Note every directive there
+must sit on one line at the same indentation: a line indented deeper becomes a
+literal newline inside the header value and truncates the policy.
+
 ## Who is allowed to crawl the site
 
 `layouts/robots.txt` is a local template (Hugo builds robots.txt because
