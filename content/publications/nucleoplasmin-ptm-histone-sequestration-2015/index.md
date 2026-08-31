@@ -28,8 +28,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.celrep.2015.02.038
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/nucleoplasmin-ptm-histone-sequestration-2015-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

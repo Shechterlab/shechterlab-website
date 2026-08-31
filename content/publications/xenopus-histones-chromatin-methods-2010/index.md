@@ -19,8 +19,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.ymeth.2009.12.014
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/xenopus-histones-chromatin-methods-2010-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

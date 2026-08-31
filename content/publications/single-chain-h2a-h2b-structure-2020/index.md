@@ -19,8 +19,8 @@ links:
   type: doi
   url: https://doi.org/10.1107/S2053230X20004604
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/single-chain-h2a-h2b-structure-2020-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

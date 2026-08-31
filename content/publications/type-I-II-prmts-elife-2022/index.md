@@ -25,8 +25,8 @@ links:
   type: doi
   url: https://doi.org/10.7554/eLife.72867
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/type-I-II-prmts-elife-2022-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

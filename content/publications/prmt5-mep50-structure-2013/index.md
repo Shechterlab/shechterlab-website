@@ -31,8 +31,8 @@ links:
   type: doi
   url: https://doi.org/10.1371/journal.pone.0057008
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/prmt5-mep50-structure-2013-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

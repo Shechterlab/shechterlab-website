@@ -24,8 +24,8 @@ links:
   type: doi
   url: https://doi.org/10.1074/jbc.M111.303677
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/prmt5-mep50-methylates-h2a-h4-2011-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

@@ -30,8 +30,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.molcel.2025.09.021
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/productive-mrna-chromatin-escape-2025-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---
