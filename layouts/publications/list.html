@@ -28,12 +28,17 @@
 {{ $reviews := slice }}
 {{ range $allPages }}
   {{ $types := .Params.publication_types }}
-  {{ if in $types "article-journal" }}
-    {{ $category := .Params.pub_category | default "lab" }}
+  {{ $category := .Params.pub_category | default "lab" }}
+  {{/* `pub_category: review` is checked first so that a review-ish item that
+       is not a journal article — a book chapter, an application note — still
+       lands under Reviews & Commentary rather than being swept into Preprints
+       by the article-journal test below. Everything not article-journal and
+       not explicitly a review is a preprint. */}}
+  {{ if eq $category "review" }}
+    {{ $reviews = $reviews | append . }}
+  {{ else if in $types "article-journal" }}
     {{ if eq $category "coauthored" }}
       {{ $coauthored = $coauthored | append . }}
-    {{ else if eq $category "review" }}
-      {{ $reviews = $reviews | append . }}
     {{ else }}
       {{ $labPapers = $labPapers | append . }}
     {{ end }}
