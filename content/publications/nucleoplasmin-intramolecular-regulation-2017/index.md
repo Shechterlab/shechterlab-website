@@ -25,8 +25,8 @@ links:
   type: doi
   url: https://doi.org/10.1038/s41467-017-02308-3
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/nucleoplasmin-intramolecular-regulation-2017-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

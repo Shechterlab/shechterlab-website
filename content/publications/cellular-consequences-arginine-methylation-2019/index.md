@@ -18,8 +18,8 @@ links:
   type: doi
   url: https://doi.org/10.1007/s00018-019-03140-2
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/cellular-consequences-arginine-methylation-2019-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

@@ -58,6 +58,24 @@
       {{ if not $articleURL }}{{ $articleURL = .Permalink }}{{ end }}
       {{ $isExternal := hasPrefix $articleURL "http" }}
 
+      {{/* Where the cover thumbnail points. Prefer a `type: pdf` entry in
+           `links:` — for papers whose thumbnail is a render of the PDF's own
+           first page, clicking through to the PDF is the obvious behaviour.
+           Falls back to the article URL above when no PDF link is set, which
+           is the case for most papers: publisher PDF URLs are not stable
+           (eLife embeds a version number, Cell Press uses session-dependent
+           PII paths) whereas the DOI page is stable by design and carries the
+           publisher's own PDF button. */}}
+      {{ $pdfURL := "" }}
+      {{ with .Params.links }}
+        {{ range . }}
+          {{ if and (not $pdfURL) (eq .type "pdf") }}{{ $pdfURL = .url }}{{ end }}
+        {{ end }}
+      {{ end }}
+      {{ $thumbURL := $articleURL }}
+      {{ with $pdfURL }}{{ $thumbURL = . }}{{ end }}
+      {{ $thumbIsExternal := hasPrefix $thumbURL "http" }}
+
       {{ $featured := partial "functions/get_featured_image.html" . }}
       {{ $image_params := dict }}
       {{ if and .Params.image (reflect.IsMap .Params.image) }}
@@ -153,16 +171,21 @@
         </div>
 
         {{ if $featured }}
-        <a href="{{ $articleURL | safeURL }}" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}
-           class="block flex-shrink-0 w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow"
-           aria-label="View publication">
+        {{/* Resize, not Fill: several papers use a render of the PDF's own
+             first page as their cover, and a square centre-crop would cut off
+             exactly the part worth showing — the title and author list. The
+             box has no fixed height, so square covers stay square and page
+             renders stay portrait. */}}
+        <a href="{{ $thumbURL | safeURL }}" {{ if $thumbIsExternal }}target="_blank" rel="noopener"{{ end }}
+           class="block flex-shrink-0 w-32 sm:w-44 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow"
+           aria-label="Read the paper{{ with $pdfURL }} (PDF){{ end }}">
           {{ if reflect.IsImageResourceProcessable $featured }}
-            {{ $thumb := $featured.Fill "256x256 Center q80" }}
-            <img src="{{ $thumb.RelPermalink }}" width="256" height="256"
+            {{ $thumb := $featured.Resize "400x q85" }}
+            <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
                  alt="{{ with $image_params.alt_text }}{{.}}{{ else }}{{ $.Title }}{{ end }}"
-                 class="w-full h-full object-cover" loading="lazy">
+                 class="block w-full h-auto" loading="lazy">
           {{ else }}
-            <img src="{{ $featured.RelPermalink }}" alt="" class="w-full h-full object-cover" loading="lazy">
+            <img src="{{ $featured.RelPermalink }}" alt="" class="block w-full h-auto" loading="lazy">
           {{ end }}
         </a>
         {{ end }}

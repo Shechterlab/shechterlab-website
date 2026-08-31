@@ -29,8 +29,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.isci.2024.109458
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/glutamylation-npm2-nap1-2024-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

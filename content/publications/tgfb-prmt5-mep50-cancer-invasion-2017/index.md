@@ -20,8 +20,8 @@ links:
   type: doi
   url: https://doi.org/10.1038/onc.2016.205
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/tgfb-prmt5-mep50-cancer-invasion-2017-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

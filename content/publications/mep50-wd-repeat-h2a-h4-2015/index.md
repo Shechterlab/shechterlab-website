@@ -23,8 +23,8 @@ links:
   type: doi
   url: https://doi.org/10.1074/jbc.M115.636894
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/mep50-wd-repeat-h2a-h4-2015-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

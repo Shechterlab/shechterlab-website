@@ -25,8 +25,8 @@ links:
   type: doi
   url: https://doi.org/10.1186/1756-8935-7-22
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/h2a-phosphorylation-methylation-2014-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

@@ -39,8 +39,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.jbc.2026.111448
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/faseb-arginine-methylation-meeting-report-2026-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

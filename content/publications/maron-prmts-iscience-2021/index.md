@@ -36,8 +36,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.isci.2021.102971
 image:
-  filename: "research/nucleosome-cartoon.jpg"
-  focal_point: ""
+  filename: "publications/maron-prmts-iscience-2021-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

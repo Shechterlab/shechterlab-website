@@ -20,8 +20,8 @@ links:
   type: doi
   url: https://doi.org/10.1039/c7sc02830j
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/ez-mtase-assay-2017-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

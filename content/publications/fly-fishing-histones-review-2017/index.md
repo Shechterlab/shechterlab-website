@@ -18,8 +18,8 @@ links:
   type: doi
   url: https://doi.org/10.1016/j.jmb.2017.06.005
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/fly-fishing-histones-review-2017-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

@@ -19,8 +19,8 @@ links:
   type: doi
   url: https://doi.org/10.1101/pdb.prot099879
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/xenopus-chromatin-characterization-protocol-2019-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---

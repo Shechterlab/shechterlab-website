@@ -12,8 +12,8 @@ tags:
 - Review
 featured: false
 image:
-  filename: "placeholders/pub-cover-placeholder.jpg"
-  focal_point: Smart
+  filename: "publications/seeing-beyond-the-double-helix-2014-first-page.jpg"
+  focal_point: "Top"
 projects: []
 slides: ""
 ---
