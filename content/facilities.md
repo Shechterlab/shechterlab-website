@@ -108,7 +108,6 @@ sections:
           - Bronx, NY 10461
       office_hours:
         - 'By appointment'
-      phone: '+1 (718) 430-4120'
       social:
         - icon: brands/orcid
           url: https://orcid.org/0000-0001-9388-6004
