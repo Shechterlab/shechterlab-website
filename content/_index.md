@@ -237,6 +237,14 @@ sections:
       title: Lab Members
       subtitle: ''
       text: 'A view of the current lab. For full current roster and alumni, see the [People page](/people).'
+      # Without this filter the block lists every file in data/authors/, alumni
+      # included. Current and Alumni weights are numbered independently (1-8 and
+      # 1-10), so sorting them together interleaved the two groups exactly —
+      # David 1 next to Humaira 1, Subray 2 next to Joseph 2, and so on. The
+      # People page never showed this because each of its blocks filters to one
+      # group before sorting.
+      user_groups:
+        - Current
       sort_by: 'weight'
       sort_ascending: true
       cta:
