@@ -10,9 +10,9 @@ sections:
 
         In the meantime:
 
-        - [Research →](/research) — what the lab works on
-        - [Publications →](/publications) — recent papers
-        - [Join the Lab →](/opportunities) — what we look for in trainees
+        - [Research →](/research/) — what the lab works on
+        - [Publications →](/publications/) — recent papers
+        - [Join the Lab →](/opportunities/) — what we look for in trainees
 
-        [← Back to Contact](/contact)
+        [← Back to Contact](/contact/)
 ---

@@ -19,7 +19,7 @@ sections:
 
         **Shechter Lab, Summer 2026.**
 
-        [Lab History →](/history) &ensp;|&ensp; [Lab Life →](/lab-life)
+        [Lab History →](/history/) &ensp;|&ensp; [Lab Life →](/lab-life/)
     design:
       spacing:
         padding: ['2rem', '0', '0.5rem', '0']

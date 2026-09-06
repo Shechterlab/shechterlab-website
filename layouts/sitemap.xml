@@ -1,0 +1,55 @@
+{{- /*
+  Local override of Hugo Blox Kit's sitemap.xml (vendored at that same path).
+
+  Why: Hugo creates an /authors/<slug>/ taxonomy page for EVERY name in every
+  paper's front matter, so the generated sitemap was 348 URLs of which 240 were
+  author pages — and all but 18 of those are external co-authors whose page
+  holds a name and a single citation. Nearly seven in ten URLs we were handing
+  Google were stubs. That is a poor signal about what the site is, and it spends
+  crawl budget on pages nobody should land on.
+
+  This keeps every real page, plus the author pages for people with a file in
+  data/authors/ — the lab roster, past and present, whose pages list a genuine
+  body of work. Co-author stubs still exist and still resolve (bylines link to
+  the ones for lab members); they are simply not advertised.
+
+  Everything else is upstream's template unchanged, including the private-page
+  filter and the translation links.
+*/ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{/* Check that page is built (has a URL) and is not private. */}}
+  {{ range where (where .Data.Pages "Permalink" "!=" "") "Params.private" "ne" true }}
+  {{- $skip := false -}}
+  {{- if and (eq .Kind "term") (eq .Type "authors") -}}
+    {{- $slug := path.Base .RelPermalink -}}
+    {{- if not (index site.Data.authors $slug) }}{{ $skip = true }}{{ end -}}
+  {{- end -}}
+  {{- if not $skip }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}<lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}
+    {{- with .Sitemap.ChangeFreq }}<changefreq>{{ . }}</changefreq>{{ end }}
+    {{- if ge .Sitemap.Priority 0.0 }}<priority>{{ .Sitemap.Priority }}</priority>{{ end }}
+    {{- if .IsTranslated -}}
+
+    {{- range .Translations -}}
+    <xhtml:link
+      rel="alternate"
+      hreflang="{{ .Language.Lang }}"
+      href="{{ .Permalink }}"
+    />
+    {{- end -}}
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="{{ .Language.Lang }}"
+      href="{{ .Permalink }}"
+    />
+
+    {{- end -}}
+  </url>
+  {{- end -}}
+  {{- end -}}
+</urlset>
