@@ -1,0 +1,73 @@
+{{- /*
+  Emits schema.org Person for the lab's PI, on the homepage and on his own
+  author page.
+
+  Why: the site previously told Google nothing about David as a *person*. The
+  theme emits WebSite and Organization on the homepage and CollectionPage on
+  an author page — no Person anywhere, and no link between "David Shechter"
+  here and the same person on ORCID, Google Scholar or the Einstein faculty
+  directory. For a name query that connection is the whole game: `sameAs` is
+  the property search engines use to reconcile an entity across sites, and
+  without it this site is just another page that happens to contain the words.
+
+  Loaded through the theme's `head-end` extensibility hook (see
+  functions/get_hook), so nothing upstream is forked.
+
+  Reads data/authors/david-shechter.yaml directly rather than the theme's
+  profile helper, because `sameas` is our own field and the helper drops it.
+  Keyed off is_owner so it follows the PI rather than a hardcoded slug.
+*/ -}}
+{{- $slug := "" -}}
+{{- range $k, $v := site.Data.authors -}}
+  {{- if and (not $slug) $v.is_owner }}{{ $slug = $k }}{{ end -}}
+{{- end -}}
+
+{{- with $slug -}}
+  {{- $a := index site.Data.authors . -}}
+  {{- $page_url := printf "%sauthors/%s/" site.Home.Permalink . -}}
+
+  {{/* Only where the page is genuinely about him: the homepage and his profile. */}}
+  {{- if or $.IsHome (eq $.RelPermalink (printf "/authors/%s/" .)) -}}
+
+    {{- $name := replaceRE `,\s*(MD-PhD|MD,\s*PhD|PhD|MD|MSTP)$` "" $a.name.display -}}
+
+    {{- $affil := slice -}}
+    {{- range $a.affiliations -}}
+      {{- $o := dict "@type" "Organization" "name" .name -}}
+      {{- with .url }}{{ $o = merge $o (dict "url" .) }}{{ end -}}
+      {{- $affil = $affil | append $o -}}
+    {{- end -}}
+
+    {{- $person := dict
+        "@context" "https://schema.org"
+        "@type" "Person"
+        "@id" (printf "%s#person" $page_url)
+        "name" $name
+        "givenName" "David"
+        "familyName" $a.name.family
+        "url" $page_url
+        "mainEntityOfPage" $page_url
+    -}}
+    {{- with $a.role }}{{ $person = merge $person (dict "jobTitle" .) }}{{ end -}}
+    {{- with $a.person_description | default $a.bio }}{{ $person = merge $person (dict "description" .) }}{{ end -}}
+    {{- with $a.sameas }}{{ $person = merge $person (dict "sameAs" .) }}{{ end -}}
+    {{- with $a.interests }}{{ $person = merge $person (dict "knowsAbout" .) }}{{ end -}}
+    {{- if $affil -}}
+      {{- $person = merge $person (dict "affiliation" $affil "worksFor" (index $affil 0)) -}}
+    {{- end -}}
+    {{- with resources.GetMatch (printf "media/authors/%s.*" .) -}}
+      {{- $person = merge $person (dict "image" (printf "%s%s" site.Home.Permalink (strings.TrimPrefix "/" .RelPermalink))) -}}
+    {{- end -}}
+    {{- with $a.orcid | default (index (or $a.sameas slice) 0) -}}
+      {{- if hasPrefix . "https://orcid.org/" -}}
+        {{- $person = merge $person (dict "identifier" (dict
+              "@type" "PropertyValue" "propertyID" "ORCID" "value" .)) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{/* safeJS: without it html/template treats the script body as JS and
+         emits the JSON escaped inside a string literal, which is not valid
+         structured data. */}}
+    <script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>
+  {{- end -}}
+{{- end -}}

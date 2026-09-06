@@ -14,6 +14,18 @@ affiliations:
     url: https://einsteinmed.edu/centers/cancer/
   - name: Data Science Institute, Einstein
     url: https://einsteinmed.edu/
+# Authoritative profiles for this person elsewhere on the web. Emitted as
+# schema.org `sameAs` by layouts/_partials/hooks/head-end/person-schema.html,
+# which is how Google reconciles "David Shechter" here with the same person on
+# ORCID, Scholar and the Einstein faculty directory. Not shown on the page.
+# One-sentence description of the person, used for schema.org Person. The
+# `bio` above is the lab's collective voice ("We study...") which reads oddly
+# as a description of an individual.
+person_description: "David Shechter, PhD, is Professor of Biochemistry at Albert Einstein College of Medicine in the Bronx, New York, where he leads the Shechter Lab studying protein arginine methylation, histone chaperones and glutamylation, RNA processing, and the cellular methyl economy."
+sameas:
+  - https://orcid.org/0000-0001-9388-6004
+  - https://scholar.google.com/citations?user=Mz9sZUoAAAAJ
+  - https://www.einsteinmed.edu/faculty/1064/david-shechter/
 links:
   - icon: hero/envelope
     url: /contact#inquiry
