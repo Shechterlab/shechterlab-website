@@ -26,21 +26,45 @@
 # These surface the lab's pages in answers with a link, which is worth having.
 
 User-agent: OAI-SearchBot
+Disallow: /tags/
+Disallow: /publication_types/
+Disallow: /authors/
+Allow: /authors/david-shechter/
 Allow: /
 
 User-agent: ChatGPT-User
+Disallow: /tags/
+Disallow: /publication_types/
+Disallow: /authors/
+Allow: /authors/david-shechter/
 Allow: /
 
 User-agent: Claude-SearchBot
+Disallow: /tags/
+Disallow: /publication_types/
+Disallow: /authors/
+Allow: /authors/david-shechter/
 Allow: /
 
 User-agent: Claude-User
+Disallow: /tags/
+Disallow: /publication_types/
+Disallow: /authors/
+Allow: /authors/david-shechter/
 Allow: /
 
 User-agent: PerplexityBot
+Disallow: /tags/
+Disallow: /publication_types/
+Disallow: /authors/
+Allow: /authors/david-shechter/
 Allow: /
 
 User-agent: Perplexity-User
+Disallow: /tags/
+Disallow: /publication_types/
+Disallow: /authors/
+Allow: /authors/david-shechter/
 Allow: /
 
 # --- Training and bulk-harvest crawlers: blocked ---
@@ -114,9 +138,26 @@ Disallow: /
 User-agent: Webzio-Extended
 Disallow: /
 
+# --- Thin pages, excluded from every group that is allowed to crawl ---
+#
+# Hugo generates a page per taxonomy term. /tags/ is 29 topic labels, and
+# /authors/ is one page per name in every paper's front matter — hundreds of
+# external co-authors whose page holds a name and a single citation. None of it
+# is linked as navigation and none of it is worth a search result. David's own
+# author page is the exception: it is a real profile with his full publication
+# list, so it stays crawlable.
+#
+# Longest match wins (RFC 9309), so `Allow: /authors/david-shechter/` beats
+# `Disallow: /authors/`, which in turn beats `Allow: /`.
+
+
 # --- Everything else, including Googlebot, Bingbot and Applebot ---
 
 User-agent: *
+Disallow: /tags/
+Disallow: /publication_types/
+Disallow: /authors/
+Allow: /authors/david-shechter/
 Allow: /
 
 Sitemap: {{ "sitemap.xml" | absURL }}

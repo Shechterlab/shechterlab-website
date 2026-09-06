@@ -1,17 +1,17 @@
 {{- /*
   Local override of Hugo Blox Kit's sitemap.xml (vendored at that same path).
 
-  Why: Hugo creates an /authors/<slug>/ taxonomy page for EVERY name in every
-  paper's front matter, so the generated sitemap was 348 URLs of which 240 were
-  author pages — and all but 18 of those are external co-authors whose page
-  holds a name and a single citation. Nearly seven in ten URLs we were handing
-  Google were stubs. That is a poor signal about what the site is, and it spends
-  crawl budget on pages nobody should land on.
+  Why: Hugo generates a page per taxonomy term, and the generated sitemap was
+  348 URLs of which 240 were /authors/ pages — one for every name in every
+  paper's front matter, mostly external co-authors whose page holds a name and
+  a single citation. Add 29 /tags/ terms and 4 /publication_types/. Nearly
+  three quarters of what we handed Google was thin.
 
-  This keeps every real page, plus the author pages for people with a file in
-  data/authors/ — the lab roster, past and present, whose pages list a genuine
-  body of work. Co-author stubs still exist and still resolve (bylines link to
-  the ones for lab members); they are simply not advertised.
+  This lists real pages only: no /tags/, no /publication_types/, and of the
+  author pages just David's, which is a genuine profile with his full
+  publication list. The other author and tag pages still exist and still
+  resolve — bylines link to lab members' pages — they are simply neither
+  advertised here nor crawled (layouts/robots.txt disallows the same paths).
 
   Everything else is upstream's template unchanged, including the private-page
   filter and the translation links.
@@ -22,9 +22,9 @@
   {{/* Check that page is built (has a URL) and is not private. */}}
   {{ range where (where .Data.Pages "Permalink" "!=" "") "Params.private" "ne" true }}
   {{- $skip := false -}}
-  {{- if and (eq .Kind "term") (eq .Type "authors") -}}
-    {{- $slug := path.Base .RelPermalink -}}
-    {{- if not (index site.Data.authors $slug) }}{{ $skip = true }}{{ end -}}
+  {{- if in (slice "tags" "publication_types") .Type }}{{ $skip = true }}{{ end -}}
+  {{- if eq .Type "authors" -}}
+    {{- if ne .RelPermalink "/authors/david-shechter/" }}{{ $skip = true }}{{ end -}}
   {{- end -}}
   {{- if not $skip }}
   <url>
