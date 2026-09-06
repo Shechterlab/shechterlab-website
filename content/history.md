@@ -13,7 +13,7 @@ sections:
           <figcaption>David Shechter at the scope.</figcaption>
         </figure>
 
-        The Shechter Lab opened at Albert Einstein College of Medicine in 2009. We started as a biochemistry lab focused on histone chaperones and *Xenopus* egg extract chromatin, and have expanded over seventeen years into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
+        The Shechter Lab opened at Albert Einstein College of Medicine in 2009 to understand the molecular mechanisms of chromatin assembly and chromatin inheritance, with a specific focus on histone chaperones and histone post-translational modifications. Over seventeen years that has expanded into protein arginine methylation, RNA processing, glutamylation, and the cellular methyl economy — with applications in cancer biology, ALS, and aging. This page is a running record of people, papers, and milestones.
 
         **Lab photos, by year** — click to enlarge.
 
@@ -97,7 +97,7 @@ sections:
 
         ## 2009–2012
 
-        Lab founded. David Shechter joins Einstein as Assistant Professor in the Department of Biochemistry, coming from a postdoctoral fellowship with C. David Allis at The Rockefeller University. Early work focuses on histone chaperone biochemistry, *Xenopus laevis* egg extract chromatin assembly, and the relationship between histone modifications and DNA replication. [Carola Wilczek](/authors/carola-wilczek/) and [Wei-Lin Wang](/authors/wei-lin-wang/) join as postdoctoral fellows; [Takashi Onikubo](/authors/takashi-onikubo/) joins as a graduate student. The Alexandrine and Alexander Sinsheimer Foundation Research Scholar award ("Exploring the Role of Histone Arginine Methylation in Breast Cancer") is received in 2011.
+        Lab founded to understand the molecular mechanisms of chromatin assembly and chromatin inheritance, with a specific focus on histone chaperones and histone post-translational modifications. David Shechter joins Einstein as Assistant Professor in the Department of Biochemistry, coming from a postdoctoral fellowship with C. David Allis at The Rockefeller University. Early work pursues that question through histone chaperone biochemistry and *Xenopus laevis* egg extract chromatin assembly. [Carola Wilczek](/authors/carola-wilczek/) and [Wei-Lin Wang](/authors/wei-lin-wang/) join as postdoctoral fellows; [Takashi Onikubo](/authors/takashi-onikubo/) joins as a graduate student. The Alexandrine and Alexander Sinsheimer Foundation Research Scholar award ("Exploring the Role of Histone Arginine Methylation in Breast Cancer") is received in 2011.
 
         ---
 
