@@ -101,5 +101,5 @@ sections:
 
         ---
 
-        [← Back to People](/people) &ensp;|&ensp; [Research →](/research)
+        [← Back to People](/people/) &ensp;|&ensp; [Research →](/research/)
 ---

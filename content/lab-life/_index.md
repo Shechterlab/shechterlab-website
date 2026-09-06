@@ -12,7 +12,7 @@ sections:
           <a href="#lab-dept-equipment">Lab &amp; Department Equipment</a>
         </nav>
 
-        A look at day-to-day science in Forchheimer 304, from 2010 to now. For a written history of the lab, see [Lab History →](/history).
+        A look at day-to-day science in Forchheimer 304, from 2010 to now. For a written history of the lab, see [Lab History →](/history/).
 
         <h2 id="fun-social">Fun &amp; Social</h2>
 

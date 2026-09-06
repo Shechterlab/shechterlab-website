@@ -236,7 +236,7 @@ sections:
     content:
       title: Lab Members
       subtitle: ''
-      text: 'A view of the current lab. For full current roster and alumni, see the [People page](/people).'
+      text: 'A view of the current lab. For full current roster and alumni, see the [People page](/people/).'
       # Without this filter the block lists every file in data/authors/, alumni
       # included. Current and Alumni weights are numbered independently (1-8 and
       # 1-10), so sorting them together interleaved the two groups exactly —

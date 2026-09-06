@@ -31,7 +31,7 @@ sections:
 
         Using biochemistry, structural biology, functional genomics, and cellular models, we aim to define how these regulatory systems operate — and how their dysregulation creates vulnerabilities that can be leveraged for therapeutic discovery.
 
-        For a history of how these directions developed, see [Lab History →](/history).
+        For a history of how these directions developed, see [Lab History →](/history/).
 
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin-top:1.5rem;font-size:0.95rem;font-weight:600">
           <a href="#disease-focus">Disease Focus</a>
