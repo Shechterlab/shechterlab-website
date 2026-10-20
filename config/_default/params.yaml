@@ -93,8 +93,10 @@ hugoblox:
       enable: false
     toc:
       enable: true
+    # Off: the "N min read" line was removed from the page templates
+    # (layouts/single.html, layouts/publications/single.html).
     reading_time:
-      enable: true
+      enable: false
     citations:
       style: apa
 
