@@ -88,6 +88,35 @@ a[class*="group/link"]:hover {
   scroll-margin-top: 6rem;
 }
 
+/* Jump-nav bar used inside markdown blocks (currently the top of the
+   Research page). The Publications list page gets the same bar from
+   layouts/publications/list.html with Tailwind utility classes; that is not
+   an option here, because Tailwind only scans the layouts and would purge
+   any class first used in a content file. Hence a real class, which also
+   keeps the markup in the content file down to one line per link. */
+.hb-jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hb-jump-nav a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.hb-jump-nav a:hover {
+  text-decoration: underline;
+}
+
+.dark .hb-jump-nav a {
+  color: var(--color-accent-dark);
+}
+
 /* Contact page: every "Contact" button on the site links to
    /contact#inquiry so it lands on the form rather than the top of the
    page, so this anchor needs the same sticky-navbar offset. */

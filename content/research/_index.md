@@ -7,6 +7,13 @@ sections:
     content:
       title: Research
       text: |
+        <nav class="hb-jump-nav">
+          <a href="#disease-focus">Disease Focus</a>
+          <a href="#research-areas">Molecular Research Areas</a>
+          <a href="#collaborators">Collaborators</a>
+          <a href="#funding">Funding</a>
+        </nav>
+
         Decoding how protein modifications regulate chromatin and RNA to control gene expression in cancer, ALS, and aging.
 
         <figure class="fig-side">
@@ -32,13 +39,6 @@ sections:
         Using biochemistry, structural biology, functional genomics, and cellular models, we aim to define how these regulatory systems operate — and how their dysregulation creates vulnerabilities that can be leveraged for therapeutic discovery.
 
         For a history of how these directions developed, see [Lab History →](/history/).
-
-        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;margin-top:1.5rem;font-size:0.95rem;font-weight:600">
-          <a href="#disease-focus">Disease Focus</a>
-          <a href="#research-areas">Molecular Research Areas</a>
-          <a href="#collaborators">Collaborators</a>
-          <a href="#funding">Funding</a>
-        </nav>
     design:
       spacing:
         padding: ['2rem', '0', '0.5rem', '0']
