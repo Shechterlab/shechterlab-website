@@ -33,7 +33,7 @@ sections:
         color: '#155e75'
         text_color_light: true
       spacing:
-        padding: ['96px', '0', '96px', '0']
+        padding: ['96px', '0', '64px', '0']
       no_padding: true
 
   - block: markdown
@@ -189,8 +189,12 @@ sections:
     design:
       layout: cards
       css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      # 0, not 3rem: the research-areas template pads its own wrapper
+      # (py-16 sm:py-20 lg:py-24). Section padding on top of that stacked
+      # into ~288px between this block and the next. assets/css/custom.css
+      # trims the wrapper itself; see the note there.
       spacing:
-        padding: ["3rem", 0, "3rem", 0]
+        padding: [0, 0, 0, 0]
 
   - block: research-areas
     id: research
@@ -230,8 +234,9 @@ sections:
     design:
       layout: cards
       css_class: "bg-white dark:bg-gray-800"
+      # Padded by the template, as above.
       spacing:
-        padding: ["3rem", 0, "3rem", 0]
+        padding: [0, 0, 0, 0]
 
   - block: cta-image-paragraph
     content:
@@ -262,8 +267,9 @@ sections:
             url: '/opportunities'
     design:
       css_class: "bg-white dark:bg-gray-800"
+      # cta-image-paragraph pads each of its two items by 4rem.
       spacing:
-        padding: ["3rem", 0, "3rem", 0]
+        padding: [0, 0, 0, 0]
 
   - block: team-showcase
     id: team
@@ -307,6 +313,9 @@ sections:
       count: 0
     design:
       view: date-title-summary
+      # Was inheriting the page-level 5rem.
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
 
   - block: markdown
     id: funders
@@ -362,6 +371,7 @@ sections:
       show_form: false
     design:
       css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      # contact-info pads its own container by 5rem.
       spacing:
-        padding: ["5rem", 0, "5rem", 0]
+        padding: [0, 0, 0, 0]
 ---
