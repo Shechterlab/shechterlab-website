@@ -571,3 +571,21 @@ footer p a:hover {
 .dark .hb-pub-h1 {
   text-decoration-color: rgb(148 163 184 / 0.4);
 }
+
+/* Homepage vertical rhythm.
+   
+   Two sources of space stack at every block boundary: the section padding
+   set per block in content/_index.md, and padding the blox template puts
+   inside its own wrapper. The research-areas template carries
+   `py-16 sm:py-20 lg:py-24` — 96px top and bottom on a desktop — so two of
+   those blocks in a row left 288px of empty page between the last card of
+   one and the heading of the next.
+   
+   Blocks that bring their own padding now set section padding to 0 in
+   _index.md, and this trims the template's own wrapper. The selector is
+   two classes deep, so it beats Tailwind's single-class `.lg\:py-24` at
+   every width without !important. Only the homepage uses this wrapper. */
+.hbb-section .py-16.sm\:py-20.lg\:py-24 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
