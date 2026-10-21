@@ -111,6 +111,40 @@ sections:
       spacing:
         padding: ["3rem", 0, "3rem", 0]
 
+  # Four most recent news items, high on the page so the homepage shows
+  # something that changes. `count: 4` with `archive.enable` gives the
+  # "All news" link under the cards. The card view is a local override
+  # (layouts/_partials/views/card.html) with the read-time line removed.
+  - block: collection
+    id: latest-news
+    content:
+      title: Latest News
+      subtitle: ''
+      text: ''
+      filters:
+        folders:
+          - news
+        exclude_past: false
+      sort_by: 'Date'
+      sort_ascending: false
+      count: 4
+      archive:
+        enable: true
+        link: /news/
+        text: All news
+    design:
+      # article-grid, not card: the plain card view is a single 65ch column,
+      # so four items would be four full-width cards stacked — more scrolling,
+      # not less. article-grid lays the same cards out two across, as /news/
+      # does. Keep columns at 2: the grid class is built dynamically
+      # (md:grid-cols-N), and only the values already used on the site are
+      # in Tailwind's safelist.
+      view: article-grid
+      columns: 2
+      css_class: "bg-white dark:bg-gray-800"
+      spacing:
+        padding: ["3rem", 0, "1rem", 0]
+
   - block: research-areas
     id: disease-focus
     content:
