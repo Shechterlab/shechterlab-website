@@ -32,7 +32,27 @@
   {{ $journal_url = (index $links 0).url }}
 {{ end }}
 
-<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+{{/* Cover thumbnail. Nearly every publication carries a render of its own
+     first page as its featured image; this is the same picture the paper's
+     own page shows, at list size. Resize, not Fill: these are portrait
+     pages, and a square centre-crop would cut the title off. Hidden below
+     640px by .hb-cite-thumb in custom.css — on a phone the text is the
+     page, and a column of thumbnails would push every citation into a
+     narrow gutter. */}}
+{{ $thumb := partial "functions/get_featured_image.html" $item }}
+{{ $thumbURL := "" }}
+{{ with $thumb }}
+  {{ $img := .Process "Resize 220x q85" }}
+  {{ $thumbURL = $img.RelPermalink }}
+{{ end }}
+
+<div class="pub-list-item view-citation hb-cite" style="margin-bottom: 1rem">
+  {{ with $thumbURL }}
+  <a href="{{ $item.RelPermalink }}" class="hb-cite-thumb" tabindex="-1" aria-hidden="true">
+    <img src="{{ . }}" alt="" loading="lazy" />
+  </a>
+  {{ end }}
+  <div class="hb-cite-body">
   <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
 
   {{/* APA Style */}}
@@ -74,4 +94,5 @@
   {{ end }}
 
   {{ end }}
+  </div>
 </div>

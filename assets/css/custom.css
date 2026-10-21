@@ -589,3 +589,63 @@ footer p a:hover {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+
+/* Publications list: cover thumbnail beside each citation.
+
+   The list was a wall of text — forty-odd citations with nothing to break
+   the column. Nearly every publication already carries a render of its own
+   first page as its featured image, so each entry now shows it at list
+   size, which also gives the eye a fixed left edge to scan down.
+
+   Below 640px the thumbnail is hidden rather than shrunk: on a phone the
+   citation needs the full width, and a column of thumbnails would squeeze
+   every entry into a narrow gutter. The markup is in
+   layouts/_partials/views/citation.html. */
+.hb-cite {
+  display: block;
+}
+
+.hb-cite-thumb {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hb-cite {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hb-cite-thumb {
+    display: block;
+    flex: 0 0 auto;
+    width: 4.5rem;
+    margin-top: 0.2rem;
+    border: 1px solid rgb(226 232 240);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background: #fff;
+    line-height: 0;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+
+  .hb-cite-thumb:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+  }
+
+  .hb-cite-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hb-cite-body {
+    min-width: 0;
+  }
+
+  .dark .hb-cite-thumb {
+    border-color: rgb(51 65 85);
+    background: rgb(15 23 42);
+  }
+}
