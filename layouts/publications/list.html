@@ -2,7 +2,7 @@
   Publications list page — overrides the generic Hugo Blox
   layouts/list.html (vendored) for this section only, so it can:
     - separate preprints from published articles
-    - split published articles into Primary Research / Co-authored Work /
+    - split published articles into Primary Research / Collaborative Work /
       Reviews & Commentary, based on each page's `pub_category` param
       (lab | coauthored | review — defaults to "lab" if unset)
     - group each of those sections under year headings
@@ -54,7 +54,7 @@
       {{ if gt (len $labPapers) 0 }}<a href="#primary-research" class="text-primary-600 dark:text-primary-400 hover:underline">Primary Research</a>{{ end }}
       {{ if gt (len $reviews) 0 }}<a href="#reviews-commentary" class="text-primary-600 dark:text-primary-400 hover:underline">Reviews &amp; Commentary</a>{{ end }}
       {{ if gt (len $preprints) 0 }}<a href="#preprints" class="text-primary-600 dark:text-primary-400 hover:underline">Preprints</a>{{ end }}
-      {{ if gt (len $coauthored) 0 }}<a href="#coauthored-work" class="text-primary-600 dark:text-primary-400 hover:underline">Co-authored Work</a>{{ end }}
+      {{ if gt (len $coauthored) 0 }}<a href="#collaborative-work" class="text-primary-600 dark:text-primary-400 hover:underline">Collaborative Work</a>{{ end }}
     </nav>
 
     {{ if gt (len $labPapers) 0 }}
@@ -91,7 +91,7 @@
     {{ end }}
 
     {{ if gt (len $coauthored) 0 }}
-    <h2 id="coauthored-work" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Co-authored Work</h2>
+    <h2 id="collaborative-work" class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 scroll-mt-24">Collaborative Work</h2>
     {{ $currentYear := "" }}
     {{ range $coauthored }}
       {{ $year := .Date.Format "2006" }}
