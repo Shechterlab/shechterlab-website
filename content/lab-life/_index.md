@@ -19,6 +19,7 @@ sections:
         Conferences, celebrations, ballgames, and the occasional beer. Click a photo to enlarge it and see who's in it.
 
         <div class="lb-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:10px;margin-top:1rem;width:100%">
+          <a href="#lb-thanksgiving-2026" class="lb-thumb"><img src="/media/lab/gallery/gallery-thanksgiving-2026.jpg" alt="David Shechter in an apron beside a table of desserts" loading="lazy"></a>
           <a href="#lb-isaac-david-beer" class="lb-thumb"><img src="/media/lab/gallery/gallery-isaac-david-beer.jpg" alt="Isaac Kraz and David Shechter with beers, FASEB Ireland" loading="lazy"></a>
           <a href="#lb-david-aliza-beer" class="lb-thumb"><img src="/media/lab/gallery/gallery-david-aliza-beer.jpg" alt="David Shechter and Aliza Silverstein, FASEB Ireland" loading="lazy"></a>
           <a href="#lb-david-isaac-aliza" class="lb-thumb"><img src="/media/lab/gallery/gallery-david-isaac-aliza.jpg" alt="David Shechter, Isaac Kraz and Aliza Silverstein at dinner in Ireland" loading="lazy"></a>
@@ -52,6 +53,7 @@ sections:
           <a href="#lb-david-lab-2010" class="lb-thumb"><img src="/media/lab/gallery/gallery-david-lab-2010.jpg" alt="David Shechter in a lab coat beside the bench" loading="lazy"></a>
         </div>
 
+        <div id="lb-thanksgiving-2026" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/gallery/gallery-thanksgiving-2026.jpg" alt="David Shechter in an apron beside a table of desserts"><figcaption>David serving dessert at the 2026 Einstein Thanksgiving Lunch</figcaption></figure></div>
         <div id="lb-isaac-david-beer" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/gallery/gallery-isaac-david-beer.jpg" alt="Isaac Kraz and David Shechter with beers, FASEB Ireland"><figcaption>Isaac Kraz &amp; David Shechter, FASEB conference, Ireland, 2026</figcaption></figure></div>
         <div id="lb-david-aliza-beer" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/gallery/gallery-david-aliza-beer.jpg" alt="David Shechter and Aliza Silverstein, FASEB Ireland"><figcaption>David Shechter &amp; Aliza Silverstein, FASEB conference, Ireland, 2026</figcaption></figure></div>
         <div id="lb-david-isaac-aliza" class="lb-overlay"><a href="#lb-close" class="lb-overlay-close">&times;</a><figure><img src="/media/lab/gallery/gallery-david-isaac-aliza.jpg" alt="David Shechter, Isaac Kraz and Aliza Silverstein at dinner in Ireland"><figcaption>Dinner in Ireland — David Shechter, Isaac Kraz &amp; Aliza Silverstein, 2026</figcaption></figure></div>
